@@ -37,8 +37,8 @@ meta() %>%
 
 This summer, we conducted a [+Data Science](https://plus.datascience.duke.edu/announcements/launch-covidds-series-june-30) class called *Counting COVID: Key elements of the analytical tool box for understanding COVID-19*. Below are the slides for this interactive presentation. To view the full-size slides in a new window, click on the *Slides* link below.
 
-```{r, fig.cap="[Slides](slides/)", out.width = "50%", out.length = "50%"}
-knitr::include_url("slides/")
+```{r, fig.cap="[Slides](slides/)"}
+knitr::include_app("slides/")
 ```
 
 \
