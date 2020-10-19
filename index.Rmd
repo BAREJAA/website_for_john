@@ -59,7 +59,7 @@ If you are new to R, we think you will find the following very useful:
 
 ## To view the slides in a new window, click on the link below
 
-+ [Slides](slides/)
++ [Slides](slides/index.html)
 
 
 
