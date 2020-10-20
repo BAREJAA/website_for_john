@@ -1,12 +1,17 @@
-name: "distill_test_website"
+name: "tifybiology"
 title: "Tidybiology"
 description: |
   Tidybiology
 output_dir: "_site"
 navbar:
+  logo: 
+    image: images/bespokeDS.png
+  search: true
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+    - icon: fas fa-hand-spock
+      href: https://github.com/BAREJAA
 output: distill::distill_article
