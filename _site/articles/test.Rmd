@@ -2,9 +2,7 @@
 title: "Test"
 author: "Akshay Bareja"
 date: "10/20/2020"
-output: 
-  distill::distill_article:
-    toc: true
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

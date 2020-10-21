@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.align="center")
 ```
 
-```{r load, include = FALSE}
+```{r load, include = TRUE}
 path <- 'inst/extdata'
 proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
 ###
