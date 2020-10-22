@@ -195,10 +195,10 @@ Data stored in a dataframe are conceptually equivalent to a spreadsheet with row
 This is a sample from the ``r dataframe_name`` dataset  
   
 ```{r kable}
-df_input %>% 
-  select(1:5) %>% 
-  slice(1:5) %>% 
-  knitr::kable()
+# df_input %>% 
+#   select(1:5) %>% 
+#   slice(1:5) %>% 
+#   knitr::kable()
 ```
 
 ## Data are stored in tables and dataframes
