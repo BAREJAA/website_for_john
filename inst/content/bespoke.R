@@ -7,6 +7,14 @@ library(tidyverse)
 #df_input <- dataframe_name
 # *programatically prepare this doc, where dataframe_name and df_input are the name of the data set?
 #   OR...load this after making defining var in rmd?
+path <- 'inst/extdata'
+proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
+###
+proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+joined <- proteins %>% right_join(proteins_join, by = 'id')
+###
+df_input <- proteins # this line is for bespoke.R to get proper var
+df_input2 <- proteins_join
 
 df_numeric <- df_input %>% select_if(~is.numeric(.) & length(unique(.)) > 10) %>% select(-contains('id'))
 df_character <- df_input %>% select_if(~is.character(.)) %>% select(-contains('id'))
