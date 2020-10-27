@@ -10,7 +10,7 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Project Examples"
+    - text: "Final Project"
       menu:
         - text: "Example by Dr. Hirschey"
           href: projects/Matthew-Hirschey.html

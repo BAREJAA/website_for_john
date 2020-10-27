@@ -34,6 +34,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 + [From Data to Viz](https://www.data-to-viz.com)
 
++ [Past Projects](https://github.com/matthewhirschey/tidybiology-final_project/tree/master/2019_fall)
+
 + [bespokeDS YouTube channel](https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ)
 
 
