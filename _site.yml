@@ -1,4 +1,4 @@
-name: "tifybiology"
+name: "tidybiology"
 title: "Tidybiology"
 description: |
   Tidybiology
@@ -10,8 +10,13 @@ navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "Project Examples"
+      menu:
+        - text: "Example by Dr. Hirschey"
+          href: projects/Matthew-Hirschey.html
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
       href: https://github.com/BAREJAA
 output: distill::distill_article
+

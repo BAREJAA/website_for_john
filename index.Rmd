@@ -24,15 +24,15 @@ knitr::opts_chunk$set(echo = FALSE)
 + [Class 5 Slides](class_five/)
 \
 
-## Vignettes/Articles?
-
-+ [Example](articles/test.Rmd)
-
 ## Useful Resources
 
-If you are new to R, we think you will find the following very useful: 
-
 + [R for Data Science](https://r4ds.had.co.nz)
+
++ [dplyr guide](https://dplyr.tidyverse.org)
+
++ [ggplot2 guide](https://ggplot2.tidyverse.org)
+
++ [From Data to Viz](https://www.data-to-viz.com)
 
 + [bespokeDS YouTube channel](https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ)
 
