@@ -1,0 +1,366 @@
+---
+title: Tidybiology
+subtitle: Intro to Data Science using R
+author: Matthew Hirschey & Akshay Bareja
+date: '2020-11-11'
+output:
+  ioslides_presentation:
+    widescreen: yes
+runtime: shiny_prerendered
+---
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(knitr)
+library(here)
+library(twitterwidget)
+library(rlang)
+library(ggrepel)
+library(viridis)
+library(gghighlight)
+library(patchwork)
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align="center")
+```
+
+```{r load, include = FALSE}
+path <- '/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/extdata'
+proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
+###
+proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+joined <- proteins %>% right_join(proteins_join, by = 'id')
+###
+df_input <- proteins # this line is for bespoke.R to get proper var
+df_input2 <- proteins_join
+source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/content/metadata.R', local = TRUE)
+source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/content/bespoke.R', local = TRUE)
+```
+## Dealing with strings {.build}
+Dealing with character strings is a bit different than dealing with numbers in R?   
+  
+* Sort?  
+* Select?  
+* Change?  
+  
+Fortunately, the `tidyverse` as a package called `stringr` for dealing with them. 
+
+## Stringr
+<center><iframe src = "https://stringr.tidyverse.org"></iframe></center>
+
+## Counting strings {.build}
+```{r setup_count, include=FALSE}
+df_input2 %>% count(string(df_2_col), sort = TRUE) %>% slice(2) %>% select(1) %>% pull()
+#restart here
+```
+
+`str_count()` is a function we can use to count the number of rows that match a particular pattern.  
+  
+The output with either be 1 (match), or 0 (no match)  
+
+<div class= "red2"> Example </div>  
+In this code:  
+- string we want to evaluate is ``r dataframe_join_name`$`r df_2_col``  
+- pattern we want to count `"High Cholesterol"`  
+
+`str_count(heart_joined$health_status, "High Cholesterol")`
+
+## Counting
+`str_count(heart_joined$health_status, "High Cholesterol")`
+
+```{r str_count example, echo= FALSE, warning = FALSE}
+str_count(df_input2[df_2_col], "High Cholesterol")
+```
+
+## Summarizing our counts
+A bunch of 0 and 1 are not incredibly useful.
+
+But since R is good at adding, we can simply wrap the previous expression in `sum()`  
+
+Try it below:  
+```{r sum_string, exercise = TRUE}
+
+```
+
+## Matching subsets of strings {.build}
+
+We previously matched the entire string "High Cholesterol"  
+But we can use the same function to detect patterns within longer strings.  
+  
+Let's look for how many patients take a statin of any kind using
+`str_count(heart_joined$medication_hx, "statin")` 
+
+## What about subsets of strings?  
+`str_count(heart_joined$medication_hx, "statin")` 
+
+What does the ouput mean?  
+```{r str_count_exercise, exercise = TRUE}
+
+```
+
+## A note about string patterns
+
+When using a stringr function, you may get an output saying a string pattern doesn't exist. If you know for sure it does, <div class="blue"> double check capitalization </div>.  
+  
+**The string must match exactly, or it will not be found!**
+
+## stringr Exercise
+How many people having an `"auntie" or "aunt"` in their health history?  
+  
+Go to code/  
+Open 09_stringr.Rmd  
+Complete the exercise. 
+
+
+
+## Detecting strings {.build}
+In addition to counting, we can use another function `str_detect()` to logically evaluate a character string.  
+  
+Because this logically evaluates an expression, the output is either `TRUE or FALSE`  
+  
+Practially, `str_detect` is used to detect the presence or absence of a pattern in a string  
+
+## Logic Evaluation 
+<div class= "red2"> Example </div>  
+Find the patients with diabetes using the following code  
+  
+`str_detect(heart_joined$health_status, "Diabetic")`  
+  
+```{r strdetect, exercise=TRUE}
+
+```
+
+## Modifiying strings with `str_replace()` {.build}
+In the health_status column we have:  
+-`"Diabetic"`  
+-`"High Cholesterol"`  
+-`"Normal blood sugar and cholesterol"`  
+  
+But let's say we want to simplify healthy individuals to `"Normal"`
+
+`str_replace(heart_joined$health_status, "Normal blood sugar and cholesterol", "Normal")`
+
+```{r str_replace, exercise=TRUE}
+
+```
+
+## Modifiying strings with `str_replace()` {.build}
+We use this same code to  modify the `health_status` column by assigning it to the same variable     
+  
+`heart_joined$health_status <-`  
+       `str_replace(heart_joined$health_status, "Normal blood sugar and cholesterol", "normal")`
+
+```{r str_replace in col, warning = FALSE, echo=FALSE}
+df_input2[df_2_col] <- 
+  str_replace(df_input2[df_2_col], "Normal blood sugar and cholesterol", "normal")
+
+head(df_input2[df_2_col], n = 10)
+```
+
+## Using `stringr` with `dplyr` {.build}
+We can use `stringr` functions in tandem with `dplyr` functions.  
+  
+<div class= "red2"> Example </div>  
+We want to make a logical variable (`TRUE`/`FALSE`) that tells us if a patient has a normal health history using  
+
+`heart_joined2 <- heart_joined %>% mutate(healthy = str_detect(health_status, "normal"))` 
+
+```{r stringr with dplyr, echo=FALSE, warning=FALSE}
+df_input22 <- mutate(df_input2, condition = str_detect(df_2_col, "normal"))
+
+head(df_input22$condition, n = 10)
+```
+ 
+## Using Regular Expressions
+That solution worked in this case, but was not very elegant, and might not work for all cases (what if there was a 'great aunt' in the list?)  
+
+Or here is a more specific case for this data set.  
+  
+How many patients have a father with a history of disease? But we don't want to include grandfathers in the results. 
+  
+We can use something called **Regular Expressions**, aka **Regex**, to solve this
+
+## Using Regular Expressions {.build}
+Think of regex as a separate language, with it's own code, syntax, and rules.  
+  
+Regex rules allow complex matching patterns for strings, to ensure matching *exactly* the content desired
+  
+It is far too complex to cover in its entirely here, but here is one specific example.  
+  
+**GOAL**: identify all of the patients that have a father with a history of disease, but excluding grandfathers in the results. 
+  
+## Regular Expression Example {.build}
+<div class="red2"> Example </div>  
+We want to start with recognizing `father`.  
+
+But then we want to make sure that we capture both `Father` and `father`. To accept either case f in the first spot we add `(F|f)`, so now our regex looks like `(F|f)ather`  
+  
+Lastly, we want this pattern to appear at the beginning of the word, so we add the regex `^` symbol.  
+
+Our completed regex looks like:  
+  
+`str_count(heart_joined$family_history, "^(F|f)ather")` 
+
+```{r regex1, exercise=TRUE}
+
+
+```
+## Regex Exercise
+Go to code/  
+Open 09_stringr.Rmd  
+Complete the exercise to count mothers.    
+
+## Regex resources
+- The stringr cheatsheet shown above is a great resource  
+- Here the tidyverse website with a link to its vignette  
+  
+<center><iframe src="https://stringr.tidyverse.org/articles/regular-expressions.html"></iframe></center>  
+## Importing data into R {.build}
+
+The `readr` package (found in the `tidyverse` collection) contains a number of useful functions of the form `read_*` to import data. For example, if you have a `.csv` file, you would use the `read_csv` function  
+  
+The dataset provided to you is a cleaned R-specific document. But you will never find this in 'the wild'.  
+  
+Most often, you will need to find a data file (such as csv), and import it
+
+## Importing data into R {.build}
+For the purpose of this class, we have generated a **simulated** dataset of `r dataframe_join_about` to accompany the `r dataframe_name` dataset.  
+
+To import the `r dataframe_join_name` file into RStudio, run the following:  
+  
+``r dataframe_join_name` <- read_csv(here::here("data", "`r dataframe_join_name`"))`
+
+Go to code/  
+Open 08_import_and_join.Rmd  
+Complete the exercise to import this new dataset.  
+
+## Importing data into R {.build}
+
+You can also use the `readr` package to import data from a URL
+
+For example, to load a dataset from a URL, run the following
+
+```{r import_url, echo = TRUE, warning = FALSE, message = FALSE, eval = TRUE}
+path <- here::here("data", "phx.csv")
+url <- "https://raw.githubusercontent.com/matthewhirschey/tidybiology-plusds/master/data/phx.csv"
+patient_hx <- read_csv(url)
+
+```
+## Combining datasets {.build}
+
+There are many times when you have two or more overlapping datasets that you would like to combine
+
+The `dplyr` package has a number of `*_join` functions for this purpose
+
+```{r left_join, echo=FALSE, fig.cap="", out.height='50%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+knitr::include_graphics(url)
+```
+
+
+## `left_join` {.build}
+
+Returns all rows from a, and all columns from a and b
+
+Rows in a with no match in b will have NA values in the new columns
+
+If there are multiple matches between a and b, all combinations of the matches are returned
+
+## `left_join` example {.build}
+
+Take a look at the variables in each dataset - `r dataframe_name` and `r dataframe_join_name`  
+
+You will notice that both datasets contain common variable - `r df_id_name`. This can therefore serve as a common variable to join on. Let's join on this:  
+  
+`left_join` `r dataframe_name` with `r dataframe_join_name` and assign the output to a new object called ``r dataframe_name`_join_left`
+
+Go to code/  
+Open 08_import_and_join.Rmd  
+Complete the exercise to join the two datasets.  
+  
+Now you have one dataset with additional useful information
+
+## `right_join`
+```{r right_join, echo=FALSE, fig.cap="", out.height='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+knitr::include_graphics(url)
+```
+
+
+## `right_join` {.build}
+Returns all rows from b, and all columns from a and b
+
+Rows in b with no match in a will have NA values in the new columns
+
+If there are multiple matches between a and b, all combinations of the matches are returned
+  
+This is conceptually equivalent to a `left_join`, but can be useful when stringing together multiple steps using %>% 
+
+## `inner_join`
+```{r inner_join, echo=FALSE, fig.cap="", out.height='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+knitr::include_graphics(url)
+```
+
+## `inner_join` {.build}
+Returns all rows from a where there are matching values in b, and all columns from a and b
+
+If there are multiple matches between a and b, all combination of the matches are returned
+
+## `full_join`
+```{r full_join, echo=FALSE, fig.cap="", out.height='66%'}
+url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+knitr::include_graphics(url)
+```
+
+## `full_join` {.build}
+Returns all rows and all columns from both a and b  
+
+Where there are no matching values, returns NA for the one missing  
+# Concluding Thoughts
+
+## Data science enables {.build}
+- Data science enables data-driven information gathering and hypothesis generation  
+-- Scientific Research  
+-- Reviews  
+  
+- Data science enables the ability to ask new types of questions  
+  
+- Process-centric, not necessarily question-centric  
+  
+- Making things computable makes them actionable at zero marginal cost.  
+  
+- Workflows save time, achieve reproducibility  
+
+## Cheatsheet Resources
+<a href="https://rstudio.com/resources/cheatsheets" target="_blank">Cheatsheets</a><br>
+<center><iframe src="https://rstudio.com/resources/cheatsheets"></iframe></center>
+
+## Google Resources
+<a href="https://google.com/" target="_blank">Google.com</a><br>
+<center><iframe src="https://google.com"></iframe></center>
+
+## R4DS Resources
+<a href="https://r4ds.had.co.nz" target="_blank">R for Data Science</a><br>
+<center><iframe src="https://r4ds.had.co.nz"></iframe></center>
+## Tidybiology Website
+<a href="https:/tidybiology.org" target="_blank">tidybiology.org</a><br>
+<center><iframe src="https://tidybiology.org"></iframe></center>
+
+## Tidybiology Videos
+<a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br>
+<center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center>
+
+## Acknowledgements {.build}
+**Co-Instructor**  
+- Akshay Bareja, D.Phil.  
+  
+**Inspiration, ideas, packages, code**  
+- R4DS (Garrett Grolemund and Hadley Wickham)  
+- Mine Çetinkaya-Rundel (datasciencebox.org)  
+- Chester Ismay and Albert Y. Kim (Modern Dive)  
+- Garrett Grolemund  (Remastering the Tidyverse)  
+- Tidyverse devs and community  
+- Rstudio  
+
+# Thank you
+Any questions?
