@@ -24,16 +24,16 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 ```{r load, include = TRUE}
-# path <- 'inst/extdata'
-# proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
-# ###
-# proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
-# joined <- proteins %>% right_join(proteins_join, by = 'id')
-# ###
-# df_input <- proteins # this line is for bespoke.R to get proper var
-# df_input2 <- proteins_join
-#source('inst/content/metadata.R')
-#source('inst/content/bespoke.R')
+path <- 'inst/extdata'
+proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
+###
+proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+joined <- proteins %>% right_join(proteins_join, by = 'id')
+###
+df_input <- proteins # this line is for bespoke.R to get proper var
+df_input2 <- proteins_join
+source('inst/content/metadata.R')
+source('inst/content/bespoke.R')
 ```
 ## Doctors make decisions based on symptoms 
 ```{r intro, echo=FALSE, fig.cap="", out.height = '100%'}
