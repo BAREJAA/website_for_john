@@ -4,5 +4,5 @@ RUN install2.r metathis distill learnr knitr here rlang ggrepel viridis gghighli
 RUN apt-get update
 RUN apt-get install build-essential libglpk-dev -y
 RUN Rscript -e 'BiocManager::install("mixOmics")'
-RUN Rscript -e 'devtools::install_github("hirscheylab/proteins")'
+RUN Rscript -e 'devtools::install_github("matthewhirschey/proteins")'
 
