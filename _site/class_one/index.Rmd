@@ -19,6 +19,7 @@ library(ggrepel)
 library(viridis)
 library(gghighlight)
 library(patchwork)
+library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
 ```

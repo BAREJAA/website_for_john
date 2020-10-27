@@ -2,7 +2,7 @@
 title: Tidybiology
 subtitle: Intro to Data Science using R
 author: Matthew Hirschey & Akshay Bareja
-date: '2020-11-11'
+date: '2020-11-06'
 output:
   ioslides_presentation:
     widescreen: yes
@@ -36,264 +36,312 @@ df_input2 <- proteins_join
 source('inst/content/metadata.R')
 source('inst/content/bespoke.R')
 ```
-## Dealing with strings {.build}
-Dealing with character strings is a bit different than dealing with numbers in R?   
+# R <br>Getting to know your data
+Any questions?
+
+## ``r dataframe_name`` dataset
+**`r dataframe_title`**  
   
-* Sort?  
-* Select?  
-* Change?  
+- For this class, we will use a dataset called ``r dataframe_name``.  
   
-Fortunately, the `tidyverse` as a package called `stringr` for dealing with them. 
-
-## Stringr
-<center><iframe src = "https://stringr.tidyverse.org"></iframe></center>
-
-## Counting strings {.build}
-```{r setup_count, include=FALSE}
-df_input2 %>% count(string(df_2_col), sort = TRUE) %>% slice(2) %>% select(1) %>% pull()
-#restart here
-```
-
-`str_count()` is a function we can use to count the number of rows that match a particular pattern.  
+- `r dataframe_source`  
   
-The output with either be 1 (match), or 0 (no match)  
+- `r dataframe_desc`  
+  
+## Inspecting your dataframe: dimensions
 
-<div class= "red2"> Example </div>  
-In this code:  
-- string we want to evaluate is `r dataframe_name`$`r df_2_col`  
-- pattern we want to count is "`r word1`"  
+Use the `dim()` function to see how many rows (observations) and columns (variables) are in ``r dataframe_name``
 
-`str_count(`r dataframe_name`$`r df_2_col`, '`r word1`')`  
-
-## Counting
-`str_count(`r dataframe_name`$`r df_2_col`, '`r word1`')`
-
-```{r str_count, exercise = TRUE}
+`dim(`r dataframe_name`)` 
+  
+Enter your function here:  
+```{r dim_exercise, exercise=TRUE}
 
 ```
 
-## Summarizing our counts
-A bunch of 0 and 1 are not incredibly useful.
+## Inspecting your dataframe: glimpse
 
-But since R is good at adding, we can simply wrap the previous expression in `sum()`  
-
-Try it below:    
-```{r sum_string, exercise = TRUE}
+Use the `glimpse()` function to see what kinds of variables the ``r dataframe_name`` dataset contains   
+  
+`glimpse(`r dataframe_name`)`  
+  
+Enter your function here:  
+```{r glimpse_exercise, exercise=TRUE}
 
 ```
-
-## Matching subsets of strings {.build}
-
-We previously matched the entire string "`r word1`" 
-But we can use the same function to detect patterns within longer strings.  
   
-`str_count(`r dataframe_name`$`r df_2_col`, '`r word2`')`
+## Basic Data Types in R {.build}
 
-## What about subsets of strings?  
-`str_count(`r dataframe_name`$`r df_2_col`, '`r word2`')`
+Recall that R has different data types -
 
-What does the ouput mean?  
-```{r str_count_exercise, exercise = TRUE}
+**character** - `"a"`, `"tidyverse"`  
+
+**numeric** - `2`, `11.5`  
+
+**integer** - `2L` (the `L` tells R to store this as an integer)  
+
+**logical** - `TRUE`, `FALSE`  
+
+**complex** - `1+4i`  
+
+(**raw**)
+
+You will also come across the **double** datatype. It is the same as **numeric**
+
+**factor**. A **factor** is a collection of *ordered* character variables
+
+## Basic Data Types in R
+
+In addition to the `glimpse()` function, you can use the `class()` function to determine the data type of a specific column
+
+`class(`r dataframe_name`$`r colnames(df_character_select)`)`
+
+```{r class, echo = FALSE, warning = FALSE}
+class(df_character_select[[1]])
+```
+  
+Try getting the `class` of a variable:  
+```{r class_exercise, exercise=TRUE}
 
 ```
+## (Re)Introducing `%>%` {.build}
 
-## A note about string patterns
-
-When using a stringr function, you may get an output saying a string pattern doesn't exist. If you know for sure it does, <div class="blue"> double check capitalization </div>  
+The `%>%` operator is a way of "chaining" together strings of commands that make reading your code easy.  
+The following code chunk illustrates how `%>%` works:  
   
-**The string must match exactly, or it will not be found!**
+``r dataframe_name` %>%`  
+    `select(`r colnames(df_character_select)`, `r colnames(df_numeric_select)`) %>%`   
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`   
+    `head()`  
 
-## Detecting strings {.build}
-In addition to counting, we can use another function `str_detect()` to logically evaluate a character string.  
-  
-Because this logically evaluates an expression, the output is either `TRUE or FALSE`  
-  
-Practially, `str_detect` is used to detect the presence or absence of a pattern in a string  
-
-## Logic Evaluation 
-<div class= "red2"> Example </div>  
-Find elements in `r df_2_col` that matches "`r word2`"  
-
-`str_detect(`r dataframe_name`$`r df_2_col`, '`r word2`')`
-  
-```{r strdetect, exercise=TRUE}
-
+```{r %>%, echo = FALSE, warning = FALSE}
+df_input %>%
+  select(colnames(df_character_select), colnames(df_numeric_select)) %>% 
+  filter(!!rlang::sym(colnames(df_character_select)) == as.character(df_character_filter)) %>% 
+  head()
 ```
 
-## Modifiying strings with `str_replace()` {.build}
-In the case of `r df_2_col`, say we want to replace every `r word1` with "IGF1" because `r word1` is incorrect.  
+## (Re)Introducing `%>%` {.build}
 
-`str_replace(`r dataframe_name`$`r df_2_col`, '`r word1`', 'IGF1')`
-
-```{r str_replace, exercise=TRUE}
-
-```
-
-## Modifiying strings with `str_replace()` {.build}
-We use this same code to  modify the `r df_2_col` column by assigning it to the same variable     
+The previous code chunk does the following - it takes your dataset and then "pipes" it into `select()`, and then applies a `filter()` to the data.
   
-``r dataframe_name`$`r df_2_col` <-`       
-       `str_replace(`r dataframe_name`$`r df_2_col`, '`r word1`', 'IGF1')`
-
-```{r str_replace in col, warning = FALSE, echo=FALSE}
-df_input[df_2_col] <- 
-  str_replace(df_input[df_2_col], word1, "IGF1")
-
-head(df_input[df_2_col], n = 10)
-```
-
-## Using `stringr` with `dplyr` {.build}
-We can use `stringr` functions in tandem with `dplyr` functions.    
+``r dataframe_name` %>%`  
+    `select(`r colnames(df_character_select)`, `r colnames(df_numeric_select)`) %>%`   
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`   
+    `head()`  
   
-<div class= "red2"> Example </div>  
+*the `head` function lists only the top n results -- convenient for long variables*
+  
+  
+**When you see `%>%`, think "and then"**
 
-`new_df <-` 
-  ``r dataframe_name` %>%`  
-   `mutate(new_col = str_detect(`r df_2_col`, '`r word2`'))`
+## (Re)Introducing `%>%` {.build}
 
-```{r stringr_with_dplyr, exercise=TRUE}
+The alternative to using `%>%` is running the following code
 
-```
+filter(select(`r dataframe_name`, `r colnames(df_character_select)`, `r colnames(df_numeric_select)`), `r colnames(df_character_select)` == "`r df_character_filter`")
+
+Although this is only one line as opposed to three, it's both more difficult to write and more difficult to read  
+  
+
+## Introducing `dplyr` {.build}
+  
+dplyr is a package that contains a suite of functions that allow you to easily manipulate a dataset  
+  
+Some of the things you can do are -  
+  
+- select rows and columns that match specific criteria  
+  
+- create new variables (columns)  
+  
+- obtain summary statistics on individual groups within your datasets  
+  
+The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`, and `summarise()`. These all combine naturally with `group_by()` which allows you to perform any operation "by group"  
  
-## Using Regular Expressions
-What if we wanted to do something more complicated, like search for all elements in a column that being with either "A" or "B"?  
-  
-We can use something called **Regular Expressions**, aka **Regex**, to solve this
+## `select()` specific columns from your dataset {.build}
+The most basic `select()` is one where you comma separate a list of columns you want included
 
-## Using Regular Expressions {.build}
-Think of regex as a separate language, with it's own code, syntax, and rules.  
-  
-Regex rules allow complex matching patterns for strings, to ensure matching *exactly* the content desired
-  
-It is far too complex to cover in its entirely here, but here is one specific example.  
-  
-**GOAL**: identify all of the patients that have a father with a history of disease, but excluding grandfathers in the results. 
-  
-## Regular Expression Example {.build}
-<div class="red2"> Example </div>  
-Our goal is to identify all elements of `r df_2_col` that begin with either the letter "A" or the letter "B".  
+For example, if you only want to select the `r colnames(df_character_select)` and `r colnames(df_numeric_select)` columns, run the following code chunk
 
-First, we need to specify a pattern that captures this. This pattern is - `(A|B)`.   
-  
-Then, we want this pattern to appear at the beginning of the word, so we add the regex `^` symbol.    
-
-Our completed regex looks like:    
-
-`str_count(`r dataframe_name`$`r df_2_col`, '^(A|B)')`
-
-```{r regex1, exercise=TRUE}
-
+``r dataframe_name` %>%`   
+    `select(`r colnames(df_character_select)`, `r colnames(df_numeric_select)`) %>%`  
+    `head()`
+    
+```{r select_exercise, exercise=TRUE}
 
 ```
 
-## Regex resources
-- The stringr cheatsheet shown above is a great resource  
-- Here the tidyverse website with a link to its vignette  
-  
-<center><iframe src="https://stringr.tidyverse.org/articles/regular-expressions.html"></iframe></center>  
-## Importing data into R {.build}
+## `select()` {.build}
 
-The `readr` package (found in the `tidyverse` collection) contains a number of useful functions of the form `read_*` to import data. For example, if you have a `.csv` file, you would use the `read_csv` function  
-  
-The dataset provided to you is a cleaned R-specific document. But you will never find this in 'the wild'.  
-  
-Most often, you will need to find a data file (such as csv), and import it
+If you want to select all columns *except* `r colnames(df_character_select)`, run the following
 
-## Importing data into R {.build}
-For the purpose of this class, we have generated a **simulated** dataset of `r dataframe_join_about` to accompany the `r dataframe_name` dataset.  
+``r dataframe_name` %>%`  
+    `select(-`r colnames(df_character_select)`) %>%`  
+    `head(5)`
 
-To import the `r dataframe_join_name` file into RStudio, run the following:  
-  
-``r dataframe_join_name` <- read_csv(here::here("data", "`r dataframe_join_name`"))`
-
-Go to code/  
-Open 08_import_and_join.Rmd  
-Complete the exercise to import this new dataset.  
-
-## Importing data into R {.build}
-
-You can also use the `readr` package to import data from a URL
-
-For example, to load a dataset from a URL, run the following
-
-```{r import_url, echo = TRUE, warning = FALSE, message = FALSE, eval = TRUE}
-path <- here::here("data", "phx.csv")
-url <- "https://raw.githubusercontent.com/matthewhirschey/tidybiology-plusds/master/data/phx.csv"
-patient_hx <- read_csv(url)
+```{r selectnot_exercise, exercise=TRUE}
 
 ```
-## Combining datasets {.build}
 
-There are many times when you have two or more overlapping datasets that you would like to combine
+## `select()` {.build}
 
-The `dplyr` package has a number of `*_join` functions for this purpose
+Finally, you can provide a range of columns to return two columns and everything in between. For example
 
-## `left_join` {.build}
+``r dataframe_name` %>%`   
+    `select(`r colnames(df_character_select)`:`r colnames(df_numeric_select)`) %>%`  
+    `head(5)`
+    
+```{r selectrange_exercise, exercise=TRUE}
 
-Returns all rows from a, and all columns from a and b
-
-Rows in a with no match in b will have NA values in the new columns
-
-If there are multiple matches between a and b, all combinations of the matches are returned
-
-## `left_join` {.build}
-
-```{r left_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
-url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true"
-knitr::include_graphics(url)
 ```
+## `filter()` rows based on certain condition(s) {.build}
 
-## `left_join` example {.build}
-
-Take a look at the variables in each dataset - `r dataframe_name` and `r dataframe_join_name`  
-
-You will notice that both datasets contain common variable - `r df_id_name`. This can therefore serve as a common variable to join on. Let's join on this:  
+The `filter()` verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered").  
   
-`left_join` `r dataframe_name` with `r dataframe_join_name` and assign the output to a new object called ``r dataframe_name`_join_left`
-
-Go to code/  
-Open 08_import_and_join.Rmd  
-Complete the exercise to join the two datasets.  
   
-Now you have one dataset with additional useful information
+**All other rows are discarded**  
 
-## `right_join`
-```{r right_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
-url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true"
-knitr::include_graphics(url)
+## `filter()` {.build}
+
+Filtering can be performed on **categorical** data
+
+``r dataframe_name` %>%`     
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`     
+    `head(3)`  
+
+```{r filter_exercise, exercise=TRUE}
+
 ```
 
+Note that `filter()` only applies to rows, and has no effect on columns
 
-## `right_join` {.build}
-Returns all rows from b, and all columns from a and b
+## `filter()` {.build}
 
-Rows in b with no match in a will have NA values in the new columns
+Filtering can also be performed on **numeric** data
 
-If there are multiple matches between a and b, all combinations of the matches are returned
+For example, if you wanted to choose `r colnames(df_numeric_select)` with a value greater than `r df_numeric_filter`, you would run the following. 
+
+``r dataframe_name` %>%`     
+    `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`     
+    `head(3)`  
+
+```{r filter_exercise2, exercise=TRUE}
+
+```
+
+## `filter()` {.build}
+
+To filter on multiple conditions, you can write a sequence of `filter()` commands
+
+``r dataframe_name` %>%`       
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`  
+    `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`    
+    `head(3)`  
+
+```{r filter_exercise3, exercise=TRUE}
+
+```
+
+## `filter()` {.build}
+
+To avoid writing multiple `filter()` commands, multiple logical statements can be put inside a single `filter()` command, separated by commas
+
+``r dataframe_name` %>%`           
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`",`  
+           ` `r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`      
+    `head(3)`  
+
+```{r filter_exercise4, exercise=TRUE}
+
+```
+## `arrange()` sorts rows {.build}
+
+The input for arrange is one or many columns, and `arrange()` sorts the rows in ascending order i.e. from smallest to largest
+
+For example, to sort rows from smallest to largest `r colnames(df_numeric_select)`, run the following
+
+``r dataframe_name` %>%`   
+  `arrange(`r colnames(df_numeric_select)`) %>%`   
+  `head(3)`  
+
+```{r arrange_exercise, exercise=TRUE}
+
+```
+
+## `arrange()` {.build}
+
+To reverse this order, use the `desc()` function within `arrange()`
+
+``r dataframe_name` %>%`  
+  `arrange(desc(`r colnames(df_numeric_select)`)) %>%`  
+  `head(3)`  
+
+```{r arrange_exercise2, exercise=TRUE}
+
+```
+## `mutate()` {.build}
+
+The `mutate()` verb, unlike the ones covered so far, creates new variable(s) i.e. new column(s). For example
+
+``r dataframe_name` %>%`    
+  `mutate(new_col = sqrt(`r colnames(df_numeric_select)`)) %>%`    
+  `head(1)`  
   
-This is conceptually equivalent to a `left_join`, but can be useful when stringing together multiple steps using %>% 
+The code chunk above takes all the elements of the column `r colnames(df_numeric_select)`, evaluates the square root of each element, and populates a new column called `new_col` with these results
+  
+## Try `mutate()` to make a new column
+  
+``r dataframe_name` %>%`    
+  `mutate(new_col = sqrt(`r colnames(df_numeric_select)`)) %>%`    
+  `head(3)`  
+  
+```{r mutate_exercise, exercise=TRUE}
 
-## `inner_join`
-```{r inner_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
-url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true"
-knitr::include_graphics(url)
+```
+## `summarise()` and `summarize()` {.build}
+
+`summarize()` is one of the key functions in `dplyr`. It produces a new dataframe that aggregates that values of a column based on a certain condition.  
+  
+For example, to calculate the mean `r colnames(df_numeric_select)`, run the following
+
+``r dataframe_name` %>%`      
+  `summarise(mean(`r colnames(df_numeric_select)`))` 
+
+```{r summarize_exercise, exercise=TRUE}
+
 ```
 
-## `inner_join` {.build}
-Returns all rows from a where there are matching values in b, and all columns from a and b
+## `group_by()` {.build}
 
-If there are multiple matches between a and b, all combination of the matches are returned
+`group_by()` and `summarize()` are a powerful combination of functions to summarize by groups  
+  
+``r dataframe_name` %>%`  
+  `group_by(`r colnames(df_character_select)`) %>%`  
+  `summarise(mean(`r colnames(df_numeric_select)`))`  
+  
+```{r groupby_exercise, exercise=TRUE}
 
-## `full_join`
-```{r full_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
-url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true"
-knitr::include_graphics(url)
 ```
+## Saving a new dataset as an object
 
-## `full_join` {.build}
-Returns all rows and all columns from both a and b  
+If you'd like to save the output of your wrangling as an object, you will need to use the `<-` operator
 
-Where there are no matching values, returns NA for the one missing  
+``r dataframe_name`_new <- `r dataframe_name` %>%`  
+            `group_by(`r colnames(df_character_select)`) %>%`  
+            `summarise(mean(`r colnames(df_numeric_select)`))`  
+  
+*Assigning the object the same name (i.e. ``r dataframe_name``) will overwrite the object  
+  
+```{r df_object_exercise, exercise=TRUE}
+
+```
+  
+## Saving a new dataset as a file
+
+To save ``r dataframe_name`_new` as a new file (e.g. csv), run the following:  
+  
+`write_csv(`r dataframe_name`_new, "`r dataframe_name`_new.csv")`
+  
 # Concluding Thoughts
 
 ## Data science enables {.build}
