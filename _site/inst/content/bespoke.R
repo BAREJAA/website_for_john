@@ -7,14 +7,6 @@ library(tidyverse)
 #df_input <- dataframe_name
 # *programatically prepare this doc, where dataframe_name and df_input are the name of the data set?
 #   OR...load this after making defining var in rmd?
-path <- 'inst/extdata'
-proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
-###
-proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
-joined <- proteins %>% right_join(proteins_join, by = 'id')
-###
-df_input <- proteins # this line is for bespoke.R to get proper var
-df_input2 <- proteins_join
 
 df_numeric <- df_input %>% select_if(~is.numeric(.) & length(unique(.)) > 10) %>% select(-contains('id'))
 df_character <- df_input %>% select_if(~is.character(.)) %>% select(-contains('id'))
@@ -45,5 +37,16 @@ df_id_vec <- df_input %>% select(matches(df_id_name)) #not used
 # df_joined_string2_name <- df_joined_strings[2] #medication_hx
 # df_joined_string3_name <- df_joined_strings[3] #health_status
 
-df_2_notid <- df_input2  %>% select_if(~is.character(.)) %>% select(-contains('id'))
+df_2_notid <- df_input  %>% select_if(~is.character(.)) %>% select(-contains('id'), -contains('sequence'))
 df_2_col <- sample(colnames(df_2_notid),1)
+word1 <- unlist(str_split(as.character(df_2_notid[1,df_2_col])," "))[1]
+
+
+l <- nchar(word1)
+length<-l-1
+if(l>=5){
+  length <- 5
+}
+s<-paste0("^.{",length,"}")
+word2 <- stringr::str_extract(unlist(str_split(as.character(df_2_notid[1,df_2_col])," "))[1],s)
+

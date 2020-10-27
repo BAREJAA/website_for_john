@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 ```{r load, include = FALSE}
-path <- '/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/extdata'
+path <- 'inst/extdata'
 proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
 ###
 proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
@@ -32,8 +32,8 @@ joined <- proteins %>% right_join(proteins_join, by = 'id')
 ###
 df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
-source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/content/metadata.R', local = TRUE)
-source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/content/bespoke.R', local = TRUE)
+source('inst/content/metadata.R')
+source('inst/content/bespoke.R')
 ```
 ## Dealing with strings {.build}
 Dealing with character strings is a bit different than dealing with numbers in R?   
@@ -59,16 +59,16 @@ The output with either be 1 (match), or 0 (no match)
 
 <div class= "red2"> Example </div>  
 In this code:  
-- string we want to evaluate is ``r dataframe_join_name`$`r df_2_col``  
-- pattern we want to count `"High Cholesterol"`  
+- string we want to evaluate is `r dataframe_name`$`r df_2_col`  
+- pattern we want to count is "`r word1`"  
 
-`str_count(heart_joined$health_status, "High Cholesterol")`
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word1`')`  
 
 ## Counting
-`str_count(heart_joined$health_status, "High Cholesterol")`
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word1`')`
 
-```{r str_count example, echo= FALSE, warning = FALSE}
-str_count(df_input2[df_2_col], "High Cholesterol")
+```{r str_count, exercise = TRUE}
+
 ```
 
 ## Summarizing our counts
@@ -76,21 +76,20 @@ A bunch of 0 and 1 are not incredibly useful.
 
 But since R is good at adding, we can simply wrap the previous expression in `sum()`  
 
-Try it below:  
+Try it below:    
 ```{r sum_string, exercise = TRUE}
 
 ```
 
 ## Matching subsets of strings {.build}
 
-We previously matched the entire string "High Cholesterol"  
+We previously matched the entire string "`r word1`" 
 But we can use the same function to detect patterns within longer strings.  
   
-Let's look for how many patients take a statin of any kind using
-`str_count(heart_joined$medication_hx, "statin")` 
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word2`')`
 
 ## What about subsets of strings?  
-`str_count(heart_joined$medication_hx, "statin")` 
+`str_count(`r dataframe_name`$`r df_2_col`, '`r word2`')`
 
 What does the ouput mean?  
 ```{r str_count_exercise, exercise = TRUE}
@@ -99,18 +98,9 @@ What does the ouput mean?
 
 ## A note about string patterns
 
-When using a stringr function, you may get an output saying a string pattern doesn't exist. If you know for sure it does, <div class="blue"> double check capitalization </div>.  
+When using a stringr function, you may get an output saying a string pattern doesn't exist. If you know for sure it does, <div class="blue"> double check capitalization </div>  
   
 **The string must match exactly, or it will not be found!**
-
-## stringr Exercise
-How many people having an `"auntie" or "aunt"` in their health history?  
-  
-Go to code/  
-Open 09_stringr.Rmd  
-Complete the exercise. 
-
-
 
 ## Detecting strings {.build}
 In addition to counting, we can use another function `str_detect()` to logically evaluate a character string.  
@@ -121,61 +111,51 @@ Practially, `str_detect` is used to detect the presence or absence of a pattern 
 
 ## Logic Evaluation 
 <div class= "red2"> Example </div>  
-Find the patients with diabetes using the following code  
-  
-`str_detect(heart_joined$health_status, "Diabetic")`  
+Find elements in `r df_2_col` that matches "`r word2`"  
+
+`str_detect(`r dataframe_name`$`r df_2_col`, '`r word2`')`
   
 ```{r strdetect, exercise=TRUE}
 
 ```
 
 ## Modifiying strings with `str_replace()` {.build}
-In the health_status column we have:  
--`"Diabetic"`  
--`"High Cholesterol"`  
--`"Normal blood sugar and cholesterol"`  
-  
-But let's say we want to simplify healthy individuals to `"Normal"`
+In the case of `r df_2_col`, say we want to replace every `r word1` with "IGF1" because `r word1` is incorrect.  
 
-`str_replace(heart_joined$health_status, "Normal blood sugar and cholesterol", "Normal")`
+`str_replace(`r dataframe_name`$`r df_2_col`, '`r word1`', 'IGF1')`
 
 ```{r str_replace, exercise=TRUE}
 
 ```
 
 ## Modifiying strings with `str_replace()` {.build}
-We use this same code to  modify the `health_status` column by assigning it to the same variable     
+We use this same code to  modify the `r df_2_col` column by assigning it to the same variable     
   
-`heart_joined$health_status <-`  
-       `str_replace(heart_joined$health_status, "Normal blood sugar and cholesterol", "normal")`
+``r dataframe_name`$`r df_2_col` <-`       
+       `str_replace(`r dataframe_name`$`r df_2_col`, '`r word1`', 'IGF1')`
 
 ```{r str_replace in col, warning = FALSE, echo=FALSE}
-df_input2[df_2_col] <- 
-  str_replace(df_input2[df_2_col], "Normal blood sugar and cholesterol", "normal")
+df_input[df_2_col] <- 
+  str_replace(df_input[df_2_col], word1, "IGF1")
 
-head(df_input2[df_2_col], n = 10)
+head(df_input[df_2_col], n = 10)
 ```
 
 ## Using `stringr` with `dplyr` {.build}
-We can use `stringr` functions in tandem with `dplyr` functions.  
+We can use `stringr` functions in tandem with `dplyr` functions.    
   
 <div class= "red2"> Example </div>  
-We want to make a logical variable (`TRUE`/`FALSE`) that tells us if a patient has a normal health history using  
 
-`heart_joined2 <- heart_joined %>% mutate(healthy = str_detect(health_status, "normal"))` 
+`new_df <-` 
+  ``r dataframe_name` %>%`  
+   `mutate(new_col = str_detect(`r df_2_col`, '`r word2`'))`
 
-```{r stringr with dplyr, echo=FALSE, warning=FALSE}
-df_input22 <- mutate(df_input2, condition = str_detect(df_2_col, "normal"))
+```{r stringr_with_dplyr, exercise=TRUE}
 
-head(df_input22$condition, n = 10)
 ```
  
 ## Using Regular Expressions
-That solution worked in this case, but was not very elegant, and might not work for all cases (what if there was a 'great aunt' in the list?)  
-
-Or here is a more specific case for this data set.  
-  
-How many patients have a father with a history of disease? But we don't want to include grandfathers in the results. 
+What if we wanted to do something more complicated, like search for all elements in a column that being with either "A" or "B"?  
   
 We can use something called **Regular Expressions**, aka **Regex**, to solve this
 
@@ -190,24 +170,20 @@ It is far too complex to cover in its entirely here, but here is one specific ex
   
 ## Regular Expression Example {.build}
 <div class="red2"> Example </div>  
-We want to start with recognizing `father`.  
+Our goal is to identify all elements of `r df_2_col` that begin with either the letter "A" or the letter "B".  
 
-But then we want to make sure that we capture both `Father` and `father`. To accept either case f in the first spot we add `(F|f)`, so now our regex looks like `(F|f)ather`  
+First, we need to specify a pattern that captures this. This pattern is - `(A|B)`.   
   
-Lastly, we want this pattern to appear at the beginning of the word, so we add the regex `^` symbol.  
+Then, we want this pattern to appear at the beginning of the word, so we add the regex `^` symbol.    
 
-Our completed regex looks like:  
-  
-`str_count(heart_joined$family_history, "^(F|f)ather")` 
+Our completed regex looks like:    
+
+`str_count(`r dataframe_name`$`r df_2_col`, '^(A|B)')`
 
 ```{r regex1, exercise=TRUE}
 
 
 ```
-## Regex Exercise
-Go to code/  
-Open 09_stringr.Rmd  
-Complete the exercise to count mothers.    
 
 ## Regex resources
 - The stringr cheatsheet shown above is a great resource  
@@ -251,12 +227,6 @@ There are many times when you have two or more overlapping datasets that you wou
 
 The `dplyr` package has a number of `*_join` functions for this purpose
 
-```{r left_join, echo=FALSE, fig.cap="", out.height='50%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
-knitr::include_graphics(url)
-```
-
-
 ## `left_join` {.build}
 
 Returns all rows from a, and all columns from a and b
@@ -264,6 +234,13 @@ Returns all rows from a, and all columns from a and b
 Rows in a with no match in b will have NA values in the new columns
 
 If there are multiple matches between a and b, all combinations of the matches are returned
+
+## `left_join` {.build}
+
+```{r left_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true"
+knitr::include_graphics(url)
+```
 
 ## `left_join` example {.build}
 
@@ -280,8 +257,8 @@ Complete the exercise to join the two datasets.
 Now you have one dataset with additional useful information
 
 ## `right_join`
-```{r right_join, echo=FALSE, fig.cap="", out.height='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+```{r right_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 
@@ -296,8 +273,8 @@ If there are multiple matches between a and b, all combinations of the matches a
 This is conceptually equivalent to a `left_join`, but can be useful when stringing together multiple steps using %>% 
 
 ## `inner_join`
-```{r inner_join, echo=FALSE, fig.cap="", out.height='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+```{r inner_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 
@@ -307,8 +284,8 @@ Returns all rows from a where there are matching values in b, and all columns fr
 If there are multiple matches between a and b, all combination of the matches are returned
 
 ## `full_join`
-```{r full_join, echo=FALSE, fig.cap="", out.height='66%'}
-url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/dplyr-joins.png"
+```{r full_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
+url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
 
@@ -336,19 +313,15 @@ Where there are no matching values, returns NA for the one missing
 <center><iframe src="https://rstudio.com/resources/cheatsheets"></iframe></center>
 
 ## Google Resources
-<a href="https://google.com/" target="_blank">Google.com</a><br>
-<center><iframe src="https://google.com"></iframe></center>
+<a href="https://www.google.com/" target="_blank">Google.com</a><br>
+<!-- <center><iframe src="https://www.google.com"></iframe></center> -->
 
 ## R4DS Resources
 <a href="https://r4ds.had.co.nz" target="_blank">R for Data Science</a><br>
 <center><iframe src="https://r4ds.had.co.nz"></iframe></center>
-## Tidybiology Website
-<a href="https:/tidybiology.org" target="_blank">tidybiology.org</a><br>
-<center><iframe src="https://tidybiology.org"></iframe></center>
-
 ## Tidybiology Videos
 <a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br>
-<center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center>
+<!-- <center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center> -->
 
 ## Acknowledgements {.build}
 **Co-Instructor**  

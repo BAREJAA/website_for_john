@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 ```{r load, include = FALSE}
-path <- '/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/extdata'
+path <- 'inst/extdata'
 proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
 ###
 proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
@@ -32,8 +32,8 @@ joined <- proteins %>% right_join(proteins_join, by = 'id')
 ###
 df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
-source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/content/metadata.R', local = TRUE)
-source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/bespokelearnr/inst/content/bespoke.R', local = TRUE)
+source('inst/content/metadata.R')
+source('inst/content/bespoke.R')
 ```
 # R <br>Getting to know your data
 Any questions?
@@ -321,8 +321,6 @@ For example, to calculate the mean `r colnames(df_numeric_select)`, run the foll
 ```{r groupby_exercise, exercise=TRUE}
 
 ```
-  
-*remember this pair! 
 ## Saving a new dataset as an object
 
 If you'd like to save the output of your wrangling as an object, you will need to use the `<-` operator
@@ -363,19 +361,15 @@ To save ``r dataframe_name`_new` as a new file (e.g. csv), run the following:
 <center><iframe src="https://rstudio.com/resources/cheatsheets"></iframe></center>
 
 ## Google Resources
-<a href="https://google.com/" target="_blank">Google.com</a><br>
-<center><iframe src="https://google.com"></iframe></center>
+<a href="https://www.google.com/" target="_blank">Google.com</a><br>
+<!-- <center><iframe src="https://www.google.com"></iframe></center> -->
 
 ## R4DS Resources
 <a href="https://r4ds.had.co.nz" target="_blank">R for Data Science</a><br>
 <center><iframe src="https://r4ds.had.co.nz"></iframe></center>
-## Tidybiology Website
-<a href="https:/tidybiology.org" target="_blank">tidybiology.org</a><br>
-<center><iframe src="https://tidybiology.org"></iframe></center>
-
 ## Tidybiology Videos
 <a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br>
-<center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center>
+<!-- <center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center> -->
 
 ## Acknowledgements {.build}
 **Co-Instructor**  
