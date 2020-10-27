@@ -10,34 +10,10 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Final Projects"
+    - text: "Final Project"
       menu:
         - text: "Example by Dr. Hirschey"
-          href: projects/Matthew-Hirschey.html
-        - text: "Katie Willard"
-          href: projects/06_final_KWillard.html
-        - text: "Min Jin Lee"
-          href: projects/06_final_Min-Jin-Lee.html
-        - text: "Timothy Smith"
-          href: projects/Timothy_Smith_Final.html
-        - text: "Chelsea Shoben"
-          href: projects/06_final_shoben.html
-        - text: "Julia Palmucci"
-          href: projects/Palmucci.html
-        - text: "Xirui Song"
-          href: projects/Song.html
-        - text: "Kari Strouse"
-          href: projects/strouse.html
-        - text: "Joe Trimarco"
-          href: projects/Trimarco.html
-        - text: "Shannon Dupont"
-          href: projects/Dupont_FinalProject.html
-        - text: "Telmo Llanga"
-          href: projects/Llanga.html
-        - text: "Justice Lu"
-          href: projects/Lu_H.html
-        - text: "Junqi Lu"
-          href: projects/Lu.html
+          href: projects/Matthew-Hirschey.Rmd
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
