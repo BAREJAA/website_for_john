@@ -13,7 +13,7 @@ navbar:
     - text: "Final Project"
       menu:
         - text: "Example by Dr. Hirschey"
-          href: htmlfolder/Matthew-Hirschey.html
+          href: Matthew-Hirschey.html
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
