@@ -10,10 +10,12 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Final Project"
+    - text: "Final Projects"
       menu:
         - text: "Example by Dr. Hirschey"
           href: projects/Matthew-Hirschey.Rmd
+        - text: "Telmo Llanga"
+          href: projects/Llanga.Rmd
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
