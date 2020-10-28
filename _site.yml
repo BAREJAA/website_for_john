@@ -16,6 +16,8 @@ navbar:
           href: projects/Matthew-Hirschey.Rmd
         - text: "Telmo Llanga"
           href: projects/Llanga.Rmd
+        - text: "Timothy Smith"
+          href: projects/Timothy_Smith_Final.Rmd
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
