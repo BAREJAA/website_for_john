@@ -17,11 +17,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Links to Class presentations
 
-+ [Class 1 Slides](class_one/)
-+ [Class 2 Slides](class_two/)
-+ [Class 3 Slides](class_three/)
-+ [Class 4 Slides](class_four/)
-+ [Class 5 Slides](class_five/)
++ [Introduction](class_one/)
++ [Data Wrangling with Dplyr](class_two/)
++ [Plotting with Ggplot2](class_three/)
++ [Stringr and Joins](class_four/)
++ [R Markdown](class_five/)
 \
 
 ## Useful Resources

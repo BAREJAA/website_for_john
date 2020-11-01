@@ -10,12 +10,12 @@ navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "Quizzes"
+      href: quizzes/quiz.Rmd
     - text: "Final Projects"
       menu:
         - text: "Example by Dr. Hirschey"
           href: projects/Matthew-Hirschey.Rmd
-        - text: "Timothy Smith"
-          href: projects/Timothy_Smith_Final.Rmd
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
