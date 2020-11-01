@@ -81,10 +81,11 @@ This may sound complicated, but R Markdown makes it extremely simple by encapsul
 
 ## Rmarkdown -- The definitive Guide
 [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/)  
-<center><iframe src="https://bookdown.org/yihui/rmarkdown/"></iframe></center>
+<center><iframe src="https://bookdown.org/yihui/rmarkdown/"></iframe></center>  
 
 # Rmarkdown <br>Text
 Any questions?  
+
 ## Markdown is a simplifed language to format text
 ```{r rmarkdown_text, echo=FALSE, fig.cap="", out.width='75%'}
 url <- "https://d33wubrfki0l68.cloudfront.net/59f29676ef5e4d74685e14f801bbc10c2dbd3cef/c0688/lesson-images/markdown-1-markup.png"
@@ -162,17 +163,6 @@ url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/R
 knitr::include_graphics(url)
 ```
 
-## Clean-up the Rmarkdown exercise
-1. Go to code/  
-2. Open 10_rmarkdown.Rmd  
-3. Inspect the code starting with the set-up chunk. Below it, you’ll see code that imports data, stores objects, and creates a graph.  
-4. Knit the document and see the results; pretty messy, huh?  
-5. Use what you've learn to execute the code, but not include the results of the set-up chunk and data import chunk.  
-6. Replace every **BOLD** with inline R code  
-7. Remove the {calculations} chunk so it is not included with the output  
-8. Change the {graph} chunk so that only the output of the plot is shown, but not the code.
-9. Re-Knit the document  
-10. **Beautiful!**  
 # Rmarkdown <br>YAML
 Any questions?  
 
@@ -193,11 +183,6 @@ Recall that Rmarkdown documents can be rendered into several different output fi
 <center><iframe src="https://rmarkdown.rstudio.com/formats.html"></iframe></center>
 
 ## Rmarkdown Parameters
-Parameters of a document are defined in the YAML header, and can pre-populate an Rmarkdown document. To see this in action,  
-  
-1. Open 11_rmarkdown_params.Rmd.  
-2. Click the dropdown menu next to Knit and use Knit with Parameters to render the document.  
-3. What happens if you type in a different gender or different age?  
 
 --- 
 
@@ -213,12 +198,9 @@ url <- "https://github.com/matthewhirschey/tidybiology-plusds/raw/master/media/R
 knitr::include_graphics(url)
 ```
 
-## Take another look
-<h1>Re-inspect 11_rmarkdown_params.Rmd.</h1>
-<br>
-<br>
-Where were the parameters called in the code?
-# Concluding Thoughts
+---
+
+# Concluding Thoughts  
 
 ## Data science enables {.build}
 - Data science enables data-driven information gathering and hypothesis generation  
