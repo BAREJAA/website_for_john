@@ -12,13 +12,13 @@ navbar:
       href: index.html
     - text: "Quizzes"
       href: quizzes/quiz.Rmd
-    - text: "Final Projects"
+    - text: "Final Project"
       menu:
         - text: "Example by Dr. Hirschey"
           href: projects/Matthew-Hirschey.Rmd
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
-      href: https://github.com/BAREJAA
+      href: https://github.com/matthewhirschey
 output: distill::distill_article
 

@@ -2,9 +2,9 @@
 title: "Welcome to Tidybiology"
 author:
 - name: Matthew Hirschey
-- name: Akshay Bareja
   affiliation: Duke University
   affiliation_url: https://duke.edu
+- name: Akshay Bareja
 date: "`r Sys.Date()`"
 description: |
   R and data science for biologists
