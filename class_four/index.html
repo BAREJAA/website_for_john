@@ -135,7 +135,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;)</code></p>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="str_count" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="str_count">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Summarizing our counts</h2></hgroup><article  id="summarizing-our-counts">
@@ -146,7 +146,7 @@ Example</div>
 
 Try it below:<br/>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="sum_string" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="sum_string">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Matching subsets of strings</h2></hgroup><article  class="build" id="matching-subsets-of-strings">
@@ -161,7 +161,7 @@ Try it below:<br/>
 
 What does the ouput mean?<br/>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="str_count_exercise" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="str_count_exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>A note about string patterns</h2></hgroup><article  id="a-note-about-string-patterns">
@@ -190,7 +190,7 @@ Example</div>
 
 <p><code>str_detect(proteins$protein_name_alt, &#39;APOBE&#39;)</code></p>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="strdetect" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="strdetect">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  class="build" id="modifiying-strings-with-str_replace">
@@ -199,7 +199,7 @@ Example</div>
 
 <p><code>str_replace(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;, &#39;IGF1&#39;)</code></p>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="str_replace" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="str_replace">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  class="build" id="modifiying-strings-with-str_replace-1">
@@ -231,7 +231,7 @@ Example</div>
 
 <p><code>new_df &lt;-</code> <code>proteins %&gt;%</code><br/><code>mutate(new_col = str_detect(protein_name_alt, &#39;APOBE&#39;))</code></p>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="stringr_with_dplyr" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="stringr_with_dplyr">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  id="using-regular-expressions">
@@ -248,8 +248,6 @@ Example</div>
 
 <p>It is far too complex to cover in its entirely here, but here is one specific example.</p>
 
-<p><strong>GOAL</strong>: identify all of the patients that have a father with a history of disease, but excluding grandfathers in the results.</p>
-
 </article></slide><slide class=""><hgroup><h2>Regular Expression Example</h2></hgroup><article  class="build" id="regular-expression-example">
 
 <div class="red2">
@@ -265,23 +263,8 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;^(A|B)&#39;)</code></p>
 
-<div data-diagnostics="1" data-startover="1" data-completion="1" data-lines="0" data-label="regex1" class="tutorial-exercise" data-caption="Code">
+<div class="tutorial-exercise" data-lines="0" data-caption="Code" data-startover="1" data-diagnostics="1" data-completion="1" data-label="regex1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
-
-</article></slide><slide class=""><hgroup><h2>Regex resources</h2></hgroup><article  id="regex-resources">
-
-<ul>
-<li>The stringr cheatsheet shown above is a great resource<br/></li>
-<li>Here the tidyverse website with a link to its vignette</li>
-</ul>
-
-<center>
-
-<iframe src="https://stringr.tidyverse.org/articles/regular-expressions.html">
-
-</iframe>
-
-</center>
 
 </article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  class="build" id="importing-data-into-r">
 
@@ -297,9 +280,7 @@ Example</div>
 
 <p>To import the proteins_join file into RStudio, run the following:</p>
 
-<p><code>proteins_join &lt;- read_csv(here::here(&quot;data&quot;, &quot;proteins_join&quot;))</code></p>
-
-<p>Go to code/<br/>Open 08_import_and_join.Rmd<br/>Complete the exercise to import this new dataset.</p>
+<p><code>proteins_join &lt;- read_csv(&quot;proteins_join.csv&quot;)</code></p>
 
 </article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  class="build" id="importing-data-into-r-2">
 
@@ -307,8 +288,7 @@ Example</div>
 
 <p>For example, to load a dataset from a URL, run the following</p>
 
-<pre class = 'prettyprint lang-r'>path &lt;- here::here(&quot;data&quot;, &quot;phx.csv&quot;)
-url &lt;- &quot;https://raw.githubusercontent.com/matthewhirschey/tidybiology-plusds/master/data/phx.csv&quot;
+<pre class = 'prettyprint lang-r'>url &lt;- &quot;https://raw.githubusercontent.com/matthewhirschey/tidybiology-plusds/master/data/phx.csv&quot;
 patient_hx &lt;- read_csv(url)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Combining datasets</h2></hgroup><article  class="build" id="combining-datasets">
@@ -319,15 +299,15 @@ patient_hx &lt;- read_csv(url)</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  class="build" id="left_join">
 
-<p>Returns all rows from a, and all columns from a and b</p>
+<p>Returns all rows from <code>x</code>, and all columns from <code>x</code> and <code>y</code></p>
 
-<p>Rows in a with no match in b will have NA values in the new columns</p>
+<p>Rows in <code>x</code> with no match in <code>y</code> will have NA values in the new columns</p>
 
-<p>If there are multiple matches between a and b, all combinations of the matches are returned</p>
+<p>If there are multiple matches between <code>x</code> and <code>y</code>, all combinations of the matches are returned</p>
 
 </article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  class="build" id="left_join-1">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -344,13 +324,13 @@ tidyexplain by gadenbuie
 
 <p><code>left_join</code> proteins with proteins_join and assign the output to a new object called <code>proteins_join_left</code></p>
 
-<p>Go to code/<br/>Open 08_import_and_join.Rmd<br/>Complete the exercise to join the two datasets.</p>
+<p><code>proteins_join_left</code> &lt;- left_join(proteins, proteins_join, by = &lsquo;uniprot_id&rsquo;)</p>
 
 <p>Now you have one dataset with additional useful information</p>
 
 </article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  id="right_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -361,17 +341,17 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  class="build" id="right_join-1">
 
-<p>Returns all rows from b, and all columns from a and b</p>
+<p>Returns all rows from <code>y</code>, and all columns from <code>x</code> and <code>y</code></p>
 
-<p>Rows in b with no match in a will have NA values in the new columns</p>
+<p>Rows in <code>y</code> with no match in <code>x</code> will have NA values in the new columns</p>
 
-<p>If there are multiple matches between a and b, all combinations of the matches are returned</p>
+<p>If there are multiple matches between <code>x</code> and <code>y</code>, all combinations of the matches are returned</p>
 
 <p>This is conceptually equivalent to a <code>left_join</code>, but can be useful when stringing together multiple steps using %&gt;%</p>
 
 </article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  id="inner_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -382,13 +362,13 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  class="build" id="inner_join-1">
 
-<p>Returns all rows from a where there are matching values in b, and all columns from a and b</p>
+<p>Returns all rows from <code>x</code> where there are matching values in <code>y</code>, and all columns from <code>x</code> and <code>y</code></p>
 
-<p>If there are multiple matches between a and b, all combination of the matches are returned</p>
+<p>If there are multiple matches between <code>x</code> and <code>y</code>, all combination of the matches are returned</p>
 
 </article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -399,19 +379,9 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  class="build" id="full_join-1">
 
-<p>Returns all rows and all columns from both a and b</p>
+<p>Returns all rows and all columns from both <code>x</code> and <code>y</code></p>
 
 <p>Where there are no matching values, returns NA for the one missing<br/># Concluding Thoughts</p>
-
-</article></slide><slide class=""><hgroup><h2>Data science enables</h2></hgroup><article  class="build" id="data-science-enables">
-
-<ul>
-<li><p>Data science enables data-driven information gathering and hypothesis generation<br/>– Scientific Research<br/>– Reviews</p></li>
-<li><p>Data science enables the ability to ask new types of questions</p></li>
-<li><p>Process-centric, not necessarily question-centric</p></li>
-<li><p>Making things computable makes them actionable at zero marginal cost.</p></li>
-<li><p>Workflows save time, achieve reproducibility</p></li>
-</ul>
 
 </article></slide><slide class=""><hgroup><h2>Cheatsheet Resources</h2></hgroup><article  id="cheatsheet-resources">
 
