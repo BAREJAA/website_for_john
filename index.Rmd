@@ -22,6 +22,10 @@ knitr::opts_chunk$set(echo = FALSE)
 + [Plotting with Ggplot2](class_three/)
 + [Stringr and Joins](class_four/)
 + [R Markdown](class_five/)
+
+## Exercises
+
++ [mtcars](mtcars/)
 \
 
 ## Useful Resources

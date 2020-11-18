@@ -1,0 +1,122 @@
+---
+title: "mtcars quiz"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+data(mtcars)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Scratchpad
+
+Use the following empty R chunk to write the necessary code to answer the questions 
+
+```{r scratch_pad, exercise=TRUE}
+
+
+```
+
+## Dplyr Questions
+
+### Please answer the following questions
+
+```{r dplyr_quiz, echo = FALSE}
+quiz(
+  question("What type of object is `mtcars`?",
+    answer("list"),
+    answer("matrix"),
+    answer("data frame", correct = TRUE),
+    answer("tibble"),
+    allow_retry = TRUE
+  ),
+  question("How many observations and variables does `mtcars` contain?",
+    answer("32 observations and 11 variables", correct = TRUE),
+    answer("11 observations and 32 variables"),
+    answer("32 observations and 32 variables"),
+    answer("11 observations and 11 variables"),
+    allow_retry = TRUE
+  ),
+  question("What are the top 3 cars in terms of horsepower (look at the `hp` variable)?",
+    answer("Merc 450SE, Ferrari Dino, and Lotus Europa"),
+    answer("Maserati Bora, Ford Pantera L, and Duster 360/Camaro Z28 (tied)", correct = TRUE),
+    answer("Honda Civic, Merc 240D, and Toyota Corolla	33"),
+    answer("Dodge Challenger, AMC Javelin, and Hornet Sportabout"),
+    allow_retry = TRUE
+  ),
+  question("How many cars have a higher than average mpg?",
+    answer("12"),       
+    answer("14", correct = TRUE),
+    answer("18"),
+    answer("10"),
+    allow_retry = TRUE
+),
+  question("Which Dplyr verb/function can we use to create a new column?",
+    answer("filter"),       
+    answer("mutate", correct = TRUE),
+    answer("select"),
+    answer("group_by"),
+    allow_retry = TRUE
+),
+  question("The select() verb/function can be used to choose which of the following?",
+    answer("Columns", correct = TRUE),       
+    answer("Rows"),
+    answer("Columns or Rows"),
+    allow_retry = TRUE
+),
+question("Which of the following is the 'not equal to' operator?",
+    answer("<"),       
+    answer("<="),
+    answer("!=", correct = TRUE),
+    allow_retry = TRUE
+)
+)
+```
+
+## Ggplot2 Questions
+
+### Please answer the following questions
+```{r ggplot2_quiz, echo = FALSE}
+quiz(
+  question("Which of the following geoms would you use to make a scatter plot?",
+    answer("geom_bar"),
+    answer("geom_col"),
+    answer("geom_point", correct = TRUE),
+    answer("geom_histogram"),
+    allow_retry = TRUE
+  ),
+  question("Which of the following symbols is used to chain together multiple lines of ggplot2 code?",
+    answer("+", correct = TRUE),
+    answer("<="),
+    answer("->"),
+    answer("->>"),
+    allow_retry = TRUE
+  ),
+  question("Which of the following functions is used to save a plot made using ggplot2?",
+    answer("save_plot"),
+    answer("plot_save"),
+    answer("ggsave", correct = TRUE),
+    answer("geom_save"),
+    allow_retry = TRUE
+  ),
+  question("If you had many overlapping points in a scatter plot, which of the following geoms would you use to improve your plot?",
+    answer("geom_point"),       
+    answer("geom_jitter", correct = TRUE),
+    answer("geom_abline"),
+    answer("geom_col"),
+    allow_retry = TRUE
+),
+  question("Which of the following can you use to flip the axes of a plot?",
+    answer("coord_flip", correct = TRUE),       
+    answer("axis_flip"),
+    answer("axes_flip"),
+    answer("switch_axes"),
+    allow_retry = TRUE
+)
+)
+```
+
