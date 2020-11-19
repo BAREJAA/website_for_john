@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Exercises
 
-+ [intro](mtcars/)
++ [intro](intro/)
 + [dplyr](dplyr/)
 + [ggplot2](ggplot2/)
 \
