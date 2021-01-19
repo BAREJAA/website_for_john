@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.align="center")
 ```
 
-```{r load, include = TRUE, warning = FALSE, message = FALSE}
+```{r load, include = FALSE, warning = FALSE, message = FALSE}
 cauti_data <- read_excel("inst/extdata/CAUTI Practice Dataset.xlsx", 
     sheet = "CAUTI Data")
 cauti_details <- read_csv("inst/extdata/cauti_details.csv")
