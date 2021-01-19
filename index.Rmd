@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE)
 + [Plotting with Ggplot2](class_three/)
 + [Stringr and Joins](class_four/)
 + [R Markdown](class_five/)
-+ [CCT Staci Reynolds](cct_staci)
++ [CCT Staci Reynolds](cct_staci/)
 
 ## Exercises
 
