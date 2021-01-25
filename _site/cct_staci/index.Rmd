@@ -25,10 +25,9 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.align="center")
 ```
 
-```{r load, include = FALSE, warning = FALSE, message = FALSE}
-cauti_data <- read_excel("extdata/CAUTI Practice Dataset.xlsx", 
-    sheet = "CAUTI Data")
-cauti_details <- read_csv("extdata/cauti_details.csv")
+```{r load, include = TRUE, warning = FALSE, message = FALSE}
+cauti_data <- read_csv("https://raw.githubusercontent.com/BAREJAA/cct_datasets/main/Staci%20Reynolds/cauti_data.csv?token=ALRLU72WC356M4XECRK35ATAB4526")
+cauti_details <- read_csv("https://raw.githubusercontent.com/BAREJAA/cct_datasets/main/Staci%20Reynolds/cauti_details.csv?token=ALRLU7ZZ7DDFZMVCXZUKIUDAB46CA")
 
 cauti_data$Month <- as.Date(cauti_data$Month)
 
