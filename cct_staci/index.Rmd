@@ -360,7 +360,7 @@ The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`
 
 ## `cauti_details` dataset
 
-How do look into `cauti_details`?  
+How do you look into `cauti_details`?  
 
 ```{r glimpse_cauti_details, exercise=TRUE}
 
