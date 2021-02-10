@@ -37,13 +37,6 @@ cauti_data %>%
          lcl = mean - (3*sd)) -> cauti_updated
 ```
 
-## Doctors make decisions based on symptoms 
-```{r intro, echo=FALSE, fig.cap="", out.height = '100%'}
-url <- "https://source.unsplash.com/701-FJcjLAQ/500x500"
-knitr::include_graphics(url)
-```
-<font size = "1">Photo by [National Cancer Institute on Unsplash](https://unsplash.com/@nci)</font>
-
 ## New digital healthcare era introduces new decision-making challenges {.build}
 **Volume**  
 - Data collection & storage allows access to huge amounts of medical information  
