@@ -8,6 +8,7 @@ library(tidyverse)
 # *programatically prepare this doc, where dataframe_name and df_input are the name of the data set?
 #   OR...load this after making defining var in rmd?
 
+df_input <- proteins
 df_numeric <- df_input %>% select_if(~is.numeric(.) & length(unique(.)) > 10) %>% select(-contains('id'))
 df_character <- df_input %>% select_if(~is.character(.)) %>% select(-contains('id'))
 df_id <- df_input %>% select(contains('id')) #make sure a variable contains 'id'!!!

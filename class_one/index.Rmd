@@ -22,19 +22,27 @@ library(patchwork)
 library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
-```
-
-```{r load, include = TRUE}
-path <- 'inst/extdata'
-proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
-###
-proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+proteins <- readRDS(url("https://github.com/BAREJAA/website_for_john/raw/master/inst/extdata/bespoke_dataframe.Rds"))
+proteins_join <- readRDS(url("https://github.com/BAREJAA/website_for_john/raw/master/inst/extdata/bespoke_dataframe_join.Rds"))
 joined <- proteins %>% right_join(proteins_join, by = 'id')
 ###
 df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
-source('inst/content/metadata.R')
-source('inst/content/bespoke.R')
+source("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/inst/content/metadata.R")
+source("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/inst/content/bespoke.R")
+```
+
+```{r load, include = TRUE}
+# path <- 'inst/extdata'
+# proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
+# ###
+# proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+# joined <- proteins %>% right_join(proteins_join, by = 'id')
+# ###
+# df_input <- proteins # this line is for bespoke.R to get proper var
+# df_input2 <- proteins_join
+# source('inst/content/metadata.R')
+# source('inst/content/bespoke.R')
 ```
 ## Doctors make decisions based on symptoms 
 ```{r intro, echo=FALSE, fig.cap="", out.height = '100%'}
@@ -208,10 +216,10 @@ Data stored in a dataframe are conceptually equivalent to a spreadsheet with row
 This is a sample from the ``r dataframe_name`` dataset  
   
 ```{r tibble}
-df_input %>% 
-  select(1:5) %>% 
-  slice(1:5) %>% 
-  print(as_tibble())
+# df_input %>% 
+#   select(1:5) %>% 
+#   slice(1:5) %>% 
+#   print(as_tibble())
 ```
 
 ## Extract or create new objects
