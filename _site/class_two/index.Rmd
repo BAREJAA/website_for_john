@@ -22,7 +22,7 @@ library(patchwork)
 library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
-path <- '/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/website_for_john/inst/extdata'
+path <- 'inst/extdata'
 proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
 ###
 proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
@@ -30,8 +30,8 @@ joined <- proteins %>% right_join(proteins_join, by = 'id')
 ###
 df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
-source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/website_for_john/inst/content/metadata.R')
-source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/website_for_john/inst/content/bespoke.R')
+source('inst/content/metadata.R')
+source('inst/content/bespoke.R')
 ```
 
 ```{r load, include = FALSE}
