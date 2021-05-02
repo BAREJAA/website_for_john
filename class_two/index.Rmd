@@ -37,12 +37,12 @@ source('inst/content/metadata.R')
 source('inst/content/bespoke.R')
 ```
 # R <br>Getting to know your data
-Any questions?
+
 
 ## ``r dataframe_name`` dataset
 **`r dataframe_title`**  
   
-- For this class, we will use a dataset called ``r dataframe_name``.  
+- For this module, we will use a dataset called ``r dataframe_name``   
   
 - `r dataframe_source`  
   
@@ -157,6 +157,8 @@ Some of the things you can do are -
 - obtain summary statistics on individual groups within your datasets  
   
 The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`, and `summarise()`. These all combine naturally with `group_by()` which allows you to perform any operation "by group"  
+
+# `select()`  
  
 ## `select()` specific columns from your dataset {.build}
 The most basic `select()` is one where you comma separate a list of columns you want included
@@ -194,6 +196,9 @@ Finally, you can provide a range of columns to return two columns and everything
 ```{r selectrange_exercise, exercise=TRUE}
 
 ```
+
+# `filter()` 
+
 ## `filter()` rows based on certain condition(s) {.build}
 
 The `filter()` verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered").  
@@ -254,6 +259,9 @@ To avoid writing multiple `filter()` commands, multiple logical statements can b
 ```{r filter_exercise4, exercise=TRUE}
 
 ```
+
+# `arrange()` 
+
 ## `arrange()` sorts rows {.build}
 
 The input for arrange is one or many columns, and `arrange()` sorts the rows in ascending order i.e. from smallest to largest
@@ -279,6 +287,9 @@ To reverse this order, use the `desc()` function within `arrange()`
 ```{r arrange_exercise2, exercise=TRUE}
 
 ```
+
+# `mutate()`  
+
 ## `mutate()` {.build}
 
 The `mutate()` verb, unlike the ones covered so far, creates new variable(s) i.e. new column(s). For example
@@ -298,6 +309,9 @@ The code chunk above takes all the elements of the column `r colnames(df_numeric
 ```{r mutate_exercise, exercise=TRUE}
 
 ```
+
+# `group_by()` and `summarize()`    
+
 ## `summarise()` and `summarize()` {.build}
 
 `summarize()` is one of the key functions in `dplyr`. It produces a new dataframe that aggregates that values of a column based on a certain condition.  
@@ -322,6 +336,9 @@ For example, to calculate the mean `r colnames(df_numeric_select)`, run the foll
 ```{r groupby_exercise, exercise=TRUE}
 
 ```
+
+# Saving your work  
+
 ## Saving a new dataset as an object
 
 If you'd like to save the output of your wrangling as an object, you will need to use the `<-` operator

@@ -231,19 +231,7 @@ If there are multiple matches between `x` and `y`, all combinations of the match
 url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true"
 knitr::include_graphics(url)
 ```
-
-## `left_join` example {.build}
-
-Take a look at the variables in each dataset - `r dataframe_name` and `r dataframe_join_name`  
-
-You will notice that both datasets contain common variable - `r df_id_name`. This can therefore serve as a common variable to join on. Let's join on this:  
   
-`left_join` `r dataframe_name` with `r dataframe_join_name` and assign the output to a new object called ``r dataframe_name`_join_left`
-
-``r dataframe_name`_join_left` <- left_join(`r dataframe_name`, `r dataframe_join_name`, by = '`r df_id_name`')
-
-Now you have one dataset with additional useful information  
-
 ## `right_join`
 ```{r right_join, echo=FALSE, fig.cap="tidyexplain by gadenbuie", out.height='66%'}
 url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true"
@@ -280,7 +268,7 @@ knitr::include_graphics(url)
 ## `full_join` {.build}
 Returns all rows and all columns from both `x` and `y`  
 
-Where there are no matching values, returns NA for the one missing    
+Where there are no matching values, returns NA for the one missing      
 # Concluding Thoughts  
 
 ## Cheatsheet Resources
