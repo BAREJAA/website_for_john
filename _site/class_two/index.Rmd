@@ -22,10 +22,7 @@ library(patchwork)
 library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
-```
-
-```{r load, include = FALSE}
-path <- 'inst/extdata'
+path <- '/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/website_for_john/inst/extdata'
 proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
 ###
 proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
@@ -33,10 +30,14 @@ joined <- proteins %>% right_join(proteins_join, by = 'id')
 ###
 df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
-source('inst/content/metadata.R')
-source('inst/content/bespoke.R')
+source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/website_for_john/inst/content/metadata.R')
+source('/Users/akshaybareja/Desktop/R Stuff/Reactivity Testing/website_for_john/inst/content/bespoke.R')
 ```
-# R <br>Getting to know your data
+
+```{r load, include = FALSE}
+
+```
+# Getting to know your data  
 
 
 ## ``r dataframe_name`` dataset
@@ -158,7 +159,7 @@ Some of the things you can do are -
   
 The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`, and `summarise()`. These all combine naturally with `group_by()` which allows you to perform any operation "by group"  
 
-# `select()`  
+# select() 
  
 ## `select()` specific columns from your dataset {.build}
 The most basic `select()` is one where you comma separate a list of columns you want included
@@ -197,7 +198,7 @@ Finally, you can provide a range of columns to return two columns and everything
 
 ```
 
-# `filter()` 
+# filter() 
 
 ## `filter()` rows based on certain condition(s) {.build}
 
@@ -260,7 +261,7 @@ To avoid writing multiple `filter()` commands, multiple logical statements can b
 
 ```
 
-# `arrange()` 
+# arrange() 
 
 ## `arrange()` sorts rows {.build}
 
@@ -288,7 +289,7 @@ To reverse this order, use the `desc()` function within `arrange()`
 
 ```
 
-# `mutate()`  
+# mutate()  
 
 ## `mutate()` {.build}
 
@@ -310,7 +311,7 @@ The code chunk above takes all the elements of the column `r colnames(df_numeric
 
 ```
 
-# `group_by()` and `summarize()`    
+# group_by() and summarize()    
 
 ## `summarise()` and `summarize()` {.build}
 
