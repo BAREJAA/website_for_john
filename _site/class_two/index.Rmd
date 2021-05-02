@@ -22,6 +22,9 @@ library(patchwork)
 library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
+```
+
+```{r load, include = FALSE}
 path <- 'inst/extdata'
 proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
 ###
@@ -32,10 +35,6 @@ df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
 source('inst/content/metadata.R')
 source('inst/content/bespoke.R')
-```
-
-```{r load, include = FALSE}
-
 ```
 # Getting to know your data  
 
