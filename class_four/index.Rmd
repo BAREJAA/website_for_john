@@ -22,19 +22,27 @@ library(patchwork)
 library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
-```
-
-```{r load, include = FALSE}
-path <- 'inst/extdata'
-proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
-###
-proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+proteins <- readRDS(url("https://github.com/BAREJAA/website_for_john/raw/master/inst/extdata/bespoke_dataframe.Rds"))
+proteins_join <- readRDS(url("https://github.com/BAREJAA/website_for_john/raw/master/inst/extdata/bespoke_dataframe_join.Rds"))
 joined <- proteins %>% right_join(proteins_join, by = 'id')
 ###
 df_input <- proteins # this line is for bespoke.R to get proper var
 df_input2 <- proteins_join
-source('inst/content/metadata.R')
-source('inst/content/bespoke.R')
+source("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/inst/content/metadata.R")
+source("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/inst/content/bespoke.R")
+```
+
+```{r load, include = FALSE}
+# path <- 'inst/extdata'
+# proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
+# ###
+# proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+# joined <- proteins %>% right_join(proteins_join, by = 'id')
+# ###
+# df_input <- proteins # this line is for bespoke.R to get proper var
+# df_input2 <- proteins_join
+# source('inst/content/metadata.R')
+# source('inst/content/bespoke.R')
 ```
 ## Dealing with strings {.build}
 Dealing with character strings is a bit different than dealing with numbers in R?   
