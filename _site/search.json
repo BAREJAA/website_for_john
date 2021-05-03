@@ -6,7 +6,7 @@
       "description": "Welcome to Tidybiology. The goal of this endeaovour is to provide a \"zero entry\" introduction to R and data science to biologists. ",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-02T20:34:20-04:00"
+      "last_modified": "2021-05-02T20:47:47-04:00"
     },
     {
       "path": "index.html",
@@ -24,7 +24,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\nLinks to Class presentations\nIntroduction\nData Wrangling with Dplyr\nPlotting with Ggplot2\nStringr and Joins\nR Markdown\nCCT Staci Reynolds\nExercises\nintro\ndplyr\nggplot2\nUseful Resources\nR for Data Science\ndplyr guide\nggplot2 guide\nFrom Data to Viz\nPast Projects\nbespokeDS YouTube channel\n\nThe R and Tidyverse online communities are very active, helpful, and welcoming. One of the best ways to learn new things is to follow the #rstats hashtag on Twitter.\n\nAcknowledgments\nThis website was modelled on a wonderfull Distill website made by Alison Hill & Desirée De Leon\n\n\n\n",
-      "last_modified": "2021-05-02T20:34:22-04:00"
+      "last_modified": "2021-05-02T20:47:48-04:00"
     }
   ],
   "collections": []

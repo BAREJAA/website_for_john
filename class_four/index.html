@@ -164,7 +164,7 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>Dealing with strings</h2></hgroup><article  class="build" id="dealing-with-strings">
+<slide class=""><hgroup><h2>Dealing with strings</h2></hgroup><article  id="dealing-with-strings" class="build">
 
 <p>Dealing with character strings is a bit different than dealing with numbers in R?</p>
 
@@ -186,7 +186,7 @@ slide:not(.current) .plotly.html-widget{
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>Counting strings</h2></hgroup><article  class="build" id="counting-strings">
+</article></slide><slide class=""><hgroup><h2>Counting strings</h2></hgroup><article  id="counting-strings" class="build">
 
 <p><code>str_count()</code> is a function we can use to count the number of rows that match a particular pattern.</p>
 
@@ -203,7 +203,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;)</code></p>
 
-<div data-label="str_count" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="str_count">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Summarizing our counts</h2></hgroup><article  id="summarizing-our-counts">
@@ -214,10 +214,10 @@ Example</div>
 
 Try it below:<br/>
 
-<div data-label="sum_string" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="sum_string">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2>Matching subsets of strings</h2></hgroup><article  class="build" id="matching-subsets-of-strings">
+</article></slide><slide class=""><hgroup><h2>Matching subsets of strings</h2></hgroup><article  id="matching-subsets-of-strings" class="build">
 
 <p>We previously matched the entire string &ldquo;APOBEC1-stimulating&rdquo; But we can use the same function to detect patterns within longer strings.</p>
 
@@ -229,7 +229,7 @@ Try it below:<br/>
 
 What does the ouput mean?<br/>
 
-<div data-label="str_count_exercise" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="str_count_exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>A note about string patterns</h2></hgroup><article  id="a-note-about-string-patterns">
@@ -241,7 +241,7 @@ double check capitalization</div>
 
 <p><strong>The string must match exactly, or it will not be found!</strong></p>
 
-</article></slide><slide class=""><hgroup><h2>Detecting strings</h2></hgroup><article  class="build" id="detecting-strings">
+</article></slide><slide class=""><hgroup><h2>Detecting strings</h2></hgroup><article  id="detecting-strings" class="build">
 
 <p>In addition to counting, we can use another function <code>str_detect()</code> to logically evaluate a character string.</p>
 
@@ -258,19 +258,19 @@ Example</div>
 
 <p><code>str_detect(proteins$protein_name_alt, &#39;APOBE&#39;)</code></p>
 
-<div data-label="strdetect" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="strdetect">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  class="build" id="modifiying-strings-with-str_replace">
+</article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  id="modifiying-strings-with-str_replace" class="build">
 
 <p>In the case of protein_name_alt, say we want to replace every APOBEC1-stimulating with &ldquo;IGF1&rdquo; because APOBEC1-stimulating is incorrect.</p>
 
 <p><code>str_replace(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;, &#39;IGF1&#39;)</code></p>
 
-<div data-label="str_replace" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="str_replace">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  class="build" id="modifiying-strings-with-str_replace-1">
+</article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  id="modifiying-strings-with-str_replace-1" class="build">
 
 <p>We use this same code to modify the protein_name_alt column by assigning it to the same variable</p>
 
@@ -290,7 +290,7 @@ Example</div>
 ##  9 &quot;c(\&quot;IGF1 protein)\&quot;, \&quot;Alpha-2-M) (C3 and PZP-like alpha-2-macroglobulin do…
 ## 10 &quot;c(\&quot;IGF1 protein)\&quot;, \&quot;Alpha-2-M) (C3 and PZP-like alpha-2-macroglobulin do…</pre>
 
-</article></slide><slide class=""><hgroup><h2>Using <code>stringr</code> with <code>dplyr</code></h2></hgroup><article  class="build" id="using-stringr-with-dplyr">
+</article></slide><slide class=""><hgroup><h2>Using <code>stringr</code> with <code>dplyr</code></h2></hgroup><article  id="using-stringr-with-dplyr" class="build">
 
 <p>We can use <code>stringr</code> functions in tandem with <code>dplyr</code> functions.</p>
 
@@ -299,7 +299,7 @@ Example</div>
 
 <p><code>new_df &lt;-</code> <code>proteins %&gt;%</code><br/><code>mutate(new_col = str_detect(protein_name_alt, &#39;APOBE&#39;))</code></p>
 
-<div data-label="stringr_with_dplyr" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="stringr_with_dplyr">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  id="using-regular-expressions">
@@ -308,7 +308,7 @@ Example</div>
 
 <p>We can use something called <strong>Regular Expressions</strong>, aka <strong>Regex</strong>, to solve this</p>
 
-</article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  class="build" id="using-regular-expressions-1">
+</article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  id="using-regular-expressions-1" class="build">
 
 <p>Think of regex as a separate language, with it’s own code, syntax, and rules.</p>
 
@@ -316,7 +316,7 @@ Example</div>
 
 <p>It is far too complex to cover in its entirely here, but here is one specific example.</p>
 
-</article></slide><slide class=""><hgroup><h2>Regular Expression Example</h2></hgroup><article  class="build" id="regular-expression-example">
+</article></slide><slide class=""><hgroup><h2>Regular Expression Example</h2></hgroup><article  id="regular-expression-example" class="build">
 
 <div class="red2">
 Example</div>
@@ -331,10 +331,10 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;^(A|B)&#39;)</code></p>
 
-<div data-label="regex1" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
+<div data-lines="0" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise" data-startover="1" data-label="regex1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  class="build" id="importing-data-into-r">
+</article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  id="importing-data-into-r" class="build">
 
 <p>The <code>readr</code> package (found in the <code>tidyverse</code> collection) contains a number of useful functions of the form <code>read_*</code> to import data. For example, if you have a <code>.csv</code> file, you would use the <code>read_csv</code> function</p>
 
@@ -342,7 +342,7 @@ Example</div>
 
 <p>Most often, you will need to find a data file (such as csv), and import it</p>
 
-</article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  class="build" id="importing-data-into-r-1">
+</article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  id="importing-data-into-r-1" class="build">
 
 <p>For the purpose of this class, we have generated a <strong>simulated</strong> dataset of This is a practice dataset for joining protiens to accompany the proteins dataset.</p>
 
@@ -350,7 +350,7 @@ Example</div>
 
 <p><code>proteins_join &lt;- read_csv(&quot;proteins_join.csv&quot;)</code></p>
 
-</article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  class="build" id="importing-data-into-r-2">
+</article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  id="importing-data-into-r-2" class="build">
 
 <p>You can also use the <code>readr</code> package to import data from a URL</p>
 
@@ -361,13 +361,13 @@ patient_hx &lt;- read_csv(url)</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Combining datasets</h2></hgroup><article  id="combining-datasets">
 
-</article></slide><slide class=""><hgroup><h2>Combining datasets</h2></hgroup><article  class="build" id="combining-datasets-1">
+</article></slide><slide class=""><hgroup><h2>Combining datasets</h2></hgroup><article  id="combining-datasets-1" class="build">
 
 <p>There are many times when you have two or more overlapping datasets that you would like to combine</p>
 
 <p>The <code>dplyr</code> package has a number of <code>*_join</code> functions for this purpose</p>
 
-</article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  class="build" id="left_join">
+</article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  id="left_join" class="build">
 
 <p>Returns all rows from <code>x</code>, and all columns from <code>x</code> and <code>y</code></p>
 
@@ -375,9 +375,9 @@ patient_hx &lt;- read_csv(url)</pre>
 
 <p>If there are multiple matches between <code>x</code> and <code>y</code>, all combinations of the matches are returned</p>
 
-</article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  class="build" id="left_join-1">
+</article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  id="left_join-1" class="build">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -388,7 +388,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  id="right_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -397,7 +397,7 @@ tidyexplain by gadenbuie
 
 </p></div>
 
-</article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  class="build" id="right_join-1">
+</article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  id="right_join-1" class="build">
 
 <p>Returns all rows from <code>y</code>, and all columns from <code>x</code> and <code>y</code></p>
 
@@ -409,7 +409,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  id="inner_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -418,7 +418,7 @@ tidyexplain by gadenbuie
 
 </p></div>
 
-</article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  class="build" id="inner_join-1">
+</article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  id="inner_join-1" class="build">
 
 <p>Returns all rows from <code>x</code> where there are matching values in <code>y</code>, and all columns from <code>x</code> and <code>y</code></p>
 
@@ -426,7 +426,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -435,7 +435,7 @@ tidyexplain by gadenbuie
 
 </p></div>
 
-</article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  class="build" id="full_join-1">
+</article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join-1" class="build">
 
 <p>Returns all rows and all columns from both <code>x</code> and <code>y</code></p>
 
@@ -473,7 +473,7 @@ tidyexplain by gadenbuie
 
 <p><a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br> <!-- <center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center> --></p>
 
-</article></slide><slide class=""><hgroup><h2>Acknowledgements</h2></hgroup><article  class="build" id="acknowledgements">
+</article></slide><slide class=""><hgroup><h2>Acknowledgements</h2></hgroup><article  id="acknowledgements" class="build">
 
 <p><strong>Co-Instructor</strong><br/>- Akshay Bareja, D.Phil.</p>
 
