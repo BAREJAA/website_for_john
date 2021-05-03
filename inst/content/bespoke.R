@@ -14,7 +14,7 @@ df_character <- df_input %>% select_if(~is.character(.)) %>% select(-contains('i
 df_id <- df_input %>% select(contains('id')) #make sure a variable contains 'id'!!!
 #df_joined_character <- df_input_join %>% select_if(~is.character(.)) %>% select(-contains('id'))
 #need to change the join to join anything, not a char
-df_joined <- joined
+#df_joined <- joined
 #do I use these?
 df_numeric_select <- df_numeric[sample(1:ncol(df_numeric), 1)] # choose a random numeric column
 df_numeric_filter <- df_numeric_select[sample(1:nrow(df_numeric), 1),] # choose a random number within that column
