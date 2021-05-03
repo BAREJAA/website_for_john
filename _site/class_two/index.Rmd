@@ -80,7 +80,7 @@ Enter your function here:
   
 ## Basic Data Types in R {.build}
 
-Recall that R has different data types -
+R has different data types -
 
 **character** - `"a"`, `"tidyverse"`  
 
@@ -94,7 +94,7 @@ Recall that R has different data types -
 
 (**raw**)
 
-You will also come across the **double** datatype. It is the same as **numeric**
+You will also come across the **double** datatype. This refers to numbers with decimal points  
 
 **factor**. A **factor** is a collection of *ordered* character variables
 

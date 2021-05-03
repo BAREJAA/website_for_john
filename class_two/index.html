@@ -123,7 +123,7 @@ slide:not(.current) .plotly.html-widget{
 
 Enter your function here:<br/>
 
-<div data-lines="0" data-startover="1" data-label="dim_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="dim_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Inspecting your dataframe: glimpse</h2></hgroup><article  id="inspecting-your-dataframe-glimpse">
@@ -134,12 +134,12 @@ Enter your function here:<br/>
 
 Enter your function here:<br/>
 
-<div data-lines="0" data-startover="1" data-label="glimpse_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="glimpse_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2>Basic Data Types in R</h2></hgroup><article  id="basic-data-types-in-r" class="build">
+</article></slide><slide class=""><hgroup><h2>Basic Data Types in R</h2></hgroup><article  class="build" id="basic-data-types-in-r">
 
-<p>Recall that R has different data types -</p>
+<p>R has different data types -</p>
 
 <p><strong>character</strong> - <code>&quot;a&quot;</code>, <code>&quot;tidyverse&quot;</code></p>
 
@@ -153,7 +153,7 @@ Enter your function here:<br/>
 
 <p>(<strong>raw</strong>)</p>
 
-<p>You will also come across the <strong>double</strong> datatype. It is the same as <strong>numeric</strong></p>
+<p>You will also come across the <strong>double</strong> datatype. This refers to numbers with decimal points</p>
 
 <p><strong>factor</strong>. A <strong>factor</strong> is a collection of <em>ordered</em> character variables</p>
 
@@ -167,10 +167,10 @@ Enter your function here:<br/>
 
 Try getting the <code>class</code> of a variable:<br/>
 
-<div data-lines="0" data-startover="1" data-label="class_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="class_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2>(Re)Introducing <code>%&gt;%</code></h2></hgroup><article  id="reintroducing" class="build">
+</article></slide><slide class=""><hgroup><h2>(Re)Introducing <code>%&gt;%</code></h2></hgroup><article  class="build" id="reintroducing">
 
 <p>The <code>%&gt;%</code> operator is a way of &ldquo;chaining&rdquo; together strings of commands that make reading your code easy.<br/>The following code chunk illustrates how <code>%&gt;%</code> works:</p>
 
@@ -181,7 +181,7 @@ Try getting the <code>class</code> of a variable:<br/>
 ##   &lt;chr&gt;          &lt;dbl&gt;
 ## 1 PI8              374</pre>
 
-</article></slide><slide class=""><hgroup><h2>(Re)Introducing <code>%&gt;%</code></h2></hgroup><article  id="reintroducing-1" class="build">
+</article></slide><slide class=""><hgroup><h2>(Re)Introducing <code>%&gt;%</code></h2></hgroup><article  class="build" id="reintroducing-1">
 
 <p>The previous code chunk does the following - it takes your dataset and then &ldquo;pipes&rdquo; it into <code>select()</code>, and then applies a <code>filter()</code> to the data.</p>
 
@@ -191,7 +191,7 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><strong>When you see <code>%&gt;%</code>, think &ldquo;and then&rdquo;</strong></p>
 
-</article></slide><slide class=""><hgroup><h2>(Re)Introducing <code>%&gt;%</code></h2></hgroup><article  id="reintroducing-2" class="build">
+</article></slide><slide class=""><hgroup><h2>(Re)Introducing <code>%&gt;%</code></h2></hgroup><article  class="build" id="reintroducing-2">
 
 <p>The alternative to using <code>%&gt;%</code> is running the following code</p>
 
@@ -199,7 +199,7 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p>Although this is only one line as opposed to three, it’s both more difficult to write and more difficult to read</p>
 
-</article></slide><slide class=""><hgroup><h2>Introducing <code>dplyr</code></h2></hgroup><article  id="introducing-dplyr" class="build">
+</article></slide><slide class=""><hgroup><h2>Introducing <code>dplyr</code></h2></hgroup><article  class="build" id="introducing-dplyr">
 
 <p>dplyr is a package that contains a suite of functions that allow you to easily manipulate a dataset</p>
 
@@ -215,7 +215,7 @@ Try getting the <code>class</code> of a variable:<br/>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>select()</h2></hgroup><article  id="select">
 
-</article></slide><slide class=""><hgroup><h2><code>select()</code> specific columns from your dataset</h2></hgroup><article  id="select-specific-columns-from-your-dataset" class="build">
+</article></slide><slide class=""><hgroup><h2><code>select()</code> specific columns from your dataset</h2></hgroup><article  class="build" id="select-specific-columns-from-your-dataset">
 
 <p>The most basic <code>select()</code> is one where you comma separate a list of columns you want included</p>
 
@@ -223,47 +223,47 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><code>proteins %&gt;%</code><br/><code>select(gene_name_alt, length) %&gt;%</code><br/><code>head()</code></p>
 
-<div data-lines="0" data-startover="1" data-label="select_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="select_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2><code>select()</code></h2></hgroup><article  id="select-1" class="build">
+</article></slide><slide class=""><hgroup><h2><code>select()</code></h2></hgroup><article  class="build" id="select-1">
 
 <p>If you want to select all columns <em>except</em> gene_name_alt, run the following</p>
 
 <p><code>proteins %&gt;%</code><br/><code>select(-gene_name_alt) %&gt;%</code><br/><code>head(5)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="selectnot_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="selectnot_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2><code>select()</code></h2></hgroup><article  id="select-2" class="build">
+</article></slide><slide class=""><hgroup><h2><code>select()</code></h2></hgroup><article  class="build" id="select-2">
 
 <p>Finally, you can provide a range of columns to return two columns and everything in between. For example</p>
 
 <p><code>proteins %&gt;%</code><br/><code>select(gene_name_alt:length) %&gt;%</code><br/><code>head(5)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="selectrange_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="selectrange_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>filter()</h2></hgroup><article  id="filter">
 
-</article></slide><slide class=""><hgroup><h2><code>filter()</code> rows based on certain condition(s)</h2></hgroup><article  id="filter-rows-based-on-certain-conditions" class="build">
+</article></slide><slide class=""><hgroup><h2><code>filter()</code> rows based on certain condition(s)</h2></hgroup><article  class="build" id="filter-rows-based-on-certain-conditions">
 
 <p>The <code>filter()</code> verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or &ldquo;filtered&rdquo;).</p>
 
 <p><strong>All other rows are discarded</strong></p>
 
-</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  id="filter-1" class="build">
+</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  class="build" id="filter-1">
 
 <p>Filtering can be performed on <strong>categorical</strong> data</p>
 
 <p><code>proteins %&gt;%</code><br/><code>filter(gene_name_alt == &quot;PI8&quot;) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="filter_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="filter_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 <p>Note that <code>filter()</code> only applies to rows, and has no effect on columns</p>
 
-</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  id="filter-2" class="build">
+</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  class="build" id="filter-2">
 
 <p>Filtering can also be performed on <strong>numeric</strong> data</p>
 
@@ -271,30 +271,30 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><code>proteins %&gt;%</code><br/><code>filter(length &gt; 397) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="filter_exercise2" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="filter_exercise2" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  id="filter-3" class="build">
+</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  class="build" id="filter-3">
 
 <p>To filter on multiple conditions, you can write a sequence of <code>filter()</code> commands</p>
 
 <p><code>proteins %&gt;%</code><br/><code>filter(gene_name_alt == &quot;PI8&quot;) %&gt;%</code><br/><code>filter(length &gt; 397) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="filter_exercise3" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="filter_exercise3" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  id="filter-4" class="build">
+</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  class="build" id="filter-4">
 
 <p>To avoid writing multiple <code>filter()</code> commands, multiple logical statements can be put inside a single <code>filter()</code> command, separated by commas</p>
 
 <p><code>proteins %&gt;%</code><br/><code>filter(gene_name_alt == &quot;PI8&quot;,</code><br/><code>length &gt; 397) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="filter_exercise4" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="filter_exercise4" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>arrange()</h2></hgroup><article  id="arrange">
 
-</article></slide><slide class=""><hgroup><h2><code>arrange()</code> sorts rows</h2></hgroup><article  id="arrange-sorts-rows" class="build">
+</article></slide><slide class=""><hgroup><h2><code>arrange()</code> sorts rows</h2></hgroup><article  class="build" id="arrange-sorts-rows">
 
 <p>The input for arrange is one or many columns, and <code>arrange()</code> sorts the rows in ascending order i.e. from smallest to largest</p>
 
@@ -302,21 +302,21 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><code>proteins %&gt;%</code><br/><code>arrange(length) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="arrange_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="arrange_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2><code>arrange()</code></h2></hgroup><article  id="arrange-1" class="build">
+</article></slide><slide class=""><hgroup><h2><code>arrange()</code></h2></hgroup><article  class="build" id="arrange-1">
 
 <p>To reverse this order, use the <code>desc()</code> function within <code>arrange()</code></p>
 
 <p><code>proteins %&gt;%</code><br/><code>arrange(desc(length)) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="arrange_exercise2" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="arrange_exercise2" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>mutate()</h2></hgroup><article  id="mutate">
 
-</article></slide><slide class=""><hgroup><h2><code>mutate()</code></h2></hgroup><article  id="mutate-1" class="build">
+</article></slide><slide class=""><hgroup><h2><code>mutate()</code></h2></hgroup><article  class="build" id="mutate-1">
 
 <p>The <code>mutate()</code> verb, unlike the ones covered so far, creates new variable(s) i.e. new column(s). For example</p>
 
@@ -328,12 +328,12 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><code>proteins %&gt;%</code><br/><code>mutate(new_col = sqrt(length)) %&gt;%</code><br/><code>head(3)</code></p>
 
-<div data-lines="0" data-startover="1" data-label="mutate_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="mutate_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>group_by() and summarize()</h2></hgroup><article  id="group_by-and-summarize">
 
-</article></slide><slide class=""><hgroup><h2><code>summarise()</code> and <code>summarize()</code></h2></hgroup><article  id="summarise-and-summarize" class="build">
+</article></slide><slide class=""><hgroup><h2><code>summarise()</code> and <code>summarize()</code></h2></hgroup><article  class="build" id="summarise-and-summarize">
 
 <p><code>summarize()</code> is one of the key functions in <code>dplyr</code>. It produces a new dataframe that aggregates that values of a column based on a certain condition.</p>
 
@@ -341,16 +341,16 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><code>proteins %&gt;%</code><br/><code>summarise(mean(length))</code></p>
 
-<div data-lines="0" data-startover="1" data-label="summarize_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="summarize_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
-</article></slide><slide class=""><hgroup><h2><code>group_by()</code></h2></hgroup><article  id="group_by" class="build">
+</article></slide><slide class=""><hgroup><h2><code>group_by()</code></h2></hgroup><article  class="build" id="group_by">
 
 <p><code>group_by()</code> and <code>summarize()</code> are a powerful combination of functions to summarize by groups</p>
 
 <p><code>proteins %&gt;%</code><br/><code>group_by(gene_name_alt) %&gt;%</code><br/><code>summarise(mean(length))</code></p>
 
-<div data-lines="0" data-startover="1" data-label="groupby_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="groupby_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Saving your work</h2></hgroup><article  id="saving-your-work">
@@ -363,7 +363,7 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p>*Assigning the object the same name (i.e. <code>proteins</code>) will overwrite the object</p>
 
-<div data-lines="0" data-startover="1" data-label="df_object_exercise" data-diagnostics="1" data-completion="1" data-caption="Code" class="tutorial-exercise">
+<div data-label="df_object_exercise" data-startover="1" class="tutorial-exercise" data-completion="1" data-lines="0" data-caption="Code" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Saving a new dataset as a file</h2></hgroup><article  id="saving-a-new-dataset-as-a-file">
@@ -374,7 +374,7 @@ Try getting the <code>class</code> of a variable:<br/>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Concluding Thoughts</h2></hgroup><article  id="concluding-thoughts">
 
-</article></slide><slide class=""><hgroup><h2>Data science enables</h2></hgroup><article  id="data-science-enables" class="build">
+</article></slide><slide class=""><hgroup><h2>Data science enables</h2></hgroup><article  class="build" id="data-science-enables">
 
 <ul>
 <li><p>Data science enables data-driven information gathering and hypothesis generation<br/>– Scientific Research<br/>– Reviews</p></li>
@@ -416,7 +416,7 @@ Try getting the <code>class</code> of a variable:<br/>
 
 <p><a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br> <!-- <center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center> --></p>
 
-</article></slide><slide class=""><hgroup><h2>Acknowledgements</h2></hgroup><article  id="acknowledgements" class="build">
+</article></slide><slide class=""><hgroup><h2>Acknowledgements</h2></hgroup><article  class="build" id="acknowledgements">
 
 <p><strong>Co-Instructor</strong><br/>- Akshay Bareja, D.Phil.</p>
 
