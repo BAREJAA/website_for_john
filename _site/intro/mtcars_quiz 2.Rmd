@@ -1,0 +1,23 @@
+---
+title: "Intro"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+data(mtcars)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Scratchpad
+
+Use the following empty R chunk to enter and execute code. 
+
+```{r scratch_pad, exercise=TRUE}
+head(mtcars)
+
+```
+
