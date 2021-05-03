@@ -209,7 +209,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;)</code></p>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="str_count" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="str_count" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Summarizing our counts</h2></hgroup><article  id="summarizing-our-counts">
@@ -220,7 +220,7 @@ Example</div>
 
 Try it below:<br/>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="sum_string" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="sum_string" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Matching subsets of strings</h2></hgroup><article  id="matching-subsets-of-strings" class="build">
@@ -235,7 +235,7 @@ Try it below:<br/>
 
 What does the ouput mean?<br/>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="str_count_exercise" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="str_count_exercise" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>A note about string patterns</h2></hgroup><article  id="a-note-about-string-patterns">
@@ -264,7 +264,7 @@ Example</div>
 
 <p><code>str_detect(proteins$protein_name_alt, &#39;APOBE&#39;)</code></p>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="strdetect" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="strdetect" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  id="modifiying-strings-with-str_replace" class="build">
@@ -273,7 +273,7 @@ Example</div>
 
 <p><code>str_replace(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;, &#39;IGF1&#39;)</code></p>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="str_replace" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="str_replace" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  id="modifiying-strings-with-str_replace-1" class="build">
@@ -305,7 +305,7 @@ Example</div>
 
 <p><code>new_df &lt;-</code> <code>proteins %&gt;%</code><br/><code>mutate(new_col = str_detect(protein_name_alt, &#39;APOBE&#39;))</code></p>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="stringr_with_dplyr" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="stringr_with_dplyr" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  id="using-regular-expressions">
@@ -337,7 +337,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;^(A|B)&#39;)</code></p>
 
-<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="regex1" data-diagnostics="1" class="tutorial-exercise">
+<div data-label="regex1" class="tutorial-exercise" data-completion="1" data-diagnostics="1" data-lines="0" data-caption="Code" data-startover="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  id="importing-data-into-r" class="build">
@@ -383,7 +383,7 @@ patient_hx &lt;- read_csv(url)</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  id="left_join-1" class="build">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -394,7 +394,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  id="right_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -415,7 +415,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  id="inner_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -432,7 +432,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join">
 
-<div style="text-align: center" class="figure">
+<div class="figure" style="text-align: center">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -441,11 +441,11 @@ tidyexplain by gadenbuie
 
 </p></div>
 
-</article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join-1" class="build">
+</article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join-1">
 
 <p>Returns all rows and all columns from both <code>x</code> and <code>y</code></p>
 
-Where there are no matching values, returns NA for the one missing<br/>
+Where there are no matching values, returns NA for the ones missing<br/>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(tidyverse)

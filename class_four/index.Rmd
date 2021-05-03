@@ -281,7 +281,7 @@ url <- "https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gi
 knitr::include_graphics(url)
 ```
 
-## `full_join` {.build}
+## `full_join` 
 Returns all rows and all columns from both `x` and `y`  
 
-Where there are no matching values, returns NA for the one missing  
+Where there are no matching values, returns NA for the ones missing  
