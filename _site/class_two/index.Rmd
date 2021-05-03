@@ -8,6 +8,11 @@ output:
     widescreen: yes
 runtime: shiny_prerendered
 ---
+<style type="text/css">
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
 ```{r setup, include=FALSE}
 library(learnr)
 library(tidyverse)
@@ -96,22 +101,8 @@ R has different data types -
 
 You will also come across the **double** datatype. This refers to numbers with decimal points  
 
-**factor**. A **factor** is a collection of *ordered* character variables
+**factor**. A **factor** is a collection of *ordered* character variables  
 
-## Basic Data Types in R
-
-In addition to the `glimpse()` function, you can use the `class()` function to determine the data type of a specific column
-
-`class(`r dataframe_name`$`r colnames(df_character_select)`)`
-
-```{r class, echo = FALSE, warning = FALSE}
-class(df_character_select[[1]])
-```
-  
-Try getting the `class` of a variable:  
-```{r class_exercise, exercise=TRUE}
-
-```
 ## (Re)Introducing `%>%` {.build}
 
 The `%>%` operator is a way of "chaining" together strings of commands that make reading your code easy.  
@@ -128,21 +119,7 @@ df_input %>%
   filter(!!rlang::sym(colnames(df_character_select)) == as.character(df_character_filter)) %>% 
   head()
 ```
-
-## (Re)Introducing `%>%` {.build}
-
-The previous code chunk does the following - it takes your dataset and then "pipes" it into `select()`, and then applies a `filter()` to the data.
   
-``r dataframe_name` %>%`  
-    `select(`r colnames(df_character_select)`, `r colnames(df_numeric_select)`) %>%`   
-    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`   
-    `head()`  
-  
-*the `head` function lists only the top n results -- convenient for long variables*
-  
-  
-**When you see `%>%`, think "and then"**
-
 ## (Re)Introducing `%>%` {.build}
 
 The alternative to using `%>%` is running the following code
@@ -187,7 +164,7 @@ If you want to select all columns *except* `r colnames(df_character_select)`, ru
 
 ``r dataframe_name` %>%`  
     `select(-`r colnames(df_character_select)`) %>%`  
-    `head(5)`
+    `head()`
 
 ```{r selectnot_exercise, exercise=TRUE}
 
@@ -199,7 +176,7 @@ Finally, you can provide a range of columns to return two columns and everything
 
 ``r dataframe_name` %>%`   
     `select(`r colnames(df_character_select)`:`r colnames(df_numeric_select)`) %>%`  
-    `head(5)`
+    `head()`
     
 ```{r selectrange_exercise, exercise=TRUE}
 
@@ -220,7 +197,7 @@ Filtering can be performed on **categorical** data
 
 ``r dataframe_name` %>%`     
     `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`     
-    `head(3)`  
+    `head()`  
 
 ```{r filter_exercise, exercise=TRUE}
 
@@ -236,7 +213,7 @@ For example, if you wanted to choose `r colnames(df_numeric_select)` with a valu
 
 ``r dataframe_name` %>%`     
     `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`     
-    `head(3)`  
+    `head()`  
 
 ```{r filter_exercise2, exercise=TRUE}
 
@@ -249,7 +226,7 @@ To filter on multiple conditions, you can write a sequence of `filter()` command
 ``r dataframe_name` %>%`       
     `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`  
     `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`    
-    `head(3)`  
+    `head()`  
 
 ```{r filter_exercise3, exercise=TRUE}
 
@@ -262,7 +239,7 @@ To avoid writing multiple `filter()` commands, multiple logical statements can b
 ``r dataframe_name` %>%`           
     `filter(`r colnames(df_character_select)` == "`r df_character_filter`",`  
            ` `r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`      
-    `head(3)`  
+    `head()`  
 
 ```{r filter_exercise4, exercise=TRUE}
 
@@ -278,7 +255,7 @@ For example, to sort rows from smallest to largest `r colnames(df_numeric_select
 
 ``r dataframe_name` %>%`   
   `arrange(`r colnames(df_numeric_select)`) %>%`   
-  `head(3)`  
+  `head()`  
 
 ```{r arrange_exercise, exercise=TRUE}
 
@@ -290,7 +267,7 @@ To reverse this order, use the `desc()` function within `arrange()`
 
 ``r dataframe_name` %>%`  
   `arrange(desc(`r colnames(df_numeric_select)`)) %>%`  
-  `head(3)`  
+  `head()`  
 
 ```{r arrange_exercise2, exercise=TRUE}
 
@@ -304,7 +281,7 @@ The `mutate()` verb, unlike the ones covered so far, creates new variable(s) i.e
 
 ``r dataframe_name` %>%`    
   `mutate(new_col = sqrt(`r colnames(df_numeric_select)`)) %>%`    
-  `head(1)`  
+  `head()`  
   
 The code chunk above takes all the elements of the column `r colnames(df_numeric_select)`, evaluates the square root of each element, and populates a new column called `new_col` with these results
   
@@ -312,7 +289,7 @@ The code chunk above takes all the elements of the column `r colnames(df_numeric
   
 ``r dataframe_name` %>%`    
   `mutate(new_col = sqrt(`r colnames(df_numeric_select)`)) %>%`    
-  `head(3)`  
+  `head()`  
   
 ```{r mutate_exercise, exercise=TRUE}
 

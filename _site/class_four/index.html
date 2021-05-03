@@ -164,6 +164,12 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
+<style type="text/css">
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
+
 <slide class=""><hgroup><h2>Dealing with strings</h2></hgroup><article  id="dealing-with-strings" class="build">
 
 <p>Dealing with character strings is a bit different than dealing with numbers in R?</p>
@@ -203,7 +209,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;)</code></p>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="str_count" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="str_count" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Summarizing our counts</h2></hgroup><article  id="summarizing-our-counts">
@@ -214,7 +220,7 @@ Example</div>
 
 Try it below:<br/>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="sum_string" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="sum_string" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Matching subsets of strings</h2></hgroup><article  id="matching-subsets-of-strings" class="build">
@@ -229,7 +235,7 @@ Try it below:<br/>
 
 What does the ouput mean?<br/>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="str_count_exercise" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="str_count_exercise" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>A note about string patterns</h2></hgroup><article  id="a-note-about-string-patterns">
@@ -258,7 +264,7 @@ Example</div>
 
 <p><code>str_detect(proteins$protein_name_alt, &#39;APOBE&#39;)</code></p>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="strdetect" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="strdetect" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  id="modifiying-strings-with-str_replace" class="build">
@@ -267,7 +273,7 @@ Example</div>
 
 <p><code>str_replace(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;, &#39;IGF1&#39;)</code></p>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="str_replace" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="str_replace" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  id="modifiying-strings-with-str_replace-1" class="build">
@@ -299,7 +305,7 @@ Example</div>
 
 <p><code>new_df &lt;-</code> <code>proteins %&gt;%</code><br/><code>mutate(new_col = str_detect(protein_name_alt, &#39;APOBE&#39;))</code></p>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="stringr_with_dplyr" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="stringr_with_dplyr" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  id="using-regular-expressions">
@@ -331,7 +337,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;^(A|B)&#39;)</code></p>
 
-<div data-caption="Code" data-lines="0" data-completion="1" data-diagnostics="1" data-label="regex1" data-startover="1" class="tutorial-exercise">
+<div data-completion="1" data-caption="Code" data-startover="1" data-lines="0" data-label="regex1" data-diagnostics="1" class="tutorial-exercise">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  id="importing-data-into-r" class="build">
@@ -439,49 +445,7 @@ tidyexplain by gadenbuie
 
 <p>Returns all rows and all columns from both <code>x</code> and <code>y</code></p>
 
-<p>Where there are no matching values, returns NA for the one missing<br/># Concluding Thoughts</p>
-
-</article></slide><slide class=""><hgroup><h2>Cheatsheet Resources</h2></hgroup><article  id="cheatsheet-resources">
-
-<a href="https://rstudio.com/resources/cheatsheets" target="_blank">Cheatsheets</a><br>
-
-<center>
-
-<iframe src="https://rstudio.com/resources/cheatsheets">
-
-</iframe>
-
-</center>
-
-</article></slide><slide class=""><hgroup><h2>Google Resources</h2></hgroup><article  id="google-resources">
-
-<p><a href="https://www.google.com/" target="_blank">Google.com</a><br> <!-- <center><iframe src="https://www.google.com"></iframe></center> --></p>
-
-</article></slide><slide class=""><hgroup><h2>R4DS Resources</h2></hgroup><article  id="r4ds-resources">
-
-<a href="https://r4ds.had.co.nz" target="_blank">R for Data Science</a><br>
-
-<center>
-
-<iframe src="https://r4ds.had.co.nz">
-
-</iframe>
-
-</center>
-
-</article></slide><slide class=""><hgroup><h2>Tidybiology Videos</h2></hgroup><article  id="tidybiology-videos">
-
-<p><a href="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ" target="_blank">tidybiology YouTube Channel</a><br> <!-- <center><iframe src="https://www.youtube.com/channel/UCstAS6IpgYgZ9Cvcag_YlCQ"></iframe></center> --></p>
-
-</article></slide><slide class=""><hgroup><h2>Acknowledgements</h2></hgroup><article  id="acknowledgements" class="build">
-
-<p><strong>Co-Instructor</strong><br/>- Akshay Bareja, D.Phil.</p>
-
-<p><strong>Inspiration, ideas, packages, code</strong><br/>- R4DS (Garrett Grolemund and Hadley Wickham)<br/>- Mine Çetinkaya-Rundel (datasciencebox.org)<br/>- Chester Ismay and Albert Y. Kim (Modern Dive)<br/>- Garrett Grolemund (Remastering the Tidyverse)<br/>- Tidyverse devs and community<br/>- Rstudio</p>
-
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Thank you</h2></hgroup><article  id="thank-you">
-
-Any questions? 
+Where there are no matching values, returns NA for the one missing<br/>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(tidyverse)

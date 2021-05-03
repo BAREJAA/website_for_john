@@ -8,11 +8,6 @@ output:
     widescreen: yes
 runtime: shiny_prerendered
 ---
-<style type="text/css">
-slides > slide:not(.nobackground):after {
-  content: '';
-}
-</style>
 ```{r setup, include=FALSE}
 library(learnr)
 library(tidyverse)
@@ -24,38 +19,29 @@ library(ggrepel)
 library(viridis)
 library(gghighlight)
 library(patchwork)
-library(proteins)
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align="center")
-proteins <- readRDS(url("https://github.com/BAREJAA/website_for_john/raw/master/inst/extdata/bespoke_dataframe.Rds"))
-proteins_join <- readRDS(url("https://github.com/BAREJAA/website_for_john/raw/master/inst/extdata/bespoke_dataframe_join.Rds"))
-#joined <- proteins %>% right_join(proteins_join, by = 'id')
-###
-df_input <- proteins # this line is for bespoke.R to get proper var
-df_input2 <- proteins_join
-source("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/inst/content/metadata.R")
-source("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/inst/content/bespoke.R")
 ```
 
 ```{r load, include = FALSE}
-# path <- 'inst/extdata'
-# proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
-# ###
-# proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
-# joined <- proteins %>% right_join(proteins_join, by = 'id')
-# ###
-# df_input <- proteins # this line is for bespoke.R to get proper var
-# df_input2 <- proteins_join
-# source('inst/content/metadata.R')
-# source('inst/content/bespoke.R')
+path <- 'inst/extdata'
+proteins <- readRDS(paste0(path, '/bespoke_dataframe.Rds'))
+###
+proteins_join <- readRDS(paste0(path, '/bespoke_dataframe_join.Rds'))
+joined <- proteins %>% right_join(proteins_join, by = 'id')
+###
+df_input <- proteins # this line is for bespoke.R to get proper var
+df_input2 <- proteins_join
+source('inst/content/metadata.R')
+source('inst/content/bespoke.R')
 ```
-# Getting to know your data  
-
+# R <br>Getting to know your data
+Any questions?
 
 ## ``r dataframe_name`` dataset
 **`r dataframe_title`**  
   
-- For this module, we will use a dataset called ``r dataframe_name``   
+- For this class, we will use a dataset called ``r dataframe_name``.  
   
 - `r dataframe_source`  
   
@@ -85,7 +71,7 @@ Enter your function here:
   
 ## Basic Data Types in R {.build}
 
-R has different data types -
+Recall that R has different data types -
 
 **character** - `"a"`, `"tidyverse"`  
 
@@ -99,10 +85,24 @@ R has different data types -
 
 (**raw**)
 
-You will also come across the **double** datatype. This refers to numbers with decimal points  
+You will also come across the **double** datatype. It is the same as **numeric**
 
-**factor**. A **factor** is a collection of *ordered* character variables  
+**factor**. A **factor** is a collection of *ordered* character variables
 
+## Basic Data Types in R
+
+In addition to the `glimpse()` function, you can use the `class()` function to determine the data type of a specific column
+
+`class(`r dataframe_name`$`r colnames(df_character_select)`)`
+
+```{r class, echo = FALSE, warning = FALSE}
+class(df_character_select[[1]])
+```
+  
+Try getting the `class` of a variable:  
+```{r class_exercise, exercise=TRUE}
+
+```
 ## (Re)Introducing `%>%` {.build}
 
 The `%>%` operator is a way of "chaining" together strings of commands that make reading your code easy.  
@@ -119,7 +119,21 @@ df_input %>%
   filter(!!rlang::sym(colnames(df_character_select)) == as.character(df_character_filter)) %>% 
   head()
 ```
+
+## (Re)Introducing `%>%` {.build}
+
+The previous code chunk does the following - it takes your dataset and then "pipes" it into `select()`, and then applies a `filter()` to the data.
   
+``r dataframe_name` %>%`  
+    `select(`r colnames(df_character_select)`, `r colnames(df_numeric_select)`) %>%`   
+    `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`   
+    `head()`  
+  
+*the `head` function lists only the top n results -- convenient for long variables*
+  
+  
+**When you see `%>%`, think "and then"**
+
 ## (Re)Introducing `%>%` {.build}
 
 The alternative to using `%>%` is running the following code
@@ -142,8 +156,6 @@ Some of the things you can do are -
 - obtain summary statistics on individual groups within your datasets  
   
 The main verbs we will cover are `select()`, `filter()`, `arrange()`, `mutate()`, and `summarise()`. These all combine naturally with `group_by()` which allows you to perform any operation "by group"  
-
-# select() 
  
 ## `select()` specific columns from your dataset {.build}
 The most basic `select()` is one where you comma separate a list of columns you want included
@@ -164,7 +176,7 @@ If you want to select all columns *except* `r colnames(df_character_select)`, ru
 
 ``r dataframe_name` %>%`  
     `select(-`r colnames(df_character_select)`) %>%`  
-    `head()`
+    `head(5)`
 
 ```{r selectnot_exercise, exercise=TRUE}
 
@@ -176,14 +188,11 @@ Finally, you can provide a range of columns to return two columns and everything
 
 ``r dataframe_name` %>%`   
     `select(`r colnames(df_character_select)`:`r colnames(df_numeric_select)`) %>%`  
-    `head()`
+    `head(5)`
     
 ```{r selectrange_exercise, exercise=TRUE}
 
 ```
-
-# filter() 
-
 ## `filter()` rows based on certain condition(s) {.build}
 
 The `filter()` verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered").  
@@ -197,7 +206,7 @@ Filtering can be performed on **categorical** data
 
 ``r dataframe_name` %>%`     
     `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`     
-    `head()`  
+    `head(3)`  
 
 ```{r filter_exercise, exercise=TRUE}
 
@@ -213,7 +222,7 @@ For example, if you wanted to choose `r colnames(df_numeric_select)` with a valu
 
 ``r dataframe_name` %>%`     
     `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`     
-    `head()`  
+    `head(3)`  
 
 ```{r filter_exercise2, exercise=TRUE}
 
@@ -226,7 +235,7 @@ To filter on multiple conditions, you can write a sequence of `filter()` command
 ``r dataframe_name` %>%`       
     `filter(`r colnames(df_character_select)` == "`r df_character_filter`") %>%`  
     `filter(`r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`    
-    `head()`  
+    `head(3)`  
 
 ```{r filter_exercise3, exercise=TRUE}
 
@@ -239,14 +248,11 @@ To avoid writing multiple `filter()` commands, multiple logical statements can b
 ``r dataframe_name` %>%`           
     `filter(`r colnames(df_character_select)` == "`r df_character_filter`",`  
            ` `r colnames(df_numeric_select)` > `r df_numeric_filter`) %>%`      
-    `head()`  
+    `head(3)`  
 
 ```{r filter_exercise4, exercise=TRUE}
 
 ```
-
-# arrange() 
-
 ## `arrange()` sorts rows {.build}
 
 The input for arrange is one or many columns, and `arrange()` sorts the rows in ascending order i.e. from smallest to largest
@@ -255,7 +261,7 @@ For example, to sort rows from smallest to largest `r colnames(df_numeric_select
 
 ``r dataframe_name` %>%`   
   `arrange(`r colnames(df_numeric_select)`) %>%`   
-  `head()`  
+  `head(3)`  
 
 ```{r arrange_exercise, exercise=TRUE}
 
@@ -267,21 +273,18 @@ To reverse this order, use the `desc()` function within `arrange()`
 
 ``r dataframe_name` %>%`  
   `arrange(desc(`r colnames(df_numeric_select)`)) %>%`  
-  `head()`  
+  `head(3)`  
 
 ```{r arrange_exercise2, exercise=TRUE}
 
 ```
-
-# mutate()  
-
 ## `mutate()` {.build}
 
 The `mutate()` verb, unlike the ones covered so far, creates new variable(s) i.e. new column(s). For example
 
 ``r dataframe_name` %>%`    
   `mutate(new_col = sqrt(`r colnames(df_numeric_select)`)) %>%`    
-  `head()`  
+  `head(1)`  
   
 The code chunk above takes all the elements of the column `r colnames(df_numeric_select)`, evaluates the square root of each element, and populates a new column called `new_col` with these results
   
@@ -289,14 +292,11 @@ The code chunk above takes all the elements of the column `r colnames(df_numeric
   
 ``r dataframe_name` %>%`    
   `mutate(new_col = sqrt(`r colnames(df_numeric_select)`)) %>%`    
-  `head()`  
+  `head(3)`  
   
 ```{r mutate_exercise, exercise=TRUE}
 
 ```
-
-# group_by() and summarize()    
-
 ## `summarise()` and `summarize()` {.build}
 
 `summarize()` is one of the key functions in `dplyr`. It produces a new dataframe that aggregates that values of a column based on a certain condition.  
@@ -321,9 +321,6 @@ For example, to calculate the mean `r colnames(df_numeric_select)`, run the foll
 ```{r groupby_exercise, exercise=TRUE}
 
 ```
-
-# Saving your work  
-
 ## Saving a new dataset as an object
 
 If you'd like to save the output of your wrangling as an object, you will need to use the `<-` operator
