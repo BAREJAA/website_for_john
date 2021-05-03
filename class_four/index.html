@@ -203,7 +203,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;)</code></p>
 
-<div data-caption="Code" data-startover="1" data-label="str_count" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="str_count" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Summarizing our counts</h2></hgroup><article  id="summarizing-our-counts">
@@ -214,7 +214,7 @@ Example</div>
 
 Try it below:<br/>
 
-<div data-caption="Code" data-startover="1" data-label="sum_string" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="sum_string" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Matching subsets of strings</h2></hgroup><article  class="build" id="matching-subsets-of-strings">
@@ -229,7 +229,7 @@ Try it below:<br/>
 
 What does the ouput mean?<br/>
 
-<div data-caption="Code" data-startover="1" data-label="str_count_exercise" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="str_count_exercise" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>A note about string patterns</h2></hgroup><article  id="a-note-about-string-patterns">
@@ -258,7 +258,7 @@ Example</div>
 
 <p><code>str_detect(proteins$protein_name_alt, &#39;APOBE&#39;)</code></p>
 
-<div data-caption="Code" data-startover="1" data-label="strdetect" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="strdetect" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  class="build" id="modifiying-strings-with-str_replace">
@@ -267,7 +267,7 @@ Example</div>
 
 <p><code>str_replace(proteins$protein_name_alt, &#39;APOBEC1-stimulating&#39;, &#39;IGF1&#39;)</code></p>
 
-<div data-caption="Code" data-startover="1" data-label="str_replace" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="str_replace" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Modifiying strings with <code>str_replace()</code></h2></hgroup><article  class="build" id="modifiying-strings-with-str_replace-1">
@@ -299,7 +299,7 @@ Example</div>
 
 <p><code>new_df &lt;-</code> <code>proteins %&gt;%</code><br/><code>mutate(new_col = str_detect(protein_name_alt, &#39;APOBE&#39;))</code></p>
 
-<div data-caption="Code" data-startover="1" data-label="stringr_with_dplyr" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="stringr_with_dplyr" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Using Regular Expressions</h2></hgroup><article  id="using-regular-expressions">
@@ -331,7 +331,7 @@ Example</div>
 
 <p><code>str_count(proteins$protein_name_alt, &#39;^(A|B)&#39;)</code></p>
 
-<div data-caption="Code" data-startover="1" data-label="regex1" class="tutorial-exercise" data-completion="1" data-lines="0" data-diagnostics="1">
+<div data-label="regex1" data-caption="Code" data-completion="1" data-startover="1" data-lines="0" class="tutorial-exercise" data-diagnostics="1">
 <script type="application/json" data-opts-chunk="1">{"fig.width":7.5,"fig.height":4.5,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":720,"warning":true,"error":false,"message":true,"exercise.df_print":"default","exercise.checker":"NULL"}</script></div>
 
 </article></slide><slide class=""><hgroup><h2>Importing data into R</h2></hgroup><article  class="build" id="importing-data-into-r">
@@ -377,7 +377,7 @@ patient_hx &lt;- read_csv(url)</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>left_join</code></h2></hgroup><article  class="build" id="left_join-1">
 
-<div class="figure" style="text-align: center">
+<div style="text-align: center" class="figure">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -388,7 +388,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>right_join</code></h2></hgroup><article  id="right_join">
 
-<div class="figure" style="text-align: center">
+<div style="text-align: center" class="figure">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -409,7 +409,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>inner_join</code></h2></hgroup><article  id="inner_join">
 
-<div class="figure" style="text-align: center">
+<div style="text-align: center" class="figure">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
@@ -426,7 +426,7 @@ tidyexplain by gadenbuie
 
 </article></slide><slide class=""><hgroup><h2><code>full_join</code></h2></hgroup><article  id="full_join">
 
-<div class="figure" style="text-align: center">
+<div style="text-align: center" class="figure">
 <img src="https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true" alt="tidyexplain by gadenbuie" height="66%" />
 
 <p class="caption">
