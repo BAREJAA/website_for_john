@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = FALSE)
 + [Stringr and Joins](class_four/)
 + [R Markdown](class_five/)
 + [CCT Staci Reynolds](cct_staci/)
++ [Xaringan Dplyr](xaringan_dplyr/)
 
 ## Exercises
 

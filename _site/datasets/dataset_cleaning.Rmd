@@ -1,0 +1,43 @@
+---
+title: "Dataset Cleaning"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+library(janitor)
+set.seed(42)
+```
+
+# Objective
+
+Inspect datasets and do any necessary cleaning/re-arranging
+
+Take one of the datasets and make a very simple version i.e. handful of columns and rows
+
+# Import data
+
+```{r import}
+heart <- read_csv(here::here("datasets/heart.csv")) # looks good
+water <- read_csv(here::here("datasets/water_potability.csv")) # needs cleaning
+happy <- read_csv(here::here("datasets/world-happiness-report-2021.csv")) # make a mini version
+```
+
+# Making mini version of `Happy` dataset
+
+```{r clean}
+colnames(happy)
+
+# Keep these columns - Country name, Ladder Score, Logged GDP per capita, Social support
+
+happy %>% 
+  clean_names() %>% 
+  select(country_name, ladder_score, logged_gdp_per_capita, social_support) %>% 
+  slice_sample(n = 5) %>% 
+  rename(gdp = logged_gdp_per_capita) -> happy_small
+
+write_csv( happy_small, here::here("datasets/happy_small.csv"))
+```
+
