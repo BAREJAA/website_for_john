@@ -21,6 +21,7 @@ library(tidyverse)
 library(kableExtra)
 library(xaringanExtra)
 library(janitor)
+library(xaringanthemer)
 
 happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
 happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
