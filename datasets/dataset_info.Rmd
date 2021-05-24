@@ -1,0 +1,16 @@
+---
+title: "Info On Datasets"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Dataset Info
+
+heart.csv - https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset
+world-happiness-report.csv - https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report.csv
+world-happiness-report-2021.csv - https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report.csv
+water_potability.csv - https://www.kaggle.com/adityakadiwal/water-potability
+

@@ -53,4 +53,4 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Acknowledgments {.appendix}
 
-This website was modelled on a wonderfull Distill website made by [Alison Hill & Desirée De Leon](https://github.com/rstudio-education/teaching-in-production/blob/master/index.Rmd)
+This website was modelled on a wonderful Distill website made by [Alison Hill & Desirée De Leon](https://github.com/rstudio-education/teaching-in-production/blob/master/index.Rmd)

@@ -1,0 +1,22 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Duke_Chapel%2C_West_Campus%2C_Duke_University%2C_Durham%2C_NC_%2848960356548%29.jpg/576px-Duke_Chapel%2C_West_Campus%2C_Duke_University%2C_Durham%2C_NC_%2848960356548%29.jpg)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+```
