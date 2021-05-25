@@ -9,6 +9,12 @@
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
     <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -22,6 +28,11 @@ class: center, middle, inverse, title-slide
 ### 2021-05-24
 
 ---
+
+
+
+
+
 
 
 
@@ -65,10 +76,16 @@ Happiness score for each country
 
 Just enter the name of your dataset!
 --
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 5 x 4
@@ -81,25 +98,55 @@ happy
 ## 5 Spain                6.49 10.6           0.932
 ```
 
+
+
+]
+]
 ---
 # Inspecting your dataframe: dimensions
 
 Use the `dim()` function to see how many rows (observations) and columns (variables) are in **happy**  
 
-`dim(happy)`
+`dim(happy)`  
+
 --
 
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+dim(happy)
+```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## [1] 5 4
 ```
+
+
+
+]
+]  
+
 ---
 # Inspecting your dataframe: glimpse
 
 Use the `glimpse()` function to see what kinds of variables the `happy` dataset contains   
-  
-`glimpse(happy)`  
+
 --
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+glimpse(happy)
+```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## Rows: 5
@@ -109,6 +156,11 @@ Use the `glimpse()` function to see what kinds of variables the `happy` dataset 
 ## $ gdp            &lt;dbl&gt; 9.240, 8.031, 10.350, 9.826, 10.571
 ## $ social_support &lt;dbl&gt; 0.746, 0.626, 0.896, 0.913, 0.932
 ```
+
+
+
+]
+]
 ---
 ## Basic Data Types in R 
 
@@ -209,11 +261,17 @@ The most basic `select()` is one where you comma separate a list of columns you 
 
 For example, if you only want to select the `country_name` and `gdp` columns, run the following code chunk  
 --
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   select(country_name, gdp)
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 5 x 2
@@ -225,16 +283,27 @@ happy %&gt;%
 ## 4 Maldives      9.83
 ## 5 Spain        10.6
 ```
+
+
+
+]
+]
 ---
 # `select()` 
 
 If you want to select all columns *except* `gdp`, run the following  
 --
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   select(-gdp)
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 5 x 3
@@ -246,16 +315,27 @@ happy %&gt;%
 ## 4 Maldives             5.20          0.913
 ## 5 Spain                6.49          0.932
 ```
+
+
+
+]
+]
 ---
 # `select()` 
 
 Finally, you can provide a range of columns to return two columns and everything in between. For example  
 --
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   select(ladder_score:social_support)
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 5 x 3
@@ -267,6 +347,11 @@ happy %&gt;%
 ## 4         5.20  9.83          0.913
 ## 5         6.49 10.6           0.932
 ```
+
+
+
+]
+]
 ---
 class: center, middle
 
@@ -297,13 +382,21 @@ The `filter()` verb evalutes a logical statement, and if a row meets the conditi
 ---
 # `filter()` 
 
-Filtering can be performed on **categorical** data  
+Filtering can be performed on **categorical** data    
+
 --
+
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   filter(country_name == "Spain")
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 1 x 4
@@ -311,6 +404,12 @@ happy %&gt;%
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Spain                6.49  10.6          0.932
 ```
+
+
+
+]
+]  
+
 --
 
 Note that `filter()` only applies to rows, and has no effect on columns  
@@ -324,11 +423,17 @@ Filtering can also be performed on **numeric** data
 
 For example, if you wanted to choose `ladder_score` with a value greater than `5`, you would run the following  
 
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   filter(ladder_score &gt; 5)
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 3 x 4
@@ -339,11 +444,18 @@ happy %&gt;%
 ## 3 Spain                6.49 10.6           0.932
 ```
 
+
+
+]
+]
 ---
 # `filter()` 
 
 To filter on multiple conditions, you can write a sequence of `filter()` commands  
+
 --
+
+.panelset[
 
 ```r
 happy %&gt;% 
@@ -357,11 +469,15 @@ happy %&gt;%
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Maldives             5.20  9.83          0.913
 ```
+]
+
 ---
 # `filter()` 
 
 To avoid writing multiple `filter()` commands, multiple logical statements can be put inside a single `filter()` command, separated by commas  
 --
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
@@ -369,12 +485,21 @@ happy %&gt;%
          gdp &lt; 10)
 ```
 
+]
+
+.panel[.panel-name[Output]
+
 ```
 ## # A tibble: 1 x 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Maldives             5.20  9.83          0.913
 ```
+
+
+
+]
+]
 ---
 class: center, middle
 
@@ -394,13 +519,21 @@ class: center, middle
 The input for arrange is one or many columns, and `arrange()` sorts the rows in ascending order i.e. from smallest to largest  
 
 
-For example, to sort rows from smallest to largest in `ladder_score`, run the following
+For example, to sort rows from smallest to largest in `ladder_score`, run the following  
+
 --
+
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   arrange(ladder_score)
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 5 x 4
@@ -412,11 +545,20 @@ happy %&gt;%
 ## 4 Panama               6.18 10.4           0.896
 ## 5 Spain                6.49 10.6           0.932
 ```
+
+
+
+]
+]  
+
 ---
 # `arrange()` 
 
 To reverse this order, use the `desc()` function within `arrange()`  
+
 --
+
+.panelset[
 
 ```r
 happy %&gt;% 
@@ -433,6 +575,8 @@ happy %&gt;%
 ## 4 Iraq                 4.85  9.24          0.746
 ## 5 Comoros              4.29  8.03          0.626
 ```
+]  
+
 ---
 class: center, middle
 
@@ -442,12 +586,20 @@ class: center, middle
 # `mutate()` 
 
 The `mutate()` verb, unlike the ones covered so far, creates new variable(s) i.e. new column(s). For example  
+
 --
+
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   mutate(gdp_sqrt = sqrt(gdp))
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 5 x 5
@@ -459,6 +611,12 @@ happy %&gt;%
 ## 4 Maldives             5.20  9.83          0.913     3.13
 ## 5 Spain                6.49 10.6           0.932     3.25
 ```
+
+
+
+]
+]  
+
 --     
 The code chunk above takes all the elements of the column `gdp`, evaluates the square root of each element, and populates a new column called `gdp_sqrt` with these results
 ---
@@ -476,11 +634,17 @@ class: center, middle
 For example, to calculate the mean `ladder_score`, run the following  
 
 --
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
   summarize(mean(ladder_score))
 ```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 1 x 1
@@ -488,6 +652,11 @@ happy %&gt;%
 ##                  &lt;dbl&gt;
 ## 1                 5.40
 ```
+
+
+
+]
+]
 ---
 # `group_by()` 
 
@@ -528,6 +697,18 @@ Let's take a look at this full dataset
 
 Let's again calculate the mean `ladder_score` but this time by region
 --
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  group_by(region) %&gt;% 
+  summarize(mean(ladder_score))
+```
+
+]
+
+.panel[.panel-name[Output]
 
 ```
 ## # A tibble: 10 x 2
@@ -544,6 +725,11 @@ Let's again calculate the mean `ladder_score` but this time by region
 ##  9 Sub-Saharan Africa                                 4.49
 ## 10 Western Europe                                     6.91
 ```
+
+
+
+]
+]
 ---
 class: center, middle
 
@@ -659,6 +845,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<script>
+(function() {
+  var divHTML = document.querySelectorAll(".details-open");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details open class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+(function() {
+  var divHTML = document.querySelectorAll(".details");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {

@@ -1,0 +1,157 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+library(knitr)
+set.seed(42)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy %>% 
+  inner_join(happy_full, by = "country_name") %>% 
+  select(country_name, healthy_life_expectancy) -> happy_join_one
+
+happy_full %>% 
+  filter(!(country_name %in% happy$country_name)) %>% 
+  slice_sample(n = 5) %>% 
+  select(country_name, healthy_life_expectancy) %>%
+  bind_rows(happy_join_one) %>% 
+  .[-10 ,] -> happy_join
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Combining datasets
+
+---
+# Combining datasets 
+
+There are many times when you have two or more overlapping datasets that you would like to combine  
+
+
+The `dplyr` package has a number of `*_join` functions for this purpose
+---
+# `happy` and `happy_join`
+
+```{r echo = FALSE, eval = TRUE}
+happy
+```
+
+--
+
+```{r echo = FALSE, eval = TRUE}
+happy_join
+```
+
+---
+# Understanding `left_join()` 
+--
+.center[
+![left_join](https://github.com/gadenbuie/tidyexplain/blob/master/images/left-join.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why `left_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  left_join(happy_join)
+```
+]
+---
+# Understanding `right_join()` 
+--
+.center[
+![right_join](https://github.com/gadenbuie/tidyexplain/blob/master/images/right-join.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why `right_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  right_join(happy_join)
+```
+]
+---
+# Understanding `inner_join()` 
+--
+.center[
+![inner_join](https://github.com/gadenbuie/tidyexplain/blob/master/images/inner-join.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why `inner_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  inner_join(happy_join)
+```
+]
+---
+# Understanding `full_join()` 
+--
+.center[
+![full_join](https://github.com/gadenbuie/tidyexplain/blob/master/images/full-join.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why `full_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  full_join(happy_join)
+```
+]
+---
+

@@ -12,6 +12,8 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+    includes: 
+      after_body: "collapseoutput.js"
 ---
 
 
@@ -41,6 +43,15 @@ style_mono_accent(
 options(htmltools.dir.version = FALSE)
 xaringanExtra::use_freezeframe()
 ```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
 ---
 class: center, middle
 
@@ -76,31 +87,37 @@ Happiness score for each country
 
 Just enter the name of your dataset!
 --
-```{r name}
+.panelset[
+```{r panelset = TRUE}
 happy
 ```
-
+]
 ---
 # Inspecting your dataframe: dimensions
 
 Use the `dim()` function to see how many rows (observations) and columns (variables) are in **happy**  
 
-`dim(happy)`
+`dim(happy)`  
+
 --
 
-```{r dim, echo = FALSE}
+.panelset[
+```{r panelset = TRUE}
 dim(happy)
 ```
+]  
+
 ---
 # Inspecting your dataframe: glimpse
 
 Use the `glimpse()` function to see what kinds of variables the `happy` dataset contains   
-  
-`glimpse(happy)`  
+
 --
-```{r glimpse, echo = FALSE}
+.panelset[
+```{r panelset = TRUE}
 glimpse(happy)
 ```
+]
 ---
 ## Basic Data Types in R 
 
@@ -199,28 +216,34 @@ The most basic `select()` is one where you comma separate a list of columns you 
 
 For example, if you only want to select the `country_name` and `gdp` columns, run the following code chunk  
 --
-```{r select}
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   select(country_name, gdp)
 ```
+]
 ---
 # `select()` 
 
 If you want to select all columns *except* `gdp`, run the following  
 --
-```{r selectnot}
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   select(-gdp)
 ```
+]
 ---
 # `select()` 
 
 Finally, you can provide a range of columns to return two columns and everything in between. For example  
 --
-```{r selectrange}
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   select(ladder_score:social_support)
 ```
+]
 ---
 class: center, middle
 
@@ -251,12 +274,17 @@ The `filter()` verb evalutes a logical statement, and if a row meets the conditi
 ---
 # `filter()` 
 
-Filtering can be performed on **categorical** data  
+Filtering can be performed on **categorical** data    
+
 --
-```{r filter}
+
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   filter(country_name == "Spain")
 ```
+]  
+
 --
 
 Note that `filter()` only applies to rows, and has no effect on columns  
@@ -270,31 +298,39 @@ Filtering can also be performed on **numeric** data
 
 For example, if you wanted to choose `ladder_score` with a value greater than `5`, you would run the following  
 
-```{r filter_num}
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   filter(ladder_score > 5)
 ```
-
+]
 ---
 # `filter()` 
 
 To filter on multiple conditions, you can write a sequence of `filter()` commands  
+
 --
-```{r filter_multiple}
+
+.panelset[
+```{r panselset = TRUE}
 happy %>% 
   filter(ladder_score > 5) %>% 
   filter(gdp < 10)
 ```
+]
+
 ---
 # `filter()` 
 
 To avoid writing multiple `filter()` commands, multiple logical statements can be put inside a single `filter()` command, separated by commas  
 --
-```{r filter_multiple_two}
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   filter(ladder_score > 5,
          gdp < 10)
 ```
+]
 ---
 class: center, middle
 
@@ -314,21 +350,31 @@ class: center, middle
 The input for arrange is one or many columns, and `arrange()` sorts the rows in ascending order i.e. from smallest to largest  
 
 
-For example, to sort rows from smallest to largest in `ladder_score`, run the following
+For example, to sort rows from smallest to largest in `ladder_score`, run the following  
+
 --
-```{r arrange}
+
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   arrange(ladder_score)
 ```
+]  
+
 ---
 # `arrange()` 
 
 To reverse this order, use the `desc()` function within `arrange()`  
+
 --
-```{r arrange_desc}
+
+.panelset[
+```{r panselset = TRUE}
 happy %>% 
   arrange(desc(ladder_score))
 ```
+]  
+
 ---
 class: center, middle
 
@@ -338,11 +384,16 @@ class: center, middle
 # `mutate()` 
 
 The `mutate()` verb, unlike the ones covered so far, creates new variable(s) i.e. new column(s). For example  
+
 --
-```{r mutate}
+
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   mutate(gdp_sqrt = sqrt(gdp))
 ```
+]  
+
 --     
 The code chunk above takes all the elements of the column `gdp`, evaluates the square root of each element, and populates a new column called `gdp_sqrt` with these results
 ---
@@ -360,10 +411,12 @@ class: center, middle
 For example, to calculate the mean `ladder_score`, run the following  
 
 --
-```{r summarize}
+.panelset[
+```{r panelset = TRUE}
 happy %>% 
   summarize(mean(ladder_score))
 ```
+]
 ---
 # `group_by()` 
 
@@ -386,11 +439,13 @@ head(happy_full)
 
 Let's again calculate the mean `ladder_score` but this time by region
 --
-```{r groupby, echo = FALSE}
+.panelset[
+```{r panelset = TRUE}
 happy_full %>% 
   group_by(region) %>% 
   summarize(mean(ladder_score))
 ```
+]
 ---
 class: center, middle
 
