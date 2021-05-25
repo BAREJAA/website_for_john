@@ -6,6 +6,7 @@ institute: "Duke University"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -37,6 +38,16 @@ happy_full %>%
   select(country_name, healthy_life_expectancy) %>%
   bind_rows(happy_join_one) %>% 
   .[-10 ,] -> happy_join
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
 ```
 
 ```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
