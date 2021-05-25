@@ -25,12 +25,14 @@ knitr::opts_chunk$set(echo = FALSE)
 + [CCT Staci Reynolds](cct_staci/)
 + [Xaringan Dplyr](xaringan_dplyr/)
 + [Xaringan Joins](xaringan_joins/)
++ [Xaringan Advanced Dplyr](xaringan_advanced_dplyr/)
 
 ## Exercises
 
 + [intro](intro/)
 + [dplyr](dplyr/)
 + [ggplot2](ggplot2/)
++ [2019 course questions](quizzes/)
 \
 
 ## Useful Resources

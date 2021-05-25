@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tidybiology</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
+    <meta name="date" content="2021-05-25" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Tidybiology
+## ⚔<br/>Intro to Data Science Using R
+### Matthew Hirschey &amp; Akshay Bareja
+### Duke University
+### 2021-05-25
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# Changing names
+
+---
+# `rename()`
+
+Datasets in the wild have variables whose names come in all shapes and types  
+
+--
+
+These names can sometimes be unwieldy and/or programming unfriendly (e.g. Names with spaces!)
+
+--
+
+You can easily rename columns with `rename()`!
+---
+# `rename()` example
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  rename(social = social_support)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 4
+##   country_name ladder_score   gdp social
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Iraq                 4.85  9.24  0.746
+## 2 Comoros              4.29  8.03  0.626
+## 3 Panama               6.18 10.4   0.896
+## 4 Maldives             5.20  9.83  0.913
+## 5 Spain                6.49 10.6   0.932
+```
+
+
+
+]
+
+]
+---
+class: center, middle
+
+# `mutate()` and `case_when()`
+
+---
+# A more powerful `mutate()`
+
+`mutate()` and `case_when()` are useful when you don't want to simply apply the same operation to all elements of a variable
+
+---
+# `mutate()` and `case_when()` example
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  mutate(ladder_cat = case_when(
+    ladder_score &lt; 5 ~ "low",
+    ladder_score &gt;= 5 &amp; ladder_score &lt; 6 ~ "medium",
+    ladder_score &gt;= 6 ~ "high"
+  ))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 5
+##   country_name ladder_score   gdp social_support ladder_cat
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;     
+## 1 Iraq                 4.85  9.24          0.746 low       
+## 2 Comoros              4.29  8.03          0.626 low       
+## 3 Panama               6.18 10.4           0.896 high      
+## 4 Maldives             5.20  9.83          0.913 medium    
+## 5 Spain                6.49 10.6           0.932 high
+```
+
+
+
+]
+]
+---
+class: center, middle
+
+# Relocating
+
+---
+# Changing the order of columns
+
+You might want re-position the columns of your dataset 
+
+--
+
+Use `relocate()`!
+
+---
+# `relocate()` examples
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  relocate(ladder_score, social_support)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 4
+##   ladder_score social_support country_name   gdp
+##          &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;
+## 1         4.85          0.746 Iraq          9.24
+## 2         4.29          0.626 Comoros       8.03
+## 3         6.18          0.896 Panama       10.4 
+## 4         5.20          0.913 Maldives      9.83
+## 5         6.49          0.932 Spain        10.6
+```
+
+
+
+]
+]
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  relocate(ladder_score, .after = gdp)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 4
+##   country_name   gdp ladder_score social_support
+##   &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Iraq          9.24         4.85          0.746
+## 2 Comoros       8.03         4.29          0.626
+## 3 Panama       10.4          6.18          0.896
+## 4 Maldives      9.83         5.20          0.913
+## 5 Spain        10.6          6.49          0.932
+```
+
+
+
+]
+]
+
+---
+class: center, middle
+
+# Advanced Dplyr
+
+---
+# Getting by with a little help from my friends
+
+The Tidyverse has a range of **helper** functions that can enhance some of the functions you are now familiar with  
+
+--
+
+(You've already come across the `desc()` helper function)
+---
+# Advanced `select()` examples
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  select(starts_with("explained"))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 x 6
+##    explained_by_log_g… explained_by_soci… explained_by_heal… explained_by_freed…
+##                  &lt;dbl&gt;              &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt;
+##  1                1.45               1.11              0.741               0.691
+##  2                1.50               1.11              0.763               0.686
+##  3                1.57               1.08              0.816               0.653
+##  4                1.48               1.17              0.772               0.698
+##  5                1.50               1.08              0.753               0.647
+##  6                1.54               1.11              0.782               0.703
+##  7                1.48               1.06              0.763               0.685
+##  8                1.75               1.00              0.76                0.639
+##  9                1.4                1.09              0.785               0.665
+## 10                1.49               1.06              0.782               0.64 
+## # … with 139 more rows, and 2 more variables: explained_by_generosity &lt;dbl&gt;,
+## #   explained_by_perceptions_of_corruption &lt;dbl&gt;
+```
+
+
+
+]
+]  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  select(contains("ladder"))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 x 3
+##    ladder_score standard_error_of_ladder_score ladder_score_in_dystopia
+##           &lt;dbl&gt;                          &lt;dbl&gt;                    &lt;dbl&gt;
+##  1         7.84                          0.032                     2.43
+##  2         7.62                          0.035                     2.43
+##  3         7.57                          0.036                     2.43
+##  4         7.55                          0.059                     2.43
+##  5         7.46                          0.027                     2.43
+##  6         7.39                          0.035                     2.43
+##  7         7.36                          0.036                     2.43
+##  8         7.32                          0.037                     2.43
+##  9         7.28                          0.04                      2.43
+## 10         7.27                          0.036                     2.43
+## # … with 139 more rows
+```
+
+
+
+]
+]  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  select(country_name, where(is.numeric))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 x 19
+##    country_name ladder_score standard_error_of_ladder… upperwhisker lowerwhisker
+##    &lt;chr&gt;               &lt;dbl&gt;                     &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Finland              7.84                     0.032         7.90         7.78
+##  2 Denmark              7.62                     0.035         7.69         7.55
+##  3 Switzerland          7.57                     0.036         7.64         7.5 
+##  4 Iceland              7.55                     0.059         7.67         7.44
+##  5 Netherlands          7.46                     0.027         7.52         7.41
+##  6 Norway               7.39                     0.035         7.46         7.32
+##  7 Sweden               7.36                     0.036         7.43         7.29
+##  8 Luxembourg           7.32                     0.037         7.40         7.25
+##  9 New Zealand          7.28                     0.04          7.36         7.20
+## 10 Austria              7.27                     0.036         7.34         7.20
+## # … with 139 more rows, and 14 more variables: logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
+## #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;,
+## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;,
+## #   explained_by_generosity &lt;dbl&gt;,
+## #   explained_by_perceptions_of_corruption &lt;dbl&gt;, dystopia_residual &lt;dbl&gt;
+```
+
+
+
+]
+]  
+
+---
+# Advanced `filter()` examples
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  filter(ladder_score &gt; mean(ladder_score))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 2 x 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Panama               6.18  10.4          0.896
+## 2 Spain                6.49  10.6          0.932
+```
+
+
+
+]
+]  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  filter(country_name %in% c("Panama", "Spain"))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 2 x 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Panama               6.18  10.4          0.896
+## 2 Spain                6.49  10.6          0.932
+```
+
+
+
+]
+]  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  filter(between(gdp, 8, 10))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 3 x 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Iraq                 4.85  9.24          0.746
+## 2 Comoros              4.29  8.03          0.626
+## 3 Maldives             5.20  9.83          0.913
+```
+
+
+
+]
+]  
+
+---
+class: center, middle
+
+# Pivoting
+
+---
+# Changing the shape of your data
+
+Sometimes your dataset is not in the form you want it to be in  
+
+--
+
+You can use `pivot_longer()` and `pivot_wider()` to change the shape of your dataset
+---
+# Understanding `pivot_*` 
+--
+.center[
+![select](https://github.com/BAREJAA/tidyexplain/blob/master/images/pivot_longer_wider.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# How pivoting works
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  pivot_longer(cols = -country_name,
+               names_to = "measurements",
+               values_to = "values")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 15 x 3
+##    country_name measurements   values
+##    &lt;chr&gt;        &lt;chr&gt;           &lt;dbl&gt;
+##  1 Iraq         ladder_score    4.85 
+##  2 Iraq         gdp             9.24 
+##  3 Iraq         social_support  0.746
+##  4 Comoros      ladder_score    4.29 
+##  5 Comoros      gdp             8.03 
+##  6 Comoros      social_support  0.626
+##  7 Panama       ladder_score    6.18 
+##  8 Panama       gdp            10.4  
+##  9 Panama       social_support  0.896
+## 10 Maldives     ladder_score    5.20 
+## 11 Maldives     gdp             9.83 
+## 12 Maldives     social_support  0.913
+## 13 Spain        ladder_score    6.49 
+## 14 Spain        gdp            10.6  
+## 15 Spain        social_support  0.932
+```
+
+
+
+]
+]
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_long %&gt;% 
+  pivot_wider(names_from = "measurements",
+              values_from = "values")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Iraq                 4.85  9.24          0.746
+## 2 Comoros              4.29  8.03          0.626
+## 3 Panama               6.18 10.4           0.896
+## 4 Maldives             5.20  9.83          0.913
+## 5 Spain                6.49 10.6           0.932
+```
+
+
+
+]
+]
+---
+# Why `pivot_*`?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_long %&gt;% 
+  ggplot(aes(country_name, values, fill = measurements)) +
+  geom_col(position = "dodge")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+![](index_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+
+]
+]
+---
+class: center, middle
+
+# Column-wise operations
+
+---
+# The power of `across()`
+
+Say you wanted to work out the mean of each numeric variable in the `happy` dataset 
+
+--
+
+You could do this:
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  summarise(mean_ladder_score = mean(ladder_score),
+            mean_gdp = mean(gdp),
+            mean_social_support = mean(social_support))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 1 x 3
+##   mean_ladder_score mean_gdp mean_social_support
+##               &lt;dbl&gt;    &lt;dbl&gt;               &lt;dbl&gt;
+## 1              5.40     9.60               0.823
+```
+
+
+
+]
+]
+
+--
+
+Is there a better way?  
+
+---
+# Yes!
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  summarise(across(where(is.numeric), mean)) 
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 1 x 3
+##   ladder_score   gdp social_support
+##          &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1         5.40  9.60          0.823
+```
+
+
+
+]
+]
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  summarise(across(where(is.numeric), mean, .names = "{.col}_mean")) 
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 1 x 3
+##   ladder_score_mean gdp_mean social_support_mean
+##               &lt;dbl&gt;    &lt;dbl&gt;               &lt;dbl&gt;
+## 1              5.40     9.60               0.823
+```
+
+
+
+]
+]
+---
+# Using `across()` with `mutate()`
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  mutate(across(where(is.numeric), log)) 
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Iraq                 1.58  2.22        -0.293 
+## 2 Comoros              1.46  2.08        -0.468 
+## 3 Panama               1.82  2.34        -0.110 
+## 4 Maldives             1.65  2.29        -0.0910
+## 5 Spain                1.87  2.36        -0.0704
+```
+
+
+
+]
+]
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  mutate(across(where(is.numeric), ~.x/gdp)) 
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Iraq                0.525     1         0.0807
+## 2 Comoros             0.534     1         0.0779
+## 3 Panama              0.597     1         0.0866
+## 4 Maldives            0.529     1         0.0929
+## 5 Spain               0.614     1         0.0882
+```
+
+
+
+]
+]
+---
+class: center, middle
+
+# Row-wise operations
+
+---
+# R usually works better on columns
+
+For example, we previously used `summarise()` to work out the mean of a given column/variable  
+
+--
+
+What if we want to calculate the mean of a row?
+
+--
+
+Enter `rowwise()`!  
+
+---
+# Calculating the mean of each row
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  mutate(mean_score = mean(c(ladder_score, gdp, social_support)))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 5
+##   country_name ladder_score   gdp social_support mean_score
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+## 1 Iraq                 4.85  9.24          0.746       5.28
+## 2 Comoros              4.29  8.03          0.626       5.28
+## 3 Panama               6.18 10.4           0.896       5.28
+## 4 Maldives             5.20  9.83          0.913       5.28
+## 5 Spain                6.49 10.6           0.932       5.28
+```
+
+
+
+]
+]
+--
+
+This didn't quite work  
+
+---
+# `rowwise()` to the rescue!
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  rowwise() %&gt;% 
+  summarise(mean_score = mean(c(ladder_score, gdp, social_support)))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## `summarise()` has ungrouped output. You can override using the `.groups` argument.
+```
+
+```
+## # A tibble: 5 x 1
+##   mean_score
+##        &lt;dbl&gt;
+## 1       4.95
+## 2       4.32
+## 3       5.81
+## 4       5.31
+## 5       6.00
+```
+
+
+
+]
+]
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  rowwise(country_name) %&gt;% 
+  summarise(mean_score = mean(c(ladder_score, gdp, social_support)))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## `summarise()` has grouped output by 'country_name'. You can override using the `.groups` argument.
+```
+
+```
+## # A tibble: 5 x 2
+## # Groups:   country_name [5]
+##   country_name mean_score
+##   &lt;chr&gt;             &lt;dbl&gt;
+## 1 Iraq               4.95
+## 2 Comoros            4.32
+## 3 Panama             5.81
+## 4 Maldives           5.31
+## 5 Spain              6.00
+```
+
+
+
+]
+]
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  rowwise(country_name) %&gt;% 
+  summarise(mean_score = mean(c_across(where(is.numeric))))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## `summarise()` has grouped output by 'country_name'. You can override using the `.groups` argument.
+```
+
+```
+## # A tibble: 5 x 2
+## # Groups:   country_name [5]
+##   country_name mean_score
+##   &lt;chr&gt;             &lt;dbl&gt;
+## 1 Iraq               4.95
+## 2 Comoros            4.32
+## 3 Panama             5.81
+## 4 Maldives           5.31
+## 5 Spain              6.00
+```
+
+
+
+]
+]
+---
+# Col-wise AND row-wise??
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  rowwise(country_name) %&gt;% 
+  mutate(mean_score = mean(c_across(where(is.numeric)))) %&gt;% 
+  mutate(across(where(is.numeric), ~ .x/mean_score))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 x 5
+## # Rowwise:  country_name
+##   country_name ladder_score   gdp social_support mean_score
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+## 1 Iraq                0.981  1.87          0.151          1
+## 2 Comoros             0.994  1.86          0.145          1
+## 3 Panama              1.06   1.78          0.154          1
+## 4 Maldives            0.978  1.85          0.172          1
+## 5 Spain               1.08   1.76          0.155          1
+```
+
+
+
+]
+]
+---
+# That was a lot!
+
+&lt;img src="https://media.giphy.com/media/3oEjHGr1Fhz0kyv8Ig/giphy.gif" style="width: 25%"/&gt;
+
+--
+
+&lt;img src="https://media.giphy.com/media/11Ph1yb20GoOOY/giphy.gif" style="width: 25%" /&gt;
+
+--
+
+&lt;img src="https://media.giphy.com/media/d31vQUs1riTEey1a/giphy.gif" style="width: 25%" /&gt;
+
+---
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

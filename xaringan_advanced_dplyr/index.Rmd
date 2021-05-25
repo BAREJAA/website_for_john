@@ -1,0 +1,391 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width = 6, fig.height = 4) 
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy %>% 
+  pivot_longer(cols = -country_name,
+               names_to = "measurements",
+               values_to = "values") -> happy_long
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Changing names
+
+---
+# `rename()`
+
+Datasets in the wild have variables whose names come in all shapes and types  
+
+--
+
+These names can sometimes be unwieldy and/or programming unfriendly (e.g. Names with spaces!)
+
+--
+
+You can easily rename columns with `rename()`!
+---
+# `rename()` example
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  rename(social = social_support)
+```
+
+]
+---
+class: center, middle
+
+# `mutate()` and `case_when()`
+
+---
+# A more powerful `mutate()`
+
+`mutate()` and `case_when()` are useful when you don't want to simply apply the same operation to all elements of a variable
+
+---
+# `mutate()` and `case_when()` example
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  mutate(ladder_cat = case_when(
+    ladder_score < 5 ~ "low",
+    ladder_score >= 5 & ladder_score < 6 ~ "medium",
+    ladder_score >= 6 ~ "high"
+  ))
+```
+]
+---
+class: center, middle
+
+# Relocating
+
+---
+# Changing the order of columns
+
+You might want re-position the columns of your dataset 
+
+--
+
+Use `relocate()`!
+
+---
+# `relocate()` examples
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  relocate(ladder_score, social_support)
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  relocate(ladder_score, .after = gdp)
+```
+]
+
+---
+class: center, middle
+
+# Advanced Dplyr
+
+---
+# Getting by with a little help from my friends
+
+The Tidyverse has a range of **helper** functions that can enhance some of the functions you are now familiar with  
+
+--
+
+(You've already come across the `desc()` helper function)
+---
+# Advanced `select()` examples
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  select(starts_with("explained"))
+```
+]  
+--
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  select(contains("ladder"))
+```
+]  
+--
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  select(country_name, where(is.numeric))
+```
+]  
+
+---
+# Advanced `filter()` examples
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(ladder_score > mean(ladder_score))
+```
+]  
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(country_name %in% c("Panama", "Spain"))
+```
+]  
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(between(gdp, 8, 10))
+```
+]  
+
+---
+class: center, middle
+
+# Pivoting
+
+---
+# Changing the shape of your data
+
+Sometimes your dataset is not in the form you want it to be in  
+
+--
+
+You can use `pivot_longer()` and `pivot_wider()` to change the shape of your dataset
+---
+# Understanding `pivot_*` 
+--
+.center[
+![select](https://github.com/BAREJAA/tidyexplain/blob/master/images/pivot_longer_wider.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# How pivoting works
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  pivot_longer(cols = -country_name,
+               names_to = "measurements",
+               values_to = "values")
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+happy_long %>% 
+  pivot_wider(names_from = "measurements",
+              values_from = "values")
+```
+]
+---
+# Why `pivot_*`?
+
+.panelset[
+```{r panelset = TRUE}
+happy_long %>% 
+  ggplot(aes(country_name, values, fill = measurements)) +
+  geom_col(position = "dodge")
+```
+]
+---
+class: center, middle
+
+# Column-wise operations
+
+---
+# The power of `across()`
+
+Say you wanted to work out the mean of each numeric variable in the `happy` dataset 
+
+--
+
+You could do this:
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  summarise(mean_ladder_score = mean(ladder_score),
+            mean_gdp = mean(gdp),
+            mean_social_support = mean(social_support))
+```
+]
+
+--
+
+Is there a better way?  
+
+---
+# Yes!
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  summarise(across(where(is.numeric), mean)) 
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  summarise(across(where(is.numeric), mean, .names = "{.col}_mean")) 
+```
+]
+---
+# Using `across()` with `mutate()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  mutate(across(where(is.numeric), log)) 
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  mutate(across(where(is.numeric), ~.x/gdp)) 
+```
+]
+---
+class: center, middle
+
+# Row-wise operations
+
+---
+# R usually works better on columns
+
+For example, we previously used `summarise()` to work out the mean of a given column/variable  
+
+--
+
+What if we want to calculate the mean of a row?
+
+--
+
+Enter `rowwise()`!  
+
+---
+# Calculating the mean of each row
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  mutate(mean_score = mean(c(ladder_score, gdp, social_support)))
+```
+]
+--
+
+This didn't quite work  
+
+---
+# `rowwise()` to the rescue!
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  rowwise() %>% 
+  summarise(mean_score = mean(c(ladder_score, gdp, social_support)))
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  rowwise(country_name) %>% 
+  summarise(mean_score = mean(c(ladder_score, gdp, social_support)))
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  rowwise(country_name) %>% 
+  summarise(mean_score = mean(c_across(where(is.numeric))))
+```
+]
+---
+# Col-wise AND row-wise??
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  rowwise(country_name) %>% 
+  mutate(mean_score = mean(c_across(where(is.numeric)))) %>% 
+  mutate(across(where(is.numeric), ~ .x/mean_score))
+```
+]
+---
+# That was a lot!
+
+<img src="https://media.giphy.com/media/3oEjHGr1Fhz0kyv8Ig/giphy.gif" style="width: 25%"/>
+
+--
+
+<img src="https://media.giphy.com/media/11Ph1yb20GoOOY/giphy.gif" style="width: 25%" />
+
+--
+
+<img src="https://media.giphy.com/media/d31vQUs1riTEey1a/giphy.gif" style="width: 25%" />
+
+---
+
+
+
+
