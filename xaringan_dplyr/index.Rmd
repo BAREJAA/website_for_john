@@ -7,7 +7,6 @@ date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: xaringan-themer.css
     nature:
       highlightStyle: github
       highlightLines: true
@@ -27,16 +26,6 @@ library(xaringanthemer)
 
 happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
 happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
-```
-
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_mono_accent(
-  base_color = "#00539B",
-  header_font_google = google_font("Adobe Caslon"),
-  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
-  code_font_google   = google_font("Fira Mono")
-)
 ```
 
 ```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
