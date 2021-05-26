@@ -1,0 +1,43 @@
+---
+title: "World Happiness Report"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+description: >
+  Learn how to explore the World Happiness Report dataset and make some pretty plots!
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(learnr)
+library(tidyverse)
+library(janitor)
+
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+## Analysing the World Happiness Report
+
+In this exercise, you will apply what you've learned in class to perform exploratory data analysis (EDA) on the **World Happiness Report** and make some pretty plots.  
+
+This dataset was downloaded from the website [Kaggle](https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report.csv). We will use the **2021** data in this exercise. This dataset is stored in an object called `happy_full` 
+
+###  
+
+In this tutorial, you will learn how to:
+
+* gain quick insight into the type of data this dataset contains
+* use functions from the Dplyr package to wrangle your data and obtain useful summaries
+* make pretty plots!
+
+### Prerequisites
+
+Please watch the recordings on Dplyr and Ggplot2  
+
+## Take a look at your data
+
+### What does the dataset look like?
+
+

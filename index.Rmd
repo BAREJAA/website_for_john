@@ -13,26 +13,35 @@ site: distill::distill_website
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(fontawesome)
 ```
 
-## Links to Class presentations
 
-+ [Introduction](class_one/)
-+ [Data Wrangling with Dplyr](class_two/)
-+ [Plotting with Ggplot2](class_three/)
-+ [Stringr and Joins](class_four/)
-+ [R Markdown](class_five/)
-+ [CCT Staci Reynolds](cct_staci/)
-+ [Xaringan Dplyr](xaringan_dplyr/)
-+ [Xaringan Joins](xaringan_joins/)
-+ [Xaringan Advanced Dplyr](xaringan_advanced_dplyr/)
+```{r links, fig.width = 10, fig.height = 10}
+# from - https://stackoverflow.com/questions/48506712/kable-kableextra-cells-with-hyperlinks
+# and - https://stackoverflow.com/questions/53549662/how-can-i-add-a-fontawesome-icon-to-a-table-in-rmarkdown
 
-## Exercises
+links <- c("https://bespokds.netlify.app/xaringan_dplyr/#1", "https://bespokds.netlify.app/xaringan_joins/#1",
+"https://bespokds.netlify.app/xaringan_advanced_dplyr/#1")
 
-+ [intro](intro/)
-+ [dplyr](dplyr/)
-+ [ggplot2](ggplot2/)
-+ [2019 course questions](quizzes/)
+df <- tribble(
+  ~Class, ~Slides, ~Recording, ~Exercise,
+  "Dplyr", paste0("<a href=\"", links[1], "\">", as.character(fa("tv")), "</a>"), as.character(fa("video")), as.character(fa("list")),
+  "Joins", paste0("<a href=\"", links[2], "\">", as.character(fa("tv")), "</a>"), as.character(fa("video")), as.character(fa("list")),
+  "Advanced Dplyr", paste0("<a href=\"", links[3], "\">", as.character(fa("tv")), "</a>"), as.character(fa("video")), as.character(fa("list"))
+)
+
+df %>% 
+  kable("html", escape = FALSE, table.attr = "style='width:100%;'") %>%
+  kable_styling(bootstrap_options = c("hover"))
+```
+\
+
++ [World Happiness Report EDA](exercise_happy/)
+
 \
 
 ## Useful Resources
