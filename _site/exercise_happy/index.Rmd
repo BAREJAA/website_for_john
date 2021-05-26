@@ -12,6 +12,8 @@ description: >
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(learnr)
+gradethis::gradethis_setup()
+
 library(tidyverse)
 library(janitor)
 
@@ -26,11 +28,11 @@ This dataset was downloaded from the website [Kaggle](https://www.kaggle.com/aja
 
 ###  
 
-In this tutorial, you will learn how to:
+In this exercise, you will practice:
 
-* gain quick insight into the type of data this dataset contains
-* use functions from the Dplyr package to wrangle your data and obtain useful summaries
-* make pretty plots!
+* gaining quick insight into the type of data this dataset contains
+* using functions from the Dplyr package to wrangle your data and obtain useful summaries
+* making pretty plots!
 
 ### Prerequisites
 
@@ -40,4 +42,99 @@ Please watch the recordings on Dplyr and Ggplot2
 
 ### What does the dataset look like?
 
+A couple useful things to know about your dataset are -
+- The number of rows and columns
+- The types of variables the dataset contains  
 
+What function can you use to get this information?
+
+```{r glimpse, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Take a glimpse at your data"}
+
+```
+
+<div id="glimpse-hint">
+**Hint:** Try the dplyr `glimpse()` function.
+</div>
+
+```{r glimpse-solution}
+glimpse(happy_full)
+```
+
+```{r glimpse-code-check}
+grade_code()
+```
+
+### Double data type
+
+We can see that `happy_full` contains many variables that are of type double. 
+
+```{r quiz-double, echo = FALSE}
+quiz(
+  question("The `double` data type refers to which of the following?",
+    answer("A string"),
+    answer("An integer"),
+    answer("A number with a decimal point", correct = TRUE),
+    answer("A factor"))
+)
+```
+
+## Selecting Variables 
+
+The `happy_full` dataset contains many variables. This gives us the chance to practice our `select()`-ing skills!
+
+### Simple selects
+
+Let's warm up by performing some basic select operations  
+
+How would you select just the columns `region` and `ladder_score`?  
+
+```{r simple-select, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "A simple selection"}
+
+```
+
+```{r simple-select-solution}
+happy_full %>% 
+  select(region, ladder_score)
+```
+
+```{r simple-select-code-check}
+grade_code()
+```
+
+Now select everything between (and including) `social_support` and `generosity`
+
+```{r select-between, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Selecting multiple columns"}
+
+```
+
+```{r select-between-solution}
+happy_full %>% 
+  select(social_support:generosity)
+```
+
+```{r select-between-code-check}
+grade_code()
+```
+
+### Slightly-more-difficult selects  
+
+Let's try something more challenging now. Select all variables that **do not** have underscores in their names
+
+```{r no-underscore, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "No underscores"}
+
+```
+
+<div id="no-underscore-hint">
+**Hint:** You'll need a helper function. Also, don't forget `!`
+</div>
+
+```{r no-underscore-solution}
+happy_full %>% 
+  select(!contains("_"))
+```
+
+```{r no-underscore-code-check}
+grade_code()
+```
+
+Helper functions can be really...helpful! Ok, no we're ready to select the variables we will need for the rest of this exercise. 

@@ -48,11 +48,15 @@ df %>%
 
 + [R for Data Science](https://r4ds.had.co.nz)
 
++ [Exploratory Data Analysis & Visualization](https://edav.info/index.html)
+
 + [dplyr guide](https://dplyr.tidyverse.org)
 
 + [ggplot2 guide](https://ggplot2.tidyverse.org)
 
 + [From Data to Viz](https://www.data-to-viz.com)
+
++ [10 Minute Markdown Tutorial](https://commonmark.org/help/tutorial/)
 
 + [Past Projects](https://github.com/matthewhirschey/tidybiology-final_project/tree/master/2019_fall)
 
