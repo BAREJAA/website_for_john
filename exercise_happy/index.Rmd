@@ -16,13 +16,14 @@ gradethis::gradethis_setup()
 
 library(tidyverse)
 library(janitor)
+library(fontawesome)
 
 happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
 
 happy_full %>% select(country_name:ladder_score, logged_gdp_per_capita:ladder_score_in_dystopia) %>% relocate(ladder_score_in_dystopia, .after = region) -> happy_select
 ```
 
-## Analysing the World Happiness Report
+## Analysing the World Happiness Report `r fa("globe-europe")`
 
 In this exercise, you will apply what you've learned in class to perform exploratory data analysis (EDA) on the **World Happiness Report** and make some pretty plots.  
 
@@ -143,7 +144,7 @@ Helper functions can be really...helpful! Ok, no we're ready to select the varia
 
 Avoid simply typing out the names of all these variables. Add `glimpse(happy_df)` as the last line to see if you got the right answer.
 
-```{r happy-select, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "No underscores"}
+```{r happy-select, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Not-so-simple select"}
 
 ```
 
@@ -164,3 +165,252 @@ grade_code()
 ```
 
 **Note:** `happy_df` hasn't actually been saved anywhere. So we will be using an identical dataset called `happy_select` for the rest of this exercise. 
+
+## Filtering
+
+`happy_select` contains both numeric and character variables, with lots and lots of observations (rows). This gives us a great opportunity to practice our filtering skills!
+
+### Simple filters
+
+Say we're only interested in looking at data for countries in East Asia. How would we do this?
+
+```{r simple-filter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Simple filter"}
+
+```
+
+<div id="simple-filter-hint">
+**Hint:** To see which major regions are in this dataset, run `unique(happy_select$region)`
+</div>
+
+```{r simple-filter-solution}
+happy_select %>% 
+  filter(region == "East Asia")
+```
+
+```{r simple-filter-code-check}
+grade_code()
+```
+
+### Filter%in%g
+
+Now use `filter()` to only keep data for the following countries - Algeria, Belgium, India, Tunisia, and Uganda. Try to do this without writing multiple filter statements  
+
+```{r multiple-filter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="multiple-filter-hint">
+**Hint:** Try the `%in%` operator
+</div>
+
+```{r multiple-filter-solution}
+happy_select %>% 
+  filter(country_name %in% c("Algeria", "Belgium", "India", "Tunisia", "Uganda"))
+```
+
+```{r multiple-filter-code-check}
+grade_code()
+```
+
+### Numeric filtering
+
+Finally, let's filter out information for countries that have a **below average** ladder score
+
+```{r num-filter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="num-filter-hint">
+**Hint:** Use the base R `mean()` function
+</div>
+
+```{r num-filter-solution}
+happy_select %>% 
+  filter(ladder_score > mean(ladder_score))
+```
+
+```{r num-filter-code-check}
+grade_code()
+```
+
+## Summary statistics
+
+### Which regions are the happiest? 
+
+Let's now find out which are the happiest regions in the world. We'll do this by working out the average `ladder_score` of all the countries in each region  
+
+```{r group-sum, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "The Happiest Regions"}
+
+```
+
+<div id="group-sum-hint">
+**Hint:** Remember the best friends, `group_by()` and `summarise()`
+</div>
+
+```{r group-sum-solution}
+happy_select %>% 
+  group_by(region) %>% 
+  summarise(mean(ladder_score)) 
+```
+
+```{r group-sum-code-check}
+grade_code()
+```
+
+### Maxed out
+
+Now let's work out the maximum value for each numeric variable, for each region  
+
+```{r max-val, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Max"}
+
+```
+
+<div id="max-val-hint">
+**Hint:** `across()` is helpful here
+</div>
+
+```{r max-val-solution}
+happy_select %>% 
+  group_by(region) %>% 
+  summarise(across(where(is.numeric), max))
+```
+
+```{r max-val-check}
+grade_code()
+```
+
+## Plotting distributions
+
+Now we move to the fun part - making pretty plots! Let's begin by getting a sense of the overall distribution of `ladder_score` in `happy_select`
+
+###
+
+```{r dist, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Plotting a Histogram"}
+
+```
+
+
+```{r dist-solution}
+happy_select %>% 
+  ggplot(aes(ladder_score)) +
+  geom_histogram()
+```
+
+```{r dist-check}
+grade_code()
+```
+
+### Making improvements
+
+This plot is fine, but it's a little chunky. Let's try a different geom - `geom_density()` - to see what we get
+
+```{r smooth-dist, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Smooth Histogram"}
+
+```
+
+```{r smooth-dist-solution}
+happy_select %>% 
+  ggplot(aes(ladder_score)) +
+  geom_density()
+```
+
+```{r smooth-dist-check}
+grade_code()
+```
+
+### Density by region
+
+What does the `ladder_score` distribution look like for each region? There are many ways to viualize this. Let's first plot all the distributions on one plot
+
+
+```{r multi-dist, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Multiple Histograms"}
+
+```
+
+```{r multi-dist-solution}
+happy_select %>% 
+  ggplot(aes(ladder_score, fill = region)) +
+  geom_density()
+```
+
+```{r multi-dist-check}
+grade_code()
+```
+
+###
+
+Nice! One small problem with this plot is that distributions are overlapping, making it difficult to visualize everything. Which argument can you adjust to improve this plot? Does it go within `aes()` or outside? Why?
+
+### Faceting
+
+Let's consider an alternative way to plot the distributions. Go ahead and use the `facet_wrap()` function to do this
+
+```{r facet, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Facet"}
+
+```
+
+```{r facet-solution}
+happy_select %>% 
+  ggplot(aes(ladder_score)) +
+  geom_density() +
+  facet_wrap(~region)
+```
+
+```{r facet-check}
+grade_code()
+```
+
+## Scatterplots
+
+### Are rich countries "happier"?
+
+We can use scatterplots to visualize the relationship between two variables. For example, let's take a look at the relationship between `ladder_score` and `logged_gdp_per_capita` (this relationship might be obvious, but maybe we'll be surprised!)
+
+```{r scatter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Scatter"}
+
+```
+
+```{r scatter-solution}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point()
+```
+
+```{r scatter-check}
+grade_code()
+```
+
+### Emphasizing relationships
+
+It's clear from the previous scatterplot that relationship between `ladder_score` and `logged_gdp_per_capita` is positive, and it looks pretty linear. To highlight this, we can use the `geom_smooth()` geom (remember to set the `se` argument to equal `FALSE` to just get a straight line)
+
+```{r smooth, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Smooth"}
+
+```
+
+```{r smooth-solution}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth(se = FALSE)
+```
+
+```{r smooth-check}
+grade_code()
+```
+
+## Making things prettier
+
+The plots we've made, while nice, look a little...basic. Let's try to make some improvements. We'll use the last plot
+
+```{r final-plot}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  labs(title = "Does Money == Happiness?",
+       subtitle = "Plotting Ladder Score against Log GDP Per Capita",
+       x = "Log GDP Per Capita",
+       y = "Ladder Score") +
+  theme_minimal()
+```
