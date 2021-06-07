@@ -72,14 +72,34 @@ class: center, middle
 # Getting to know your data  
 
 --
-For this module, we will use a dataset called **happy**  
+
+We will use a dataset called **happy**  
+
 --
-  
+
 Kaggle  
+
 --
-  
-Happiness score for each country 
+
+Happiness score for each country   
+
 --
+---
+# World Happiness Report
+
+```{r whr, echo = FALSE}
+whr <- tribble(
+  ~Variable, ~Description,
+  "country_name", "Country name",
+  "ladder_score", "Cantril ladder score",
+  "gdp", "Log GDP per capita"   ,
+  "social_support", "Measure of support (0 or 1)" 
+)
+
+whr %>%
+  kbl(caption = "Source: Gallup World Poll") %>%
+  kable_styling()
+```
 ---
 # What does your dataset contain?
 
@@ -422,7 +442,7 @@ happy %>%
 
 --
 
-To show off the power of this duo, let's take a look at the entire dataset - called `happy_full` - that contains an additional columns, one of which is called `region`  
+To show off the power of this duo, let's take a look at the entire dataset - called `happy_full` - that contains additional columns, one of which is called `region`  
 
 --
 
