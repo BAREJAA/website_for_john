@@ -411,9 +411,6 @@ happy %>%
   mutate(gdp_sqrt = sqrt(gdp))
 ```
 ]  
-
---     
-The code chunk above takes all the elements of the column `gdp`, evaluates the square root of each element, and populates a new column called `gdp_sqrt` with these results
 ---
 class: center, middle
 
