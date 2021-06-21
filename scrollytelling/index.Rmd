@@ -1,0 +1,200 @@
+---
+title: "World Happiness Report EDA"
+author: ""
+date: "`r Sys.Date()`"
+output: rolldown::scrollama_sidebar
+runtime: shiny
+---
+
+```{css, echo=FALSE}
+.level1 {
+  min-height: 200px;
+  border: 1px solid;
+  margin-bottom: 4em;
+  padding: 1em 2em 2em;
+  opacity: .5;
+}
+.is-active {
+  opacity: 1;
+  background-color: lightyellow;
+}
+body {
+  margin-bottom: 80vh;
+}
+```
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(janitor)
+library(shiny)
+
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy_full %>% select(country_name:ladder_score, logged_gdp_per_capita:ladder_score_in_dystopia) %>% relocate(ladder_score_in_dystopia, .after = region) -> happy_select
+```
+
+# Analysing the World Happiness Report
+
+In this exercise, you will apply what you've learned in class to perform exploratory data analysis (EDA) on the **World Happiness Report** and make some pretty plots.  
+
+This dataset was downloaded from the website [Kaggle](https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report.csv). We will use the **2021** data in this exercise. This dataset is stored in an object called `happy_full` 
+
+In this exercise, you will practice:
+
+* gaining quick insight into the type of data this dataset contains
+* using functions from the Dplyr package to wrangle your data and obtain useful summaries
+* making pretty plots!
+
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::include_graphics("https://media.giphy.com/media/SbIUHd0FYzdjk8m8j2/giphy.gif")
+```
+</div>
+
+# Selecting variables
+
+The `happy_full` dataset contains many variables. This gives us the chance to practice our `select()`-ing skills!
+
+**Simple selects**
+
+Let's warm up by performing some basic select operations  
+
+How would you select just the columns `region` and `ladder_score`?  
+
+Code:  
+
+`happy_full %>%` 
+  `select(region, ladder_score)`
+
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_full %>% 
+  select(region, ladder_score) %>%
+  head() %>% 
+  knitr::kable()
+```
+</div>
+
+# Your turn!
+
+Try to select everything *except* for `region`
+
+<div style = "width:0%; height:auto; margin: auto;">
+```{r app, echo=FALSE}
+# Source - https://stackoverflow.com/questions/45347852/how-to-run-user-input-as-r-code-in-a-shiny-app
+ui <- fluidPage(
+    mainPanel(
+        textInput("testcode", "Enter your code: ", 
+                  "happy_full", width="600px"), 
+        submitButton("Run Code", icon("refresh")),
+        h3("Results: "), verbatimTextOutput("codeResults"))
+)
+
+server <- function(input, output) {
+    shinyEnv <- environment() 
+    output$displayData <- renderPrint({ head(mtcars) })  # prepare head(mtcars) for display on the UI
+    
+    # create codeInput variable to capture what the user entered; store results to codeResults
+    codeInput <- reactive({ input$testcode })
+    output$codeResults <- renderPrint({
+        eval(parse(text=codeInput()), envir=shinyEnv)
+    })
+}
+
+shinyApp(ui, server)
+```
+</div>
+
+
+# Slightly-more-difficult selects  
+
+Let's try something more challenging now. Select all variables that **do not** have underscores in their names  
+
+Code:  
+
+`happy_full %>%` 
+  `select(!contains("_"))`
+
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_full %>%
+  select(!contains("_")) %>% 
+  head() %>% 
+  knitr::kable()
+```
+</div>
+
+# Plotting distributions
+
+Now we move to the fun part - making pretty plots! Let's begin by getting a sense of the overall distribution of `ladder_score` in `happy_select`  
+
+Code:  
+
+`happy_select %>%`   
+  `ggplot(aes(ladder_score)) +`  
+  `geom_histogram()`
+
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score)) +
+  geom_histogram()
+```
+</div>
+
+# Making improvements
+
+This plot is fine, but it's a little chunky. Let's try a different geom - `geom_density()` - to see what we get  
+
+Code:  
+
+`happy_select %>%`   
+  `ggplot(aes(ladder_score)) +`  
+  `geom_density()`  
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score)) +
+  geom_density()
+```
+</div>
+
+# Density by region
+
+What does the `ladder_score` distribution look like for each region? There are many ways to visualize this. Let's first plot all the distributions on one plot
+
+`happy_select %>%`   
+  `ggplot(aes(ladder_score, fill = region)) +`  
+  `geom_density()`  
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, fill = region)) +
+  geom_density()
+```
+</div>
+
+# Faceting
+
+Nice! One small problem with this plot is that distributions are overlapping, making it difficult to visualize everything. Which argument can you adjust to improve this plot? Does it go within `aes()` or outside? Why?  
+
+Let's consider an alternative way to plot the distributions. Go ahead and use the `facet_wrap()` function to do this  
+
+`happy_select %>%`   
+  `ggplot(aes(ladder_score)) +`  
+  `geom_density() +`  
+  `facet_wrap(~region)`  
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score)) +
+  geom_density() +
+  facet_wrap(~region)
+```
+</div>
+

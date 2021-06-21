@@ -45,7 +45,7 @@ Please watch the recordings on Dplyr and Ggplot2
 
 ### What does the dataset look like?
 
-A couple useful things to know about your dataset are -
+A couple useful things to know about your dataset are -  
 - The number of rows and columns
 - The types of variables the dataset contains  
 
@@ -320,7 +320,7 @@ grade_code()
 
 ### Density by region
 
-What does the `ladder_score` distribution look like for each region? There are many ways to viualize this. Let's first plot all the distributions on one plot
+What does the `ladder_score` distribution look like for each region? There are many ways to visualize this. Let's first plot all the distributions on one plot
 
 
 ```{r multi-dist, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Multiple Histograms"}
