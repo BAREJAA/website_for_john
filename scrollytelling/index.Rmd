@@ -94,8 +94,7 @@ ui <- fluidPage(
 
 server <- function(input, output) {
     shinyEnv <- environment() 
-    output$displayData <- renderPrint({ head(mtcars) })  # prepare head(mtcars) for display on the UI
-    
+  
     # create codeInput variable to capture what the user entered; store results to codeResults
     codeInput <- reactive({ input$testcode })
     output$codeResults <- renderPrint({
