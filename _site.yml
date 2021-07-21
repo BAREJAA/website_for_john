@@ -15,7 +15,7 @@ navbar:
         - text: "Example by Dr. Hirschey"
           href: projects/Matthew-Hirschey.html
     - text: "Flashcard App"
-      href: app.R
+      href: flashcard/app.R
     - text: "About"
       href: about.html
     - icon: fas fa-hand-spock
