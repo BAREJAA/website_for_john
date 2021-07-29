@@ -25,7 +25,7 @@ ui <- fluidPage(
                    tags$style(HTML('#question{background-color:blue;
                                 color:white}'))
                ),
-               actionButton("question", "Next Question", width = '150px'),
+               actionButton("question", "Next Question", width = '150px', icon = icon('refresh')),
                tags$head(
                    tags$style(HTML('#answer{background-color:blue;
                                 color:white}'))
@@ -61,7 +61,7 @@ server <- function(input, output) {
         output$Question <- renderText({question})
         
         output$button2 <- renderUI({
-            actionButton("answer", label = "Show Answer", width = '150px')
+            actionButton("answer", label = "Show Answer", width = '150px', icon = icon('check'))
         })
         
     })

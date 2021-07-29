@@ -1,0 +1,3052 @@
+gene_name,p_val_adj
+AFFX-HUMISGF3A/M97935_MA_at (endogenous control),2.9618467678460547e-9
+AFFX-HUMISGF3A/M97935_MB_at (endogenous control),1.2936739679503262e-8
+AFFX-HUMISGF3A/M97935_3_at (endogenous control),9.32277175458296e-7
+AFFX-HUMRGE/M10098_5_at (endogenous control),9.32277175458296e-7
+AFFX-HUMRGE/M10098_M_at (endogenous control),9.32277175458296e-7
+AFFX-HUMRGE/M10098_3_at (endogenous control),2.714405087700378e-6
+AFFX-HUMGAPDH/M33197_5_at (endogenous control),3.473489054098674e-6
+AFFX-HUMGAPDH/M33197_M_at (endogenous control),3.6895514723411793e-6
+AFFX-HSAC07/X00351_5_at (endogenous control),3.6895514723411793e-6
+AFFX-HSAC07/X00351_M_at (endogenous control),3.7113368082764e-6
+AFFX-HUMTFRR/M11507_5_at (endogenous control),4.7374490650398116e-6
+AFFX-HUMTFRR/M11507_M_at (endogenous control),4.7374490650398116e-6
+AFFX-HUMTFRR/M11507_3_at (endogenous control),4.7374490650398116e-6
+AFFX-M27830_5_at (endogenous control),4.7374490650398116e-6
+AFFX-M27830_M_at (endogenous control),4.7374490650398116e-6
+AFFX-M27830_3_at (endogenous control),5.5314384519444815e-6
+AFFX-HSAC07/X00351_3_st (endogenous control),5.5314384519444815e-6
+AFFX-HUMGAPDH/M33197_M_st (endogenous control),5.5314384519444815e-6
+AFFX-HUMGAPDH/M33197_3_st (endogenous control),6.573591501135567e-6
+AFFX-HSAC07/X00351_M_st (endogenous control),6.573591501135567e-6
+GB DEF = GABAa receptor alpha-3 subunit,6.573591501135567e-6
+mRNA,6.773981161092089e-6
+VRK1,6.960963999675256e-6
+"mRNA, clone RES4-24A, exon 1, 2, 3, 4",6.960963999675256e-6
+"Zinc finger protein, clone RES4-26",6.960963999675256e-6
+Prostate differentiation factor mRNA,6.960963999675256e-6
+GLIA MATURATION FACTOR BETA,7.081056964342025e-6
+AQP3 Aquaporin 3,7.609863348467804e-6
+KIAA0317 gene,8.111534811563153e-6
+"KIAA0320 gene, partial cds",9.197623566770119e-6
+KIAA0384 gene,9.197623566770119e-6
+Hunc18b2,9.954243735038615e-6
+Proteasome subunit p27,1.4222948552002698e-5
+WUGSC:H_133K23.1c gene extracted from Human BAC clone 133K23 from 7q31.2,1.4986863834228919e-5
+WUGSC:H_RG083M05.2 gene extracted from Human BAC clone RG083M05 from 7q21-7q22,1.4986863834228919e-5
+WUGSC:DJ515N1.2 gene extracted from Human PAC clone DJ515N1 from 22q11.2-q22,1.6742560762117442e-5
+"COX6B gene (COXG) extracted from Human DNA from overlapping chromosome 19 cosmids R31396, F25451, and R31076 containing COX6B and UPKA, genomic sequence",1.8693990569529362e-5
+"F25451_2 gene extracted from Human DNA from overlapping chromosome 19 cosmids R31396, F25451, and R31076 containing COX6B and UPKA, genomic sequence",1.8693990569529362e-5
+RAS-RELATED PROTEIN RAB-11A,1.9685528321894834e-5
+"TTF-I interacting peptide 20 mRNA, partial cds",2.0293751805461337e-5
+"Uroplakin II mRNA, partial cds",2.0844897018907587e-5
+"GB DEF = Angelman Syndrome Gene, E6-AP ubiquitin protein ligase 3A (UBE3A) mRNA from promoter P1, 5'UTR",2.0844897018907587e-5
+RET ligand 2 (RETL2) mRNA,2.0940085299039448e-5
+"GB DEF = Delayed rectifier potassium channel (KVLQT1-Iso5) mRNA, 5' UTR and partial cds",2.0995499075577246e-5
+"Fas-binding protein (DAXX) mRNA, partial cds",2.265151397651266e-5
+Arp2/3 protein complex subunit p41-Arc (ARC41) mRNA,2.46337800087011e-5
+Arp2/3 protein complex subunit p20-Arc (ARC20) mRNA,2.6537841463060224e-5
+"Dolichol monophosphate mannose synthase (DPM1) mRNA, partial cds",2.858676175008702e-5
+Phospholipid scramblase mRNA,2.858676175008702e-5
+GB DEF = Syntaxin-16C mRNA,2.858676175008702e-5
+GB DEF = TEB4 protein mRNA,2.858676175008702e-5
+MAD-related gene SMAD7 (SMAD7) mRNA,2.858676175008702e-5
+Chemokine receptor X (CKRX) mRNA,2.858676175008702e-5
+"GB DEF = Unknown protein mRNA, partial cds",2.858676175008702e-5
+GB DEF = SKB1Hs mRNA,2.858676175008702e-5
+GB DEF = C8FW phosphoprotein,2.858676175008702e-5
+GB DEF = Rer1 protein,2.858676175008702e-5
+ANX2 Annexin II (lipocortin II),2.9577768846431902e-5
+TYMS Thymidylate synthase,2.968060529415746e-5
+GPX3 Glutathione peroxidase 3 (plasma),3.095710451723744e-5
+GCSH Glycine cleavage system protein H (aminomethyl carrier),3.2145000474824036e-5
+FECH Ferrochelatase (protoporphyria),3.2145000474824036e-5
+PSMA3 Proteasome component C3,3.219206244090397e-5
+PSMA5 Proteasome component C5,3.362314665311325e-5
+PROTEASOME COMPONENT C8,3.371492395422261e-5
+GAPD Glyceraldehyde-3-phosphate dehydrogenase,3.446858375140542e-5
+PTAFR Platelet activating factor receptor,3.7009824781666634e-5
+"PRKCD Protein kinase C, delta",3.933275443146478e-5
+ACAT1 Acetyl-Coenzyme A acetyltransferase 2 (acetoacetyl Coenzyme A thiolase),3.933275443146478e-5
+MACS Myristoylated alanine-rich C-kinase substrate,4.06555563809847e-5
+OGDH Oxoglutarate dehydrogenase (lipoamide),4.0879813933040615e-5
+PROBABLE G PROTEIN-COUPLED RECEPTOR HM74,4.34572588220089e-5
+GB DEF = Serotonin 1B receptor,4.34572588220089e-5
+IL2RG Interleukin 2 receptor gamma chain,4.453695630985005e-5
+26S PROTEASE REGULATORY SUBUNIT 7,4.529422651688542e-5
+PMP22 Peripheral myelin protein 22,4.62085327543502e-5
+GLO1 Glyoxalase I,4.878440211485958e-5
+DNA-(APURINIC OR APYRIMIDINIC SITE) LYASE,4.934879685839869e-5
+"PIGF Phosphatidylinositol glycan, class F",4.934879685839869e-5
+KIAA0001 gene,4.934879685839869e-5
+KIAA0002 gene,4.934879685839869e-5
+ANGPT1 Angiopoietin 1,5.131229909615689e-5
+KIAA0005 gene,5.295352587571662e-5
+KIAA0011 gene,6.608959859670328e-5
+CCND2 Cyclin D2,6.728882119981924e-5
+"HLA-C Major histocompatibility complex, class I, C",7.174403633083517e-5
+KIAA0016 gene,7.247731496038719e-5
+KIAA0018 gene,7.698194276390408e-5
+KIAA0020 gene,7.698194276390408e-5
+EIF4A1 Eukaryotic translation initiation factor 4A (eIF-4A) isoform 1,7.985224025282011e-5
+Peptide YY precursor gene extracted from Human DNA for peptide YY,8.548593280218035e-5
+Mitochondrial short-chain enoyl-CoA hydratase,8.875863718987128e-5
+Rab GDI mRNA,9.204416137456684e-5
+PUTATIVE MUCIN CORE PROTEIN PRECURSOR 24,9.245283684609652e-5
+KIAA0101 gene,9.660446195396176e-5
+KIAA0102 gene,1.0693654889917803e-4
+KIAA0105 gene,1.1030706445689192e-4
+KIAA0106 gene,1.1745838166539995e-4
+KIAA0107 gene,1.189086776039713e-4
+AMT Glycine cleavage system protein T (aminomethyltransferase),1.239421480659974e-4
+NUCLEAR PORE COMPLEX PROTEIN NUP214,1.239421480659974e-4
+PHOSPHATIDYLSERINE SYNTHASE I,1.27386556623555e-4
+APOA2 Apolipoprotein A-II,1.2850105589193872e-4
+"ATP5A1 ATP synthase, H+ transporting, mitochondrial F1 complex, alpha subunit, isoform 1, cardiac muscle",1.2926908936645035e-4
+KIAA0110 gene,1.3033362896998872e-4
+KIAA0026 gene,1.3462545890178697e-4
+FGF9 Fibroblast growth factor 9 (glia-activating factor),1.4471943835836498e-4
+ADM Adrenomedullin,1.4471943835836498e-4
+Protein D123,1.4911772551947307e-4
+"Small GTP-binding protein, S10",1.539229423441535e-4
+Transcription factor AREB6,1.6419534311871273e-4
+DEFENDER AGAINST CELL DEATH 1,1.644726637266122e-4
+CAST Calpastatin,1.654316113977039e-4
+3-KETOACYL-COA THIOLASE MITOCHONDRIAL,1.7922629758567558e-4
+"ORF, Xq terminal portion",1.8421362157930178e-4
+VLDLR Very low density lipoprotein receptor,1.8616358856447275e-4
+"ATP SYNTHASE GAMMA CHAIN, MITOCHONDRIAL PRECURSOR",1.8645663789244123e-4
+HPCA Hippocalcin,2.0351885162451432e-4
+CRARF C4/C2 activating component of Ra-reactive factor,2.0494236283341387e-4
+GB DEF = N-acetylglucosaminyltransferase V,2.0573616376858838e-4
+"KIAA0030 gene, partial cds",2.1024266750515315e-4
+XP-C repair complementing protein (p58/HHR23B),2.1215966660526866e-4
+CDH11 Cadherin 11 (OB-cadherin),2.1215966660526866e-4
+60S RIBOSOMAL PROTEIN L23,2.3351773231357746e-4
+SM22-ALPHA HOMOLOG,2.4580763403509565e-4
+"KIAA0035 gene, partial cds",2.460036213523928e-4
+"KIAA0029 gene, partial cds",2.90744599529888e-4
+UBL1 Ubiquitin-like protein,2.9816192472210956e-4
+KIAA0014 gene,3.2580718219144846e-4
+"KIAA0027 gene, partial cds",3.2580718219144846e-4
+"KIAA0112 gene, partial cds",3.3535944214392724e-4
+Randomly sequenced mRNA,3.3535944214392724e-4
+Randomly sequenced mRNA,3.4343143822185746e-4
+KIAA0036 gene,3.5998939453448143e-4
+"PFKP Phosphofructokinase, platelet",3.686050823934917e-4
+KIAA0037 gene,3.7531030472458016e-4
+PIMT isozyme I,3.7984122432900466e-4
+"KIAA0041 gene, partial cds",3.836596449628681e-4
+RNS1 Ribonuclease A (pancreatic),3.8918281418454825e-4
+"NADPH-flavin reductase",3.973522759095318e-4
+Transmembrane protein,4.0604665088555267e-4
+Proteasome subunit HsC7-I,4.0698509220391877e-4
+MOBP Myelin-associated oligodendrocytic basic protein,4.073554332053322e-4
+DB1,4.320086122724942e-4
+RPS11 Ribosomal protein S11,4.3895557167897335e-4
+"GB DEF = Annexin II, 5'UTR (sequence from the 5'cap to the start codon)",4.5008854466797274e-4
+"GB DEF = ATP synthase B chain, 5'UTR (sequence from the 5'cap to the start codon)",4.5249726534921607e-4
+"GB DEF = Pre-mRNA splicing factor SRp20, 5'UTR (sequence from the 5'cap to the start codon)",4.5937698066797256e-4
+KIAA0045 gene,4.6519598393726864e-4
+SP2 Sp2 transcription factor,4.691925832180077e-4
+"GB DEF = mRNA (KIAA00167), partial sequence",4.996706252828902e-4
+Hepatitis C-associated microtubular aggregate protein p44,5.015935588213887e-4
+HYPOTHETICAL MYELOID CELL LINE PROTEIN 2,5.066906803659588e-4
+HYPOTHETICAL MYELOID CELL LINE PROTEIN 3,5.282054320931464e-4
+KIAA0115 gene,5.52454079660015e-4
+HYPOTHETICAL MYELOID CELL LINE PROTEIN 5,5.52454079660015e-4
+PHOSPHATIDYLINOSITOL,5.527182831205707e-4
+EIF4A2 Eukaryotic translation initiation factor 4A (eIF-4A) isoform 2,5.910169954331155e-4
+CAMK4 Calcium/calmodulin-dependent protein kinase IV,6.146996227570534e-4
+VIM Vimentin,6.146996227570534e-4
+KIAA0050 gene,6.157628665850526e-4
+GC box bindig protein,6.312353069132988e-4
+KIAA0064 gene,6.443932870787923e-4
+PUTATIVE GLUCOSAMINE-6-PHOSPHATE ISOMERASE,7.006830543849157e-4
+KIAA0058 gene,7.006830543849157e-4
+CD40LG CD40 antigen ligand (hyper IgM syndrome),7.064101646441357e-4
+KIAA0059 gene,7.10376739365038e-4
+KIAA0063 gene,7.10376739365038e-4
+"KIAA0069 gene, partial cds",7.348054552638238e-4
+"KIAA0071 gene, partial cds",7.367039567101966e-4
+"KIAA0070 gene, partial cds",7.904945295739093e-4
+KIAA0067 gene,7.905989987339097e-4
+"GB DEF = HuSAA1g gene for serum amyloid A1 gamma, exon 3 and intron 3",8.099087747497069e-4
+AARS Alanyl-tRNA synthetase,8.099087747497069e-4
+FK-506 binding protein (fkbp12.6) gene,8.099087747497069e-4
+26S PROTEASOME REGULATORY SUBUNIT P31,8.099087747497069e-4
+Proteasome subunit z,8.161148810291109e-4
+RANBP1 RAN binding protein 1,8.56058059317878e-4
+Prostacyclin synthase,8.792293378806549e-4
+Tob,8.798349669708568e-4
+"KIAA0077 gene, partial cds",8.798349669708568e-4
+NT5 5' nucleotidase (CD73),8.798349669708568e-4
+PK-120,8.847938957798508e-4
+KIAA0076 gene,8.847938957798508e-4
+"KIAA0068 gene, partial cds",9.212387018943756e-4
+"KIAA0075 gene, partial cds",9.264845785639528e-4
+KIAA0078 gene,0.0010414234196804296
+"KIAA0073 gene, partial cds",0.0010735999679843246
+KIAA0079 gene,0.0010735999679843246
+Calgizzarin,0.0010735999679843246
+"KIAA0088 gene, partial cds",0.0010735999679843246
+"KIAA0084 gene, partial cds",0.0010735999679843246
+KIAA0091 gene,0.0010735999679843246
+KIAA0092 gene,0.001096520634408437
+"KIAA0094 gene, partial cds",0.0011064989902665116
+KIAA0095 gene,0.0011113387832288198
+"KIAA0118 gene, partial cds",0.0012075034554262021
+"KIAA0096 gene, partial cds",0.0012231455833898225
+YL-1 mRNA for YL-1 protein (nuclear protein with DNA-binding ability),0.0012249425987952123
+Chemokine,0.0012249425987952123
+KIAA0100 gene,0.001260743482771788
+KIAA0097 gene,0.0012788746103265353
+"KIAA0082 gene, partial cds",0.001292393993519841
+"T-COMPLEX PROTEIN 1, EPSILON SUBUNIT",0.0013088220973827916
+"ATP SYNTHASE GAMMA CHAIN, MITOCHONDRIAL PRECURSOR",0.0013403850101681423
+Proteasome subunit p112,0.001344182414926305
+Proteasome activator hPA28 subunit beta,0.001344182414926305
+ApM2 mRNA for GS2374 (unknown product specific to adipose tissue),0.001344182414926305
+ApM1 mRNA for GS3109 (novel adipose specific collagen-like factor),0.001344182414926305
+Apo1_Human (MER5(Aop1-Mouse)-like protein),0.0013443112066601965
+"IL3RA Interleukin 3 receptor, alpha (low affinity)",0.001392892610974537
+Protein disulfide isomerase-related protein P5,0.001392892610974537
+Protein disulfide isomerase-related protein (PDIR),0.001392892610974537
+Cytoskeleton associated protein (CG22) mRNA,0.0014201286146315448
+"Fructose 6-phosphate,2-kinase/fructose 2,6-bisphosphatase",0.0014251494734625596
+"Fructose 6-phosphate,2-kinase/fructose 2,6-bisphosphatase, partial cds",0.0014479953059104156
+"Transcription elongation factor S-II, hS-II-T1",0.0014485424805094618
+GB DEF = TI-227H,0.0014485424805094618
+CW-1 mRNA,0.0014485424805094618
+"TGFBR2 Transforming growth factor, beta receptor II (70-80kD)",0.0014485424805094618
+C-myc binding protein,0.0014716176777178345
+Ceramide glucosyltransferase,0.0014748093979028627
+DOCK180 protein mRNA,0.001482780586298252
+TESK1,0.0014950109465831827
+KIAA0121 gene,0.0014958417410613478
+"KIAA0122 gene, partial cds",0.0015246514420015345
+"KIAA0123 gene, partial cds",0.0015261469344885444
+"KIAA0124 gene, partial cds",0.001534631164752168
+KIAA0125 gene,0.001577185379269231
+KIAA0126 gene,0.001577185379269231
+KIAA0127 gene,0.0015868871677331767
+"KIAA0128 gene, partial cds",0.0015969691191242913
+KIAA0130 gene,0.0015969691191242913
+"KIAA0136 gene, partial cds",0.0016674245922025112
+KIAA0137 gene,0.0016674245922025112
+KIAA0138 gene,0.0016674245922025112
+KIAA0140 gene,0.001730083168942822
+"GB DEF = Monocyte PABL (pseudoautosomal boundary-like sequence) mRNA, clone Mo2",0.0017737159334014912
+"MDH1 Malate dehydrogenase 1, NAD (soluble)",0.0017737159334014912
+DNA REPLICATION LICENSING FACTOR CDC47 HOMOLOG,0.0018235384512870635
+DJ-1 protein,0.0018235384512870635
+Phosphoribosypyrophosphate synthetase-associated protein 39,0.0018286590351702017
+Serum lectin P35,0.001841375728997748
+Platelet activating factor acetylhydrolase IB gamma-subunit,0.0018504092214129836
+KIAA0109 gene,0.0018552799795934277
+KIAA0142 gene,0.0018552799795934277
+"KIAA0147 gene, partial cds",0.0018906155070387164
+KIAA0152 gene,0.0018943626198032507
+"KIAA0153 gene, partial cds",0.0018943626198032507
+Unc-18homologue,0.0018943626198032507
+Rod photoreceptor protein,0.001940743859047763
+Unc-18 homologue,0.0019625705387616554
+HMG1 High-mobility group (nonhistone chromosomal) protein 1,0.0019625705387616554
+KIAA0155 gene,0.001966930497183121
+"KIAA0154 gene, partial cds",0.0019932717005008353
+"KIAA0241 gene, partial cds",0.0020391277317551165
+PROBABLE PROTEIN DISULFIDE ISOMERASE ER-60 PRECURSOR,0.0021305685175718875
+KIAA0156 gene,0.0021774725260495574
+KIAA0159 gene,0.0022218191183023322
+"KIAA0160 gene, partial cds",0.0022352354638223784
+"MANA2 Mannosidase, alpha type II",0.0022702910740713842
+Tob family,0.002303727043347079
+Tob family,0.002303727043347079
+Histone H1x,0.002306429434481909
+"ATP binding protein associated with cell differentiation, partial cds",0.002306429434481909
+SEC14L SEC14 (S. cerevisiae)-like,0.002464918648291354
+CRMP1 Collapsin response mediator protein 1,0.002464918648291354
+"GB DEF = Adult (34 year old) Male liver mRNA for squalene epoxidase, partial cds",0.002465487643980604
+"YWHAZ Tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, zeta polypeptide",0.002489992616408951
+Proteasome subunit p42,0.0024933261901520787
+5'-terminal region of UMK,0.0025101169422409825
+"Ornithine decarboxylase antizyme, ORF 1 and ORF 2",0.0025816875363179797
+CAD PROTEIN,0.0025816875363179797
+MEST Mesoderm specific transcript (mouse) homolog,0.0025816875363179797
+KIAA0164 gene,0.0026050601596041886
+KIAA0168 gene,0.002609414998072017
+KIAA0170 gene,0.0026470176803453627
+KIAA0171 gene,0.0026574417867627834
+"KIAA0172 gene, partial cds",0.0026719713457466435
+KIAA0174 gene,0.002690618551874638
+"KIAA0177 gene, partial cds",0.002690618551874638
+"KIAA0179 gene, partial cds",0.0027013469208605053
+"KIAA0181 gene, partial cds",0.002706261573726535
+"KIAA0182 gene, partial cds",0.0027351144013726945
+"KIAA0183 gene, partial cds",0.00277596284842428
+"KIAA0184 gene, partial cds",0.0027868172619784264
+"KIAA0185 gene, partial cds",0.0027868172619784264
+KIAA0186 gene,0.0027924403858780866
+KIAA0187 gene,0.0028111986355372075
+"KIAA0188 gene, partial cds",0.002826631724148183
+"KIAA0190 gene, partial cds",0.0028331041228384186
+"B-cell mRNA for a member of the short-chain alcohol dehydrogenase family, partial cds",0.002836989287167702
+AC1 mRNA,0.002836989287167702
+NB thymosin beta,0.0028409021187553785
+5-aminoimidazole-4-carboxamide-1-beta-D-ribonucleoti de transformylase/inosinicase,0.0028528953882646377
+Epidermoid carcinoma mRNA for ubiquitin-conjugating enzyme E2 similar to Drosophila bendless gene product,0.0028701375379570565
+"Nuclear protein, NP220",0.0028847281099378046
+"ATM Ataxia telangiectasia mutated (includes complementation groups A, C and D)",0.002946646756421156
+Cadherin-15,0.002946646756421156
+RP105,0.0029683211553834265
+Calcium-binding protein in amniotic fluid 1,0.002982278982855457
+Peroxisome assembly factor-2,0.002983967805871797
+Adult heart mRNA for neutral calponin,0.002983967805871797
+"KIAA0191 gene, partial cds",0.003006350386756867
+KIAA0193 gene,0.0030232057043098775
+KIAA0196 gene,0.0030232057043098775
+"KIAA0192 gene, partial cds",0.0030232057043098775
+"KIAA0198 gene, partial cds",0.003024150915759948
+KIAA0200 gene,0.0030449587467728974
+FCN1 Ficolin (collagen/fibrinogen domain-containing) 1,0.0031201698611694633
+RBP-MS/type 1,0.0031231328129902145
+IgG Fc binding protein,0.0031672094000165366
+CD38 CD38 antigen (p45),0.0033213025314488883
+TPRD,0.0033284618450931534
+Phosphoethanolamine cytidylyltransferase,0.0034288426848567886
+P105MCM mRNA,0.0035124704018176718
+TR3beta,0.0035124704018176718
+DNAJ PROTEIN HOMOLOG 1,0.0035124704018176718
+"GB DEF = LIM domain, partial cds",0.0035140972581071887
+Enhancer of rudimentary homolog mRNA,0.0035140972581071887
+DNA for rhoHP1,0.003538739432482224
+P97 homologous protein,0.0036241141996078553
+"Non-lens beta gamma-crystallin like protein (AIM1) mRNA, partial cds",0.003634670499844703
+"P97 homologous protein, partial cds",0.003673637124818829
+KIAA0201 gene,0.0037115705833210885
+"KIAA0206 gene, partial cds",0.003737938660069113
+KIAA0207 gene,0.003737938660069113
+"KIAA0209 gene, partial cds",0.003801151517701863
+KIAA0212 gene,0.003801151517701863
+KIAA0216 gene,0.003925930707936036
+"KIAA0217 gene, partial cds",0.003928293096350227
+KIAA0218 gene,0.003933057880491919
+"KIAA0219 gene, partial cds",0.003933057880491919
+"KIAA0223 gene, partial cds",0.0039449928533528055
+"KIAA0225 gene, partial cds",0.0039449928533528055
+KIAA0226 gene,0.004017720064556668
+"KIAA0230 gene, partial cds",0.004036674033571768
+KIAA0232 gene,0.004039292715699536
+J1 gene extracted from Human (lambda) DNA for immunoglobin light chain,0.004039292715699536
+KIAA0233 gene,0.004039292715699536
+KIAA0236 gene,0.004039292715699536
+KIAA0237 gene,0.004039292715699536
+"KIAA0238 gene, partial cds",0.004039292715699536
+"KIAA0239 gene, partial cds",0.004044941536959681
+"KIAA0235 gene, partial cds",0.004152807478510617
+DUAL SPECIFICITY MITOGEN-ACTIVATED PROTEIN KINASE KINASE 3,0.004154186376224213
+Cancellous bone osteoblast mRNA for GS3955,0.004165323396428846
+Cancellous bone osteoblast mRNA for GS3786,0.004177036824861775
+Rhodanese,0.004177036824861775
+"KIAA0246 gene, partial cds",0.004177036824861775
+KIAA0247 gene,0.004207382926728895
+ARF3 ADP-ribosylation factor 3,0.004207382926728895
+KIAA0249 gene,0.004279651542293214
+"KIAA0251 gene, partial cds",0.004327976960050354
+"KIAA0253 gene, partial cds",0.004333171947465949
+KIAA0256 gene,0.004333171947465949
+"KIAA0257 gene, partial cds",0.004333171947465949
+KIAA0258 gene,0.0044778207256785845
+"KIAA0259 gene, partial cds",0.004675197286877091
+"KIAA0261 gene, partial cds",0.004682268401332297
+KIAA0262 gene,0.004682268401332297
+KIAA0263 gene,0.004682268401332297
+"KIAA0264 gene, partial cds",0.004693732867559181
+KIAA0266 gene,0.004723138816207301
+KIAA0269 gene,0.0047351990881706815
+"KIAA0270 gene, partial cds",0.004840338898354096
+"KIAA0272 gene, partial cds",0.004889316645722314
+KIAA0274 gene,0.005022909674386898
+KIAA0275 gene,0.0050371971248423745
+"KIAA0276 gene, partial cds",0.005056050479023997
+"KIAA0279 gene, partial cds",0.0050637477879071705
+Heat shock transcription factor 4,0.005126010431040117
+"KIAA0242 gene, partial cds",0.005181545278693481
+"GB DEF = Alpha(1,2)fucosyltransferase, 5'UTR partial sequence",0.005181545278693481
+RTP,0.005352369756695232
+CMP-sialic acid transporter,0.005355508128677085
+GB DEF = (lambda) DNA for immunoglobin light chain,0.005399740552820715
+CYSTATIN A,0.005681145110592263
+HGCMa,0.005681145110592263
+Neuroblastoma,0.005681145110592263
+Proton-ATPase-like protein,0.005763347993034729
+Src-like adapter protein mRNA,0.005763347993034729
+C-myc binding protein,0.005763347993034729
+PDHA1 Pyruvate dehydrogenase (lipoamide) alpha 1,0.005763347993034729
+PDHB Pyruvate dehydrogenase (lipoamide) beta,0.0058279918271081695
+ATF4 CAMP-dependent transcription factor ATF-4 (CREB2),0.005832187792461527
+TXGP1 Tax-transcriptionally activated glycoprotein 1 (34kD),0.006021888973511126
+CGM7 Carcinoembryonic antigen gene family member 7,0.006052324914455904
+Lamin-Like Protein (Gb:M24732),0.006052324914455904
+Ras-Related C3 Botulinum Toxin Substrate,0.006052324914455904
+Ras-Like Protein Tc4,0.006052324914455904
+Nucleoside Diphosphate Kinase Nm23-H2s,0.0062118505834486
+"Collagen, Type Iv, Alpha 2, N-Terminus",0.006274795102908932
+Macmarcks,0.006353279877446632
+"Protein Phosphatase 1, Alpha Catalytic Subunit",0.006362540094416148
+Elastase 1,0.006378181163242684
+Ornithine Aminotransferase-Like 3,0.006405851330520391
+Calmodulin Type I,0.006478381704301923
+Male Enhanced Antigen,0.006485780660610854
+"Major Histocompatibility Complex, Dg",0.006542694944569453
+Ras-Like Protein Tc10,0.006612934453077391
+Stimulatory Gdp/Gtp Exchange Protein For C-Ki-Ras P21 And Smg P21,0.006612934453077391
+"Arrestin, Beta 2",0.006671872253360966
+"Protein Kinase Ht31, Camp-Dependent",0.0066745471902498405
+Major Intrinsic Protein,0.006723072394453651
+"Atpase, Ca2+ Transporting, Plasma Membrane 1, Alt. Splice 6",0.006747372197149287
+"Rna Polymerase Ii, 14.5 Kda Subunit",0.006754267968182772
+Triosephosphate Isomerase,0.006754267968182772
+Calcitonin,0.006806330262044823
+"Integrin, Beta 3 Subunit",0.0069895604891069595
+"Retinoic Acid Receptor, Gamma 2",0.007010317699489961
+Transcription Factor E2f-2,0.007041431366661578
+Guanine Nucleotide-Binding Protein G25k,0.007091027878546453
+Fmlp-Related Receptor I,0.0071132448930031735
+"Helix-Loop-Helix Protein Delta Max, Alt. Splice 1",0.007171149032326949
+"Succinate Dehydrogenase, Flavoprotein Subunit",0.007171149032326949
+Tyrosine Kinase (Gb:Z25437),0.007308980602665555
+"Oncogene Tls/Chop, Fusion Activated",0.00736982928094953
+Calcyclin,0.007409608609181768
+Homeotic Protein Pl2,0.007442370920842524
+Ret Transforming Gene,0.007442370920842524
+"Heat Shock Protein, 70 Kda (Gb:Y00371)",0.007603596216418073
+Ribosomal Protein L39 Homolog,0.007603596216418073
+"Beta-Hexosaminidase, Alpha Polypeptide, Abnormal Splice Mutation",0.007615704013767404
+Adp-Ribosylation-Like Factor,0.00771812574697331
+"Splicing Factor Sc35, Alt Splice Form 3",0.0077449484981790065
+Transcription Factor Iia,0.0077449484981790065
+Carcinoembryonic Antigen,0.007747171052995814
+Guanine Nucleotide-Binding Protein Hsr1,0.007763595699065541
+"Protease Receptor-1, Effector Cell",0.007984528816561384
+"Crystallin, Alpha A",0.008032506077154014
+Ubiquitin-Conjugating Enzyme Ubch5,0.008032506077154014
+Peroxisome Proliferator Activated Receptor (Gb:Z30972),0.008084358749832623
+Zinc Finger Protein 20,0.008084358749832623
+Uncoupling Protein Ucp,0.008162787948544421
+Nuclear Factor Nf-Il6,0.008313703445802336
+"Collagen, Type Ix, Alpha 1",0.008349726155680706
+"Tropomyosin Tm30nm, Cytoskeletal",0.008475186855936399
+Ras-Related Protein Rap1b,0.008565450158518449
+"Ccaat Displacement Protein, Cut Homolog, Alt. Splice 1",0.008599051579673325
+"Autoimmune Antigen, Thyroid Disease-Related Antigen",0.008608845545361545
+"Calcium Channel, Voltage-Gated, Beta 1 Subunit, L Type, Alt. Splice 2, Skeletal Muscle Isoform",0.008662170769507833
+Epidermal Growth Factor Receptor-Related Protein,0.008704738755553606
+"Basic Transcription Factor 2, 34 Kda Subunit",0.008704738755553606
+"Basic Transcription Factor, 44 Kda Subunit",0.008774724264188837
+G1 Phase-Specific Gene,0.008998960058124833
+Interleukin 9 Receptor (Gb:S71404),0.009174837396495146
+"Cpg-Enriched Dna, Clone E06",0.009201010121072328
+"Cpg-Enriched Dna, Clone S19",0.009224120608661719
+Opioid-Binding Cell Adhesion Molecule,0.009241383054175541
+Retinoblastoma 1,0.009339330666625442
+Phosphoprotein Tal2,0.009681045797933219
+Cytosolic Acetoacetyl-Coenzyme A Thiolase,0.009706053604440212
+Rad2,0.009706965033544183
+Zinc Finger Protein Hzf4,0.009806181503728032
+"Nuclear Factor 1, A Type",0.009909344004319478
+Af-17,0.009909344004319478
+Zinc Finger Protein Znf155,0.010195655019651554
+Nkr-P1a Protein,0.010242861763313016
+Transcriptional Coactivator Pc4,0.010338960267439433
+"Immunoglobulin Heavy Chain, Vdjc Regions (Gb:L23564)",0.010338960267439433
+"Glucocorticoid Receptor, Beta",0.01036331778266659
+"Centractin, Alpha",0.010520605435652676
+Spliceosomal Protein Sap 49,0.010700498455731025
+Microtubule-Associated Protein 1b,0.010700498455731025
+"Omega Light Chain, Immunoglobulin Lambda Light Chain Related",0.010786470720858993
+Guanosine 5'-Monophosphate Synthase,0.01092731098538005
+"Calmitine Calcium-Binding Protein, Mitochondrial",0.01092731098538005
+Ras Inhibitor Inf,0.010944345520236357
+"Tyrosine Phosphatase, Epsilon",0.010944345520236357
+Potassium Channel (Gb:L02750),0.010944345520236357
+Cyclophilin-Related Protein,0.011050442458171203
+Mg61 Protein (Gb:L08239),0.011097076648012886
+"Dna Polymerase, Epsilon, Catalytic Subunit",0.01111428789595231
+Mac25,0.01119656539552568
+"Alpha-cardiac actin gene, 5' flank and",0.011297173982812367
+Somatostatin I gene and flanks,0.011297173982812367
+EIF2A Eukaryotic translation initiation factor 2A,0.011370495647193647
+"PROTEIN PHOSPHATASE PP2A, 65 KD REGULATORY SUBUNIT, ALPHA ISOFORM",0.011370495647193647
+CYTOCHROME P450 IIF1,0.011370495647193647
+LCP1 Lymphocyte cytosolic protein 1 (L-plastin),0.011434728042341519
+THBD gene extracted from Human thrombomodulin gene,0.011439818595524526
+SPARC SPARC/osteonectin,0.01168570664021889
+MYCL2 gene,0.011871181265701755
+SRF Serum response factor (c-fos serum response element-binding transcription factor),0.011871181265701755
+Profilin mRNA,0.01189767790276191
+"PDGFRB Platelet-derived growth factor receptor, beta polypeptide",0.012007479880269926
+LTA4H Leukotriene A4 hydrolase,0.012007479880269926
+ADPRT ADP-ribosyltransferase (NAD+; poly (ADP-ribose) polymerase),0.012199823660021689
+UBIQUITIN-LIKE PROTEIN GDX,0.012306297765064072
+ALOX5 Arachidonate 5-lipoxygenase,0.01244019586623413
+"PAI1 Plasminogen activator inhibitor, type I",0.012727745604153583
+"MME Membrane metallo-endopeptidase (neutral endopeptidase, enkephalinase, CALLA, CD10)",0.012966800887749435
+SMALL NUCLEAR RIBONUCLEOPROTEIN SM D1,0.01313512540105723
+SP-C1 gene (pulmonary surfactant protein SP-C) extracted from Human pulmonary surfactant protein C (SP-C) and pulmonary surfactant protein C1 (SP-C1) genes,0.01313512540105723
+GAMMA-INTERFERON-INDUCIBLE PROTEIN IP-30 PRECURSOR,0.01313512540105723
+"ITGAM Integrin, alpha M (complement component receptor 3, alpha; also known as CD11b (p170), macrophage antigen alpha polypeptide)",0.013156306035066921
+Adenosine triphosphatase mRNA,0.01317307648688788
+"ETFA Electron-transfer-flavoprotein, alpha polypeptide (glutaric aciduria II)",0.01317307648688788
+TOP2A Topoisomerase (DNA) II alpha (170kD),0.013196795211511958
+GB DEF = Erythroblastosis virus oncogene homolog 1 (ets-1) mRNA,0.013220537442604006
+ETS2 V-ets avian erythroblastosis virus E26 oncogene homolog 2,0.013231990316395973
+"C-jun proto oncogene (JUN), clone hCJ-1",0.013231990316395973
+"CD3Z CD3Z antigen, zeta polypeptide (TiT3 complex)",0.013231990316395973
+"FCGR3 Fc fragment of IgG, low affinity IIIa, receptor for (CD16)",0.013231990316395973
+RPS3 Ribosomal protein S3,0.013385061332760299
+PGAM1 Phosphoglycerate mutase 1 (brain),0.013385061332760299
+CYC1 Cytochrome c-1,0.013385061332760299
+LGALS1 Ubiquinol-cytochrome c reductase core protein II,0.013385061332760299
+GYS1 Glycogen synthase 1 (muscle),0.013385061332760299
+ANX7 Annexin VII (synexin),0.013442935324051875
+BGN Biglycan,0.013478731903291616
+PEPD Peptidase D,0.013561612651421424
+G22P1 Thyroid autoantigen 70kD (Ku antigen),0.013624055911836056
+SNRPN Small nuclear ribonucleoprotein polypeptide N,0.013769671242583836
+ALCOHOL DEHYDROGENASE,0.014142175098020003
+Cytosolic adenylate kinase (AK1) gene,0.014142175098020003
+Cytochrome c oxidase subunit VIII (COX8) mRNA,0.014142175098020003
+Alkaline phosphatase,0.014200788327366022
+LGALS1 Ubiquinol-cytochrome c reductase core protein II,0.014200788327366022
+CATHEPSIN G PRECURSOR,0.014730427874629973
+ASPARTYL-TRNA SYNTHETASE,0.014746571291175108
+"SPTAN1 Spectrin, alpha, non-erythrocytic 1 (alpha-fodrin)",0.014746571291175108
+DPEP1 Dipeptidase 1 (renal),0.014746571291175108
+IMPDH1 IMP (inosine monophosphate) dehydrogenase 1,0.014873704876915013
+"SPTB Spectrin, beta, erythrocytic (includes sperocytosis, clinical type I)",0.015132816055021097
+"GB DEF = Proliferating cell nuclear antigen (PCNA) gene, promoter region",0.015132816055021097
+"PI Protease inhibitor 1 (anti-elastase), alpha-1-antitrypsin",0.015350666520945055
+NPY Neuropeptide Y,0.015370135661014528
+TCRB gene extracted from Human T-cell receptor germline beta-chain J-beta-1 gene cluster: J-beta-1-1 and J-beta-1-2 genes; and D-beta-1-1 gene,0.015547885750976324
+NP Nucleoside phosphorylase,0.01562954197846948
+(HepG2) glucose transporter gene mRNA,0.01568592490630972
+"C1QB Complement component 1, q subcomponent, beta polypeptide",0.01586445653371015
+"Alpha-tubulin isotype H2-alpha gene, last exon",0.016073245208144134
+GPI Glucose phosphate isomerase,0.016087525858375307
+LOW-DENSITY LIPOPROTEIN RECEPTOR PRECURSOR,0.016098717521309504
+"FNTB Farnesyltransferase, CAAX box, beta",0.016098717521309504
+PRKCQ Protein kinase C-theta,0.016098717521309504
+CLC Charot-Leyden crystal protein,0.016148250425385535
+"62 kDa paraneoplastic antigen mRNA, 3' end",0.016353915001032362
+CRYM Crystallin Mu,0.0163988545951195
+M4 protein mRNA,0.0163988545951195
+"(clone CC6) NADH-ubiquinone oxidoreductase subunit mRNA, 3' end cds",0.016399823718564452
+KINESIN LIGHT CHAIN,0.016879415255661327
+NEURON-SPECIFIC X11 PROTEIN,0.016879415255661327
+Protein tyrosine kinase related mRNA sequence,0.016879415255661327
+CD44 gene (cell surface glycoprotein CD44) extracted from Human hyaluronate receptor (CD44) gene,0.01711333667696587
+Autoantigen mRNA,0.01711333667696587
+HTN1 Histatin 1,0.017213946942512687
+"EPHX2 Epoxide hydrolase 2, cytoplasmic",0.017438383728161207
+VDAC1 Voltage-dependent anion channel 1,0.017517420639553704
+P5-1 mRNA,0.01781736029241431
+PLOD Lysyl hydroxylase,0.01786106763849349
+Transcription factor mRNA,0.01788438973085999
+CARS Cysteinyl-tRNA synthetase,0.017890038573442114
+Calcium/calmodulin-dependent protein kinase (CAMK) isoform B mRNA sequence,0.01805911731929983
+"RECA Replication protein A (E coli RecA homolog, RAD51 homolog)",0.018355726427923248
+ACY1 Aminoacylase 1,0.018404453821100456
+"RPS6KA2 Ribosomal protein S6 kinase, 90kD, polypeptide 2",0.018408012975711298
+INTERFERON GAMMA UP-REGULATED I-5111 PROTEIN PRECURSOR,0.018408012975711298
+IEF SSP 9502 mRNA,0.01862540670758458
+CES2 Carboxylestease 2 (liver),0.01862540670758458
+"GBE1 Glucan (1,4-alpha-), branching enzyme 1 (glycogen branching enzyme, Andersen disease, glycogen storage disease type IV)",0.01873084130904574
+DNAJ PROTEIN HOMOLOG 2,0.018767986031583285
+Cytokine receptor (EBI3) mRNA,0.01882724265650433
+INDUCED MYELOID LEUKEMIA CELL DIFFERENTIATION PROTEIN MCL1,0.01899196756767595
+(chromosome 3p25) membrane protein mRNA,0.01899196756767595
+INTESTINAL MEMBRANE A4 PROTEIN,0.01899196756767595
+C2 Complement component C2,0.01899196756767595
+CANX Calnexin,0.01928677937746578
+"MXS1 Membrane component, X chromosome, surface marker 1",0.01929579347742472
+(clone CTG-B43a) mRNA sequence,0.019343969024241407
+PRE-MRNA SPLICING FACTOR SRP20,0.01941369526706854
+Splicing factor (CC1.3) mRNA,0.019488231369356318
+"Homeobox protein (HOX) gene, 3' end",0.0198883128697363
+DUAL SPECIFICITY MITOGEN-ACTIVATED PROTEIN KINASE KINASE 2,0.0198883128697363
+DUAL SPECIFICITY PROTEIN PHOSPHATASE PAC-1,0.020143332944457894
+Protocadherin 42 mRNA for abbreviated PC42,0.02044528746806408
+Protocadherin 43 mRNA for abbreviated PC43,0.020587485267960497
+Tetracycline transporter-like protein mRNA,0.020629972783069907
+RSU-1/RSP-1 mRNA,0.020858055286345805
+HNF-3/fork-head homolog-3 HFH-3 mRNA,0.02087456771127233
+Mac-2 binding protein mRNA,0.02087456771127233
+REGULATOR OF G-PROTEIN SIGNALLING 2,0.02087456771127233
+Chromosome 3p21.1 gene sequence,0.02087456771127233
+"Guanylate cyclase mRNA, complete mature peptide",0.021181222903669254
+BMI1 Murine leukemia viral (bmi-1) oncogene homolog,0.02141266981557082
+Activated p21cdc42Hs kinase (ack) mRNA,0.021436379603384906
+"Dihydrolipoamide dehydrogenase gene, exon 14",0.02147697669536136
+"GB DEF = Liver expressed protein gene, 3' end",0.021545455939084003
+LKP DEAD/H (Asp-Glu-Ala-Asp/His) box polypeptide 9 (RNA helicase A),0.021735257456269964
+"UBE1L Ubiquitin-activating enzyme E1, like",0.02203418228597476
+FBN1 Fibrillin 1 (Marfan syndrome),0.022465335483200444
+"SIAT4A Sialyltransferase 4A (beta-galactosidase alpha-2,3-sialytransferase)",0.022486968536984984
+PRE-MRNA SPLICING FACTOR SRP75,0.022556321569049135
+PERIPHERIN,0.022672097422731737
+IGHMBP2 DNA-binding protein (SMBP2),0.022672097422731737
+TJP1 Tight junction protein 1 (zona occludens 1),0.02290463784532118
+VON HIPPEL-LINDAU DISEASE TUMOR SUPPRESSOR,0.022959707168789145
+"BF B-factor, properdin",0.022961374785740354
+ETS-RELATED PROTEIN PE-1,0.023024861279611807
+UQCRC1 Ubiquinol-cytochrome c reductase core protein I,0.023105756952986268
+GPRK6 G protein-coupled receptor kinase 6,0.023148050384088147
+Zinc finger protein mRNA,0.023203979654130305
+DTYMK Deoxythymidylate kinase,0.023203979654130305
+High mobility group protein (HMG-I(Y)) gene exons 1-8,0.023203979654130305
+"Pre-T/NK cell associated protein (3B3) mRNA, 3' end",0.023308264829669717
+TRANSCRIPTION FACTOR P65,0.02333308458140905
+GB DEF = Translation initiation factor eIF-2 gamma subunit mRNA,0.023359592665307242
+"MAC30 mRNA, 3' end",0.023500655004147372
+"59 protein mRNA, 3' end",0.02356817760486137
+HRY gene,0.02356817760486137
+TALDO Transaldolase,0.023586511731476707
+ANX11 Annexin XI (56kD autoantigen),0.023789859933201866
+Macrophage migration inhibitory factor (MIF) gene,0.02407743026068948
+Dystroglycan (DAG1) mRNA,0.024128057714834297
+Histone H2A.2 mRNA,0.024128057714834297
+ATF3 Activating transcription factor 3,0.024298383354667875
+AHR AH-receptor,0.02464977674618457
+HCF1 gene related mRNA sequence,0.024796983247373953
+"Transcription factor (CBFB) mRNA, 3' end",0.025004723286448566
+GCGR Glucagon receptor,0.025004723286448566
+S protein mRNA,0.025051065837960875
+FTH1 Ferritin heavy chain,0.025141702842870508
+"PDE4B Phosphodiesterase 4B, cAMP-specific (dunce (Drosophila)-homolog phosphodiesterase E4)",0.025334936618154908
+SLC10A1 Na/taurocholate cotransporting polypeptide,0.025653125397152622
+"SDH2 Succinate dehydrogenase 2, flavoprotein (Fp) subunit",0.02589044759784006
+PERIPHERAL-TYPE BENZODIAZEPINE RECEPTOR,0.02593576521424134
+Guanine nucleotide regulatory protein (G13) mRNA,0.02595404092799294
+ADORA1 Adenosine receptor A1,0.026283400051424242
+GB DEF = Nuclear phosphoprotein mRNA,0.02629591463583687
+POLA DNA polymerase alpha subunit,0.02649642276856314
+Rad mRNA,0.026984757605175394
+GB DEF = mRNA fragment,0.026984757605175394
+(p23) mRNA,0.02699028152714351
+ARH9 Aplysia ras-related homolog 9,0.027833177420879204
+PROTEIN TRANSPORT PROTEIN SEC61 BETA SUBUNIT,0.027845100004032564
+XE169 PROTEIN,0.027905008154203857
+TBP-associated factor TAFII80 mRNA,0.028140487953228634
+INTEGRIN ALPHA-E PRECURSOR,0.028167149864493656
+Protein tyrosine phosphatase (CIP2)mRNA,0.028772658739427456
+RPL3 Ribosomal protein L3,0.029184194317651055
+"POU3F1 POU domain, class 3, transcription factor 1",0.02923904490188519
+Insulin-like growth factor binding protein 5 (IGFBP5) mRNA,0.029290895023190586
+CCT6 Chaperonin containing T-complex subunit 6,0.02930816686739227
+Autoantigen pericentriol material 1 (PCM-1) mRNA,0.02930816686739227
+CDA Cytidine deaminase,0.02954735364170633
+HnRNP F protein mRNA,0.02954735364170633
+"PTGER2 Prostaglandin E receptor 2 (subtype EP2), 53kD",0.02954735364170633
+MANA2 Alpha mannosidase II isozyme,0.02954735364170633
+SORD Sorbitol dehydrogenase,0.02968675230400406
+Clk2 mRNA,0.029781348717080772
+STAT3 Signal transducer and activator of transcription 3 (acute-phase response factor),0.029825830585609475
+CMKBR7 Chemokine (C-C) receptor 7,0.02998539510189183
+"SLC16A1 Solute carrier family 16 (monocarboxylic acid transporters), member 1",0.02998539510189183
+"Effector cell protease receptor-1 (EPR-1) gene, partial cds",0.030058601219422828
+Protein kinase (MLK-3) mRNA,0.03023958165671117
+UBIQUINOL-CYTOCHROME C REDUCTASE IRON-SULFUR SUBUNIT PRECURSOR,0.03023958165671117
+PKD1 Polycystic kidney disease protein 1,0.030243305590653965
+"(clone FFE-7) type II inosine monophosphate dehydrogenase (IMPDH2) gene, exons 1-13",0.03078449679880896
+CDH4 Cadherin 4,0.03122851519184472
+Cadherin-8 mRNA,0.031350080987472315
+"RNA polymerase II elongation factor SIII, p15 subunit mRNA",0.031769843274894356
+PECAM1 Platelet/endothelial cell adhesion molecule (CD31 antigen),0.031769843274894356
+Ribose 5-phosphate isomerase (RPI) mRNA,0.031769843274894356
+Enigma gene,0.031769843274894356
+ZINC FINGER PROTEIN 35,0.03193512972560602
+GB DEF = Olfactory receptor-like gene,0.03212585131072266
+"Ras inhibitor mRNA, 3' end",0.03231003098889208
+"GB DEF = Integrin alpha 8 subunit mRNA, 3' end",0.03251828216144617
+Receptor protein-tyrosine kinase (HEK8) mRNA,0.03251828216144617
+Bystin mRNA,0.03269980006528616
+INPPL1 Inositol polyphosphate phosphatase-like protein 1 (51C protein),0.0327931391304146
+"GB DEF = Met-ase gene, exon 1",0.03317810508505649
+Dynamin (DNM) mRNA,0.033407234058940034
+FK-506 binding protein homologue (FKBP38) mRNA,0.03376498197625171
+"CSNK1A1 Casein kinase 1, alpha 1",0.03405640360303808
+"CSNK1E Casein kinase 1, epsilon",0.03405640360303808
+(clone mf.18) RNA polymerase II mRNA,0.03426458215490366
+Syntaxin 1A mRNA,0.034331104032525504
+MITOCHONDRIAL ELONGATION FACTOR TS PRECURSOR,0.034392711171697926
+MFAP4 Microfibrillar-associated protein 4,0.03439824056155787
+"Estrogen receptor-related protein (hERRa1) mRNA, 3' end, partial cds",0.03454891815661642
+Brain and reproductive organ-expressed protein (BRE) gene,0.034570788647884355
+"Autoantigen p542 mRNA, 3' end of cds",0.034592701070360485
+Thyroid receptor interactor (TRIP1) mRNA,0.034668557110771304
+GT212 mRNA,0.035416678057055256
+Importin beta subunit mRNA,0.03566936534422258
+ITM1 Integral transmembrane protein 1,0.03566936534422258
+Transcription factor SL1 mRNA,0.03577467333653184
+DCTD Deoxycytidylate deaminase,0.03608275087364268
+Glycogen synthase kinase 3 mRNA,0.0360835675622462
+"Thyroid receptor interactor (TRIP7) mRNA, 3' end of cds",0.037319370521580034
+"GB DEF = Thyroid receptor interactor (TRIP14) gene, 3' end of cds",0.037319370521580034
+(clone s153) mRNA fragment,0.037319370521580034
+"(clone S164) mRNA, 3' end of cds",0.037329102463291006
+"(clone S20iii15) mRNA, 3' end of cds",0.03781814530098625
+"Thyroid receptor interactor (TRIP3) mRNA, 3' end of cds",0.03781814530098625
+IDS Iduronate 2-sulfatase (Hunter syndrome),0.03828981620913737
+LGALS1 Ubiquinol-cytochrome c reductase core protein II,0.03864336838240833
+Transcription factor NFATx mRNA,0.03904678339930912
+"TNF receptor-1 associated protein (TRADD) mRNA, 3' end of cds",0.039218394805830434
+RB1 Retinoblastoma 1 (including osteosarcoma),0.039218394805830434
+"Splicing factor, arginine/serine-rich 7 (SFRS7) gene",0.039218394805830434
+HIC-1 gene fragment,0.03932731093895545
+"GB DEF = (clone GPCR W) G protein-linked receptor gene (GPCR) gene, 5' end of cds",0.039356063917567206
+GB DEF = (clone 48ES4) mRNA fragment,0.039356063917567206
+Protein phosphatase 2A B56-alpha mRNA,0.039386590560571554
+"Quiescin (Q6) mRNA, partial cds",0.03956715226331788
+Pyruvate dehydrogenase kinase isoenzyme 2 (PDK2) mRNA,0.03956715226331788
+RLIP76 protein mRNA,0.03976768124769885
+ATP1AL1 ATP-driven ion pump,0.03976768124769885
+Motor protein,0.0397680968885062
+Ly-9 mRNA,0.03983916737070565
+"Scaffold attachment factor (SAF-B) gene, partial cds",0.03986604147125546
+"TCEB3 Transcription elongation factor B (SIII), polypeptide 3 (110kD, elongin A)",0.04028625307611125
+Inducible protein mRNA,0.040366945283873155
+TSC2 Tuberin,0.04059973516632833
+G0S3 mRNA,0.04059973516632833
+FRG1 mRNA,0.04059973516632833
+Guanylate kinase (GUK1) mRNA,0.0406140140300925
+NMDA receptor mRNA,0.040722847943651115
+(clone HSNME29) CGRP type 1 receptor mRNA,0.040972182711179084
+15-HYDROXYPROSTAGLANDIN DEHYDROGENASE,0.04100451946609992
+"Protein phosphatase 2A 74 kDa regulatory subunit (delta or B"" subunit)",0.0415741353887037
+B56epsilon mRNA,0.04161780581086167
+Phosphomevalonate kinase mRNA,0.04161780581086167
+"DGS-D mRNA, 3' end",0.04161780581086167
+COX17 mRNA,0.04161780581086167
+Protein tyrosine phosphatase mRNA,0.0416317423474041
+STAT4 Signal transducer and activator of transcription 4,0.041703164426924164
+APOC2 Apolipoprotein C-II,0.041703164426924164
+GRL Glucocorticoid receptor,0.041703164426924164
+GB DEF = Endogenous retrovirus envelope region mRNA (PL1),0.04175248124803855
+"FTL Ferritin, light polypeptide",0.04190859417713887
+OXT Oxytocin,0.04198269682618515
+Heat shock protein (hsp 70) gene,0.042011160642220685
+Terminal transferase mRNA,0.04203659877911806
+PPY Pancreatic polypeptide,0.04203659877911806
+ARH6 Aplysia ras-related homolog 6,0.04211150984814148
+IMMUNOGLOBULIN J CHAIN,0.042210882155342515
+"TCRB T-cell receptor, beta cluster",0.04243289838544581
+"ERCC1 Excision repair cross-complementing rodent repair deficiency, complementation group 1 (includes overlapping antisense sequence)",0.04249931669915235
+N-MYC PROTO-ONCOGENE PROTEIN,0.04269010342094271
+"G1P2 Interferon, alpha-inducible protein (clone IFI-15K)",0.042711698461292746
+ADA Adenosine deaminase,0.042711698461292746
+"GB DEF = Involucrin gene, exon 2",0.043070572833245425
+RPS14 gene (ribosomal protein S14) extracted from Human ribosomal protein S14 gene,0.04315287654871662
+"Mesothelial keratin K7 (type II) mRNA, 3' end",0.04325111112736842
+UROD Uroporphyrinogen decarboxylase,0.043280621570024234
+C1R Complement component C1r,0.04338330132344856
+T-cell receptor beta-chain J1.3 gene extracted from Human T-cell receptor germline beta-chain D1.1 and J1.1 to J1.6 genes,0.04338330132344856
+Diazepam binding inhibitor (DBI) mRNA,0.04338330132344856
+DCN Decorin,0.04340201266570533
+COAGULATION FACTOR XIII A CHAIN,0.043476464225969444
+PYGL Glycogen phosphorylase L (liver form),0.04361712806188031
+"GB DEF = ISG-54K gene (interferon stimulated gene) encoding a 54 kDA protein, exon 2",0.04361712806188031
+"FYN FYN oncogene related to SRC, FGR, YES",0.04363224396168145
+"FCER2 Fc fragment of IgE, low affinity II, receptor for (CD23A)",0.04365947037562257
+"GUSB Glucuronidase, beta",0.04372829257235867
+"TK1 Thymidine kinase 1, soluble",0.04389773686192169
+RPL44 Ribosomal protein L44,0.04389773686192169
+PCNA Proliferating cell nuclear antigen,0.04389773686192169
+SNRPB2 Small nuclear ribonucleoprotein polypeptide B'',0.04434384098800294
+C-yes-1 mRNA,0.04434384098800294
+LYN V-yes-1 Yamaguchi sarcoma viral related oncogene homolog,0.04434384098800294
+"MIC2 Antigen identified by monoclonal antibodies 12E7, F21 and O13",0.044483042631426266
+MUSCARINIC ACETYLCHOLINE RECEPTOR M4,0.04456777087564601
+BETA-HEXOSAMINIDASE ALPHA CHAIN PRECURSOR,0.044765516108057804
+GJA1P1 gene extracted from Human Hanukah factor serine protease (HuHF) mRNA,0.044765516108057804
+"ALPP Alkaline phosphatase, placental (Regan isozyme)",0.044880213474739646
+"ATP5B ATP synthase, H+ transporting, mitochondrial F1 complex, beta polypeptide",0.04543808883304443
+MPO Myeloperoxidase,0.04554859140699811
+78 KD GLUCOSE REGULATED PROTEIN PRECURSOR,0.04554859140699811
+FGR Gardner-Rasheed feline sarcoma viral (v-fgr) oncogene homolog,0.045772115839066485
+COX5B Cytochrome c oxidase subunit Vb,0.045772115839066485
+Platelet-derived growth factor (PDGFA) A chain gene,0.045772115839066485
+CLTA Clathrin light chain A,0.045772115839066485
+"GLUCOSE TRANSPORTER TYPE 3, BRAIN",0.045772115839066485
+APOC1 Apolipoprotein CI,0.045772115839066485
+CALGRANULIN A,0.045772115839066485
+SCYA5 Small inducible cytokine A5 (RANTES),0.045772115839066485
+AMD1 S-adenosylmethionine decarboxylase 1,0.045772115839066485
+"CYBA Cytochrome b-245, alpha polypeptide",0.0459482193354151
+SNRPE Small nuclear ribonucleoprotein polypeptide E,0.046204845813646755
+Neuromedin B mRNA,0.046662239431255664
+"PDGFRA Platelet-derived growth factor receptor, alpha polypeptide",0.04671668221809711
+"TCRD T-cell receptor, delta",0.04692001748878002
+"MDU1 Antigen identified by monoclonal antibodies 4F2, TRA1.10, TROP4, and T43",0.0470319898277907
+"TROPONIN T, FAST SKELETAL MUSCLE ISOFORM BETA",0.047343131931167466
+ORPHAN RECEPTOR TR2,0.04741696152989738
+"ANPEP Alanyl (membrane) aminopeptidase (aminopeptidase N, aminopeptidase M, microsomal aminopeptidase, CD13)",0.04779378642092458
+HSPD1 Heat shock 60 kD protein 1 (chaperonin),0.04779378642092458
+"PLA2G2A Phospholipase A2, group IIA (platelets, synovial fluid)",0.04852224028821437
+BMP2 Bone morphogenetic protein 2,0.0492490140820544
+NDUFV2 NADH dehydrogenase (ubiquinone) flavoprotein 2 (24kD),0.0492490140820544
+"GOT2 Glutamic-oxaloacetic transaminase 2, mitochondrial (aspartate aminotransferase 2)",0.0492966096357104
+LYL-1 protein gene,0.0492966096357104
+CYTOCHROME C OXIDASE POLYPEPTIDE VA PRECURSOR,0.049310016873406255
+CYC1 Cytochrome c-1,0.04971480141221261
+TP53 Tumor protein p53 (Li-Fraumeni syndrome),0.050298083977313175
+MLC gene (non-muscle myosin light chain) extracted from Human nonmuscle/smooth muscle alkali myosin light chain gene,0.050837159127481955
+PPGB Protective protein for beta-galactosidase (galactosialidosis),0.050837159127481955
+CYB5 Cytochrome b-5,0.050837159127481955
+"RAP1A RAP1A, member of RAS oncogene family",0.050837159127481955
+"ATP2A2 ATPase, Ca++ transporting, cardiac muscle, slow twitch  2",0.05120776076786674
+Transposon-like element mRNA,0.05124784840468418
+CD33 CD33 antigen (differentiation antigen),0.05170993792208502
+"CAPN2 Calpain, large polypeptide L2",0.05170993792208502
+HEXB Hexosaminidase B (beta polypeptide),0.05170993792208502
+RASA1 GTPase-activating protein ras p21 (RASA),0.05172550893589133
+"MYL3 Myosin, light polypeptide 3, alkali; ventricular, skeletal, slow",0.0519173533282315
+PTMS Parathymosin,0.05213374842727731
+"ALPL Alkaline phosphatase, liver/bone/kidney",0.05213374842727731
+G6PD Glucose-6-phosphate dehydrogenase,0.052709180871100006
+IFI56 Interferon-induced protein 56,0.052861848628503044
+"THRA Thyroid hormone receptor, alpha (avian erythroblastic leukemia viral (v-erb-a) oncogene homolog)",0.052861848628503044
+60-kdal ribonucleoprotein (Ro) mRNA,0.053074970484064045
+"ELK1 ELK1, member of ETS oncogene family",0.05309655949349085
+SELL Selectin L (lymphocyte adhesion molecule 1),0.053216819148306595
+"ATP6B1 ATPase, H+ transporting, lysosomal (vacuolar proton pump), beta polypeptide, 56/58kD, isoform 1",0.053216819148306595
+PF4 Platelet factor 4,0.053316864325896426
+COL4A1 gene (alpha-1 type IV collagen) extracted from Human alpha-1 collagen type IV gene,0.05332523501297063
+"DEFA1 Defensin, alpha 1, myeloid-related sequence ",0.05354052718650249
+UBA52 Ubiquitin A-52 residue ribosomal protein fusion product 1,0.05354331428063726
+"CD8A CD8 antigen, alpha polypeptide (p32)",0.05383654194988932
+"SLC4A1 Solute carrier family 4, anion exchanger, member 1 (erythrocyte membrane protein band 3)",0.054700692566590985
+Endogenous retroviral protease mRNA,0.05474681795195038
+CST3 Cystatin C (amyloid angiopathy and cerebral hemorrhage),0.05475140703474831
+RAS-RELATED PROTEIN RAB-1A,0.05479778810413997
+"NADH-CYTOCHROME B5 REDUCTASE",0.055751203513664055
+CD1A CD1a antigen (thymocyte antigen),0.05612057825390611
+CD1B CD1b antigen (thymocyte antigen),0.056160744383293645
+CD1C CD1c antigen (thymocyte antigen),0.056160744383293645
+HNRPA2B1 Heterogeneous nuclear ribonucleoprotein A2/B1,0.0567281847731808
+MAG Myelin-associated glycoprotein,0.056792203998488416
+Recombination activating protein (RAG-1) gene,0.056792203998488416
+Translational initiation factor 2 beta subunit (elF-2-beta) mRNA,0.056792203998488416
+IL7R Interleukin 7 receptor,0.057526436690026043
+"FUCA1 Fucosidase, alpha-L- 1, tissue",0.05764600483597163
+OAT Ornithine aminotransferase (gyrate atrophy),0.05764600483597163
+MGMT 6-O-methylguanine-DNA methyltransferase (MGMT),0.058353113042373964
+"CETP Cholesteryl ester transfer protein, plasma",0.05841836661131241
+"MX2 Myxovirus (influenza) resistance 2, homolog of murine",0.05877949477550537
+TCRG T cell receptor gamma chain,0.05880527411464532
+"ATP-DEPENDENT DNA HELICASE II, 86 KD SUBUNIT",0.05938883424730282
+"MYH9 Myosin, heavy polypeptide 9, non-muscle",0.05963500134254893
+"PTX3 Pentaxin-related gene, rapidly induced by IL-1 beta",0.0597787289359515
+Oncoprotein 18 (Op18) gene,0.05978487712874146
+"GNB3 Guanine nucleotide binding protein (G protein), beta polypeptide 3",0.060259242469701414
+X BOX BINDING PROTEIN-1,0.06060773157758869
+HPRT1 Hypoxanthine phosphoribosyltransferase 1 (Lesch-Nyhan syndrome),0.06090872036350337
+"ALDH1 Aldehyde dehydrogenase 1, soluble",0.060987189694569295
+"NCF2 Neutrophil cytosolic factor 2 (65kD, chronic granulomatous disease, autosomal 2)",0.06123766989653396
+GB DEF = H19 RNA gene,0.06134186200648017
+"SRD5A1 Steroid-5-alpha-reductase, alpha polypeptide 1 (3-oxo-5 alpha-steroid delta 4-dehydrogenase alpha 1)",0.06139984840774997
+TNFR2 Tumor necrosis factor receptor 2 (75kD),0.06153189199107418
+ICAM2 Intercellular adhesion molecule 2,0.06162350600764086
+SRI Sorcin,0.061877737164183495
+Fc-epsilon-receptor gamma-chain mRNA,0.06203684862713613
+VCL Vinculin,0.06204264739853958
+PRKAR1A CAMP-dependent protein kinase regulatory subunit type I,0.06269377729293704
+LARGE PROLINE-RICH PROTEIN BAT2,0.06315067292880834
+LARGE PROLINE-RICH PROTEIN BAT3,0.06336984098032042
+GB DEF = Lymphocyte-specific protein 1 (LSP1) mRNA,0.06342219765116246
+26-kDa cell surface protein TAPA-1 mRNA,0.06380354318957998
+ODC1 Ornithine decarboxylase 1,0.06380354318957998
+"MX1 Myxovirus (influenza) resistance 1, homolog of murine (interferon-inducible protein p78)",0.06451073871487309
+GB DEF = Alpha-2-adrenergic receptor (alpha-2 c2) gene,0.06459224385821673
+"CLAPB1 Clathrin-associated/assembly/adaptor protein, large, beta 1",0.06459224385821673
+"PRKACB Protein kinase, cAMP-dependent, catalytic, beta",0.06466364503010891
+"ITGA2B Integrin, alpha 2b (platelet glycoprotein IIb of IIb/IIIa complex, antigen CD41B)",0.06475061809923165
+GLB1 Beta-D-galactosidase,0.06512098309392986
+"IDO Indole 2,3-dioxygenase",0.06535115011735618
+FKBP1 FK506-binding protein 1 (12kD),0.06569163020073471
+"PLCG1 Phospholipase C, gamma 1 (formerly subtype 148)",0.0657359973766669
+"PTPRA Protein tyrosine phosphatase, receptor type, alpha polypeptide",0.06578714771756702
+FACTOR VIII INTRON 22 PROTEIN,0.06578714771756702
+GB DEF = M1 gene for muscarinic acetylcholine receptor,0.06629340952171095
+"FUT1 Fucosyltransferase 1 (galactoside 2-alpha-L-fucosyltransferase, Bombay phenotype included)",0.06631524849209847
+INSULIN-LIKE GROWTH FACTOR BINDING PROTEIN 3 PRECURSOR,0.06651559529180164
+"LIG1 Ligase I, DNA, ATP-dependent",0.06672439654205152
+DNA-REPAIR PROTEIN XRCC1,0.06685810717039317
+ARF4 ADP-ribosylation factor 4,0.06705193565151263
+CD53 CD53 antigen,0.0671054225821785
+"ATP5 ATP synthase, H+ transporting, mitochondrial",0.06718061877201315
+"GB DEF = Ig superfamily cytotoxic T-lymphocyte-associated protein (CTLA-4) gene, last exon",0.06719517215352344
+CSF1 Colony-stimulating factor 1 (M-CSF),0.06719729542546354
+H2AZ H2AZ histone,0.06719729542546354
+CD48 CD48 antigen (B-cell membrane protein),0.06735641565306133
+"S100A10 S100 calcium-binding protein A10 (annexin II ligand, calpactin I, light polypeptide (p11))",0.06755755478640472
+CD9 CD9 antigen,0.06765249342974458
+CD72 CD72 antigen,0.06765249342974458
+PPBP Connective tissue activation peptide III,0.06765249342974458
+NCF1 47 kD autosomal chronic granulomatous disease protein,0.06809014189675308
+FAH Fumarylacetoacetate,0.06816301112748996
+"CSNK2A1 Casein kinase 2, alpha 1 polypeptide",0.06820992011715053
+"CSNK2A2 Casein kinase 2, alpha prime polypeptide",0.06820992011715053
+"SLC2A5 Solute carrier family 2 (facilitated glucose transporter), member 5",0.06890744984206323
+"MMP2 Matrix metalloproteinase 2 (gelatinase A, 72kD gelatinase, 72kD type IV collagenase)",0.06921912898095055
+VITAMIN K-DEPENDENT PROTEIN Z PRECURSOR,0.06969942522769995
+ARF5 ADP-ribosylation factor 5,0.07026385574867329
+GLI3 PROTEIN,0.07145336219464157
+"LGALS3 Lectin, galactoside-binding, soluble, 3 (galectin 3) (NOTE: redefinition of symbol)",0.07145336219464157
+ARF6 ADP-ribosylation factor 6,0.07145336219464157
+UBE1 Ubiquitin activating enzyme E1,0.07148164155630991
+Membrane-associated protein (HEM-1) mRNA,0.0716991277044722
+SYN1 gene (synapsin I) extracted from Human synapsin I (SYN1) gene,0.07248661498144053
+"RPS4Y Ribosomal protein S4, Y-linked",0.07305993214462056
+NFKB1 Nuclear factor of kappa light polypeptide gene enhancer in B-cells 1 (p105),0.07305993214462056
+TNFAIP1 Tumor necrosis factor alpha inducible protein A20,0.07309536095590058
+"NATURAL KILLER CELLS PROTEIN 4 PRECURSOR",0.07346734212375972
+C4A Complement component 4A,0.07362107873093711
+CSF3R Colony stimulating factor 3 receptor (granulocyte),0.07385252978639328
+GB DEF = MHC class III HSP70-HOM gene (HLA),0.07401190032385252
+HEAT SHOCK 70 KD PROTEIN 1,0.07401190032385252
+ITGA3 Integrin alpha-3 subunit,0.07421986080624779
+GALT Galactose-1-phosphate uridyl transferase,0.07525106661877017
+HLA-DQB1 gene extracted from Human guanine nucleotide-binding regulatory protein (Go-alpha) gene,0.07526544659111122
+DTR Diphtheria toxin receptor (heparin-binding epidermal growth factor-like growth factor),0.07632466817819634
+EPB42 Erythrocyte membrane protein band 4.2,0.0768164439000551
+DCK Deoxycytidine kinase,0.07682025978012715
+Homeobox gene,0.07682025978012715
+GB DEF = Histone H2A.1 (H2A) gene,0.07682025978012715
+EVI2B PROTEIN PRECURSOR TROPIC VIRAL INTEGRATION SITE 2B PROTEIN),0.07697615348508327
+Surface antigen mRNA,0.07714476135632775
+CLEAVAGE SIGNAL-1 PROTEIN,0.07724148093135469
+"TUBG Tubulin, gamma polypeptide",0.0787709184697887
+PHOSPHATIDYLINOSITOL 3-KINASE REGULATORY ALPHA SUBUNIT,0.07957298010696165
+Growth/differentiation factor 1 (GDF-1) mRNA,0.07988141064199626
+"Modulator recognition factor I (MRF-1) mRNA, 3' end",0.07988141064199626
+ATP6C Vacuolar H+ ATPase proton channel subunit,0.0803895027487455
+"NAGA N-acetylgalactosaminidase, alpha-",0.0803895027487455
+TCF6L1 Transcription factor 6-like 1 (mitochondrial transcription factor 1-like),0.0804471658016013
+Transcription factor ETR101 mRNA,0.08046644911899077
+Thyroid autoantigen (truncated actin-binding protein) mRNA,0.08066490672248856
+CTSD Cathepsin D (lysosomal aspartyl protease),0.08168269862703673
+AKT1 V-akt murine thymoma viral oncogene homolog 1,0.08210693225053618
+AMFR Autocrine motility factor receptor,0.08293581596853357
+TARS Threonyl-tRNA synthetase,0.08397489893381845
+"GB DEF = 5-lipoxygenase activating protein (FLAP) gene, exon 5",0.08425799317078828
+CLU Clusterin (complement lysis inhibitor; testosterone-repressed prostate message 2; apolipoprotein J),0.08444806236186847
+PPIB Peptidylprolyl isomerase B (cyclophilin B),0.08446148204582847
+THYROLIBERIN PRECURSOR,0.08504092240368778
+TAL1 T-cell acute lymphocytic leukemia 1 (NOTE: redefinition of symbol),0.08607705221537783
+"GNA15 Guanine nucleotide binding protein (G protein), alpha 15 (Gq class)",0.08758749343113087
+CD27 CD27 antigen (T cell activation antigen),0.08820397062778486
+LRPAP1 Low density lipoprotein-related protein-associated protein 1 (alpha-2-macroglobulin receptor-associated protein 1,0.08833553153889899
+High density lipoprotein binding protein (HBP) mRNA,0.08860605401358916
+"Udulin 1 mRNA, 3' end",0.08902324683489106
+TYROSINE-PROTEIN KINASE JAK1,0.08918524458122312
+GLDC Glycine cleavage system protein P (glycine decarboxylase),0.08930932261230828
+RAC2 Ras-related C3 botulinum toxin substrate 2,0.08958082861533107
+HEAT SHOCK FACTOR PROTEIN 1,0.0895894833478551
+"MPP1 Membrane protein, palmitoylated 1 (55kD)",0.0895894833478551
+"PPP2R2A Protein phosphatase 2 (formerly 2A), regulatory subunit B (PR 52), alpha isoform",0.08961420496402804
+XK Kell blood group precursor (McLeod phenotype),0.09027960736131524
+PSMA2 Proteasome component C2,0.09050943303306998
+"PRKAR1B Protein kinase, cAMP-dependent, regulatory, type I, beta",0.09105412812267799
+FSHR Follicle stimulating hormone receptor,0.09105412812267799
+HEAT SHOCK FACTOR PROTEIN 2,0.09105412812267799
+CDK2 Cyclin-dependent kinase 2,0.09105412812267799
+ORF mRNA,0.09105412812267799
+GATA2 GATA-binding protein 2,0.09141115975963407
+GB DEF = Protein-tyrosine phosphatase mRNA,0.09141115975963407
+Globin gene,0.09195116116629531
+"PRE-MRNA SPLICING FACTOR SF2, P32 SUBUNIT PRECURSOR",0.09195116116629531
+MAJOR HISTOCOMPATIBILITY COMPLEX ENHANCER-BINDING PROTEIN MAD3,0.09195116116629531
+MSN Moesin,0.09195116116629531
+TPP2 Tripeptidyl peptidase II,0.09198778888428136
+POLYPOSIS LOCUS PROTEIN 1,0.09229168265045987
+CPA3 Carboxypeptidase A3 (mast cell),0.09262377277443443
+Arginine-rich nuclear protein mRNA,0.09273881513097895
+"TB1 gene mRNA, 3' end",0.09273881513097895
+CUTL1 Cut (Drosophila)-like 1 (CCAAT displacement protein),0.09303842204136407
+ARF3 ADP-ribosylation factor 3,0.09347486869057799
+UBE2A Ubiquitin-conjugating enzyme E2A (RAD6 homolog),0.0940746230183882
+"SEF2-1A protein (SEF2-1A) mRNA, 5' end",0.09436968140665182
+FRAP FK506 binding protein 12-rapamycin associated protein,0.09436968140665182
+HK1 Hexokinase 1,0.09436968140665182
+FN1 Fibronectin 1,0.09471182572414988
+Carbonic anhydrase VII (CA VII) gene,0.09495411477028888
+GTF2B General transcription factor IIB,0.09495411477028888
+NUCLEOLYSIN TIA-1,0.09515495131880466
+YY1 YY1 transcription factor,0.09515495131880466
+PYCR1 Pyrroline-5-carboxylate reductase 1,0.09534670097083615
+INTEGRAL MEMBRANE PROTEIN E16,0.0954886802637734
+"PEPTIDYL-PROLYL CIS-TRANS ISOMERASE, MITOCHONDRIAL PRECURSOR",0.095544950570548
+GB DEF = M5 muscarinic acetylcholine receptor gene,0.09620345550910839
+"Protein kinase A catalytic subunit mRNA, 3' end",0.09620345550910839
+PUTATIVE SERINE/THREONINE-PROTEIN KINASE P78,0.09894166241280772
+PLACENTAL CALCIUM-BINDING PROTEIN,0.09963350635584796
+Cdc2-related protein kinase (CHED) mRNA,0.09989657698979441
+THROMBOXANE-A SYNTHASE,0.09989657698979441
+AHNAK AHNAK nucleoprotein (desmoyokin),0.10000859139014996
+CPB1 Carboxypeptidase B1 (tissue),0.10002121085672792
+TRANSCRIPTION ELONGATION FACTOR S-II,0.10050175723102543
+"SODIUM CHANNEL PROTEIN, SKELETAL MUSCLE ALPHA-SUBUNIT",0.10070345820944437
+"SMPD1 gene (acid sphingomyelinase) extracted from Homo sapiens acid sphingomyelinase (SMPD1) gene, ORF's 1-3's",0.1017939006146319
+GB DEF = Somatostatin receptor isoform 2 (SSTR2) gene,0.10211802555399217
+ANX4 Annexin IV (placental anticoagulant protein II),0.10211802555399217
+ETS-RELATED TRANSCRIPTION FACTOR ELF-1,0.10211802555399217
+PGM1 Phosphoglucomutase 1,0.10211802555399217
+GB DEF = Serotonin receptor gene,0.10211802555399217
+TRANSCRIPTION FACTOR RELB,0.10211802555399217
+"TCF12 Transcription factor 12 (HTF4, helix-loop-helix transcription factors 4)",0.10282012784726859
+Arginine-rich protein (ARP) gene,0.10312274086660107
+"CD59 CD59 antigen p18-20 (antigen identified by monoclonal antibodies 16.3A5, EJ16, EJ30, EL32 and G344)",0.10312274086660107
+DF D component of complement (adipsin),0.1032091994180083
+CALR Autoantigen calreticulin,0.1032091994180083
+Homologue of yeast sec7 mRNA,0.10336373693012203
+"GB DEF = Dopamine D1A receptor gene, complete exon 1, and exon 2, 5' end",0.10336373693012203
+NKG5 PROTEIN PRECURSOR,0.10372930553488227
+"YWHAZ Tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, zeta polypeptide",0.10372930553488227
+PBX1 PBX1a and PBX1b,0.10376469810777031
+HnRNP C2 protein mRNA,0.10461581874803026
+GLYCYLPEPTIDE N-TETRADECANOYLTRANSFERASE,0.10485565971965372
+SSRP1 High mobility group box,0.10549414726905841
+TRANSFORMATION-SENSITIVE PROTEIN IEF SSP 3521,0.10549414726905841
+"PXMP3 Peroxisomal membrane protein 3 (35kD, Zellweger syndrome)",0.10557005799136994
+"RFC4 Replication factor C, 37-kD subunit",0.10557005799136994
+69/71 KD,0.10567307770555216
+TRANSCRIPTIONAL REGULATOR ISGF3 GAMMA SUBUNIT,0.10590039309212952
+GALECTIN-2,0.10590039309212952
+P62 mRNA,0.10590039309212952
+FKBP4 FK506-binding protein 4 (59kD),0.10636405649006685
+T-CELL SURFACE PROTEIN TACTILE PRECURSOR,0.10636405649006685
+ELP-1 mRNA sequence,0.10691320825173987
+MVK Mevalonate kinase,0.10731624388632387
+IGB Immunoglobulin-associated beta (B29),0.10731624388632387
+"GCK Glucokinase (hexokinase 4, maturity onset diabetes of the young 2)",0.10738160042000483
+"GLCLC Glutamate-cysteine ligase (gamma-glutamylcysteine synthetase), catalytic (72.8kD)",0.10758931684348708
+AMP deaminase (AMPD2) mRNA,0.10770500947323536
+G-gamma globin gene extracted from H.sapiens G-gamma globin and A-gamma globin genes's,0.10772765446512504
+DNA-binding protein (HRC1) mRNA,0.10775107613913203
+ICSBP1 Interferon consensus sequence binding protein 1,0.10775107613913203
+"ACADM Acyl-Coenzyme A dehydrogenase, C-4 to C-12 straight chain",0.1080401201680621
+GB DEF = Kazal-type serine proteinase (HUSI-II) gene,0.10814123001641533
+Br140 mRNA,0.10814123001641533
+ZNF76 Zinc finger protein 76,0.10843991190401273
+Ubiquitin carrier protein (E2-EPF) mRNA,0.1086952938323565
+CCND3 Cyclin D3,0.1086952938323565
+"DIHYDROPRYRIDINE-SENSITIVE L-TYPE, CALCIUM CHANNEL BETA-1-B1 SUBUNIT",0.10925723750091382
+B94 PROTEIN,0.11010893474474455
+130 KD LEUCINE-RICH PROTEIN,0.11010893474474455
+"LTR mRNA, 3' end of coding region and 3' flank",0.11053063034362685
+CTGF Connective tissue growth factor,0.11097499567466951
+LEUKOCYTE ELASTASE INHIBITOR,0.1113490957918423
+D-BETA-HYDROXYBUTYRATE DEHYDROGENASE PRECURSOR,0.11245227152205536
+M6PR Mannose receptor,0.11245227152205536
+Pancreatic lipase related protein 1 (PLRP1) mRNA,0.1131665915475015
+Methylmalonate semialdehyde dehydrogenase gene,0.1131665915475015
+"PTPRZ Protein tyrosine phosphatase, receptor-type, zeta polypeptide",0.11347536228182914
+NOS3 Nitric oxide synthase 3 (endothelial cell),0.11469505725113409
+MDK Midkine (neurite growth-promoting factor 2),0.11495961741032018
+"CAPG Capping protein (actin filament), gelsolin-like",0.11557632641854915
+"LAMB2 Laminin, beta 2 (laminin S)",0.11565401109139468
+SSBP Single-stranded DNA-binding protein,0.11570858057543863
+"Heterogeneous nuclear ribonucleoprotein D (hnRNP D), partial cds, clone cDx4",0.11651183603989199
+"GB DEF = Recombination acitivating protein (RAG2) gene, last exon",0.1175342635434965
+"FATTY ACID-BINDING PROTEIN, EPIDERMAL",0.11769709391600337
+"ALPHA-ACTININ 1, CYTOSKELETAL ISOFORM",0.11817419897696937
+"SLC5A2 Solute carrier family 5 (sodium/glucose cotransporter), member 2",0.11890415604215625
+"COL9A2 Collagen, type IX, alpha 2",0.11971383377682634
+PBGD gene (hydroxymethylbilane synthase) extracted from Homo sapiens hydroxymethylbilane synthase gene,0.11993554365216764
+"PLCB2 Phospholipase C, beta 2",0.12006862970796572
+BRAF V-raf murine sarcoma viral oncogene homolog B1,0.12006862970796572
+22kDa smooth muscle protein (SM22) mRNA,0.12024171568455376
+Azurocidin gene,0.12024171568455376
+"SPTBN1 Spectrin, beta, non-erythrocytic 1",0.1210086221290506
+DPP6 Dipeptidylpeptidase VI,0.1210086221290506
+SPLICING FACTOR U2AF 35 KD SUBUNIT,0.12124847630033807
+SATB1 Special AT-rich sequence binding protein 1 (binds to nuclear matrix/scaffold-associating DNA's),0.12126844172030103
+CRABP2 Cellular retinoic acid-binding protein 2,0.12232164744876084
+"NASP Nuclear autoantigenic sperm protein (histone-binding)",0.12232164744876084
+Defensin 5 gene,0.12236232850674181
+SIGNAL TRANSDUCER AND ACTIVATOR OF TRANSCRIPTION 1-ALPHA/BETA,0.12236232850674181
+Folylpolyglutamate synthetase mRNA,0.12249980827660732
+Prostaglandin D2 synthase gene,0.12288069395177491
+Keratin 1 gene,0.12299618890995101
+FLI1 Friend leukemia virus integration 1,0.12299618890995101
+"KERATIN, TYPE II CYTOSKELETAL 2 ORAL",0.12348050824923212
+(pp21) mRNA,0.12348050824923212
+"KERATIN, TYPE II CYTOSKELETAL 2 EPIDERMAL",0.12363425495881586
+CRYAB Crystallin alpha-B,0.12368272216844016
+HKR-T1,0.12381954034506157
+CD34 CD34 antigen (hemopoietic progenitor cell antigen),0.12392976332226904
+Pp52,0.12420345326279258
+RGS1 Regulator of G-protein signalling 1,0.12463482702586909
+ERBB3 V-erb-b2 avian erythroblastic leukemia viral oncogene homolog 3 {alternative products},0.12463482702586909
+D10S102,0.1259110266652653
+"SP-10=intra-acrosomal protein {alternatively spliced} [human, liver, Genomic, 2339 nt 4 segments]",0.1259110266652653
+"Actin depolymerizing factor [human, fetal brain, mRNA, 1452 nt]",0.1261063562270918
+RBP2,0.12690351877472603
+"Heat shock protein HSP72 homolog [human, thyroid associated ophthalmopathy patient, mRNA Partial, 450 nt]",0.1269979845019133
+"PCCB Propionyl Coenzyme A carboxylase, beta polypeptide",0.12716966742184743
+"SLC9A1 Solute carrier family 9 (sodium/hydrogen exchanger), isoform 1 (antiporter, Na+/H+, amiloride sensitive)",0.1271867950534293
+"Granulocyte colony-stimulating factor induced gene [human, CML patient, bone marrow mononuclear cells, mRNA, 833 nt]",0.1271867950534293
+"GB DEF = Glycine transporter type 1b [human, substantia nigra, mRNA, 2364 nt]",0.12730890779725615
+"NEURAL CELL ADHESION MOLECULE, PHOSPHATIDYLINOSITOL-LINKED ISOFORM PRECURSOR",0.12784558151519232
+CDC10 Cell division cycle 10 (homologous to CDC10 of S. cerevisiae,0.12827412480474581
+Platelet-derived endothelial cell growth factor mRNA,0.12827412480474581
+"Brain-expressed HHCPA78 homolog [human, HL-60 acute promyelocytic leukemia cells, mRNA, 2704 nt]",0.12828837324811718
+Nrf2,0.1284834050912106
+IK,0.1290220313074771
+"Cellular retinoic acid-binding protein [human, skin, mRNA, 735 nt]",0.1290220313074771
+"Matk=megakaryocyte-associated tyrosine kinase [human, Genomic, 2617 nt 13 segments]",0.12934776860421604
+"ELONGATION FACTOR TU, MITOCHONDRIAL PRECURSOR",0.1307911644562077
+BLK Protein-tyrosine kinase blk,0.13096802957955742
+"Protein kinase inhibitor [human, neuroblastoma cell line SH-SY-5Y, mRNA, 2147 nt]",0.13224113632300882
+VAV2 Vav 2 oncogene,0.13266601639521752
+"GB DEF = Transcript ch21=oligomycin sensitivity conferral protein oscp homolog [human, RF1,RF48 stomach cancer cell lines, mRNA, 262 nt]",0.13270446229103536
+"GB DEF = ERV9 reverse transcriptase homolog {clone RT18} [human, multiple sclerosis, brain plaques, mRNA Partial, 84 nt]",0.1329857129344124
+NF-E2 protein (NF-E2) mRNA,0.1329857129344124
+FLT1 Fms-related tyrosine kinase 1 (vascular endothelial growth factor/vascular permeability factor receptor),0.1330169730872171
+PDCD2 Programmed cell death 2,0.1332537525949091
+M-PHASE INDUCER PHOSPHATASE 2,0.13339365683935542
+"Neurofilament-66 [human, fetal brain, mRNA, 3197 nt]",0.13360601860054933
+EXT1 Exostoses (multiple) 1,0.1344049384724933
+ITGB7 Integrin beta-7 subunit,0.1344049384724933
+L-UBC,0.1346168210297546
+TGF-beta inducible early protein (TIEG) mRNA,0.1346168210297546
+IEX-1,0.13542915052615936
+BB1,0.13542915052615936
+"GB DEF = Putative Rab5-interacting protein {clone L1-57} [human, HeLa cells, mRNA Partial, 366 nt]",0.1355969229322594
+PHB Prohibitin,0.13635969045374954
+"Protein phosphatase 2C alpha [human, teratocarcinoma, mRNA, 2346 nt]",0.13649205774870346
+"Cytochrome P450 reductase [human, placenta, mRNA Partial, 2403 nt]",0.13694591384918814
+BCL6 B cell lymphoma protein 6 (zinc finger protein 51),0.13701024320189478
+IL10R Interleukin 10 receptor,0.13707320415491608
+"LST1 mRNA, cLST1/E splice variant",0.1371208565629699
+GB DEF = Clone A9A2BRB2 (CAC)n/(GTG)n repeat-containing mRNA,0.1372420471179014
+Clone A9A2BRB7 (CAC)n/(GTG)n repeat-containing mRNA,0.13791493700606988
+SREBP-1 mRNA,0.1388918953383447
+PLK mRNA,0.13904455626958676
+ABR Active BCR-related gene,0.1401317486831615
+GB DEF = Olfactory marker protein (OMP) gene,0.14039820378683734
+Beta-globin thalassemia gene extracted from Human beta globin region on chromosome 11,0.14095722092931418
+Glutamate transporter,0.14095722092931418
+BTK region clone ftp-3 mRNA,0.14095722092931418
+Pre-B cell enhancing factor (PBEF) mRNA,0.14148053332295285
+Sterol regulatory element binding protein-2 mRNA,0.14156488407150605
+Guanine nucleotide regulatory protein (NET1) mRNA,0.14169788306643996
+FKHR Homolog 1 of Drosophila forkhead (rhabdomyosarcoma),0.14382248056933575
+54 kDa protein mRNA,0.14423155734207657
+RP3 mRNA,0.14488592027708969
+"CDC42 GTPase-activating protein mRNA, partial cds",0.14589198818595014
+TFIIIC Box B-binding subunit mRNA,0.14589198818595014
+Growth factor receptor tyrosine kinase (STK-1) mRNA,0.14688933312898095
+Actin bundling protein mRNA,0.14688933312898095
+Ca2+-dependent phospholipase A2 mRNA,0.14713981523838965
+B4-2 protein mRNA,0.1473200943894134
+GB DEF = Centrin mRNA,0.1473200943894134
+FBN2 Fibrillin 2,0.14855541556980345
+Receptor 4-1BB ligand mRNA,0.14863839859143305
+G protein-coupled receptor APJ gene,0.1488845196318301
+"Capping protein alpha mRNA, partial cds",0.14987347687970773
+"Phorbolin I mRNA, partial cds",0.14987347687970773
+Trophinin mRNA,0.1500292779846923
+RORA RAR-related orphan receptor A,0.1500292779846923
+Fetal Alz-50-reactive clone 1 (FAC1) mRNA,0.1503658909587921
+MB-1 gene,0.15054917774552098
+P55CDC mRNA,0.15069549483248001
+HSD17B3 Hydroxysteroid (17-beta) dehydrogenase 3,0.15082785961574097
+Clone pSK1 interferon gamma receptor accessory factor-1 (AF-1) mRNA,0.15084817500869396
+N-ACETYLGALACTOSAMINE-6-SULFATASE PRECURSOR,0.1513044442113558
+IEF SSP 9502 mRNA,0.15143160162277336
+Clone CCA12 mRNA containing CCA trinucleotide repeat,0.15143160162277336
+Follistatin-related protein precursor mRNA,0.1517728522931548
+"Orphan receptor mRNA, partial cds",0.151827602265551
+Syntaxin mRNA,0.15403531700870293
+Beta2-chimaerin mRNA,0.15407019036324543
+Protein kinase (zpk) mRNA,0.15471631914875392
+MLH1 DNA mismatch repair protein MLH1,0.15482443255752976
+Putative tRNA synthetase-like protein mRNA,0.15567959909063975
+HSPE1 Heat shock 10 kD protein 1 (chaperonin 10),0.15567959909063975
+"ABL gene, exon 1b and intron 1b, and putative M8604 Met protein  (M8604 Met) gene",0.15569458748385914
+HB9 homeobox gene,0.15598137835740897
+"NAD(H)-specific isocitrate dehydrogenase alpha subunit precursor mRNA",0.15599356208128554
+HTK Hepatoma transmembrane kinase,0.15599432610295877
+ERF-2 mRNA,0.1563110861382627
+SRP14 Signal recognition particle 14 kD protein,0.15650108050469086
+ALDH6 Aldehyde dehydrogenase 6 ,0.15650108050469086
+GB DEF = Insulin-stimulated protein kinase 1 (ISPK-1) mRNA,0.15693372384204365
+Basic helix-loop-helix transcription factor mRNA,0.15693372384204365
+Splicesomal protein (SAP 61) mRNA,0.15693372384204365
+Glutamate transporter mRNA,0.15701683121819518
+Phospholipase c delta 1 mRNA,0.15792461031068666
+1.1 kb mRNA upregulated in retinoic acid treated HL-60 neutrophilic cells,0.15792461031068666
+PINCH protein mRNA,0.15918374052950487
+Placenta LERK-2 (EPLG2) mRNA,0.15929868353951276
+ZNF131 Zinc finger protein 131 (clone pHZ-10),0.16056873579402162
+Serine kinase mRNA,0.16070785328793866
+MAPKAP kinase (3pK) mRNA,0.16070785328793866
+"CDKN1A Cyclin-dependent kinase inhibitor 1A (p21, Cip1)",0.1607223042463478
+"JAK3 Janus kinase 3 (a protein tyrosine kinase, leukocyte)",0.16183393003500887
+Cysteine-rich heart protein (hCRHP) mRNA,0.161859569582338
+ZNF173 Acid finger protein ZNF173,0.16216112664670146
+ZNF139 Zinc finger protein 139 (clone pHZ-37),0.16216112664670146
+ZNF143 Zinc finger protein 143 (clone pHZ-1),0.1630813890873979
+CALMODULIN,0.1630813890873979
+Nuclear factor NF45 mRNA,0.1630813890873979
+Nuclear factor NF90 mRNA,0.16369137247084933
+GP36b glycoprotein mRNA,0.16546814213441635
+ADAR Double-stranded RNA adenosine deaminase,0.16562079332708884
+Lymphoid-restricted membrane protein (Jaw1) mRNA,0.16615765844949115
+MEOX1 Homeobox protein mox1,0.16712822667771846
+MAGE-11 antigen (MAGE11) gene,0.16758714568994126
+ALDH7 Aldehyde dehydrogenase 7,0.16758714568994126
+"G2 protein mRNA, partial cds",0.16758714568994126
+ETV6 Ets variant gene 6 (TEL oncogene),0.16764937835173482
+CCNH Cyclin H,0.16790758787959006
+"Interleukin-8 receptor type A (IL8RBA) gene, promoter and complete cds",0.16838223165045862
+"GB DEF = Interleukin-8 receptor type B (IL8RB) mRNA, splice variant IL8RB1, partial cds",0.1698986996069317
+"GB DEF = Interleukin-8 receptor type B (IL8RB) mRNA, splice variant IL8RB9, partial cds",0.1698986996069317
+"GB DEF = Alpha1(XI) collagen (COL11A1) gene, 5' region and exon 1",0.1698986996069317
+IgG Fc receptor hFcRn mRNA,0.1699424459354054
+MAP KINASE-ACTIVATED PROTEIN KINASE 2,0.1699424459354054
+Oxidoreductase (HHCMA56) mRNA,0.1705384857263826
+GB DEF = G protein-coupled receptor (GPR1) gene,0.1705384857263826
+GB DEF = Homolog of yeast mutL (hPMS1) gene,0.1705878226908703
+"GB DEF = ELAV-like neuronal protein 1 isoform Hel-N2 (Hel-N1) mRNA, partial cds",0.17058976792672156
+Cysteine protease CPP32 isoform alpha mRNA,0.17058976792672156
+TATA-binding protein associated factor 30 kDa subunit (tafII30) mRNA,0.1706062680623936
+TFIIA gamma subunit mRNA,0.1706730870402974
+Myosin-IC mRNA,0.1706730870402974
+"Ral guanine nucleotide dissociation stimulator mRNA, partial cds",0.1706730870402974
+(ard-1) mRNA,0.1706730870402974
+Paxillin mRNA,0.1706730870402974
+Protein tyrosine phosphatase PTPCAAX2 (hPTPCAAX2) mRNA,0.171118874662966
+SnRNP core protein Sm D3 mRNA,0.17125286815396212
+"HLA-DMB Major histocompatibility complex, class II, DM beta",0.17164639723128167
+"Beta-1,2-N-acetylglucosaminyltransferase II (MGAT2) gene",0.17182075852953452
+EEF1A1 Translation elongation factor 1-alpha-1,0.1719611903292459
+GB DEF = Cosmid CRI-JC2015 at D10S289 in 10sp13,0.1728778615402501
+Acidic 82 kDa protein mRNA,0.1733524967281139
+"Serine palmitoyltransferase (LCB2) mRNA, partial cds",0.17391390103323512
+"CSTF3 Cleavage stimulation factor, 3' pre-RNA, subunit 3, 77kD",0.1739246757047901
+Protein tyrosine phosphatase mRNA,0.17508229650390095
+Transcription factor IL-4 Stat mRNA,0.17518492689632537
+"GRIK5 Glutamate receptor, ionotropic, kainate 5",0.17518492689632537
+ELL mRNA,0.17611551174658283
+CSPG2 Chondroitin sulfate proteoglycan 2 (versican),0.1767857361508708
+Peroxisomal enoyl-CoA hydratase-like protein (HPXEL) mRNA,0.17723295137569411
+(AF1q) mRNA,0.17751323403990335
+Transcription factor ETV1 mRNA,0.1778752731909762
+NOS1 Nitric oxide synthase 1 (neuronal),0.1778752731909762
+PARATHYROID HORMONE/PARATHYROID HORMONE-RELATED PEPTIDE RECEPTOR PRECURSOR,0.1778752731909762
+"Growth hormone-releasing hormone receptor form b gene extracted from Human growth hormone-releasing hormone receptor gene, alternatively spliced forms a, b, and c, partial cds",0.17921970553994288
+"SDH1 Succinate dehydrogenase, iron sulphur (Ip) subunit",0.17921970553994288
+"Alpha(1,2)fucosyltransferase",0.17934427574389497
+Chromosome 17q21 mRNA clone LF113,0.17934427574389497
+TFIID subunit TAFII55 (TAFII55) mRNA,0.17934427574389497
+CAMLG Calcium modulating ligand,0.17934427574389497
+CDC16Hs mRNA,0.1793752061197702
+GB DEF = GPR12 G protein coupled-receptor gene,0.17981763204308623
+Epstein-Barr virus-induced protein mRNA,0.1806063903835133
+Melanoma antigen p15 mRNA,0.1806063903835133
+Protein disulfide isomerase (PDIp) mRNA,0.18114492541563068
+Preprocarboxypeptidase A2 (proCPA2) mRNA,0.18114492541563068
+76 kDa tyrosine phosphoprotein SLP-76 mRNA,0.18114492541563068
+Gps1 (GPS1) mRNA,0.18114492541563068
+Cocaine and amphetamine regulated transcript CART (hCART) mRNA,0.18114492541563068
+CMKRL1 Chemokine receptor-like 1,0.18326137338258391
+SNC19 mRNA sequence,0.1839025776437743
+"Actin-like peptide mRNA, partial cds",0.18418954202752472
+ZNF151 Zinc finger protein 151 (pHZ-67),0.1847320516818014
+Ubiquitin protease (Unph) proto-oncogene mRNA,0.18505075036988236
+"GB DEF = Clone 350/2 melanoma ubiquitous mutated protein (MUM-1) gene, partial cds",0.18505075036988236
+Chromatin assembly factor-I p150 subunit mRNA,0.18523866477381032
+SRP9 Signal recognition particle 9 kD protein,0.18623895738589963
+GB DEF = DD96 mRNA,0.18623895738589963
+DNA polymerase delta small subunit mRNA,0.1865399241547482
+GB DEF = ECA39 mRNA,0.18670823003506343
+FBP1 Fructose-bisphosphatase 1,0.18811213030353102
+100 kDa coactivator mRNA,0.18832522356715403
+"2,3-oxidosqualene-lanosterol cyclase mRNA",0.18931985756716296
+Nuclear domain 10 protein (ndp52) mRNA,0.18931985756716296
+Class I histocompatibility antigen-like protein mRNA,0.18931985756716296
+"Mitochondrial serine hydroxymethyltransferase gene, nuclear encoded mitochondrion protein",0.18931985756716296
+Heterogeneous ribonucleoprotein A0 mRNA,0.18931985756716296
+Putative tumor suppressor (LUCA15) mRNA,0.19001429271173814
+Coatomer protein (COPA) mRNA,0.19001429271173814
+P21-activated protein kinase (Pak1) gene,0.19103285233116218
+JTV-1 (JTV-1) mRNA,0.19103285233116218
+"Pyrroline-5-carboxylate dehydrogenase (P5CDh) mRNA, long form",0.19103285233116218
+"Breast tumor autoantigen mRNA, complete sequence",0.19193391315549155
+Ras GTPase-activating-like protein (IQGAP1) mRNA,0.1921166520939169
+GRL Glucocorticoid receptor alpha {alternative products},0.1921166520939169
+Fragile X mental retardation protein 1 homolog FXR1 mRNA,0.19216819033538746
+Antioxidant enzyme AOE37-2 mRNA,0.19216819033538746
+Protein tyrosine kinase t-Ror1 (Ror1) mRNA,0.1922917098353707
+Transcriptional repressor (CTCF) mRNA,0.19233094621674865
+GB DEF = Chromosome 17q21 mRNA clone 1046:1-1,0.19233094621674865
+"ACP1 Acid phosphatase 1, soluble",0.1929221768470134
+SELPLG Selectin P ligand,0.19404577055017566
+STX5A Syntaxin 5A,0.1945709842128109
+Cbl-b mRNA,0.19521662958351096
+"GB DEF = Striatum-enriched phosphatase (STEP) mRNA, partial cds",0.19575170495921454
+"GB DEF = HMGI-C chimeric transcript mRNA, partial cds",0.19576953022612265
+"ID4 Inhibitor of DNA binding 4, dominant negative helix-loop-helix protein",0.19592287943759676
+RCH1 RAG (recombination activating gene) cohort 1,0.1963991247146563
+Putative RNA binding protein RNPL mRNA,0.1963991247146563
+ZNF157 Zinc finger protein 157 (HZF22),0.19653940258223526
+Cysteine-rich fibroblast growth factor receptor (CFR-1) mRNA,0.19757357368368578
+"Protein immuno-reactive with anti-PTH polyclonal antibodies mRNA, partial cds",0.19757357368368578
+GB DEF = Selenium-binding protein (hSBP) mRNA,0.19759253980709796
+"CSNK1D Casein kinase 1, delta",0.19759253980709796
+NPTX2 Neuronal pentraxin II,0.19832812927898394
+EIF-2-associated p67 homolog mRNA,0.1994710152053348
+Chitotriosidase precursor mRNA,0.1994710152053348
+Bcl-2 related (Bfl-1) mRNA,0.1994710152053348
+GB DEF = Anti-mullerian hormone type II receptor precursor gene,0.19966305348530447
+Pigment epithelium-derived factor gene,0.19966305348530447
+PGD Phosphogluconate dehydrogenase,0.20008114693161277
+FRAP FK506 binding protein 12-rapamycin associated protein,0.20008114693161277
+Splicing factor SRp30c mRNA,0.2011117464070728
+CENP-F kinetochore protein mRNA,0.20156625717637391
+TRNA-guanine transglycosylase mRNA,0.20282581560868687
+"GB DEF = (memc) mRNA, 3'UTR",0.20282581560868687
+"GB DEF = DP prostanoid receptor (PTGDR) mRNA, partial cds",0.20315958676840987
+HERV1 mRNA,0.20373414422011554
+G protein gamma-4 subunit mRNA,0.20398215781788454
+G protein gamma-10 subunit mRNA,0.20447521486272863
+G protein gamma-11 subunit mRNA,0.20493108775988808
+Fragile X mental retardation syndrome related protein (FXR2) mRNA,0.2057713830145306
+Transcriptional regulator homolog RPD3 mRNA,0.2067046163040275
+Hep27 protein mRNA,0.20684275405271696
+DUT DUTP pyrophosphatase,0.2070819536650581
+GAP SH3 binding protein mRNA,0.2070819536650581
+Myeloid elf-1 like factor (MEF) mRNA,0.20923347069653128
+"CLN3 Ceroid-lipofuscinosis, neuronal 3, juvenile (Batten, Spielmeyer-vogt disease) ",0.21020902059881535
+Hou mRNA,0.21057765609311047
+Cytoplasmic dynein light chain 1 (hdlc1) mRNA,0.21057765609311047
+Lipid-activated protein kinase PRK1 mRNA,0.21057765609311047
+Mammaglobin mRNA,0.21108525430181124
+Chromosome segregation gene homolog CAS mRNA,0.21108525430181124
+K+ channel beta 2 subunit mRNA,0.21108525430181124
+Tax1-binding protein TXBP151 mRNA,0.21108525430181124
+Tax1-binding protein TXBP181 mRNA,0.21227346174347503
+ALDH7 Aldehyde dehydrogenase 7 (NOTE: redefinition of symbol),0.21227497940068452
+Retinoic acid- and interferon-inducible 58K protein RI58 mRNA,0.21413730854624455
+Biliverdin-IXalpha reductase mRNA,0.2142850954565514
+DPH2L,0.21458963865660027
+Transcription factor HCSX (hCsx) mRNA,0.2145995394924362
+TSC-22 protein mRNA,0.2145995394924362
+Metastasis-associated mta1 mRNA,0.21511271997819306
+Heterochromatin protein p25 mRNA,0.2154929252371245
+Pancreatic zymogen granule membrane protein GP-2 mRNA,0.21570783158811865
+EIF3 Eukaryotic translation initiation factor 3 (eIF-3) p36 subunit,0.21692037193142458
+CGMP-inhibited cAMP phosphodiesterase mRNA,0.21726777004580486
+"GB DEF = Fork head domain protein (FKHR) mRNA, 3' end",0.2173788678764231
+Cleavage and polyadenylation specificity factor mRNA,0.21739234931242632
+Cyclin-dependent kinase 4 (CDK4) gene,0.21739234931242632
+ADD3 Adducin 3 (gamma),0.21770813106826745
+Cyclophilin-like protein CyP-60 mRNA,0.2189597750528472
+Alpha-mannosidase (6A8) mRNA,0.22138082558765795
+ZNF177 KRAB zinc finger protein {alternative products},0.2218884427927601
+"PPP2R4 Protein phosphatase 2A, regulatory subunit B' alpha-1",0.2230743421714711
+CtBP mRNA,0.2230743421714711
+TNF-related apoptosis inducing ligand TRAIL mRNA,0.22425650806018751
+ALDH8 Aldehyde dehydrogenase 8,0.22562150783590545
+IAP homolog B (MIHB) mRNA,0.22587275567581352
+RNA polymerase II subunit (hsRPB8) mRNA,0.22587275567581352
+DLG3 Homolog 3 of Drosophila large discs,0.22587275567581352
+HuR RNA binding protein (HuR) mRNA,0.22587275567581352
+"GB DEF = Cytochrome b pseudogene, partial cds",0.22698193806720607
+Stimulator of TAR RNA binding (SRB) mRNA,0.22704000910840907
+TAR RNA loop binding protein (TRP-185) mRNA,0.22754789526517952
+"PMS8 mRNA (yeast mismatch repair gene PMS1 homologue), partial cds (C-terminal region)",0.22754789526517952
+E2 ubiquitin conjugating enzyme UbcH5B (UBCH5B) mRNA,0.22826518288734532
+NOF1 mRNA,0.22900683248875617
+Platelet alpha SNAP mRNA,0.2296873024834366
+Salivary peroxidase mRNA,0.22976445452551866
+"SLC18A1 Solute carrier family 18 (vesicular monoamine), member 1",0.2302535186328751
+Integrin-linked kinase (ILK) mRNA,0.2306740501057743
+CDK inhibitor p19INK4d mRNA,0.23073421867557345
+Spermidine/spermine N1-acetyltransferase (SSAT) gene,0.23073518810616814
+Serotonin N-acetyltransferase gene,0.23089275207182688
+Pre-pro-megakaryocyte potentiating factor,0.2315502590448957
+Ikaros/LyF-1 homolog (hIk-1) mRNA,0.23190426800870606
+"NAD(P) transhydrogenase",0.23201589474467868
+GB DEF = Tyrosyl-tRNA synthetase mRNA,0.23400194084833545
+"Putative voltage-gated potassium channel (KVLQT1) mRNA, partial cds",0.23497814586215257
+Retinal protein (HRG4) mRNA,0.23508642337054575
+PRELP Proline arginine-rich end leucine-rich repeat protein,0.23527300358089315
+"Gu protein mRNA, partial cds",0.23527300358089315
+Deleted in split hand/split foot 1 (DSS1) mRNA,0.23641785022441214
+OS-9 precurosor mRNA,0.23673446631599573
+DGUOK Deoxyguanosine kinase,0.23692688717586616
+HOXA9 Homeo box A9,0.23703879695768873
+"54 kDa progesterone receptor-associated immunophilin FKBP54 mRNA, partial cds",0.23713603013149528
+Ladinin (LAD) mRNA,0.23737828287152793
+Cardiotrophin-1 (CTF1) mRNA,0.23737828287152793
+CDC37 homolog mRNA,0.23737828287152793
+"GNAQ Guanine nucleotide binding protein (G protein), q polypeptide",0.23778942813828977
+PTCH Patched (Drosophila) homolog,0.23836228558162145
+GB DEF = Urocortin gene,0.23991156082126386
+Selenophosphate synthetase 2 (SPS2) mRNA,0.24120833578372805
+DRP2 Dystrophin related protein 2,0.24123503229960572
+Protein tyrosine kinase PYK2 mRNA,0.24126516988964358
+"Malignant melanoma metastasis-suppressor (KiSS-1) gene, mRNA",0.24126516988964358
+"Kinase suppressor of ras-1 (KSR1) mRNA, partial cds",0.24208569051395937
+Signal transducing adaptor molecule STAM mRNA,0.24209866890922785
+GB DEF = Thyrotroph embryonic factor (TEF) mRNA,0.2424626957555574
+Palmitoyl protein thioesterase mRNA,0.24257174277651944
+Putative ubiquitin C-terminal hydrolase (UHX1) mRNA,0.24385552736232452
+"DNA-binding protein CPBP (CPBP) mRNA, partial cds",0.24397628168220828
+Specific 116-kDa vacuolar proton pump subunit (OC-116KDa) mRNA,0.24480570619043404
+"Neuronal membrane glycoprotein M6b mRNA, partial cds",0.24507014313590902
+Clathrin assembly protein lymphoid myeloid leukemia (CALM) mRNA,0.24526213655934095
+"Renal cell carcinoma antigen RAGE-4 mRNA, complete putative cds",0.2453684225300007
+"GLUTATHIONE S-TRANSFERASE, MICROSOMAL",0.24543176785325901
+Aquaporin-5 (AQP5) gene,0.24543176785325901
+Tetratricopeptide repeat protein (tpr2) mRNA,0.24543176785325901
+Cystatin B gene,0.24702455256133016
+Phosphotyrosine independent ligand p62 for the Lck SH2 domain mRNA,0.24702455256133016
+"SNCA Synuclein, alpha (non A4 component of amyloid precursor)",0.24702455256133016
+"NifU-like protein (hNifU) mRNA, partial cds",0.24813621146769663
+"GB DEF = Gamma aminobutyric acid receptor beta4 subunit-like mRNA, partial cds",0.24816511845835407
+Cyclin G2 mRNA,0.2482656084411427
+Nucleolar autoantigen No55 mRNA,0.24852178593478247
+TUBB Beta-tubulin,0.24876395027869536
+D13S824E locus mRNA,0.24902230195147976
+Monocytic leukaemia zinc finger protein (MOZ) mRNA,0.2510797783979614
+UBIQUITIN CARBOXYL-TERMINAL HYDROLASE T,0.25264656572989874
+GB DEF = G-protein beta-3 subunit alternatively spliced form mRNA sequence,0.25367858925100756
+"Protein kinase C-binding protein RACK7 mRNA, partial cds",0.25387022077772065
+Protein tyrosine phosphatase PTPCAAX1 (hPTPCAAX1) mRNA,0.25422992806936845
+GB DEF = G protein coupled receptor OGR1 gene,0.25434566461663566
+Kidney water channel (hKID) mRNA,0.2547410188972059
+Amyloid precursor-like protein 1 mRNA,0.2547410188972059
+"CHRNB4 Cholinergic receptor, nicotinic, beta polypeptide 4",0.2547410188972059
+Myosin light chain kinase (MLCK) mRNA,0.2547410188972059
+Peptidyl-prolyl isomerase and essential mitotic regulator (PIN1) mRNA,0.2547410188972059
+Neuroendocrine-dlg (NE-dlg) mRNA,0.2547410188972059
+Placenta (Diff33) mRNA,0.2557405154063731
+Putative cerebral cortex transcriptional regulator T-Brain-1 (Tbr-1) mRNA,0.25604408260997996
+"Putative DNA-binding protein mRNA, partial cds",0.25618067946281736
+"Liver 2,4-dienoyl-CoA reductase mRNA",0.25662502309766566
+Ionotropic ATP receptor P2X5a mRNA,0.25757322176191216
+EIF5 Eukaryotic translation initiation factor 5 (eIF5),0.25757322176191216
+"DCT Dopachrome tautomerase (dopachrome delta-isomerase, tyrosine-related protein 2)",0.2586716272355441
+LIM protein MLP mRNA,0.26142432088650214
+Protein kinase ATR mRNA,0.2619742166409255
+Transcriptional activator mRNA,0.26236084037969865
+Guanine nucleotide exchange factor p532 mRNA,0.26334984531756506
+Leukotriene C4 synthase (LTC4S) gene,0.2641707993107473
+EZH1 Enhancer of zeste (Drosophila) homolog 1,0.2641707993107473
+"BRCA2 region, mRNA sequence CG037",0.2641707993107473
+"BRCA2 region, mRNA sequence CG005",0.26431277721615876
+Helicase like protein 2 mRNA,0.2644305343621489
+Dynamitin mRNA,0.26491604403755026
+"Na,K-ATPase gamma subunit mRNA",0.26558760922553415
+PKD2 Autosomal dominant polycystic kidney disease type II,0.2657175933354736
+Amyloid precursor protein-binding protein 1 mRNA,0.26630661834842945
+Putative protein kinase C inhibitor (PKCI-1) mRNA,0.2671991628441747
+IRF5 Interferon regulatory factor 5,0.2671991628441747
+G/T mismatch-specific thymine DNA glycosylase mRNA,0.2672167594269396
+"KIAA0085 gene, partial cds",0.2672167594269396
+Armadillo repeat protein mRNA,0.2673257495804593
+Putative RNA binding protein (RBP56) mRNA,0.2679052707735083
+Nuclear protein Skip mRNA,0.26864586243941774
+Diacylglycerol kinase zeta mRNA,0.2693464921053596
+Sodium/potassium-transporting ATPase beta-3 subunit mRNA,0.27045154746727157
+"Siah binding protein 1 (SiahBP1) mRNA, partial cds",0.27073951849494515
+Golgi complex autoantigen golgin-97 mRNA,0.27073951849494515
+Small acidic protein mRNA,0.27073951849494515
+RasGAP-related protein (IQGAP2) mRNA,0.2709170449852829
+HPrp18 mRNA,0.270981779280431
+YMP mRNA,0.2731500545587112
+"RbP gene (renin-binding protein) extracted from Human Xq28 genomic DNA in the region of the L1CAM locus containing the genes for neural cell adhesion molecule L1 (L1CAM), arginine-vasopressin receptor (AVPR2), C1 p115 (C1), ARD1 N-acetyltransferase related protein (TE2), renin-binding protein (RbP), host cell factor 1 (HCF1), and interleukin-1 receptor-associated kinase (IRAK) genes, and Xq28lu2 gene",0.27328055729475725
+GOK (STIM1) mRNA,0.2736319044133727
+RNA polymerase II seventh subunit (rpb-7) gene,0.2737379386579809
+RIG-G mRNA,0.2745156399617952
+Grb2-related adaptor protein (Grap) mRNA,0.2745156399617952
+"Arfaptin 2, putative target protein of ADP-ribosylation factor, mRNA",0.27569366735189765
+IRF4 Interferon regulatory factor 4,0.2759026381376733
+"GB DEF = Cri-du-chat region mRNA, clone CSC8",0.27608730782867213
+KNP-Ia,0.276319166332974
+Transformer-2 alpha (htra-2 alpha) mRNA,0.27699365996069786
+EVPL Envoplakin,0.27818619924642884
+Interferon regulatory factor 7 (humirf7) mRNA,0.27818619924642884
+14-3-3 epsilon mRNA,0.27899609233840134
+GB DEF = HBRAVO/Nr-CAM precursor (hBRAVO/Nr-CAM) gene,0.27899609233840134
+HIG-1 mRNA,0.2791311835152755
+Lysophosphatidic acid acyltransferase-alpha mRNA,0.27931842281881764
+Lysophosphatidic acid acyltransferase-beta mRNA,0.2795363030542554
+Capping protein alpha subunit isoform 1 mRNA,0.2798072366309136
+Kinase Myt1 (Myt1) mRNA,0.2802202867815301
+"VHL binding protein-1 (VBP-1) mRNA, partial cds",0.2802202867815301
+Putative serine/threonine protein kinase PRK (prk) mRNA,0.2802202867815301
+Small GTP-binding protein mRNA,0.2802202867815301
+GCN5 (hGCN5) gene,0.2802202867815301
+Myelodysplasia/myeloid leukemia factor 2 (MLF2) mRNA,0.2802202867815301
+PEDF Pigment epithelium-derived factor,0.2802202867815301
+GB DEF = Jumonji putative protein (jumonji) mRNA,0.2802202867815301
+Signaling inositol polyphosphate 5 phosphatase SIP-110 mRNA,0.2812912790323151
+"Fetal brain (239FB) mRNA, from the WAGR region",0.2814193329588447
+PRSM1 Metallopeptidase 1 (33 kD),0.2817639188046225
+Hs-cul-1 mRNA,0.2827424983934663
+"Hs-cul-3 mRNA, partial cds",0.2835283713233969
+GB DEF = Bumetanide-sensitive Na-K-2Cl cotransporter (NKCC2) mRNA,0.2835283713233969
+GB DEF = Neurogenic basic-helix-loop-helix protein (NeuroD2) gene,0.283635228530524
+FX protein mRNA,0.28393535072183845
+Putative outer mitochondrial membrane 34 kDa translocase hTOM34 mRNA,0.28393535072183845
+Steroid receptor coactivator (SRC-1) mRNA,0.28490250301276504
+FH Fumarate hydratase,0.28490250301276504
+DEAD-box protein p72 (P72) mRNA,0.28490250301276504
+Mad-related protein MADR1 mRNA,0.28490250301276504
+Transcription factor (NFATc.b) mRNA,0.2851036634473277
+"Low-Mr GTP-binding protein (RAB32) mRNA, partial cds",0.2853443503934606
+Skeletal muscle LIM-protein SLIM1 mRNA,0.2854833579830237
+"Putative envelope protein; orf similar to env of Type A and Type B retroviruses and to class II HERVs gene extracted from Human endogenous retrovirus HERV-K(HML6) proviral clone HML6.17 putative polymerase and envelope genes, partial cds, and 3'LTR",0.2857239471095792
+POLG DNA polymerase gamma,0.28577061339386256
+HU-K4 mRNA,0.28642238583394125
+Semaphorin (CD100) mRNA,0.28642238583394125
+Hybrid receptor gp250 precursor mRNA,0.28664936324444146
+Enhancer of zeste homolog 2 (EZH2) mRNA,0.2872677148581461
+SH3 domain-containing protein SH3P17 mRNA,0.2876893077492099
+Tubulin-folding cofactor C mRNA,0.2876893077492099
+Acetolactate synthase homolog mRNA,0.2876893077492099
+"Putative cyclin G1 interacting protein mRNA, partial sequence",0.28777533903448316
+"Putative enterocyte differentiation promoting factor mRNA, partial cds",0.28777533903448316
+Hypothetical protein 384D8_7 gene extracted from Chromosome 22q13 BAC Clone CIT987SK-384D8 complete sequence,0.29237007895773004
+"CHRNA4 Cholinergic receptor, nicotinic, alpha polypeptide 4",0.29520153918669456
+Int-6 mRNA,0.2953913352598174
+SUR Sulfonylurea receptor (hyperinsulinemia),0.2967937460353256
+"GB DEF = mRNA expressed in HC/HCC livers and MolT-4 proliferating cells, partial sequence",0.2987148739206126
+Mitotic centromere-associated kinesin mRNA,0.30008517787312416
+Hepatitis delta antigen interacting protein A (dipA) mRNA,0.300362257078303
+GB DEF = Neurogenic basic-helix-loop-helix protein (neuroD3) gene,0.300362257078303
+"Guanine nucleotide exchange factor p115-RhoGEF mRNA, partial cds",0.3008187126008562
+SRI Sorcin,0.3008187126008562
+GB DEF = Ribonuclease k6 precursor gene,0.30172461157647024
+Msg1-related gene 1 (mrg1) mRNA,0.3017791882440928
+GB DEF = Seven transmembrane G-coupled receptor (GPR31) gene,0.30288677741066533
+"Mitochondrial NADH dehydrogenase-ubiquinone Fe-S protein 8, 23 kDa subunit precursor (NDUFS8) nuclear mRNA encoding mitochondrial protein",0.30288677741066533
+Ribosomal protein L3-like mRNA,0.303457922046993
+HPS Hermansky-Pudlak syndrome protein,0.30386231946454234
+150 kDa oxygen-regulated protein ORP150 mRNA,0.3041593314931915
+JUN V-jun avian sarcoma virus 17 oncogene homolog,0.3041593314931915
+Extracellular matrix protein 1 (ECM1) mRNA,0.3041593314931915
+Clone 161455 breast expressed mRNA from chromosome X,0.3041593314931915
+"TCRBV1S1A1N1 gene extracted from Human germline T-cell receptor beta chain Dopamine-beta-hydroxylase-like, TRY1, TRY2, TRY3, TCRBV27S1P, TCRBV22S1A2N1T, TCRBV9S1A1T, TCRBV7S1A1N2T, TCRBV5S1A1T, TCRBV13S3, TCRBV6S7P, TCRBV7S3A2T, TCRBV13S2A1T, TCRBV9S2A2PT, TCRBV7S2A1N4T, TCRBV13S9/13S2A1T, TCRBV6S5A1N1, TCRBV30S1P, TCRBV31S1, TCRBV13S5, TCRBV6S1A1N1, TCRBV32S1P, TCRBV5S5P, TCRBV1S1A1N1, TCRBV12S2A1T, TCRBV21S1, TCRBV8S4P, TCRBV12S3, TCRBV21S3A2N2T, TCRBV8S5P, TCRBV13S1 genes from bases 1 to 267156 (section 1 of 3)",0.3041593314931915
+EPLG8 Eph-related receptor tyrosine kinase ligand 8),0.30502783338526923
+Hematopoietic progenitor kinase (HPK1) mRNA,0.30502783338526923
+Cell growth regulator CGR11 mRNA,0.30502783338526923
+"NPM1 Nucleophosmin (nucleolar phosphoprotein B23, numatrin)",0.30502783338526923
+SWI/SNF complex 155 KDa subunit (BAF155) mRNA,0.30502783338526923
+SWI/SNF complex 170 KDa subunit (BAF170) mRNA,0.30502783338526923
+SWI/SNF complex 60 KDa subunit (BAF60b) mRNA,0.30502783338526923
+Cyclin A1 mRNA,0.30502783338526923
+GB DEF = Selenoprotein W (selW) mRNA,0.30502783338526923
+"SLC15A2 Solute carrier family 15 (H+/peptide transporter), member 2",0.30502783338526923
+Lysophospholipase homolog (HU-K5) mRNA,0.30557767437007693
+Mad protein homolog (hMAD-2) mRNA,0.30577854472668786
+Mad protein homolog (hMAD-3) mRNA,0.30577854472668786
+Putative splice factor transformer2-beta mRNA,0.30580244564666265
+"RalGDS-like 2 (RGL2) mRNA, partial cds",0.3061321175723356
+Farnesol receptor HRR-1 (HRR-1) mRNA,0.30674467338092914
+Amphiphysin II mRNA,0.30674467338092914
+Hbc647 mRNA sequence,0.3074036475987358
+"HS1 binding protein HAX-1 mRNA, nuclear gene encoding mitochondrial protein",0.3074036475987358
+"NADH:ubiquinone oxidoreductase subunit B13 (B13) mRNA",0.3074323522377487
+GCDH Glutaryl-Coenzyme A dehydrogenase,0.30763736215787024
+RNA binding protein Etr-3 mRNA,0.307910862837728
+Zinc finger protein mRNA,0.307910862837728
+Acid ceramidase mRNA,0.3080712981526261
+Herpesvirus entry mediator mRNA,0.3083511056965756
+Transportin (TRN) mRNA,0.3085354619860556
+"SCA2 Spinocerebellar ataxia 2 (olivopontocerebellar ataxia 2, autosomal dominant)",0.30937482093797153
+A28-RGS14p mRNA,0.3094907874902938
+Myleoid differentiation primary response protein MyD88 mRNA,0.3094907874902938
+Copper transport protein HAH1 (HAH1) mRNA,0.3106737620878933
+Zinc finger transcription factor hEZF (EZF) mRNA,0.3109694390731172
+"Ataxin-2 related protein mRNA, partial cds",0.3112633586320502
+Glutamate pyruvate transaminase (GPT) gene,0.31236411004888
+GB DEF = 34 kDa mov34 isologue mRNA,0.31236411004888
+Prostaglandin transporter hPGT mRNA,0.31236411004888
+MAP kinase kinase MEK5c mRNA,0.31347067410559715
+Cytoplasmic antiproteinase 3 (CAP3) mRNA,0.31375625260470197
+"Zinc finger protein zfp2 (zf2) mRNA, partial cds",0.31398102844114356
+Guanine nucleotide regulatory factor (LFP40) mRNA,0.31488548373922826
+PLATELET-ACTIVATING FACTOR ACETYLHYDROLASE 45 KD SUBUNIT,0.3158549079259991
+40871 mRNA partial sequence,0.31702539799984486
+B7 mRNA,0.31724538062019725
+"B-cell receptor associated protein (hBAP) mRNA, partial cds",0.3179152592643783
+C3f mRNA,0.3179165062256315
+"GB DEF = Alternatively spliced variant C7f (C3f) mRNA, partial 3'UTR",0.3179165062256315
+LOT1 mRNA,0.3179165062256315
+Ninjurin1 mRNA,0.3192613577556613
+GB DEF = Karyopherin beta 3 mRNA,0.3196866204626385
+"SM15 gene (human interferon-related protein SM15 (U09585); final exon similar to partial sequence of human EST R48415, but would require alternative splice) extracted from Human cosmid LUCA14",0.3207358703840716
+DLX7 Distal-less homeobox 7,0.3207358703840716
+SKI V-ski avian sarcoma viral oncogene homolog,0.32077652354622505
+Cyclin-selective ubiquitin carrier protein mRNA,0.321559795718047
+GTBP DNA G/T mismatch-binding protein,0.3225884093746665
+"GB DEF = Dynactin mRNA, partial cds",0.32322877316062426
+P97 mRNA,0.32322877316062426
+ADP-ribosylation factor-like protein 4 mRNA,0.32395887436110715
+Tat interactive protein mRNA,0.3243971739155918
+Isopeptidase T-3 (ISOT-3) mRNA,0.32551617344669986
+"Mitochondrial RNA polymerase mRNA, nuclear gene encoding mitochondrial protein",0.32551617344669986
+Histone stem-loop binding protein (SLBP) mRNA,0.3256042607991307
+CHL1 protein,0.3256042607991307
+Putative zinc transporter ZnT-3 (ZnT-3) mRNA,0.3267186450683847
+FHIT Fragile histidine triad gene product,0.32701554765670504
+DsRNA adenosine deaminase DRADA2b (DRADA2b) mRNA,0.32701554765670504
+BRCA1-associated RING domain protein (BARD1) mRNA,0.32705212118968197
+No cluster in current Unigene and no Genbank entry for U77396 (qualifier U77396_at),0.3270645904264157
+O-linked GlcNAc transferase mRNA,0.32743572587224457
+Nucleosome assembly protein 2 mRNA,0.3278614887983158
+Desmosome associated protein pinin mRNA,0.3278614887983158
+Pim-2 protooncogene homolog pim-2h mRNA,0.3278614887983158
+"KAI1 Kangai 1 (suppression of tumorigenicity 6, prostate; CD82 antigen (R2 leukocyte antigen, antigen detected by monoclonal and antibody IA4))",0.3278614887983158
+"MOP5 mRNA, partial cds",0.3278614887983158
+"L44L gene (L44-like ribosomal protein) extracted from Human Bruton's tyrosine kinase (BTK), alpha-D-galactosidase A (GLA), L44-like ribosomal protein (L44L) and FTP3 (FTP3) genes",0.3278614887983158
+Placental bikunin mRNA,0.3278614887983158
+GTP cyclohydrolase I feedback regulatory protein gene,0.3278614887983158
+Immunophilin homolog ARA9 mRNA,0.3278614887983158
+"Gu binding protein mRNA, partial cds",0.32787218831733883
+Eukaryotic translation initiation factor (eIF3) mRNA,0.32916402031186204
+Cisplatin resistance associated alpha protein (hCRA alpha) mRNA,0.33036206283904235
+"68 kDa type I phosphatidylinositol-4-phosphate 5-kinase alpha mRNA, clone PIP5KIa1",0.33046166076761546
+TNF receptor associated factor 6 (TRAF6) mRNA,0.33115817006093995
+OPCML Opioid-binding cell adhesion molecule,0.3312100357277378
+Clone 23679 mRNA,0.3324586306889927
+Clone 23693 mRNA sequence,0.33326269983516693
+"X11 protein mRNA, partial cds",0.33326269983516693
+Clone 23945 mRNA,0.33326269983516693
+Clone 23745 mRNA,0.3333441663254634
+DHPS Deoxyhypusine synthase,0.3342146343178182
+Clone 23614 mRNA sequence,0.3342146343178182
+Clone 23627 mRNA,0.3344106362513912
+"Clone 23707 mRNA, partial cds",0.33453019181908894
+Clone 23933 mRNA sequence,0.33453019181908894
+Clone 23733 mRNA,0.334592186183822
+"Clone 23947 mRNA, partial cds",0.33473901270839085
+GLYCYLPEPTIDE N-TETRADECANOYLTRANSFERASE,0.33498610188474964
+Clone 23867 mRNA sequence,0.3355289730606983
+Clone 23721 mRNA sequence,0.33609447150837457
+Clone 23882 mRNA,0.33609447150837457
+Endonuclease III homolog mRNA,0.33609447150837457
+A33 antigen precursor mRNA,0.3361675770554829
+"Smn gene (survival motor neuron protein SMN) extracted from Human basic transcription factor 2 p44 (btf2p44) gene, partial cds, neuronal apoptosis inhibitory protein (naip) and survival motor neuron protein (smn) genes",0.3364358307762449
+GB DEF = Tip associating protein (TAP) mRNA,0.33684956351936346
+Transcription factor SIM2 long form mRNA,0.337858698798695
+"SNRPN mRNA, 3' UTR, partial sequence",0.3388228235676864
+P76 mRNA,0.3389052998055099
+Placental equilibrative nucleoside transporter 1 (hENT1) mRNA,0.3389052998055099
+CaM kinase II isoform mRNA,0.3389052998055099
+Hypothetical protein A4 mRNA,0.3389052998055099
+Homeodomain protein HOXB13 mRNA,0.339435517351615
+"Paired-like homeodomain protein PRX-2 mRNA, partial cds",0.33950221839916517
+GRAVIN,0.33982347708330574
+Phosphatidylinositol 4-kinase,0.3400354362492209
+Heme A: farnesyltransferase (COX10) gene promoter region and,0.3401608547221317
+Frizzled homolog (FZD3) mRNA,0.3401608547221317
+Immunoglobulin-like transcript 1 mRNA,0.3401932523672613
+"GB DEF = Unknown protein mRNA, partial cds",0.3401932523672613
+"GB DEF = Unknown protein mRNA, partial cds",0.3404312325841463
+DNA-binding protein ABP/ZF mRNA,0.3404666899408666
+"HSP1-A gene extracted from Homo sapiens cosmids Qc14E2, Qc12H12, Qc11F9, Qc10G9, LA1733 and Qc17B8 from Xq28, complete sequence",0.3404666899408666
+GB DEF = Homeodomain protein HoxA9 mRNA,0.34093294286823556
+"Non-lens beta gamma-crystallin like protein (AIM1) mRNA, partial cds",0.34177016646634917
+Post-synaptic density protein 95 (PSD95) mRNA,0.341969783187909
+Copine I mRNA,0.34221920008073575
+"GCP-2 gene (granulocyte chemotactic protein-2) extracted from Human line-1 reverse transcriptase gene, partial cds, and granulocyte chemotactic protein-2 (GCP-2) gene",0.3426528052907961
+Scaffold protein Pbp1 mRNA,0.34388155998915027
+"GB DEF = HIV-1 Nef interacting protein (Nip7-1) mRNA, partial cds",0.34471046032026414
+YF5 mRNA,0.34610738162727533
+mRNA export protein Rae1 (RAE1) mRNA,0.34610738162727533
+Phosphatidylinositol-4-phosphate 5-kinase type II beta mRNA,0.34723082482608636
+Snk interacting protein 2-28 mRNA,0.3475024331419791
+Myeloid progenitor inhibitory factor-1 MPIF-1 mRNA,0.3476931539451736
+"Clone IMAGE:35527 unknown protein mRNA, partial cds",0.3479083146581185
+"GB DEF = Hyaluronan synthase 3 (HAS3) gene, partial cds",0.3481640130085404
+Nucleolar protein p40 mRNA,0.3484801471215622
+"Clone IMAGE:30008 unknown protein mRNA, partial cds",0.3484801471215622
+"GB DEF = NAD+-isocitrate dehydrogenase mRNA, partial cds",0.3484801471215622
+"DNA binding protein homolog (DRIL) mRNA, partial cds",0.34961342206316987
+ATP binding cassette transporter (ABCR) mRNA,0.34987659320768066
+HEM45 mRNA,0.34987659320768066
+Polyhomeotic 2 homolog (HPH2) mRNA,0.3508644991599872
+"Unknown gene extracted from Human HLA class III region containing NOTCH4 gene, partial sequence, homeobox PBX2 (HPBX) gene, receptor for advanced glycosylation end products (RAGE) gene, and 6 unidentified cds, complete sequence",0.3508644991599872
+"RAGE gene (receptor for advanced glycosylation end products) extracted from Human HLA class III region containing NOTCH4 gene, partial sequence, homeobox PBX2 (HPBX) gene, receptor for advanced glycosylation end products (RAGE) gene, and 6 unidentified cds, complete sequence",0.35154637226536484
+"Unknown gene extracted from Human HLA class III region containing NOTCH4 gene, partial sequence, homeobox PBX2 (HPBX) gene, receptor for advanced glycosylation end products (RAGE) gene, and 6 unidentified cds, complete sequence",0.35161408615750805
+"Unknown gene extracted from Human HLA class III region containing NOTCH4 gene, partial sequence, homeobox PBX2 (HPBX) gene, receptor for advanced glycosylation end products (RAGE) gene, and 6 unidentified cds, complete sequence",0.35409015604027816
+"Clone cRT16 CREB-binding protein mRNA, partial cds",0.354226867577561
+Hlark mRNA,0.354226867577561
+Casein kinase I gamma 2 mRNA,0.35480008362503934
+"GB DEF = Iroquois-class homeodomain protein IRX-4 mRNA, partial cds",0.35535270726501905
+Nuclear RNA helicase,0.3555562271251734
+Ro/SSA ribonucleoprotein homolog (RoRet) mRNA,0.3558413308356907
+Non-histone chromosomal protein (NHC) mRNA,0.3561341885008622
+Butyrophilin (BTF2) mRNA,0.3566154602754513
+Histone 2A-like protein (H2A/l) mRNA,0.3567296933859464
+"Embryonic ectoderm development protein homolog (eed) mRNA, partial cds",0.35678530162420846
+LIM domain protein CLP-36 mRNA,0.3583317660448462
+Clone 23773 mRNA sequence,0.3583964918269
+Clone 23907 mRNA sequence,0.3583964918269
+Clone 23722 mRNA sequence,0.3583964918269
+Clone 23652 mRNA sequence,0.35851529927349224
+Clone 23815 mRNA sequence,0.360184669487119
+Clone 23654 mRNA sequence,0.36051821750610213
+Acyl-CoA thioester hydrolase mRNA,0.3606779065919638
+GB DEF = Chromosome 12p15 BAC clone CIT987SK-99D8 complete sequence,0.361192146136476
+AP-3 complex delta subunit mRNA,0.361192146136476
+AP-3 complex beta3A subunit mRNA,0.361192146136476
+Clathrin coat assembly protein-like,0.362811002614367
+DNA fragmentation factor-45 mRNA,0.36361620591398813
+Clone 121711 defective mariner transposon Hsmar2 mRNA sequence,0.36407825588635506
+Mutated in multiple advanced cancers protein (MMAC1) mRNA,0.36407825588635506
+Protease-activated receptor 3 (PAR3) mRNA,0.3647970384368725
+GB DEF = SLP-76 associated protein mRNA,0.365674633403939
+Nuclear chloride ion channel protein (NCC27) mRNA,0.3659220924302933
+MEN1 gene (menin) extracted from Human menin (MEN1) gene,0.3659986483452199
+"Autoantigen DFS70 mRNA, partial cds",0.3659986483452199
+"NADH:ubiquinone oxidoreductase MLRQ subunit mRNA",0.36618398092516175
+Uncoupling protein homolog (UCPH) mRNA,0.3675589873153771
+Multispanning membrane protein mRNA,0.3675589873153771
+Translation initiation factor 3 47 kDa subunit mRNA,0.3683937605246973
+D9 splice variant A mRNA,0.3688477117103445
+"Unknown protein mRNA, partial cds",0.36899481835935594
+362G6.1 gene (unknown protein CIT987SK_362G6_1) extracted from Human chromosome 16p13.1 BAC clone CIT987SK-362G6 complete sequence,0.36940090226317135
+362G6.2 gene extracted from Human chromosome 16p13.1 BAC clone CIT987SK-362G6 complete sequence,0.36940090226317135
+Sarcolipin (SLN) mRNA,0.3697637979664752
+"GB DEF = Nedd-4-like ubiquitin-protein ligase WWP1 mRNA, partial cds",0.3698744545948191
+2A8.3 gene (hereditary multiple exostoses gene isolog) extracted from Human chromosome 8 BAC clone CIT987SK-2A8 complete sequence,0.36987998295497676
+Sin3 associated polypeptide p18 (SAP18) mRNA,0.3715806704239806
+Dihydropyrimidinase related protein-2,0.37208616623353546
+"GB DEF = Immunoglobulin mu, part of exon 8",0.37333817828573884
+PGK1 Phosphoglycerate kinase 1,0.37397571301347476
+Cellular oncogene c-fos (complete sequence),0.37502975158408897
+"HLA CLASS II HISTOCOMPATIBILITY ANTIGEN, DR ALPHA CHAIN PRECURSOR",0.3756846464199667
+"TFRC Transferrin receptor (p90, CD71)",0.37576987823312363
+APOC3 Apolipoprotein C-III,0.37576987823312363
+ASS Argininosuccinate synthetase,0.37714970095647876
+GB DEF = Gene fragment for the acetylcholine receptor gamma subunit precursor (exons 1 and 2),0.37714970095647876
+LDHA Lactate dehydrogenase A,0.377554898818568
+SOD1 Superoxide dismutase 1 (Cu/Zn),0.3778070964240926
+INP10 Interferon (gamma)-induced cell line; protein 10 from,0.37789163917346297
+GB DEF = Bcr (breakpoint cluster region) gene in Philadelphia chromosome,0.3785987524260381
+OIAS (2'-5') oligoadenylate synthetase,0.3785987524260381
+TNF Tumor necrosis factor,0.3785987524260381
+GB DEF = Int-1 mammary oncogene,0.3785987524260381
+HLA-SB alpha gene (class II antigen) extracted from Human HLA-SB(DP) alpha gene,0.3791569448755909
+HISTONE H1',0.3795137779595724
+RAF1 V-raf-1 murine leukemia viral oncogene homolog 1,0.3795137779595724
+G-CSF protein gene extracted from Human gene for granulocyte colony-stimulating factor (G-CSF),0.3795137779595724
+GB DEF = T-cell antigen receptor gene T3-delta,0.3795137779595724
+CYBB Chronic granulomatous disease,0.37988073524469235
+"Catalase (EC 1.11.1.6) 5'flank and exon 1 mapping to chromosome 11, band p13 (and joined CDS)",0.37988073524469235
+"CAPN4 Calpain, small polypeptide",0.380167306954959
+"CD3G CD3G antigen, gamma polypeptide (TiT3 complex)",0.3815073350274177
+Skeletal muscle 1.3 kb mRNA for tropomyosin,0.3840209927929125
+"BPGM 2,3-bisphosphoglycerate mutase",0.38441115158950556
+"CALPAIN 1, LARGE",0.38635507918089657
+CD5 CD5 antigen (p56-62),0.3872339222741879
+"GSN Gelsolin (amyloidosis, Finnish type)",0.38756556598661757
+"IL1B Interleukin 1, beta",0.38814484084372186
+"GNAI2 Guanine nucleotide binding protein (G protein), alpha inhibiting activity polypeptide 2",0.38976607691357473
+Aldolase C gene,0.3900560407814002
+TPM4 Tropomyosin 4 (fibroblast),0.3904195431087756
+OX-2 MEMBRANE GLYCOPROTEIN PRECURSOR,0.39121760207701767
+"ALDH2 Aldehyde dehydrogenase 2, mitochondrial",0.39145042494474847
+ANX1 Annexin I (lipocortin I),0.39145042494474847
+"ITGA5 Integrin, alpha 5 (fibronectin receptor, alpha polypeptide)",0.39235275311637174
+MITOCHONDRIAL 60S RIBOSOMAL PROTEIN L3,0.3936273905313695
+GB DEF = Theta 1-globin gene,0.3936273905313695
+Receptor of retinoic acid,0.3939388642228586
+DNA polymerase alpha-subunit,0.3946064828210871
+HMOX1 Heme oxygenase (decycling) 1,0.39625539505209184
+"(clones lambda-hPKC-beta[15,802]) protein kinase C-beta-1 (PRKCB1) mRNA",0.396623524185267
+ZINC FINGER PROTEIN HF.12,0.396623524185267
+NUCLEAR TRANSPORT FACTOR 2,0.3974229903072775
+PLECKSTRIN,0.3974229903072775
+"PRKACA Protein kinase, cAMP-dependent, catalytic, alpha",0.39782835097506797
+"SOD2 Superoxide dismutase 2, mitochondrial",0.39816001468897905
+"ITGB1 Integrin, beta 1 (fibronectin receptor, beta polypeptide, antigen CD29 includes MDF2, MSK12)",0.39879136289410994
+PROTEIN PHPS1-2,0.39986274114117487
+ALDOA Aldolase A,0.4002120442219177
+CTSL Cathepsin L,0.4002120442219177
+CCAAT BOX-BINDING TRANSCRIPTION FACTOR 1,0.40031237355991733
+SRP19 Signal recognition particle 19 kD protein,0.40031237355991733
+COX6C Cytochrome c oxidase subunit VIc,0.40239027448262166
+MYBL2 V-myb avian myeloblastosis viral oncogene homolog-like 2,0.4027936198133825
+CD14 CD14 antigen,0.4044599228818484
+T-CELL SURFACE GLYCOPROTEIN CD8 BETA.3 CHAIN PRECURSOR,0.40566563669012135
+U2 SMALL NUCLEAR RIBONUCLEOPROTEIN A',0.40589937372593193
+Put. HMG-17 protein gene extracted from Human HMG-17 gene for non-histone chromosomal protein HMG-17,0.4063335977322334
+Lactate dehydrogenase B gene exon 1 and 2 (EC 1.1.1.27) (and joined CDS),0.4063437841119105
+LCAT Lecithin-cholesterol acyltransferase,0.4069272616063709
+9 KD PROTEIN,0.40815366877476683
+LIF Leukemia inhibitory factor (cholinergic differentiation factor),0.40956407569462966
+RNH Ribonuclease/angiogenin inhibitor,0.41136630617417747
+CD37 CD37 antigen,0.4124542870606153
+ACBP Arginine carboxypeptidase (carboxypeptidase N),0.4133159627458573
+ALPHA-GALACTOSIDASE A PRECURSOR,0.41430858579044993
+GB DEF = Bcr-abl mRNA 5' fragment (clone 3c),0.41574266072916993
+THBS1 Thrombospondin 1,0.41603732870005417
+CRYAA Crystallin alpha-A,0.4162741318039207
+ACAA Acetyl-Coenzyme A acyltransferase (peroxisomal 3-oxoacyl-Coenzyme A thiolase),0.41645968103479536
+HISTONE H2A.X,0.4169174451724171
+GB DEF = CD1 R2 gene for MHC-related antigen,0.4175343035879857
+60S RIBOSOMAL PROTEIN L13,0.41789230430152474
+TRA1 Homologue of mouse tumor rejection antigen gp96,0.41809523842336277
+GB DEF = Natriuretic peptide receptor (ANP-A receptor),0.4194364400417057
+Motilin gene exon 2 (and joined CDS),0.4196673176521647
+ALDR1 Aldehyde reductase 1 (low Km aldose reductase),0.42000469543381086
+PFKL Phosphofructokinase (liver type),0.42000469543381086
+COX7A2 Cytochrome c oxidase VIIa subunit (liver specific),0.42005716407075167
+CREB1 CAMP responsive element binding protein 1,0.42049508120215406
+"COL6A1 Collagen, type VI, alpha 1",0.42049508120215406
+"COL6A2 Collagen, type VI, alpha 2",0.4214287934986612
+IRF2 Interferon regulatory factor 2,0.42340819645841565
+GB DEF = VAV oncogene,0.42353845348100444
+MTHFD NAD-dependent methylene tetrahydrofolate dehydrogenase cyclohydrolase,0.42485747079512304
+ABL1 V-abl Abelson murine leukemia viral oncogene homolog 1,0.4248903136361678
+COX7C Cytochrome c oxidase VIIc subunit,0.4251533675183157
+HEMATOPOIETIC LINEAGE CELL SPECIFIC PROTEIN,0.4251533675183157
+HOXB2 Homeo box B2,0.4261159321433567
+HOXB3 Homeo box B3,0.42700994782375895
+FOS-RELATED ANTIGEN 2,0.42713959797213863
+CTSH Cathepsin H,0.42788736968067265
+"ITGA4 Integrin, alpha 4 (antigen CD49D, alpha 4 subunit of VLA-4 receptor)",0.42788736968067265
+Homolog of yeast IPP isomerase,0.42788736968067265
+"PRG1 Proteoglycan 1, secretory granule",0.43007108003693434
+"PACE Paired basic amino acid cleaving enzyme (furin, membrane associated receptor protein)",0.430437998648254
+GATA1 Transcription factor Eryf1,0.430465417852878
+"NME1 Non-metastatic cells 1, protein (NM23A) expressed in",0.43064033217939984
+MYOG Myogenin (myogenic factor 4),0.43116019275451023
+VIL2 Villin 2 (ezrin),0.43116019275451023
+HSPA6 Heat shock 70kD protein 6 (HSP70B'),0.43264254191851453
+ENO2 gene for neuron specific (gamma) enolase,0.43264254191851453
+SPI1 Spleen focus forming virus (SFFV) proviral integration oncogene spi1,0.4333525322381891
+ARSA Arylsulfatase A,0.43370455438260624
+FES Feline sarcoma (Snyder-Theilen) viral (v-fes)/Fujinami avian sarcoma (PRCII) viral (v-fps) oncogene homolog,0.43370455438260624
+IL4R Interleukin 4 receptor,0.43370455438260624
+"PRKCA Protein kinase C, alpha",0.43370455438260624
+EGR1 Early growth response protein 1,0.4337564269137463
+"PFKFB1 6-phosphofructo-2-kinase/fructose-2,6-biphosphatase 1",0.43379053113765864
+"RXRA Retinoid X receptor, alpha",0.4363968449611476
+"T-COMPLEX PROTEIN 1, ALPHA SUBUNIT",0.4368698454113944
+TRANSCRIPTION FACTOR ATF-A AND ATF-A-DELTA,0.4370829880676506
+GJA1 Cardiac gap junction protein,0.43791284538291864
+MGP Matrix protein gla,0.43791284538291864
+FLN1 Filamin 1 (actin-binding protein-280),0.4382058593481154
+Integrin alpha 6 (or alpha E) protein gene extracted from Human mRNA for integrin alpha 6,0.4386892918761746
+MULTIFUNCTIONAL PROTEIN ADE2,0.43874747853610147
+"KAI1 Kangai 1 (suppression of tumorigenicity 6, prostate; CD82 antigen (R2 leukocyte antigen, antigen detected by monoclonal and antibody IA4))",0.43874747853610147
+LTF Lactotransferrin,0.4411479556602483
+GPC1 Glypican 1,0.4414710184125295
+Myosin regulatory light chain mRNA,0.4414710184125295
+MULTIFUNCTIONAL AMINOACYL-TRNA SYNTHETASE,0.4419843118125835
+NKG2-D TYPE II INTEGRAL MEMBRANE PROTEIN,0.4432224635296471
+"ITPKA Inositol 1,4,5-trisphosphate 3-kinase A",0.44325510629078224
+CKS1 CDC28 protein kinase 1,0.44325510629078224
+CKS2 CDC28 protein kinase 2,0.44325510629078224
+GAA gene extracted from Human lysosomal alpha-glucosidase gene exon 1,0.4446393505556817
+Usf mRNA for late upstream transcription factor,0.44564279975493953
+"PRTN3 Proteinase 3 (serine proteinase, neutrophil, Wegener granulomatosis autoantigen)",0.44564279975493953
+EUKARYOTIC INITIATION FACTOR 4B,0.4461049580731131
+NT5 5' nucleotidase (CD73),0.4464161110131848
+ER LUMEN PROTEIN RETAINING RECEPTOR 1,0.4464161110131848
+"XIST, coding sequence ""a"" mRNA (locus DXS399E)",0.4464161110131848
+MPR46 gene for 46kd mannose 6-phosphate receptor,0.45037618895439785
+14-3-3 PROTEIN TAU,0.4518552266312623
+"PKM2 Pyruvate kinase, muscle",0.4521840698718649
+"CALB2 Calbindin 2, (29kD, calretinin)",0.4521840698718649
+HISTONE H1D,0.4526020945486367
+"ITPKB Inositol 1,4,5-trisphosphate 3-kinase B",0.4532760997044289
+"YWHAB Tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, beta polypeptide",0.45436559711238633
+"NME1 Non-metastatic cells 1, protein (NM23A) expressed in",0.45507440242151215
+"TAP1 Transporter 1, ABC (ATP binding cassette)",0.455199018889749
+PSG11 Pregnancy-specific beta-1 glycoprotein 11,0.455199018889749
+Flg-2 gene for fibroblast growth factor receptor,0.455199018889749
+"PTPRM Protein tyrosine phosphatase, receptor type, mu polypeptide",0.455199018889749
+NUCLEAR PORE GLYCOPROTEIN P62,0.455199018889749
+IGHM Immunoglobulin mu,0.455199018889749
+CD22 CD22 antigen,0.455199018889749
+PROTEASOME IOTA CHAIN,0.455199018889749
+TST Thiosulfate sulfurtransferase (rhodanese),0.4556196568940683
+GLUL Glutamate-ammonia ligase (glutamine synthase),0.45593406453477103
+PRE-B-CELL LEUKEMIA TRANSCRIPTION FACTOR-3,0.4563953279465861
+TCF7 Transcription factor 7 (T-cell specific),0.45644800143430575
+TRYPTOPHANYL-TRNA SYNTHETASE,0.45644800143430575
+EXTRACELLULAR SIGNAL-REGULATED KINASE 1,0.45644800143430575
+"ATP5F1 ATP synthase, H+ transporting, mitochondrial F0 complex, subunit b, isoform 1",0.45644800143430575
+GB DEF = H4/d gene for H4 histone,0.4568261347814439
+H4/g gene for H4 histone,0.45697703296905823
+CD40 CD40 antigen,0.45852707356117306
+AK3 mRNA for adenylate kinase 3,0.45852707356117306
+"DPP4 Dipeptidylpeptidase IV (CD26, adenosine deaminase complexing protein 2)",0.45852707356117306
+TIE Tyrosine kinase with immunoglobulin and epidermal growth factor homology domains,0.45852707356117306
+T-CELL DIFFERENTIATION ANTIGEN CD6 PRECURSOR,0.45852707356117306
+"T cell receptor, clone IGRA17",0.45852707356117306
+TTG-2a gene extracted from Human TTG-2 mRNA for a cysteine rich protein with LIM motif,0.4591606944896366
+"BTG1 B-cell translocation gene 1, anti-proliferative",0.4591606944896366
+"ARHG Ras homolog gene family, member G (rho G)",0.4591606944896366
+LIFR Leukemia inhibitory factor receptor,0.4599176058650218
+PROTEASOME ZETA CHAIN,0.4599176058650218
+"Rod cG-PDE G gene for 3', 5'-cyclic nucleotide phosphodiesterase",0.45995055825897124
+"PTPN6 Protein tyrosine phosphatase, non-receptor type 6",0.46368457186901024
+GM2A GM2 ganglioside activator protein,0.46513065954296223
+GRN Granulin,0.46513065954296223
+CDW52 CDW52 antigen (CAMPATH-1 antigen),0.4654204932436026
+"DAGK1 Diacylglycerol kinase, alpha (80kD)",0.4660176360703264
+"FCGR2B Fc fragment of IgG, low affinity IIb, receptor for (CD32)",0.4670399945962952
+ME491  gene extracted from H.sapiens gene for Me491/CD63 antigen,0.46876569428417875
+"CLASS II HISTOCOMPATIBILITY ANTIGEN, M ALPHA CHAIN PRECURSOR",0.46876569428417875
+"UDP-GLUCURONOSYLTRANSFERASE 2B10 PRECURSOR, MICROSOMAL",0.4703945292728681
+GB DEF = IrlB mRNA,0.4709750813554199
+"ATP5D ATP synthase, H+ transporting, mitochondrial F1 complex, delta subunit",0.4709879574091503
+"GTF2E2 General transcription factor TFIIE beta subunit, 34 kD",0.47279087782765244
+RPS13 RNA polymerase II polypeptide B (140 kD),0.47279087782765244
+TRAMP protein,0.47279087782765244
+DNMT DNA methyltransferase,0.47382892220697725
+SON SON DNA binding protein,0.47447983675073935
+High-sulphur keratin,0.47447983675073935
+"GTF2F1 General transcription factor IIF, polypeptide 1 (74kD subunit)",0.47447983675073935
+SPLICING FACTOR U2AF 65 KD SUBUNIT,0.4747136627513
+DEK PROTEIN,0.47793586764867413
+TCF6L1 Transcription factor 6-like 1 (mitochondrial transcription factor 1-like),0.48045033958714406
+ATP-citrate lyase,0.48162653516047266
+BSG Basigin,0.48162653516047266
+ERYTHROCYTE PLASMA MEMBRANE 50 KD GLYCOPROTEIN,0.48162653516047266
+RSN Restin (Reed-Steinberg cell-expressed intermediate filament-associated protein),0.481765798692095
+S100P S100 calcium-binding protein P,0.4832534647796021
+ADENYLOSUCCINATE LYASE,0.4832534647796021
+KINESIN HEAVY CHAIN,0.48425227370920726
+"DEFA4 Defensin, alpha 4, corticostatin ",0.4848690384656928
+SPIB Spi-B transcription factor (Spi-1/PU.1 related),0.4854215307820915
+SERINE/THREONINE-PROTEIN KINASE PCTAIRE-1,0.4854215307820915
+mRNA PSSALRE for serine/threonine protein kinase,0.48692585639778346
+CDK6 Cyclin-dependent kinase 6,0.48875515937800296
+"RPL7A Neurotrophic tyrosine kinase, receptor, type 1",0.48891265804999773
+"LMP2 gene extracted from H.sapiens genes TAP1, TAP2, LMP2, LMP7 and DOB",0.48891265804999773
+"CHRNE Cholinergic receptor, nicotinic, epsilon polypeptide",0.48891265804999773
+KAPPA CASEIN PRECURSOR,0.49006423899248225
+POSSIBLE GTP-BINDING PROTEIN HSR1,0.49014433970519417
+Adenylosuccinate synthetase mRNA,0.49031530868926176
+"GUANYLATE CYCLASE SOLUBLE, BETA-1 CHAIN",0.49394164586750783
+"GUANYLATE CYCLASE SOLUBLE, ALPHA-3 CHAIN",0.493996728266477
+MaTu MN mRNA for p54/58N protein,0.493996728266477
+Max gene extracted from H.sapiens max gene,0.493996728266477
+EWSR1 Ewing sarcoma breakpoint region 1,0.493996728266477
+FGFR1 Basic fibroblast growth factor (bFGF) receptor (shorter form),0.493996728266477
+RTS beta protein,0.49420070888006723
+MITOTIC KINESIN-LIKE PROTEIN-1,0.4954797786905954
+INTERFERON-ALPHA INDUCED 11.5 KD PROTEIN,0.49552518191928147
+MC1R Melanocortin 1 receptor (alpha melanocyte stimulating hormone receptor),0.4962946486801963
+Tissue specific mRNA,0.49639546302508963
+PAGA Proliferation-associated gene A (natural killer-enhancing factor A),0.49642809723876624
+"Pantophysin [human, keratinocyte line HaCaT, mRNA, 2106 nt]",0.49712392045755077
+Alpha-tubulin mRNA,0.49712392045755077
+ADORA2B Adenosine A2b receptor,0.49712392045755077
+SP3 Sp3 transcription factor,0.4974248734654465
+"Alpha1-antichymotrypsin, exon 1",0.4974300267818292
+S-ADENOSYLMETHIONINE SYNTHETASE GAMMA FORM,0.4974300267818292
+"ID3 Inhibitor of DNA binding 3, dominant negative helix-loop-helix protein",0.4984606941533535
+FARNESYL-DIPHOSPHATE FARNESYLTRANSFERASE,0.49874351772567344
+"CD47 CD47 antigen (Rh-related antigen, integrin-associated signal transducer)",0.4992337153994772
+"IDH2 Isocitrate dehydrogenase 2 (NADP+), mitochondrial",0.49973192592833066
+Rho GDP-dissociation Inhibitor 1,0.5002890924191912
+Pax8 mRNA,0.500546153650785
+ICAM3 Intercellular adhesion molecule 3,0.5012894967174313
+G9a,0.5017902719784334
+FLT4 Fms-related tyrosine kinase 4,0.5018446217754701
+P2 gene for c subunit of mitochondrial ATP synthase gene extracted from H.sapiens gene for mitochondrial ATP synthase c subunit (P2 form),0.5018517183123663
+P63 mRNA for transmembrane protein,0.5020524249038185
+ERCC5 DNA excision repair protein ERCC5,0.5024886360264051
+MST1R Protein-tyrosine kinase RON,0.5026617278877118
+GB DEF = Neurotensin receptor,0.5026731156683668
+"PPP4C Protein phosphatase 4 (formerly X), catalytic subunit",0.5026905313247463
+"CHRNA7 Cholinergic receptor, nicotinic, alpha polypeptide 7",0.5026905313247463
+OZF mRNA,0.5026905313247463
+COATOMER BETA' SUBUNIT,0.5026905313247463
+Cl.1042 mRNA of DEAD box protein family,0.5033053120555978
+SOX4 SRY (sex determining region Y)-box 4,0.5033053120555978
+MADER mRNA,0.5033053120555978
+"ETFB Electron-transfer-flavoprotein, beta polypeptide",0.5033053120555978
+RNA-BINDING PROTEIN FUS/TLS,0.5033053120555978
+"ATP6E ATPase, H+ transporting, lysosomal (vacuolar proton pump) 31kD",0.5056754166826167
+"Proteasome-like subunit MECL-1 gene extracted from H.sapiens genes for proteasome-like subunit (MECL-1), chymotrypsin-like protease (CTRL-1) and protein serine kinase (PSK-H1) last exon",0.5061735673318686
+GPX4 Phospholipid hydroperoxide glutathione peroxidase,0.5061735673318686
+ENG Endoglin (Osler-Rendu-Weber syndrome 1),0.5063415171573893
+MONOCYTE CHEMOTACTIC PROTEIN 3 PRECURSOR,0.5064498764424473
+Humig mRNA,0.506661541099135
+GB DEF = Endogenous retrovirus mRNA for ORF,0.5067358654929184
+Retinoblastoma-binding protein (RbAp46) mRNA,0.5068088498466846
+"PPP1CC Protein phosphatase 1, catalytic subunit, gamma isoform",0.5068088498466846
+"SSR2 Signal sequence receptor, beta",0.5068523044824691
+RETINOBLASTOMA BINDING PROTEIN P48,0.5068523044824691
+"ITGA7 Integrin, alpha 7B",0.5073475605814441
+CB2 (peripheral) cannabinoid receptor gene extracted from H.sapiens mRNA for CB2 (peripheral) cannabinoid receptor,0.5085296011131413
+Gal-beta(1-3/1-4)GlcNAc alpha-2.3-sialyltransferase,0.5088592798617476
+Receptor protein tyrosine kinase,0.5107946044954451
+CDC21 HOMOLOG,0.5107946044954451
+CDC46 HOMOLOG,0.5107946044954451
+"T-COMPLEX PROTEIN 1, GAMMA SUBUNIT",0.510957207029187
+HUMM9 mRNA,0.5112108031339663
+REL V-rel avian reticuloendotheliosis viral oncogene homolog,0.5116601645193953
+HEK2 mRNA for protein tyrosine kinase receptor,0.5116601645193953
+PBP Prostatic binding protein,0.5120043978253659
+Golgi antigen gcp372,0.5126458541215336
+FAU Finkel-Biskis-Reilly murine sarcoma virus (FBR-MuSV) ubiquitously expressed (fox derived),0.5140861835470081
+SHB SHB adaptor protein (a Src homology 2 protein),0.5145358662890867
+Rab 13,0.5145358662890867
+TEGT Testis enhanced gene transcript,0.5145758944573335
+OX40L RECEPTOR PRECURSOR,0.5152355547869858
+GLUTAMINYL-TRNA SYNTHETASE,0.5152355547869858
+"HLON ATP-dependent protease mRNA, nuclear gene encoding  mitochondrial protein",0.5155977431072268
+YRRM1,0.5155977431072268
+GB DEF = DAP-kinase mRNA,0.5157148785447172
+DAP-1 mRNA,0.5157148785447172
+RY-1 mRNA for putative nucleic acid binding protein,0.5157148785447172
+"MPV17 MpV17 transgene, murine homolog, glomerulosclerosis",0.5171325526306326
+GLRX Glutaredoxin (thioltransferase),0.5171325526306326
+MT1L Metallothionein 1L,0.5172777362854883
+DNA-BINDING PROTEIN NEFA PRECURSOR,0.5182723592548335
+P40phox,0.5186616448749225
+CDNA for RFG,0.5186616448749225
+TXN Thioredoxin,0.5186616448749225
+"Red cell anion exchanger (EPB3, AE1, Band 3) 3' non-coding region",0.5195555245034422
+Cyclin G1 mRNA,0.5203363269158365
+IKBL mRNA,0.520480918182681
+"Alpha(1,3)fucosyltransferase mRNA",0.5205494948855405
+HnRNP-E2 mRNA,0.5205494948855405
+Brk mRNA for tyrosine kinase,0.5207937894320543
+Translin,0.5207937894320543
+CRAT Carnitine acetyltransferase,0.5212304116385216
+"KIAA0131 gene, partial cds",0.521337184352505
+GB DEF = HZF1 mRNA for zinc finger protein,0.5218193024868767
+ZNF2 Zinc finger protein 2 (A1-5),0.5223248907915683
+ERF-2 mRNA,0.5237873555927774
+GB DEF = ERF-1 mRNA 5' end,0.5254060173398785
+ERF-1 mRNA 3' end,0.5254060173398785
+Rab GDI alpha,0.5255883778038025
+GB DEF = Notch 3 DNA sequence,0.5255965781322316
+HNRPA1 Heterogeneous nuclear ribonucleoprotein A1,0.5256263810580029
+YPT3 mRNA,0.525886166778806
+GB DEF = Ray mRNA,0.525886166778806
+Mrp17 mRNA,0.5259899236814829
+Lrp mRNA,0.5271434262440896
+"CDH5 Cadherin 5, VE-cadherin (vascular epithelium)",0.5275109210819362
+B-cam mRNA,0.5290585613616283
+MLN64 mRNA,0.5292371410797647
+MLN51 mRNA,0.5316772474778694
+MLN62 mRNA,0.5325793656236467
+mRNA (clone C-2k) mRNA for serine/threonine protein kinase,0.5328931793071864
+"PHOSPHORYLASE B KINASE ALPHA REGULATORY CHAIN, LIVER ISOFORM",0.5332653544417629
+ERK3 protein kinase mRNA,0.5336401312053367
+RPL27 Ribosomal protein L27,0.5336973018486089
+GB DEF = P85 beta subunit of phosphatidyl-inositol-3-kinase,0.5337444799130691
+"PPP1CB Protein phosphatase 1, catalytic subunit, beta isoform",0.5349521800763569
+Gdf5 gene,0.5377244244482221
+GB DEF = Nov gene,0.5389484793928376
+HCG V mRNA,0.5393618321772728
+COATOMER DELTA SUBUNIT,0.5393618321772728
+6C6-Ag mRNA,0.5417569522251614
+Staf50 mRNA,0.5441461949996999
+BETA-CENTRACTIN,0.5441461949996999
+TCL1 gene (T cell leukemia) extracted from H.sapiens mRNA for Tcell leukemia/lymphoma 1,0.5441461949996999
+EMD Emerin (Emery-Dreifuss muscular dystrophy),0.5441461949996999
+MLN50 mRNA,0.5441461949996999
+FBLN2 Fibulin 2,0.5441461949996999
+SPHAR gene for cyclin-related protein,0.5444677539770099
+DLG2 Homolog 2 of Drosophila large discs,0.5452593050052136
+"K+ channel beta 1a subunit mRNA, alternatively spliced",0.5452593050052136
+"ATP5O ATP synthase, H+ transporting, mitochondrial F1 complex, O subunit (oligomycin sensitivity conferring protein)",0.5462474452299376
+DNA ligase IV,0.5470559226598857
+ARSE mRNA,0.5470559226598857
+Transcription factor TFIID subunit TAFII28,0.549051368984793
+NUCLEAR FACTOR RIP140,0.549051368984793
+Mediator of receptor-induced toxicity,0.5493188156520445
+Ribosomal S6 kinase,0.5493188156520445
+Sm protein F,0.5493188156520445
+Sm protein G,0.5493188156520445
+DARC gene,0.5493188156520445
+BINDING REGULATORY FACTOR,0.549354699723912
+"GB DEF = DNA sequence from intron 22 of the factor VIII gene, Xq28. Contains the end of a 9.5kb repeated region, int22h-1, involved in many cases of haemophilia",0.551090036040359
+MUF1 protein,0.5514585913524862
+Acidic hair keratin 1,0.5538443520253485
+"Nucleolar protein, HNP36",0.554365392944799
+218kD Mi-2 protein,0.5543756173206181
+FAST kinase,0.5550059774747029
+Major astrocytic phosphoprotein PEA-15,0.5550059774747029
+CTSC Cathepsin C,0.5550059774747029
+Processing a-glucosidase I,0.5550059774747029
+HFat protein,0.5590238860574583
+"CTNNB1 Catenin (cadherin-associated protein), beta 1 (88kD)",0.5590238860574583
+RPS11 Ribosomal protein S11,0.5615457993375707
+UROD Uroporphyrinogen decarboxylase,0.5619207157023595
+"Ung gene (uracil-DNA-glycosylase, UNG2) extracted from H.sapiens ung gene for uracil DNA-glycosylase",0.5636064764794382
+Putative MT4-MMP protein,0.5636250908801126
+TGIF protein,0.5643090820850162
+Mitochondrial capsule selenoprotein,0.5643090820850162
+BCL7 B cell lymphoma protein 7B,0.5643090820850162
+Uridine phosphorylase,0.565829368064662
+Gp25L2 protein,0.565829368064662
+TXNRD1 Thioredoxin reductase,0.568101392052684
+WHITE PROTEIN HOMOLOG,0.568101392052684
+SERYL-TRNA SYNTHETASE,0.5717452469092135
+TFCOUP2 Transcription factor COUP 2 (a.k.a. ARP1),0.5718708247290439
+Icln protein,0.5722330318333109
+GAIP protein,0.5722330318333109
+Transmembrane protein rnp24,0.5722330318333109
+Bleomycin hydrolase,0.5722330318333109
+Novel gene in Xq28 region,0.5724048438583814
+Phosphoenolpyruvate carboxykinase,0.5724844336779842
+BETA-DEFENSIN 1 PRECURSOR,0.5725497912932536
+Tafazzins protein,0.5725497912932536
+ITBA2 protein,0.5749095156205212
+Protein phosphatase 6,0.5749095156205212
+RAB7 protein,0.5755050978728987
+GB DEF = Telomeric DNA binding protein (orf2),0.5755050978728987
+Protein-tyrosine-phosphatase (tissue type: foreskin),0.5761104249423509
+Protein-tyrosine-phosphatase (tissue type: testis),0.5785037814687116
+AFX protein,0.5787899062134767
+Novel T-cell activation protein,0.5794929887472757
+ERp31 protein,0.5820875392632366
+Zyxin,0.5823441848155033
+"Erm gene, exon 2,3,4,5 (and joined CDS)",0.5823441848155033
+GB DEF = ROX protein,0.5839765592145758
+DGCR6 protein,0.5870642675442834
+NOV Nephroblastoma overexpressed gene,0.5880339871942154
+FAN protein,0.5881457837872079
+D1075-like gene,0.5881457837872079
+GB DEF = AICL (activation-induced C-type lectin),0.5903875622128785
+L-3-hydroxyacyl-CoA dehydrogenase,0.5913758484191817
+GB DEF = 5' mRNA of PECAM-1 molecule,0.5913758484191817
+Gene encoding mitochondrial citrate transport protein,0.5916577384011585
+Urea transporter,0.5920328095554815
+EEF2 Eukaryotic translation elongation factor 2,0.592034523245405
+"TFE3 transcription factor gene extracted from H.sapiens TFE3 gene, exons 1,2,3 (and joined CDS)",0.592102785734719
+GB DEF = Ptg-1 protein,0.592326793541995
+GB DEF = Adipophilin,0.593349626027517
+TIM17 preprotein translocase,0.5939829571343355
+"TNR Tenascin R (restrictin, janusin)",0.5944182638348325
+MACH-alpha-2 protein,0.5953514367478878
+Sortilin,0.5953890574338118
+"M-phase phosphoprotein, mpp11",0.5953890574338118
+"M-phase phosphoprotein, mpp5",0.5953890574338118
+"M-phase phosphoprotein, mpp6",0.5953890574338118
+GB DEF = Myosin-IE,0.5955574814099872
+Myosin-I beta,0.5979301288277101
+RNA helicase (Myc-regulated dead box protein),0.598135520512076
+Dynactin,0.598135520512076
+"NRGN gene, exons 2,3 & 4 (joined CDS)",0.598135520512076
+"GB DEF = Hair keratin, hHb5",0.5998347196994723
+"GB DEF = Hair keratin, hHb3",0.6009120278986702
+"GB DEF = Hair keratin, hHb6",0.6009120278986702
+TNNC2 Troponin C2 (fast skeletal),0.6009120278986702
+Alpha-tubulin mRNA,0.6015118349302587
+Sigma 3B protein,0.6015118349302587
+SMT3A protein,0.6025452476570929
+"Protein containing SH3 domain, SH3GL3",0.6027937268374914
+mRNA from TYL gene,0.6027937268374914
+GB DEF = XIAP associated factor-1,0.6033586910691011
+TPRC gene,0.6033586910691011
+"GB DEF = NDUFV3 gene, exon 3",0.6036601312785815
+S100 calcium-binding protein A13,0.6038634780298054
+"PTPRC Protein tyrosine phosphatase, receptor type, c polypeptide",0.6038634780298054
+RPN1 Ribophorin I,0.6049043325008842
+RPN2 Ribophorin II,0.6053711964006141
+GPX1 Glutathione peroxidase 1,0.605776685054236
+Adenine phosphoribosyltransferase (aprt) gene extracted from Human APRT gene for adenine phosphoribosyltransferase,0.6062204049512925
+"CD58 CD58 antigen, (lymphocyte function-associated antigen 3)",0.6062502988185069
+"ITGAL Integrin, alpha L (antigen CD11A (p180), lymphocyte function-associated antigen 1; alpha polypeptide)",0.6064579710705577
+Nucleoside-diphosphate kinase,0.606623921158234
+Exon A2 from  H.sapiens gene encoding RING finger protein./ntype=DNA /annot=exon,0.6071649312326307
+RRP22 protein,0.6089478337019629
+GB DEF = ASM-like phosphodiesterase 3b,0.6100969373778137
+"AAD14 protein, partial",0.6102838439713988
+GB DEF = MAP kinase phosphatase 4,0.61118822964619135
+GB DEF = Spot14 gene,0.6112286233121526
+RABAPTIN-5 protein,0.6119298140641685
+CRM1 protein,0.612166120023995
+GB DEF = HRX-like protein,0.6130555294627876
+Alpha 4 protein,0.6130555294627876
+Not56-like protein,0.6130555294627876
+"Protein kinase, Dyrk2",0.6130555294627876
+Alkyl-dihydroxyacetonephosphate synthase precursor,0.6130555294627876
+Putative serine/threonine protein kinase,0.6150623756344848
+GB DEF = Phosphoinositide 3-kinase,0.6153313700577179
+GB DEF = CD171 protein,0.6155037651171974
+GB DEF = CD30L protein,0.6163717011633688
+GB DEF = EYA1A gene,0.6164008165302276
+GB DEF = SIRP-beta1,0.6164008165302276
+GB DEF = Twist gene,0.6167386898967588
+GB DEF = Hypothetical protein downstream of DMPK and DMAHP,0.6179140897150602
+SKAP55 protein,0.6182817782984145
+HTcf-4 gene extracted from H.sapiens mRNA for beta catenin/TCF-4,0.6183775044557744
+GB DEF = Mitochondrial ribosomal protein S12,0.6184720957366255
+"Extracellular matrix protein collagen type XIV, C-terminus",0.6184720957366255
+LEPR Leptin receptor,0.6184720957366255
+"GB DEF = AMP-activated protein kinase alpha-1, partial",0.6184720957366255
+GB DEF = Serine/threonine protein kinase SAK,0.619766118037682
+Fb19 mRNA,0.6203640839899847
+GB DEF = BCL9 gene,0.6205814629682705
+GB DEF = G protein gene encoding beta 3 subunit exon 1 and promoter,0.6217980735494987
+CD83 ANTIGEN PRECURSOR,0.6217980735494987
+"SSR1 Signal sequence receptor, alpha",0.6217980735494987
+RING1 Ring finger protein 1,0.6222731166506602
+COX7B Cytochrome c oxidase subunit VIIb,0.6239859548477329
+MHC-encoded proteasome subunit gene LAMP7-E1 gene (proteasome subunit LMP7) extracted from H.sapiens gene for major histocompatibility complex encoded proteasome subunit LMP7,0.6250064612288081
+"PRKCZ Protein kinase C, zeta",0.6254620873725313
+"CRFB4 Cytokine receptor family II, member 4",0.6259092259211527
+ZINC FINGER PROTEIN PLZF,0.6264127574486681
+CNTN1 Contactin 1,0.6271357838641327
+EEF1D Eukaryotic translation elongation factor 1 delta (guanine nucleotide exchange protein),0.6271357838641327
+SERINE/THREONINE-PROTEIN KINASE RECEPTOR R2 PRECURSOR,0.6271431046009928
+Thiol-specific antioxidant protein mRNA,0.6284931726455311
+Kinectin gene,0.629337496770265
+Encoding CLA-1 mRNA,0.6297432802212677
+HSPB1 Heat shock 27kD protein 1,0.6312286157118274
+APOPTOSIS REGULATOR BCL-X,0.631316396674113
+Garp gene mRNA,0.6323033193176061
+Nuclear pore complex protein hnup153,0.6323033193176061
+GB DEF = ClC-1 muscle chloride channel protein,0.6323033193176061
+DNA-DIRECTED RNA POLYMERASE II 14.4 KD POLYPEPTIDE,0.6323615723862906
+EPS15 Epidermal growth factor receptor pathway substrate 15,0.6351500244838895
+"PHOSPHATIDYLINOSITOL 3-KINASE CATALYTIC SUBUNIT, ALPHA ISOFORM",0.6353243834775492
+"3-HYDROXYANTHRANILATE 3,4-DIOXYGENASE",0.6357062989971716
+Alpha-CP1 mRNA,0.6357062989971716
+BCMA B cell maturation factor,0.6357062989971716
+MitF mRNA,0.6366211174617842
+Orphan nuclear hormone receptor,0.6372755490540938
+CD69 CD69 antigen (early T cell activation antigen),0.6385800672216272
+"CDO1 Cysteine dioxygenase, type 1",0.638788040567612
+GB DEF = CD36 gene exon 15,0.6394661925164824
+SURF1 Surfeit 1,0.6397052431462512
+Ndr protein kinase,0.6408823342652684
+TTF mRNA for small G protein,0.6408823342652684
+PEBP2aC1 acute myeloid leukaemia mRNA,0.6414095460300555
+ECE1 Endothelin converting enzyme 1,0.6414095460300555
+Novel glucocorticoid receptor-associated protein,0.6424213542101631
+CCNF Cyclin F,0.6432867124883185
+GB DEF = Net transcription factor,0.6437587327521367
+BAT1 mRNA for nuclear RNA helicase (DEAD family),0.6437587327521367
+HK2 mRNA for hexokinase II,0.6437587327521367
+Phosphatidylinositol 3-kinase,0.6437794918844806
+mRNA encoding GPI-anchored protein p137,0.6437794918844806
+PXR1 Peroxisome receptor 1,0.6437794918844806
+SDC1 Syndecan 1,0.6437794918844806
+MT-MMP protein,0.6437794918844806
+GB DEF = XG mRNA (clone PEP6),0.6440325220863048
+Disintegrin-metalloprotease (partial),0.6442445854443795
+GB DEF = Retrotransposon,0.6457118959379744
+HISTONE H3.3,0.6468426953187307
+Spermine synthase,0.6469634152972157
+OBF-1 mRNA for octamer binding factor 1,0.6475328691238382
+L23-related mRNA,0.6480748181265827
+Chemokine HCC-1,0.6491100840026763
+Guanidinoacetate N-methyltransferase,0.6500077626106577
+Surface glycoprotein,0.6521221773378247
+Sds22-like mRNA,0.6526923982964926
+Leucine zipper protein,0.6533598117869674
+CLPP,0.654354840706501
+Interferon regulatory factor 3,0.6550047474097265
+"Chloride channel protein (CLCN7) mRNA, partial cds",0.6557178786957865
+H-IDH gamma gene (NAD(H)-specific isocitrate dehydrogenase gamma-subunit precursor) extracted from H.sapiens IDH gamma gene and TRAP delta gene,0.6573386061168122
+GB DEF = Imogen 38,0.6580306072543535
+"Adenosine triphosphatase, calcium",0.6581152987505562
+GB DEF = mRNA (clone ICRFp507L1876),0.6581383998218353
+GB DEF = 5'UTR for unknown protein (clone ICRFp507C0696),0.6582758187365362
+GB DEF = 5'UTR for unknown protein (clone ICRFp507O0882),0.6583799732935799
+Vacuolar-type H(+)-ATPase 115 kDa subunit,0.6583799732935799
+Herpesvirus associated ubiquitin-specific protease (HAUSP),0.6592577165345528
+Protease inhibitor 12 (PI12; neuroserpin),0.659367397550358
+"5-aminolevulinic acid synthase gene extracted from Human DNA sequence from PAC 296K21 on chromosome X contains cytokeratin exon, delta-aminolevulinate synthase (erythroid); 5-aminolevulinic acid synthase.(EC 2.3.1.37). 6-phosphofructo-2-kinase/fructose-2,6-bisphosphatase (EC 2.7.1.105, EC 3.1.3.46), ESTs and STS",0.659860865964428
+"Zeta-globin 1 gene extracted from Human DNA sequence from cosmid GG1 from a contig from the tip of the short arm of chromosome 16, spanning 2Mb of 16p13.3 Contains alpha and zeta globin genes and ESTs",0.659860865964428
+"Alpha-globin 1 gene extracted from Human DNA sequence from cosmid GG1 from a contig from the tip of the short arm of chromosome 16, spanning 2Mb of 16p13.3 Contains alpha and zeta globin genes and ESTs",0.6642203537400958
+"GB DEF = DNA sequence from PAC 398C22 on chromosome 22q11.2-qter. Contains Brain Protein E46 like sequences, ESTs",0.6642203537400958
+"DNA binding protein from  Human DNA sequence from PAC 339A18 on chromosome Xp11.1-Xp11.4. Contains KIAA0178 gene, similar to mitosis-specific chromosome segregation protein SMC1 of S.cerevisiae, DNA binding protein similar to URE-B1, ESTs and STS./ntype=DNA /annot=CDS",0.6646743500006523
+GB DEF = Galectin-9 isoform,0.6647329015055963
+PRPS1 Phosphoribosyl pyrophosphate synthetase subunit I,0.6647329015055963
+FACL1 Long chain fatty acid acyl-coA ligase,0.6653098373430806
+LTK Leukocyte tyrosine kinase,0.6656035457589562
+"HADHA Hydroxyacyl-Coenzyme A dehydrogenase/3-ketoacyl-Coenzyme A thiolase/enoyl-Coenzyme A hydratase (trifunctional protein), alpha subunit",0.6669021998362591
+Mitochondrial 3-ketoacyl-CoA thiolase beta-subunit of trifunctional protein,0.6672712994275628
+HHR23A protein,0.6673487326615677
+"KIAA0006 gene, partial cds",0.6680411267803191
+"Type 1 inositol 1,4,5-trisphosphate receptor",0.6680411267803191
+GGTB2 Glycoprotein-4-beta-galactosyltransferase 2,0.6699464543096975
+"KIAA0072 gene, partial cds",0.6713495882346753
+MCM3 Minichromosome maintenance deficient (S. cerevisiae) 3,0.6727012543939866
+TBXA2R Thromboxane A2 receptor,0.6730396292276972
+CBFA2 Proto-oncogene AML1 {alternative products},0.6730396292276972
+Kidney mRNA for zinc-finger DNA-binding protein,0.6732289062315596
+RPD3 protein,0.6737193758043316
+"KIAA0178 gene, partial cds",0.6740555350685405
+Serine/threonine protein kinase,0.6740555350685405
+KIAA0221 gene,0.6740555350685405
+"Dihydrofolate Reductase, Alt. Splice 6",0.6740555350685405
+Insulin-Like Growth Factor 2,0.6740555350685405
+"Adducin, Alpha Subunit, Alt. Splice 2",0.6740555350685405
+"P4HB Procollagen-proline, 2-oxoglutarate 4-dioxygenase (proline 4-hydroxylase), beta polypeptide (protein disulfide isomerase; thyroid hormone binding protein p55)",0.6740555350685405
+LAMP1 Lysosome-associated membrane protein 1,0.6740555350685405
+MYC V-myc avian myelocytomatosis viral oncogene homolog,0.6740555350685405
+CACCC box-binding protein mRNA,0.6740555350685405
+Translocation T(4:11) of ALL-1 gene to chromosome 4,0.6740555350685405
+MXI1 mRNA,0.6741204078382045
+"MEF2C MADS box transcription enhancer factor 2, polypeptide C (myocyte enhancer factor 2C)",0.6741204078382045
+"FNTA Farnesyltransferase, CAAX box, alpha",0.6748931022610477
+MITOCHONDRIAL STRESS-70 PROTEIN PRECURSOR,0.6767634496980007
+DUAL SPECIFICITY MITOGEN-ACTIVATED PROTEIN KINASE KINASE 1,0.6767634496980007
+AF-4 mRNA,0.6772739050368071
+"MUC2 Mucin 2, intestinal/tracheal",0.6784404856622122
+Nuclear respiratory factor-1 (NRF-1) mRNA,0.6794559825601452
+Ras GTPase-activating-like protein (IQGAP1) mRNA,0.6798961225645641
+CSaids binding protein (CSBP1) mRNA,0.6798961225645641
+"(clone S31i125) mRNA, 3' end of cds",0.6798961225645641
+"Transcription factor ZFM1 isoform B3 mRNA, complete  cds",0.6803635236663057
+(clone cc44) senilin 1 (PS1; S182) mRNA,0.6803635236663057
+BCL2 B cell lymphoma protein 2,0.6804519251285426
+"HLA-DQB1 Major histocompatibility complex, class II, DQ beta 1",0.6804519251285426
+HnRNP C2 protein mRNA,0.681317174080719
+"ICAM1 Intercellular adhesion molecule 1 (CD54), human rhinovirus receptor",0.6818509472365983
+V-ERBA RELATED PROTEIN EAR-1,0.6838486805841065
+PTPN1 Tyrosine phosphatase 1,0.6838486805841065
+CALMODULIN-RELATED PROTEIN NB-1,0.6838486805841065
+Spermidine synthase gene,0.6838486805841065
+"GNA11 Guanine nucleotide binding protein (G protein), alpha 11 (Gq class)",0.6857224889065623
+"GB DEF = Nonmuscle myosin heavy chain-B (MYH10) mRNA, partial cds",0.6869278916866917
+"HLA-DPB1 Major histocompatibility complex, class II, DP beta 1",0.6869278916866917
+Glucose transporter (GLUT4) gene,0.686989422346037
+SET PROTEIN,0.686989422346037
+Zinc finger protein (MAZ) mRNA,0.6878109119112786
+"ID2 Inhibitor of DNA binding 2, dominant negative helix-loop-helix protein",0.6878109119112786
+MSX1 Msh (Drosophila) homeo box homolog 1 (formerly homeo box 7),0.6909032317667396
+"L-arginine:glycine amidinotransferase [human, kidney carcinoma cells, mRNA, 2330 nt]",0.6913462706358915
+NFKB2 Nuclear factor of kappa light polypeptide gene enhancer in B-cells 2 (p49/p100),0.6913462706358915
+Cyclooxygenase-2 (hCox-2) gene,0.6929576743228462
+CAB3b mRNA for calcium channel beta3 subunit,0.6945376996351442
+Mitogen induced nuclear orphan receptor (MINOR) mRNA,0.6945376996351442
+Negative regulator of programmed cell death ICH-1S (Ich-1) mRNA,0.6948806244255882
+Glioma pathogenesis-related protein (GliPR) mRNA,0.6950688911947126
+Zinc finger protein RIZ mRNA,0.6952394345100328
+EIF5A Eukaryotic translation initiation factor 5A,0.6954271824049064
+Clone CIITA-8 MHC class II transactivator CIITA mRNA,0.6959258782905208
+DP2 (Humdp2) mRNA,0.7004709976773875
+Lymphocyte dihydropyrimidine dehydrogenase mRNA,0.700571553996518
+PSG13 Pregnancy-specific beta-1 glycoprotein 13,0.7011899766914083
+"E2F5 E2F transcription factor 5, p130-binding",0.7013702703072813
+"ATM Ataxia telangiectasia mutated (includes complementation groups A, C and D)",0.7013702703072813
+CRHR2 Corticotropin releasing hormone receptor 2,0.7013702703072813
+"SLC6A8 gene (creatine transporter) extracted from Human Xq28 cosmid, creatine transporter (SLC6A8) gene, and CDM gene, partial cds",0.7032586341546048
+Silencing mediator of retinoid and thyroid hormone action (SMRT) mRNA,0.7051816236356874
+Kinesin-like spindle protein HKSP (HKSP) mRNA,0.7053643216965237
+Semaphorin III family homolog mRNA,0.7055725718058345
+"AQP1 Aquaporin 1 (channel-forming integral protein, 28kD)",0.7055725718058345
+RagA protein,0.7061158517730916
+DNA-dependent protein kinase catalytic subunit (DNA-PKcs) mRNA,0.7061158517730916
+Plectin (PLEC1) mRNA,0.7061158517730916
+"OR17-40 gene extracted from Human olfactory receptor gene cluster on chromosome 17, OR17-228 and OR17-40, and OR17-24 and OR17-25 pseudogenes",0.7061158517730916
+RPS26 Ribosomal protein S26,0.7061158517730916
+BTG2 (BTG2) mRNA,0.7061158517730916
+Macrophage-derived chemokine precursor (MDC) mRNA,0.7061158517730916
+KH type splicing regulatory protein KSRP mRNA,0.706485676273909
+HPV16 E1 protein binding protein mRNA,0.7087137247052853
+INSR Insulin receptor,0.7087137247052853
+"GNB1 Guanine nucleotide binding protein (G protein), beta polypeptide 1",0.7089756548990576
+"COL4A2 Collagen, type IV, alpha 2",0.7092449794913044
+CD20 RECEPTOR,0.711053154664416
+Hnrnp a1 protein gene extracted from Human gene for heterogeneous nuclear ribonucleoprotein (hnRNP) core protein A1,0.711053154664416
+HGF Hepatocyte growth factor (hepapoietin A; scatter factor),0.711053154664416
+ECP gene for eosinophil cationic protein,0.711053154664416
+HLA-E MHC class I antigen HLA-E,0.7113456191871942
+GL105 gene (histone H2B) extracted from H.sapiens genes for histones H2B.1 and H2A,0.7127867134311526
+GATA3 GATA-binding protein 3,0.7151841162829015
+"ZFX Zinc finger protein, X-linked",0.7151841162829015
+RETINOIC ACID RECEPTOR RXR-BETA,0.7159743895924229
+HETEROGENOUS NUCLEAR RIBONUCLEOPROTEIN U,0.7159743895924229
+HNRPK Heterogeneous nuclear ribonucleoprotein K,0.7167745139712816
+Transcriptional activator hSNF2a,0.7167745139712816
+HPTPA mRNA,0.7167745139712816
+IMMEDIATE-EARLY RESPONSE PROTEIN NOT,0.7169157368691786
+MULTIDRUG RESISTANCE-ASSOCIATED PROTEIN 1,0.7174672014133747
+EUKARYOTIC PEPTIDE CHAIN RELEASE FACTOR SUBUNIT 1,0.7180810761771806
+MN1 mRNA,0.7188209520715203
+APP Amyloid A4 protein of Alzheimer's disease,0.7194961703017678
+B4B,0.7194961703017678
+TOP2B Topoisomerase (DNA) II beta (180kD),0.7194961703017678
+"COL1A1 Collagen, type I, alpha 1",0.7202675798371911
+"Protein encoded by a candidate gene, DXS6673E, for mental retardation",0.7202675798371911
+Galectin,0.7209032262927371
+"A-589H1.2 from  Homo sapiens Chromosome 16 BAC clone CIT987-SKA-589H1  ~complete genomic sequence, complete sequence./ntype=DNA /annot=mRNA",0.7209032262927371
+CYP3A7 Cytochrome P450 IIIA7 (P450-HFLa),0.7221912652933333
+"PrP gene, exon 2",0.7221912652933333
+MACROPHAGE INFLAMMATORY PROTEIN 1-ALPHA PRECURSOR,0.7227786757450555
+ELASTASE IIIA PRECURSOR,0.7227786757450555
+ANX6 Annexin VI (p68),0.7227786757450555
+T-CELL ANTIGEN CD7 PRECURSOR,0.7233801825208634
+T-CELL ANTIGEN CD7 PRECURSOR,0.7235525566554826
+PRPS1 Phosphoribosyl pyrophosphate synthetase 1,0.7237280229867988
+FACL1 Long chain fatty acid acyl-coA ligase,0.7238570812321831
+Zinc finger homeodomain protein (ATBF1-A) mRNA,0.7238570812321831
+MPZ Myelin protein zero (Charcot-Marie-Tooth neuropathy 1B),0.724341332993523
+PROBABLE G PROTEIN-COUPLED RECEPTOR LCR1 HOMOLOG,0.724341332993523
+"PTPN7 Protein tyrosine phosphatase, non-receptor type 7",0.724341332993523
+AMPD3 Adenosine monophosphate deaminase (isoform E),0.724341332993523
+"PKLR Pyruvate kinase, liver",0.724341332993523
+"SDC4 Syndecan 4 (amphiglycan, ryudocan)",0.7243587240979792
+"Transcription Factor E4tf1, Respiratory, Gamma 2 Subunit, Alt. Splice 4",0.7244010528102501
+KIAA0006 gene,0.7257912774089843
+Fatty acids omega-hydroxylase (cytochrome P-450HKV),0.7258833097052007
+"Carboxyl Methyltransferase, Aspartate, Alt. Splice 1",0.7260433282956403
+Peptide Yy,0.7262465476681584
+CREM CAMP responsive element modulator,0.7268896359532739
+CREM CAMP responsive element modulator,0.7271304187456255
+GB DEF = Ltk mRNA,0.7272144944227169
+PROBABLE PROTEIN DISULFIDE ISOMERASE ER-60 PRECURSOR,0.7284359117878344
+Transformation-Related Protein,0.7286788421598699
+Drebrin E,0.7286788421598699
+Transcriptional activator hSNF2b,0.7301171137151443
+"KIAA0007 gene, partial cds",0.7316737985948627
+PTGS2 Prostaglandin-endoperoxide synthase 2 (prostaglandin G/H synthase and cyclooxygenase),0.7316737985948627
+Cyclooxygenase-2 (hCox-2) gene,0.7317136335153883
+IARS Isoleucine-tRNA synthetase,0.7317136335153883
+PBX2 mRNA,0.7317136335153883
+Ras GTPase-activating-like protein (IQGAP1) mRNA,0.7319732298562885
+"GB DEF = Inducible nitric oxide synthase gene, promoter and exon 1",0.7322340429656313
+"TEC gene extracted from Human protein tyrosine kinase TEC (tec) gene, partial cds, and tyrosine kinase TXK (txk) gene",0.7322340429656313
+ZNF33B gene,0.7322985543634337
+DRPLA Dentatorubral-pallidoluysian atrophy,0.7322985543634337
+Transcription Factor Iiia,0.7322985543634337
+MCM3 Minichromosome maintenance deficient (S. cerevisiae) 3,0.7333742904161278
+TBXA2R Thromboxane A2 receptor,0.7333742904161278
+DNA-DIRECTED RNA POLYMERASE II 23 KD POLYPEPTIDE,0.7343090080708808
+GB DEF = PMS2 related (hPMSR2) gene,0.7349943157644195
+RING3 PROTEIN,0.7351750050064808
+RING3 PROTEIN,0.7351750050064808
+Very-long-chain acyl-CoA dehydrogenase (VLCAD),0.7351750050064808
+MacMarcks mRNA,0.7351750050064808
+"CALM1 Calmodulin 1 (phosphorylase kinase, delta)",0.7351750050064808
+LEP Leptin (murine obesity homolog),0.7351750050064808
+GB DEF = HLA-B null allele mRNA,0.7363571136710391
+"GB DEF = Integral membrane protein (NRAMP1) gene, exon 5",0.7363571136710391
+GB DEF = Histone deacetylase HD1 mRNA,0.7365719162491332
+KIAA0139 gene,0.7367016261986211
+DAGK4 Diacylglycerol kinase delta,0.7367342168887994
+GCN5-like 1,0.7367342168887994
+TIAL1 TIA1 cytotoxic granule-associated RNA-binding protein-like 1,0.7367342168887994
+Suppressor for yeast mutant,0.7367342168887994
+"Ras homologue enriched in brain (RHEB) gene, Ras-related GTP binding protein gene",0.7383933158160126
+"YWHAH Tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, eta polypeptide",0.7389752394333512
+KIAA0162 gene,0.7393726586525463
+SB1.8/DXS423E,0.7398903628164729
+HXC-26 mRNA,0.7398903628164729
+Myc-associated zinc-finger protein of human islet,0.7411874941042776
+SHPS-1,0.7414309692225214
+SHPS-1,0.7414309692225214
+Allograft inflammatory factor-1 (AIF-1) mRNA,0.7414309692225214
+KIAA0203 gene,0.7418699059187306
+SMCY (H-Y) mRNA,0.7422329685455915
+CD24 signal transducer mRNA and 3' region,0.7423012592601683
+LRP1 ATL-derived PMA-responsive (APR) peptide,0.7440305458916628
+"GNAZ Guanine nucleotide binding protein (G protein), alpha z polypeptide",0.7457169296330328
+"Non-Specific Cross Reacting Antigen (Gb:D90277), Alt. Splice Form 2",0.7457169296330328
+G6PD gene (glucose-6-phosphate dehydrogenase) extracted from H.sapiens G6PD gene for glucose-6-phosphate dehydrogenase,0.7467497224055404
+Heterogeneous Nuclear Ribonucleoprotein A/B,0.7467497224055404
+"Collagen, Type Vi, Alpha 2, Alt. Splice 2",0.7467497224055404
+"Small Nuclear Ribonucleoprotein, Polypeptide C, Alt. Splice 2",0.7467497224055404
+GB DEF = Sickle cell beta-globin mRNA,0.7469315671814122
+"Globin, Beta",0.7479817546550792
+"Transcription Factor Oct-1a/1b, Alt. Splice 2, Oct-1b",0.7479817546550792
+Adrenal-Specific Protein Pg2,0.7480188707199862
+RPS3 Ribosomal protein S3,0.7480737449650033
+RPS3 Ribosomal protein S3,0.7481138533667586
+"Heterogeneous Nuclear Ribonucleoprotein I, Alt. Splice 2, Ptb-1",0.7482363113589545
+Chorionic Somatomammotropin Hormone Cs-5,0.7482363113589545
+Interferon-gamma receptor alpha chain gene,0.7502271153236448
+Prolactin-Induced Protein,0.7510203815490266
+CHGA Chromogranin A,0.7510203815490266
+37 kD laminin receptor precursor/p40 ribosome associated protein gene,0.7510203815490266
+"Cytochrome P450, Subfamily Iic, Alt. Splice Form 2",0.7510203815490266
+"PFKM Phosphofructokinase, muscle",0.7510786589822487
+"PRG2 Proteoglycan 2, bone marrow (natural killer cell activator, eosinophil granule major basic protein)",0.7519303037343088
+"Nuclear Mitotic Apparatus Protein 1, Alt. Splice Form 2",0.7519303037343088
+Monocyte Chemotactic Protein 1,0.7519303037343088
+"Tubulin, Alpha 1, Isoform 44",0.7519303037343088
+"PPP3CA Protein phosphatase 3 (formerly 2B), catalytic subunit, alpha isoform (calcineurin A alpha){alternative products}",0.7519303037343088
+Helix-Loop-Helix Protein Sef2-1d,0.7522457762986381
+DM kinase gene (myotonic dystrophy kinase) extracted from Human myotonic dystrophy kinase (DM kinase) gene,0.7522457762986381
+KIT V-kit Hardy-Zuckerman 4 feline sarcoma viral oncogene homolog,0.7524496775575695
+"C-myb gene extracted from Human (c-myb) gene, complete primary cds, and five complete alternatively spliced cds",0.7526007813125013
+Single-Stranded Dna-Binding Protein Mssp-1,0.7526007813125013
+Serine/Threonine Kinase (Gb:Z25427),0.7526825528385609
+Gamma-Glutamyltransferase 1 (Gb:J04131),0.7530441893853813
+"Clathrin, Light Polypeptide B, Alt. Splice 2",0.7560649239227001
+LMNA Lamin A,0.7560649239227001
+Lung Surfactant Protein D,0.7560649239227001
+SNRP70 U1 snRNP 70K protein,0.7560649239227001
+"Myosin, Light Chain, Alkali, Smooth Muscle (Gb:U02629), Non-Muscle, Alt. Splice 2",0.7560649239227001
+"Myosin, Light Chain, Alkali, Smooth Muscle (Gb:U02629), Non-Muscle, Alt. Splice 2",0.7560649239227001
+"Epican, Alt. Splice 11",0.7560649239227001
+"Epican, Alt. Splice 1",0.7560983266644654
+"Elastin, Alt. Splice 2",0.7561199359224077
+"Elastin gene, partial cds and partial 3'UTR",0.7564233733002221
+"Elastin gene, partial cds and partial 3'UTR",0.7577731527829737
+DNM1 Dynamin 1,0.7577921411026383
+"Heterogeneous Nuclear Ribonucleoprotein K, Alt. Splice 1",0.7588653165136304
+PR264 gene,0.7600618860797698
+Plasma Membrane Calcium Pump Hpmca2a,0.7600618860797698
+"Major Histocompatibility Complex, Class Iii, Rp1, Alt. Splice 1",0.7601157953340891
+Unknown protein gene extracted from Human ribosomal protein S24 mRNA,0.7602230232316373
+MANB Mannosidase alpha-B (lysosomal),0.7616752101186971
+Id1,0.7629491733539482
+"Dnaj Homolog (Gb:X63368), Alt. Splice Form 2",0.7629491733539482
+"Gtp Cyclohydrolase I, Alt. Splice 1",0.7629491733539482
+"Myelin Proteolipid Protein, Alt. Splice 2",0.7629491733539482
+Protein Kinase (Gb:M59287),0.7629491733539482
+"Proto-Oncogene C-Myc, Alt. Splice 3, Orf 114",0.7629491733539482
+MYC V-myc avian myelocytomatosis viral oncogene homolog,0.7643070191592483
+IGF2 Insulin-like growth factor 2 (somatomedin A),0.7643638838493625
+"Amyloid Beta (A4) Precursor Protein, Alt. Splice 2, A4(751)",0.7662678536887618
+"Mucin 1, Epithelial, Alt. Splice 9",0.7662678536887618
+Insulin-Like Leydig Hormone,0.7662678536887618
+Tyrosine Kinase Syk,0.7667701477395531
+"P72syk {G insertion nucleotide 92} [human, Jurkat E6-1 J.CaM1 cells, mRNA Partial Mutant, 1909 nt]",0.7671300949631239
+"Homeotic Protein A1, Class I, Alt. Splice 1",0.7678804163916163
+Surfacant Protein Sp-A2 Delta,0.7683157397143123
+"GNAS1 Guanine nucleotide binding protein (G protein), alpha stimulating activity polypeptide 1",0.768355580194379
+"Dystrophin-Associated Glycoprotein, 50 Kda, Alt. Splice 2",0.768355580194379
+GB DEF = Endogenous retrovirus type C oncovirus sequence,0.7685469699594125
+Olfactory Receptor Or17-201,0.7686804045942806
+Cathepsin B,0.7707580613931286
+Urokinase-type plasminogen activator receptor gene extracted from Human urokinase-type plasminogen receptor,0.7712697479170832
+GLUD1 Glutamate dehydrogenase,0.7721883084008813
+Guanine Nucleotide-Binding Protein Rab5c-Like Protein,0.7721883084008813
+Lim-Domain Transcription Factor Lim-1,0.7736990558481833
+Glycogenin,0.7736990558481833
+Dematin,0.7736990558481833
+"Transcription Factor Mef2, Alt. Splice 2",0.7739680439522735
+Spinal Muscular Atrophy 4,0.77471004645521
+"Oncogene Mll-Af4, Fusion Activated",0.77471004645521
+PML Probable transcription factor PML {alternative products},0.77471004645521
+"Rhesus (Rh) Blood Group System Ce-Antigen, Alt. Splice 2, Rhvi",0.77471004645521
+"Rhesus (Rh) Blood Group System Ce-Antigenl, Alt. Splice 3, Rhviii",0.77471004645521
+"Adducin, Alpha Subunit, Alt. Splice 3",0.77471004645521
+"Placental Protein 14, Endometrial Alpha 2 Globulin, Alt. Splice 3",0.77471004645521
+"Mucin 6, Gastric (Gb:L07517)",0.7762023398227331
+CD70 CD70 antigen (CD27 ligand),0.7763648462129504
+"GB DEF = Dopamine D4 receptor {exon 1} [human, brain tumor tissue, mRNA Partial Mutant, 386 nt]",0.7767097865700893
+Pre-T/Nk-Cell-Associated Protein 1f6,0.7769472000403156
+"Sulfotransferase, Phenol-Preferring",0.7769472000403156
+SIGNAL TRANSDUCER AND ACTIVATOR OF TRANSCRIPTION 1-ALPHA/BETA,0.7769472000403156
+IG EPSILON CHAIN C REGION,0.7787051696761695
+"Ig alpha 2=immunoglobulin A heavy chain allotype 2 {constant region, germ line} [human, peripheral blood neutrophils, Genomic, 1799 nt]",0.7787051696761695
+"(hybridoma H210) anti-hepatitis A IgG variable region, constant region, complementarity-determining regions mRNA",0.7791751972352228
+INS Insulin,0.7804701251346519
+Metallothionein isoform 2,0.7804701251346519
+Metallothionein isoform 2,0.7804701251346519
+Non-histone chromosomal protein HMG-14 mRNA,0.7812954538852881
+ANT2 Adenine nucleotide translocator 2 (fibroblast),0.7841041132583355
+"P4HB Procollagen-proline, 2-oxoglutarate 4-dioxygenase (proline 4-hydroxylase), beta polypeptide (protein disulfide isomerase; thyroid hormone binding protein p55)",0.7841041132583355
+GYPE Glycophorin E,0.7841041132583355
+GLYCOPHORIN B PRECURSOR,0.7841041132583355
+CA2 Carbonic anhydrase II,0.7843502732245152
+Protein kinase C substrate 80K-H gene (PRKCSH),0.7860450975099411
+PSAP Sulfated glycoprotein 1,0.7862512994195932
+TOP1 DNA topoisomerase I,0.7863654946149646
+LAMP1 Lysosome-associated membrane protein 1,0.7868214043423409
+IGF2R Insulin-like growth factor 2 receptor,0.7871505237882213
+CR2 Complement component (3d/Epstein Barr virus) receptor 2,0.7871505237882213
+"PAI2 Plasminogen activator inhibitor, type II (arginine-serpin)",0.7871505237882213
+GB DEF = Activin beta-A subunit (exon 2),0.7880526025629608
+"Annexin V (ANX5) gene, 5'-untranslated region",0.7884098350255992
+LYZ Lysozyme,0.7884098350255992
+"Phosphatase 2A mRNA, partial cds",0.7884155375120249
+GSTM4 Glutathione S-transferase M4,0.7884194452510576
+INTERPHOTORECEPTOR RETINOID-BINDING PROTEIN PRECURSOR,0.7884435276787553
+Keratin 10 type I intermediate filament (KRT10) mRNA,0.7888089902031806
+CALMODULIN,0.7891190847671673
+SCYA4 Small inducible cytokine A4 (homologous to mouse Mip-1b),0.7893153237150118
+SCYA4 Small inducible cytokine A4 (homologous to mouse Mip-1b),0.7899870930935907
+Leukosialin (CD43) gene,0.7899870930935907
+SSB Sjogren syndrome antigen B (autoantigen La),0.7917269364404305
+"ACP5 Acid phosphatase 5, tartrate resistant",0.7917269364404305
+PGC Gastricsin (pepsinogen C),0.7935911008449746
+SmB protein gene extracted from Human gene for small nuclear ribonucleoproteins SmB and SmB',0.7935911008449746
+GFAP Glial fibrillary acidic protein,0.7935911008449746
+GB DEF = mRNA fragment for elongation factor TU (N-terminus),0.7947237635947983
+(clone pA3) protein disulfide isomerase related protein (ERp72) mRNA,0.7948136019803915
+CTSE Cathepsin E,0.7951578921610077
+TIMP2 Tissue inhibitor of metalloproteinase 2,0.7951578921610077
+"MHC cell surface glycoprotein (HLA-DQA) mRNA, 3'end",0.7957446406514411
+HLA-DQA1 MHC class II DQ alpha,0.7958071074095828
+GB DEF = T-cell receptor active alpha-chain mRNA from Jurkat cell line,0.8000678415743143
+"FNTA Farnesyltransferase, CAAX box, alpha",0.8000678415743143
+RD Radin blood group,0.8002272417572781
+ZNF148 Zinc finger protein 148 (pHZ-52),0.8003217755789694
+IRF1 Interferon regulatory factor 1,0.8003217755789694
+HISTATIN 3 PRECURSOR,0.8010749288496691
+DUAL SPECIFICITY MITOGEN-ACTIVATED PROTEIN KINASE KINASE 1,0.8020868004988821
+"MEF2C MADS box transcription enhancer factor 2, polypeptide C (myocyte enhancer factor 2C)",0.8024753083448695
+APLP2 Amyloid beta (A4) precursor-like protein 2,0.8024753083448695
+EEF1A2 Eukaryotic translation elongation factor 1 alpha 2,0.8030163754393792
+LTB Lymphotoxin-beta,0.8030163754393792
+TKT Transketolase (Wernicke-Korsakoff syndrome),0.8033269094199748
+Beta adaptin protein mRNA,0.8040157569462737
+PRHX Proline-rich homeodomain-containing transcription factor (symbol provisional),0.8057279980361476
+"GB DEF = NF-kappa-B p65delta3 mRNA, spliced transcript lacking exons 6 and 7, partial cds",0.8060246611086925
+Of p65 gene encoding p65 subunit of transcription factor NF-kappaB,0.8060246611086925
+FRAGILE X MENTAL RETARDATION 1 PROTEIN,0.8064113274900367
+"GB DEF = Interleukin-8 receptor type B (IL8RB) mRNA, splice variant IL8RB4, partial cds",0.8072608389943953
+HOMEOBOX/POU DOMAIN PROTEIN RDC-1,0.8072608389943953
+Cell division control related protein (hCDCrel-1) mRNA,0.8072608389943953
+GB DEF = Corticotropin releasing factor receptor mRNA,0.8072608389943953
+GB DEF = B-lymphocyte cell-surface antigen B1 (CD20),0.809606332089977
+DDIT1 DNA-damage-inducible transcript 1,0.8101279612039135
+"DCI Dodecenoyl-Coenzyme A delta isomerase (3,2 trans-enoyl-Coenzyme A isomerase)",0.8102705737605768
+LBR Lamin B receptor,0.8102705737605768
+"Neuron-specific RNA recognition motifs (RRMs)-containing protein [human, hippocampus, mRNA, 1992 nt]",0.8102705737605768
+GRB2 Growth factor receptor-bound protein 2,0.8104585645857657
+"GB DEF = GPSAT=glycophorin SAT [human, peripheral bloods, mRNA Partial, 407 nt]",0.812207908957731
+PROBABLE G PROTEIN-COUPLED RECEPTOR GPR3,0.8138520000826283
+"GB DEF = 4-aminobutyrate aminotransferase [human, neuroblastoma BE cells, mRNA Partial, 1352 nt]",0.8138730034026119
+"GB DEF = Gamma-aminobutyric acid transaminase mRNA, partial cds",0.814570024783761
+"ATP6B2 ATPase, H+ transporting, lysosomal (vacuolar proton pump), beta polypeptide, 56/58kD, isoform 2",0.8153740637365505
+Phosphodiesterase I alpha,0.8155673185043187
+VIP2 receptor,0.8155673185043187
+GB DEF = (clone hEHK1-L) EHK1 receptor tyrosine kinase ligand (EFL-2) mRNA,0.8155673185043187
+Lamin B gene extracted from Human lamin B mRNA,0.8155673185043187
+ARF4L ADP-ribosylation factor 4-like,0.8155673185043187
+DDB1 Damage-specific DNA binding protein 1 (127 kD),0.8156899046467933
+DP2 (Humdp2) mRNA,0.8156899046467933
+"(clone S31i125) mRNA, 3' end of cds",0.8156899046467933
+STAT5A Signal transducer and activator of transcription 5A,0.8156899046467933
+"GCNT1 Glucosaminyl (N-acetyl) transferase 1, core 2 (beta-1,6-N-acetylglucosaminyltransferase)",0.8156899046467933
+PP2A B56-beta mRNA,0.8156899046467933
+(clone EST02946) mRNA,0.8189425361674526
+"GB DEF = Clone 110298 map Xq28, mRNA sequence",0.8225246174375949
+DNL1L gene extracted from Homo sapiens chromosome X region from filamin (FLN) gene to glucose-6-phosphate dehydrogenase (G6PD) gene's,0.8230371067320023
+"GB DEF = (cell line HL-60) alpha topoisomerase truncated-form mRNA, 3'UTR",0.8230371067320023
+ZFM1 protein alternatively spliced product,0.8232941854036124
+"GB DEF = Splicing factor, SF1-Bo isoform",0.8257100772064533
+Mutant coseg gene for vasopressin-neurophysin precursor,0.8258835869943628
+EEF1G Translation elongation factor 1 gamma,0.8258835869943628
+GB DEF = DNA for cellular retinol binding protein (CRBP) exons 3 and 4,0.8261154969636519
+OIAS (2'-5') oligoadenylate synthetase,0.8261154969636519
+TCRA T cell receptor alpha-chain,0.826466981032099
+PROBABLE PROTEIN DISULFIDE ISOMERASE ER-60 PRECURSOR,0.8269967685407051
+"C1NH Complement component 1 inhibitor (angioedema, hereditary)",0.827718512529291
+PKS PROTO-ONCOGENE SERINE/THREONINE-PROTEIN KINASE,0.827718512529291
+ROS1 Transmembrane tyrosine-specific protein kinase ROS1,0.8277508699059603
+BCL2 B-cell CLL/lymphoma 2,0.8277508699059603
+"GB DEF = Uroporphyrinogen decarboxylase (URO-D) gene, partial cds",0.8277508699059603
+"ENO1 Enolase 1, (alpha)",0.8277508699059603
+"CD2 CD2 antigen (p50), sheep red blood cell receptor",0.829197708576914
+IL6 Interleukin 6 (B cell stimulatory factor 2),0.829258904008787
+IL6 Interleukin 6 (B cell stimulatory factor 2),0.8293858423622207
+SELL Leukocyte adhesion protein beta subunit,0.8293858423622207
+Transducin beta-2 subunit mRNA,0.8296428328009523
+HCK Hemopoietic cell kinase,0.8307247117387326
+"ELA1 Elastase 1, pancreatic (elastase IIA)",0.8307247117387326
+"Histone H4 gene, clone FO108",0.8307247117387326
+PIM1 Pim-1 oncogene,0.8309463984730495
+"Homeo box c8 protein, mRNA",0.8316094543329543
+Interleukin 8 (IL8) gene,0.8347704106005235
+INTERLEUKIN-8 PRECURSOR,0.8349666937160917
+"HLA CLASS II HISTOCOMPATIBILITY ANTIGEN, DQ(2) ALPHA CHAIN PRECURSOR",0.8352003993609032
+TRANSFORMING PROTEIN ERG,0.8362844502292915
+TH Tyrosine hydroxylase,0.8362844502292915
+"PRKACB gene (protein kinase C-beta-2) extracted from Human protein kinase C beta 1 and 2 genes, next to last",0.8373534407206789
+"MPO from  Human myeloperoxidase gene, exons 1-4./ntype=DNA /annot=exon",0.8389934733399046
+"ELA2 Elastatse 2, neutrophil",0.83947090591345
+"GB DEF = Neutrophil elastase gene, exon 5",0.8394969824109177
+GB DEF = Cystic fibrosis antigen mRNA,0.8407131472669511
+CD19 gene,0.8407131472669511
+"GB DEF = Lymphocyte-specific protein tyrosine kinase (LCK) gene, exon 1, and downstream promoter region",0.8436003320835064
+"GB DEF = Mitochondrial ubiquinone-binding protein (QP) gene, exon 4",0.8436061178551066
+UQCRB Ubiquinol-cytochrome c reductase binding protein,0.8436542469529502
+T-CELL SURFACE GLYCOPROTEIN CD3 EPSILON CHAIN PRECURSOR,0.8440754465902846
+JUP Junction plakoglobin,0.8440754465902846
+DNA-BINDING PROTEIN A,0.8440754465902846
+SAT Spermidine/spermine N1-acetyltransferase,0.8459442538795026
+PIM1 Pim-1 oncogene,0.8466283072135322
+"Na,K-ATPase beta-1 subunit mRNA",0.8473909492148046
+BRAIN NATRIURETIC PEPTIDE PRECURSOR,0.8488762342103693
+HLA-DQA1 MHC class II DQ alpha,0.848901969105479
+"SCAD gene, exon 1 and joining features",0.8493273898468146
+"GB DEF = Topoisomerase type II (Topo II) mRNA, partial cds",0.8493273898468146
+CAMP-RESPONSE ELEMENT BINDING PROTEIN,0.8509835695148807
+"KERATIN, TYPE I CYTOSKELETAL 17",0.8518331931273834
+CELL SURFACE GLYCOPROTEIN MUC18 PRECURSOR,0.8518780649150662
+CELL SURFACE GLYCOPROTEIN MUC18 PRECURSOR,0.8518780649150662
+CELL SURFACE GLYCOPROTEIN MUC18 PRECURSOR,0.853061676253316
+JUNB Jun B proto-oncogene,0.8531811294330429
+"GB DEF = Partial cDNA sequence, farnesyl pyrophosphate synthetase like-4",0.8531811294330429
+"ADRB3 Adrenergic, beta-3-, receptor",0.8531811294330429
+"GB DEF = Alpha-I spectrin gene, exon 12",0.8531811294330429
+"Tryptase-III mRNA, 3' end",0.854451320713277
+GB DEF = Casein kinase II beta subunit mRNA,0.8546954823391587
+Amphiregulin (AR) gene,0.8565812081578079
+Insulin-like growth factor binding protein (hIGFBP1) gene,0.8565812081578079
+GB DEF = PTX3 gene promotor region,0.8565812081578079
+"GB DEF = Propionyl-CoA carboxylase beta-subunit (beta-PCC) gene, partial cds (mutant delta-ATC)",0.8570023276061365
+MYL1 Myosin light chain (alkali),0.8575985086649516
+Proto-oncogene BCL3 gene,0.8575985086649516
+CYP11B1 Cytochrome P450 11 beta,0.8576839186251652
+CYP11B1 Cytochrome P450 11 beta,0.8577026808477812
+TNFR1 Tumor necrosis factor receptor 1 (55kD),0.8580182381891479
+SRM Spermidine synthase,0.8582558496133145
+"GB DEF = Insulin-like growth factor binding protein-2 [human, placenta, Genomic, 1342 nt, segment 4 of 4]",0.8588322041433232
+Interferon-inducible RNA-dependent protein kinase (Pkr) gene,0.860763426975968
+"MYL4 Myosin, light polypeptide 4, alkali; atrial, embryonic",0.860763426975968
+GYPC Glycophorin C (Gerbich blood group),0.863725345043654
+"POU2F2 POU domain, class 2, transcription factor 2",0.8641906763986706
+"POU2F2 POU domain, class 2, transcription factor 2",0.8643188543153549
+GRO2 GRO2 oncogene,0.8643346568039
+GRO3 GRO3 oncogene,0.8649522513868096
+"PLCG2 Phospholipase C, gamma 2 (phosphatidylinositol-specific)",0.8659825734994094
+"Na+,K+ -ATPase catalytic subunit alpha-III isoform gene",0.8659825734994094
+"Transforming growth factor-beta mRNA, clone pTGF-beta-trp114",0.866052520840698
+AMELY Amelogenin (chromosome Y encoded),0.866052520840698
+"KCNA5 Potassium voltage-gated channel, shaker-related subfamily, member 5",0.8662378054249822
+MHC class II HLA-DP light chain mRNA,0.8662378054249822
+Interleukin 10 (IL10) gene,0.8675981738617681
+CALMODULIN-RELATED PROTEIN NB-1,0.8677267551988794
+COMT Catechol-O-methyltransferase,0.8677267551988794
+GB DEF = Atrial natriuretic peptide clearance receptor (ANP-C receptor),0.8694253750791519
+"GB DEF = Neurokinin A receptor (NK-2R) gene, exon 5",0.870022539446544
+Protein phosphatase-2A catalytic subunit-alpha gene extracted from Human protein phosphatase 2A catalytic subunit-alpha gene,0.8709393445777289
+WT1 Wilms tumor 1,0.8713771766749824
+U1 SMALL NUCLEAR RIBONUCLEOPROTEIN A,0.8713771766749824
+SPECTRIN ALPHA CHAIN,0.8713771766749824
+AHCY S-adenosylhomocysteine hydrolase,0.8713771766749824
+IGFBP4 Insulin-like growth factor-binding protein 4,0.8720775977100514
+"GB DEF = Alpha-1 Ig germline C-region membrane-coding region, 3' end",0.8730014099560717
+GLUL Glutamate-ammonia ligase (glutamine synthase),0.8730014099560717
+ZFP36 Zinc finger protein homologous to Zfp-36 in mouse,0.8730014099560717
+Interferon-gamma induced protein (IFI 16) gene,0.8730014099560717
+COMT Catechol-O-methyltransferase,0.8730014099560717
+"G0S2 gene extracted from Human GOS2 gene, 5' flank and cds",0.8741427090500428
+PML Probable transcription factor PML {alternative products},0.8741427090500428
+"IDUA Iduronidase, alpha-L-",0.8745476586947651
+"LIPA Lipase A, lysosomal acid, cholesterol esterase",0.8750594000204462
+"LIPA Lipase A, lysosomal acid, cholesterol esterase",0.8753798870923014
+EUKARYOTIC PEPTIDE CHAIN RELEASE FACTOR SUBUNIT 1,0.8762306941236582
+Pmel 17 mRNA,0.8762306941236582
+"USF2a & USF2b, clone P2",0.8762306941236582
+"POLD1 Polymerase (DNA directed), delta 1, catalytic subunit (125kD)",0.8762306941236582
+RING3 PROTEIN,0.8765129001192989
+"ATP1B2 ATPase, Na+/K+ transporting, beta 2 polypeptide",0.8765129001192989
+"ITGAX Integrin, alpha X (antigen CD11C (p150), alpha polypeptide)",0.8767498019651236
+"PFC Properdin P factor, complement",0.8770345867117797
+HMG2 High-mobility group (nonhistone chromosomal) protein 2,0.8779304391217108
+NF-IL6-beta protein mRNA,0.8779304391217108
+THYMOSIN BETA-10,0.8786964818725305
+COL16A1 Alpha-1 type XVI collagen,0.8786964818725305
+SET PROTEIN,0.879739026230725
+N-type calcium channel alpha-1 subunit mRNA,0.879739026230725
+"GB DEF = DAT1 gene, partial, VNTR",0.879739026230725
+HLF Hepatic leukemia factor,0.8801020253557181
+"ID2 Inhibitor of DNA binding 2, dominant negative helix-loop-helix protein",0.8802218475226515
+VALYL-TRNA SYNTHETASE,0.8802218475226515
+"CD36 CD36 antigen (collagen type I receptor, thrombospondin receptor)",0.8805512775821391
+"PDE6B Phosphodiesterase 6B, cGMP-specific, rod, beta",0.8805512775821391
+IGL@ Immunoglobulin lambda light chain,0.8815706924614302
+"Cellular adhesion regulatory molecule [human, mRNA, 429 nt]",0.8841383709112851
+HMFG,0.8847140313997632
+Cytoplasmic antiproteinase,0.8847309904551462
+DRD2 Dopamine D2 receptor,0.8850066871494555
+EIF5A Eukaryotic translation initiation factor 5A,0.8850066871494555
+HRK1,0.8850066871494555
+TFAP4 Transcription factor AP-4 (activating enhancer-binding protein 4)),0.8850066871494555
+DAX-1,0.8853462141334902
+"Lipid-activated, protein kinase PRK2 mRNA",0.8853462141334902
+TINUR,0.8853462141334902
+PCCA Propionyl-coA carboxylase alpha chain,0.8856378035196221
+LAMP2 Lysosome-associated membrane protein 2 {alternative products},0.8869081933888242
+"Fatty acid synthase {3' region} [human, breast and HepG2 cells, mRNA Partial, 2237 nt]",0.887559297606686
+GB DEF = Beta adducin,0.8898253364407088
+Mitogen induced nuclear orphan receptor (MINOR) mRNA,0.8904404266539472
+"GB DEF = Hs-TBX2=T-box gene {T-box region} [human, fetal kidney, mRNA Partial, 283 nt]",0.8904404266539472
+"Description: UDP-GalNAc:polypeptide N-acetylgalactosaminyltransferase gene extracted from UDP-GalNAc:polypeptide N-acetylgalactosaminyltransferase/GalNAc-transferase {3' region, exon 11} [human, placenta, Genomic, 1902 nt]",0.8936665644454442
+"GB DEF = Differentiation-stimulating factor/leukemia inhibitory factor receptor {5' region, exon 1} [human, placenta, Genomic, 1350 nt]",0.8937203380446371
+GB DEF = FLT3/FLK2 ligand mRNA,0.8950815316621707
+HAES-1 mRNA,0.8957971410624305
+GB DEF = Chromosome 1q subtelomeric sequence D1S553,0.8965990247694173
+"GB DEF = Nicotinamide N-methyltransferase gene, exon 1 and 5' flanking region",0.8965990247694173
+Thymopoietin (TMPO) gene,0.8965990247694173
+Dihydropyrimidine dehydrogenase mRNA,0.8965990247694173
+GARS Glycyl-tRNA synthetase,0.8965990247694173
+ERGIC-53 PROTEIN PRECURSOR,0.8976644836797278
+Helicase II (RAD54L) mRNA,0.8976799870991612
+MAP KINASE-ACTIVATED PROTEIN KINASE 2,0.8978208548509982
+Glioma pathogenesis-related protein (GliPR) mRNA,0.8978208548509982
+Bak protein mRNA,0.8983929634456633
+MHC CLASS II TRANSACTIVATOR CIITA,0.9002734761240613
+GT334 protein (GT334) gene mRNA,0.902557778836313
+MOP1 mRNA,0.9059758635850779
+6-16 gene (interferon-inducible peptide precursor) extracted from Human interferon-inducible peptide (6-16) gene,0.9071209800307803
+GB DEF = T-lymphocyte specific protein tyrosine kinase p56lck (lck) abberant mRNA,0.9086305761066217
+Neuronatin alpha mRNA,0.9090129529135467
+BZIP protein NF-IL3A (IL3BP1) mRNA,0.90917166855214
+DHPS Deoxyhypusine synthase,0.9100621230670901
+Heterochromatin protein HP1Hs-gamma mRNA,0.9102817124568807
+TFIIB related factor hBRF (HBRF) mRNA,0.9102817124568807
+Thimet oligopeptidase (metalloproteinase),0.9134127639632984
+Splicing factor SRp40-1 (SRp40) mRNA,0.9135036165977721
+UBE2I Ubiquitin-conjugating enzyme E2I (homologous to yeast UBC9),0.91372371079271
+CREB-RP (creb-rp) mRNA,0.9138225671848561
+"Retinoid X receptor beta (RXRbeta) gene, partial 3' transcript, and collagen alpha2(XI) (COL11A2) gene",0.9139174521361542
+"GB DEF = Orphan receptor GPR9 (GPR9) gene, partial cds",0.9162746049077586
+"TTF1 Transcription termination factor, RNA polymerase I",0.9162746049077586
+"TTF1 Transcription termination factor, RNA polymerase I",0.9162746049077586
+"GB DEF = Ataxia-telangiectasia locus protein (ATM) gene, exons 1a, 1b, 2, 3 and 4, partial cds",0.9167047749585022
+Epb72 gene exon 1,0.9167047749585022
+GB DEF = Adenosine kinase mRNA,0.9167047749585022
+"DNA-PK mRNA, partial cds",0.9167047749585022
+"Pre-T cell receptor alpha-type chain precursor, mRNA",0.9173584289762733
+"PPP2R4 Protein phosphatase 2A, regulatory subunit B' alpha-1",0.9173584289762733
+Kinesin-related protein,0.9173584289762733
+TCOF1 Treacher Collins syndrome susceptibility protein,0.9173584289762733
+Ring zinc-finger protein (ZNF127-Xp) gene and 5' flanking sequence,0.9173584289762733
+Metargidin precursor mRNA,0.917866567370259
+NC2 alpha subunit,0.918930224925534
+HK3 Hexokinase 3 (white cell),0.9195701545716662
+"Ets transcription factors NERF-1a and NERF-1b (NERF-1a,b) mRNA",0.9195701545716662
+B4B,0.9221520542827945
+U1-snRNP binding protein homolog mRNA,0.9222258364173779
+P2x1 receptor mRNA,0.9222258364173779
+Signal transducer and activator of transcription Stat5B mRNA,0.9227494002782427
+"MEF2A gene (myocyte-specific enhancer factor 2A, C9 form) extracted from Human myocyte-specific enhancer factor 2A (MEF2A) gene, first coding",0.9234434974310873
+Enhancer of rudimentary homolog mRNA,0.924171180455184
+CHIT1 Chitinase 1,0.9244037507416829
+"GB DEF = Mariner1 transposase gene, complete consensus sequence",0.9244037507416829
+"GB DEF = Adrenal Creb-rp homolog (Creb-rp), and tenascin-X (XB), partial cds, mRNA",0.9253667454271806
+GB DEF = Plectin,0.9256316164641405
+TUB Tubby (mouse) homolog,0.9256667384517917
+Ly-6-related protein (9804) gene,0.9256667384517917
+Calcium ATPase isoform 3x/a mRNA,0.9261973426801906
+"Transcription factor, forkhead related activator 4 (FREAC-4) gene",0.9267928574923214
+RPS26 Ribosomal protein S26,0.9267928574923214
+Transmembrane protein Jagged 1 (HJ1) mRNA,0.9318832931364197
+Ubiquitin-homology domain protein PIC1 mRNA,0.9324722540630497
+Ubiquitin-homology domain protein PIC1 mRNA,0.9324722540630497
+"Clone 23959 mRNA, partial cds",0.932523317705733
+"Ribosomal RNA upstream binding transcription factor (UBTF) gene, partial cds",0.932523317705733
+"TCRB T-cell receptor, beta cluster",0.932523317705733
+"Lysosomal trafficking regulator (LYST) mRNA, partial cds",0.932523317705733
+GB DEF = Polyadenylate binding protein II,0.9329689647875341
+"FUSE binding protein 2 (FBP2) mRNA, partial cds",0.9329689647875341
+PHAPI2b protein,0.9329689647875341
+"GB DEF = Alternatively spliced B8 (B7) mRNA, partial sequence",0.9329689647875341
+X-LINKED HELICASE II,0.9329723749016535
+HLA-DR ASSOCIATED PROTEIN I,0.9343822048749925
+"WSL-LR, WSL-S1 and WSL-S2 proteins",0.9343822048749925
+Sigma receptor mRNA,0.9347830827094027
+CD97 CD97 antigen (leucocyte antigen),0.9349387821901588
+SIP-1 mRNA,0.9349387821901588
+"Death domain receptor 3 soluble form (DDR3) mRNA, partial cds",0.9349387821901588
+GB DEF = Netrin-2 like protein (NTN2l) mRNA,0.9358852345630091
+Butyrophilin (BTF1) mRNA,0.9358852345630091
+Butyrophilin (BTF5) mRNA,0.9364676960015161
+CD20 RECEPTOR,0.9366645037873275
+GB DEF = SOD-2 gene for manganese superoxide dismutase,0.9366706860331719
+P68 PROTEIN,0.9370751988202108
+PTB-ASSOCIATED SPLICING FACTOR,0.9373230253425523
+IL1RN Interleukin 1 receptor antagonist,0.9376236521089931
+HOX3D gene for homeoprotein HOX3D,0.9384564846666404
+NUCLEOLAR TRANSCRIPTION FACTOR 1,0.9384564846666404
+GATA3 GATA-binding protein 3,0.9384564846666404
+"ALAS1 Aminolevulinate, delta-, synthase 1",0.9401862387772478
+HOX 2.2 gene extracted from Human Hox2.2 gene for a homeobox protein,0.9408760161783858
+CSK C-src tyrosine kinase,0.9410372738813589
+"RNA polymerase II largest subunit gene extracted from H.sapiens gene for RNA pol II largest subunit, exon 1",0.9410372738813589
+"GB DEF = Fas/Apo-1 (clone pCRTM11-Fasdelta(4,7))",0.9412392747062156
+"GB DEF = Fas (Apo-1, CD95)",0.9412392747062156
+"MYBPC1 Myosin-binding protein C, slow-type",0.9412392747062156
+"GB DEF = Integrin associated protein mRNA,",0.9412392747062156
+GB DEF = MAL gene exon 4,0.9414132776921084
+"GB DEF = SYT-SSX, synovial sarcoma translocation junction",0.9414132776921084
+LPAP gene,0.9414132776921084
+ALPHA-CENTRACTIN,0.9414132776921084
+HEPATOCYTE NUCLEAR FACTOR 4,0.942356308122303
+mRNA translocon-associated protein delta subunit precursor,0.942356308122303
+MST1 Macrophage stimulating 1 (hepatocyte growth factor-like),0.9425063998157674
+"VASP gene, exons 4 to 13",0.9434472984383544
+POU5F1 Octamer binding protein 3,0.9436335924127316
+"Gene encoding E-cadherin, exon 3 and joined CDS",0.9436335924127316
+"LST1 mRNA, cLST1/E splice variant",0.9436335924127316
+GB DEF = Smooth muscle LIM protein (h-SmLIM) mRNA,0.9436335924127316
+"Pre-Mrna Splicing Factor Sf2p33, Alt. Splice Form 1",0.9436335924127316
+"IGHD gene (immunoglobulin delta-chain) extracted from Human germline IgD chain gene, C-region, C-delta-1 domain",0.9436335924127316
+"GNB1 Guanine nucleotide binding protein (G protein), beta polypeptide 1",0.9436335924127316
+AKT2 V-akt murine thymoma viral oncogene homolog 2,0.9436335924127316
+BETA-2-MICROGLOBULIN PRECURSOR,0.9440733858386623
+"Ins(1,3,4,5)P4-binding protein",0.944432127560876
+GB DEF = Alpha satellite and satellite 3 junction DNA sequence,0.944432127560876
+"Mucin 3, Intestinal (Gb:M55405)",0.9445620749556457
+Potassium Channel Protein (Gb:Z11585),0.9445620749556457
+Spliceosomal Protein Sap 62,0.9460861267323984
+Zinc Finger Protein (Gb:M88357),0.9463867724588491
+"Small Nuclear Ribonucleoprotein U1, 1snrp",0.9463867724588491
+"Small Nuclear Ribonucleoprotein U1, 1snrp",0.9471148733989578
+"ZNF91 Zinc finger protein 91 (HPF7, HTF10)",0.9484891661196854
+"ZNF91 Zinc finger protein 91 (HPF7, HTF10)",0.9484891661196854
+"GB DEF = Unproductively rearranged Ig mu-chain mRNA V-region (VD), 5' end, clone mu-3A1A",0.9490175502917472
+Krueppel-related zinc finger protein (H-plk) mRNA,0.9490175502917472
+"GB DEF = Neurofilament triplet L protein mRNA, partial cds",0.9490175502917472
+Butyrophilin (BTF4) mRNA,0.9490175502917472
+"DMA gene extracted from H.sapiens DMA, DMB, HLA-Z1, IPP2, LMP2, TAP1, LMP7, TAP2, DOB, DQB2 and RING8, 9, 13 and 14 genes",0.9490175502917472
+"DMA gene extracted from H.sapiens DMA, DMB, HLA-Z1, IPP2, LMP2, TAP1, LMP7, TAP2, DOB, DQB2 and RING8, 9, 13 and 14 genes",0.9490175502917472
+Exon 1b; used only in type 2 transcripts from  H.sapiens dbi/acbp gene exon 1 & 2./ntype=DNA /annot=exon,0.9490175502917472
+"PDE4C Phosphodiesterase 4C, cAMP-specific (dunce (Drosophila)-homolog phosphodiesterase E1)",0.9496967924656335
+"GB DEF = DNA mismatch repair protein (hMLH1) mRNA, alternatively spliced, partial cds",0.9499487121398572
+"Mucin 3, Intestinal (Gb:M55406)",0.9499487121398572
+Neurofibromatosis 2 Tumor Suppressor (Gb:L27065),0.9519533935358998
+"Major Histocompatibility Complex, Class Ii Beta W52",0.9519533935358998
+"Major Histocompatibility Complex, Class I (Gb:X12432)",0.9519533935358998
+"Homeotic Protein C6, Class I",0.9519533935358998
+"Major Histocompatibility Complex, Class Ii, Dr Beta 2 (Gb:X65561)",0.9540363364272715
+GYPB Glycophorin B,0.9546456791681291
+LYZ Lysozyme,0.9547105342993032
+LYZ Lysozyme,0.9547105342993032
+Lysozyme gene (EC 3.2.1.17),0.9556564643512062
+ZNF43 Zinc finger protein 43 (HTF6),0.956226029894468
+DDH1 Dihydrodiol dehydrogenase,0.9563716220315528
+"GB DEF = Facioscapulohumeral muscular dystrophy (FSHD) gene region, D4Z4 tandem repeat unit",0.9563716220315528
+"NAK1 mRNA for DNA binding protein",0.9563716220315528
+"Tubulin, Beta 2",0.9581408899462437
+"Myosin, Heavy Polypeptide 9, Non-Muscle",0.9582149463316232
+"Tubulin, Beta",0.9582149463316232
+Sodium Channel 1,0.9582816834460192
+"Mucin 6, Gastric (Gb:L07518)",0.9595523315738711
+GB DEF = Small proline-rich protein 1 (SPRR1A) gene,0.9595523315738711
+Regenerating protein I beta,0.9595523315738711
+HMR Hormone receptor (growth factor-inducible nuclear protein N10),0.9618770921911214
+Metallothionein-Ie gene (hMT-Ie),0.9618770921911214
+Skeletal beta-tropomyosin,0.9619937721710815
+Metallothionein I-B gene,0.9619937721710815
+PULMONARY SURFACTANT-ASSOCIATED PROTEIN A PRECURSOR,0.9619937721710815
+TCF3 Transcription factor 3 (E2A immunoglobulin enhancer binding factors E12/E47),0.9623044526089461
+"FCGR2A Fc fragment of IgG, low affinity IIa, receptor for (CD32)",0.9628488839465104
+"HLA-DRB1 Major histocompatibility complex, class II, DR beta 1",0.9631400558334792
+GB DEF = Histone H3.1 (H1F3) gene,0.9643279494525142
+"GB DEF = Transducin-like enhancer protein (TLE4) mRNA, 3' end",0.9643279494525142
+"GIF=growth inhibitory factor [human, brain, Genomic, 2015 nt]",0.9643279494525142
+Delta-globin gene extracted from Human beta globin region on chromosome 11,0.9643279494525142
+FLT3LG Fms-related tyrosine kinase 3 ligand,0.9643279494525142
+CELLULAR NUCLEIC ACID BINDING PROTEIN,0.9644506817520402
+"GB DEF = Anti-B cell autoantibody IgM heavy chain variable V-D-J region (VH4) gene, clone E11, VH4-63 non-productive rearrangement",0.9644506817520402
+"Serine kinase (hPAK65) mRNA, partial cds",0.9647251981178242
+Uridine diphosphoglucose pyrophosphorylase mRNA,0.9651946492878632
+ICH-2 PROTEASE PRECURSOR,0.9651946492878632
+"GB DEF = Beta-2 integrin alphaD subunit (ITGAD) gene, exons 25-30, and partial cds",0.9651946492878632
+"TRY8 gene (trypsinogen E) extracted from Human germline T-cell receptor beta chain TCRBV17S1A1T, TCRBV2S1, TCRBV10S1P, TCRBV29S1P, TCRBV19S1P, TCRBV15S1, TCRBV11S1A1T, HVB relic, TCRBV28S1P, TCRBV34S1, TCRBV14S1, TCRBV3S1, TCRBV4S1A1T, TRY4, TRY5, TRY6, TRY7, TRY8, TCRBD1, TCRBJ1S1, TCRBJ1S2, TCRBJ1S3, TCRBJ1S4, TCRBJ1S5, TCRBJ1S6, TCRBC1, TCRBD2, TCRBJ2S1, TCRBJ2S2, TCRBJ2S3, TCRBJ2S4, TCRBJ2S5, TCRBJ2S6, TCRBJ2S7, TCRBC2, TCRBV20S1A1N2 genes from bases 452324 to 684973 (section 3 of 3)",0.9653586802870008
+Steroidogenic factor 1 mRNA,0.9653658975621278
+Death domain containing protein CRADD mRNA,0.9665438588442664
+Clone 61501 defective mariner transposon Hsmar2 mRNA sequence,0.967798392947478
+Alpha-tubulin mRNA,0.9679298426793176
+RNS2 Ribonuclease 2 (eosinophil-derived neurotoxin; EDN),0.9679298426793176
+"HLA CLASS I HISTOCOMPATIBILITY ANTIGEN, F ALPHA CHAIN PRECURSOR",0.9679298426793176
+ECRP gene for eosinophil cationic related protein,0.9679298426793176
+L2-9 transcript of unrearranged immunoglobulin V(H)5 pseudogene,0.9696167009844625
+ZNF37A Zinc finger protein 37a (KOX 21),0.9700569563949623
+RPS26 Ribosomal protein S26,0.970145883733821
+GLUL Glutamate-ammonia ligase (glutamine synthase),0.970563753574338
+GB DEF = Anion exchange protein,0.9706228720106648
+GB DEF = RagB protein,0.9706228720106648
+Ubiquitin hydrolase,0.9711389844506982
+GB DEF = Chloride channel (putative) 2139bp,0.9711389844506982
+GB DEF = Chloride channel (putative) 2163bp,0.9711389844506982
+HD21 mRNA,0.9711580185421618
+GB DEF = H2B/l gene,0.9711580185421618
+H4/j gene,0.9711580185421618
+mRNA fragment encoding beta-tubulin. (from clone D-beta-1),0.9711580185421618
+H2K binding factor 2 (KBF2) mRNA,0.9711580185421618
+Autotaxin mRNA,0.9711580185421618
+AVPR1B Arginine vasopressin receptor 1B,0.9711580185421618
+SELL Leukocyte adhesion protein beta subunit,0.9711842972722359
+DNA-BINDING PROTEIN A,0.9711842972722359
+NPPB Natriuretic peptide precursor B,0.9716629951652296
+GAP43 Growth associated protein 43,0.9719362301255572
+ARAF1 V-raf murine sarcoma 3611 viral oncogene homolog 1,0.9733809757670009
+Transcription factor LSF mRNA,0.9739265310383873
+Homolog of Drosophila enhancer of split m9/m10 mRNA,0.9748365832434485
+GARS Glycyl-tRNA synthetase,0.9768364152084449
+Estrogen sulfotransferase mRNA,0.9779250060020216
+Protein tyrosine phosphatase sigma mRNA,0.9780926495303152
+"Transcription factor E2F like protein [human, mRNA, 2492 nt]",0.9782126036342683
+"PRKCB1 Protein kinase C, beta 1",0.9782603224075234
+APS Prostate specific antigen,0.9782603224075234
+"RAB2 RAB2, member RAS oncogene family",0.9782603224075234
+"GABRB1 Gamma-aminobutyric acid (GABA) A receptor, beta 1",0.9782603224075234
+RD Radin blood group,0.9782603224075234
+JUNB Jun B proto-oncogene,0.9782603224075234
+"MYH7 Myosin, heavy polypeptide 7, cardiac muscle, beta",0.9797150628781434
+SCYA4 Small inducible cytokine A4 (homologous to mouse Mip-1b),0.9801214689513199
+GB DEF = R kappa B mRNA,0.981878696914296
+GB DEF = G-protein coupled receptor,0.9839623867901153
+GB DEF = Bone marrow serine protease gene (medullasin) (leukocyte neutrophil elastase gene),0.9840002766713003
+ALPHA-CENTRACTIN,0.9840002766713003
+GB DEF = Immunoglobulin-related 14.1 protein mRNA,0.9846486978442761
+GB DEF = Immunoglobulin-related 14.1 protein mRNA,0.9846486978442761
+"GB DEF = Omega light chain protein 14.1 (Ig lambda chain related) gene, exon 3",0.9846486978442761
+"GB DEF = Omega light chain protein 14.1 (Ig lambda chain related) gene, exon 3",0.9849744541532476
+"GB DEF = Endogenous retroviral H protease/integrase-derived ORF1 mRNA, and putative envelope protein mRNA, partial cds",0.9857709596219304
+"HLA-A MHC class I protein HLA-A (HLA-A28,-B40, -Cw3)",0.9857844137263506
+"PMS8 mRNA (yeast mismatch repair gene PMS1 homologue), partial cds (C-terminal region)",0.9860369906621792
+"PMS8 mRNA (yeast mismatch repair gene PMS1 homologue), partial cds (C-terminal region)",0.9862468842654294
+"Major Histocompatibility Complex, Class I, E (Gb:M20022)",0.986843666328981
+"Major Histocompatibility Complex, Class I, E (Gb:M21533)",0.9889060269981707
+"Luteinizing Hormone, Beta Subunit",0.9894463183741892
+"Proline-Rich Protein Prb4, Allele",0.9898152983206329
+"IFNA21 Interferon, alpha 21",0.989955361244909
+"HLA CLASS II HISTOCOMPATIBILITY ANTIGEN, DQ(1) BETA CHAIN PRECURSOR",0.9906664064524051
+Chorionic gonadotropin beta subunit gene,0.9913151689673185
+Chorionic gonadotropin (hcg) beta subunit mRNA,0.9913151689673185
+PRH1 Proline-rich protein HaeIII subfamily 1,0.9913151689673185
+Cytochrome P-450 4 gene,0.9913151689673185
+(clone Hu lambda-17) lambda-like gene,0.9913151689673185
+"KERATIN, TYPE II CYTOSKELETAL 6D",0.9913151689673185
+"KERATIN, TYPE II CYTOSKELETAL 6D",0.9913151689673185
+"S26 from  Homo sapiens excision and cross link repair protein (ERCC4) gene, complete genomic sequence./ntype=DNA /annot=exon",0.9913151689673185
+"PRSS1 Protease, serine, 1 (trypsin 1)",0.9913151689673185
+"HLA-DRB1 Major histocompatibility complex, class II, DR beta 5",0.9913151689673185
+GB DEF = Histone H2B.1 (H2B) gene,0.9913151689673185
+GB DEF = BTF3 protein homologue gene,0.9917723001619296
+MAGE-5a antigen (MAGE5a) gene,0.992089593145632
+CYTOCHROME P450 IIA6,0.9932699302785489
+Metallothionein,0.9932699302785489
+GB DEF = Glutamate dehydrogenase,0.9932699302785489
+"PRSS3 Protease, serine, 3 (trypsin 3)",0.9932699302785489
+GB DEF = Transmembrane protein Tmp21-IIex,0.9932699302785489
+GB DEF = H2B/h gene,0.9933062609281288
+"ACTB Actin, beta",0.9933062609281288
+GAPD Glyceraldehyde-3-phosphate dehydrogenase,0.9933062609281288
+CYTOCHROME P450 IA2,0.9933062609281288
+Nkat2b mRNA,0.9933062609281288
+Natural killer cell receptor (KIR) mRNA,0.9933062609281288
+"Major Histocompatibility Complex, Class I, C (Gb:X58536)",0.9933062609281288
+"HLA-A MHC class I protein HLA-A (HLA-A28,-B40, -Cw3)",0.9933062609281288
+"PRB2 locus salivary proline-rich protein mRNA, clone cP7",0.9933062609281288
+"HLA CLASS II HISTOCOMPATIBILITY ANTIGEN, DQ(W1.1) BETA CHAIN PRECURSOR",0.9938500097973034
+"Integrase gene extracted from Human endogenous retrovirus H clone g10.34 integrase and putative envelope protein genes, partial cds",0.9946007084473023
+TIAL1 TIA1 cytotoxic granule-associated RNA-binding protein-like 1,0.9953458392943433
+"Ifp35 gene extracted from Human BRCA1, Rho7 and vatI genes, and ipf35 gene, partial cds",0.9968869026887051
+PLGL Plasminogen-like protein,0.9968869026887051
+Transcriptional activator hSNF2b,0.9991882339934605
+Breast epithelial antigen BA46 mRNA,0.9991882339934605
+TUBULIN ALPHA-4 CHAIN,0.9991983041541477
+PTGER3 Prostaglandin E receptor 3 (subtype EP3) {alternative products},0.9991983041541477
+HMG2 High-mobility group (nonhistone chromosomal) protein 2,0.9998382122187928
+"GB DEF = Glycophorin Sta (type A) exons 3 and 4, partial",0.9998382122187928

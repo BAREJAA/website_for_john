@@ -1,0 +1,477 @@
+---
+title: "Golub Dataset"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+description: >
+  Learn how to explore the Golub dataset and make some pretty plots!
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(learnr)
+gradethis::gradethis_setup()
+
+library(tidyverse)
+library(janitor)
+library(fontawesome)
+library(here)
+
+# note: you will have to replace the following lines with urls to the github locations of these files
+golub_subjects <- read_csv(here::here("datasets/golub_kaggle/golub_subjects.csv"))
+gene_pval <- read_csv(here::here("datasets/golub_kaggle/gene_pval.csv"))
+
+golub_subjects %>% 
+  inner_join(gene_pval, by = "gene_name") -> golub_full
+```
+
+## Analysing the Golub dataset `r fa("dna")`
+
+In this exercise, you will apply what you've learned in class to perform exploratory data analysis (EDA) on the **Golub Dataset** and make some pretty plots.  
+
+These data was obtained from the package [multtest](https://www.bioconductor.org/packages/release/bioc/html/multtest.html), which is a Biconductor package that offers tools for multiple testing procedures. The "Golub dataset" refers to data used in [Golub et al. (1999)](https://pubmed.ncbi.nlm.nih.gov/10521349/). This was a landmark paper that described the use of genome-wide expression to predict disease status (specifically, acute myeloid lukemia (AML) or acute lymphoblastic lukemia (ALL). This is a rich dataset that is useful for practising everything from [data viz to machine learning](https://www.kaggle.com/crawford/gene-expression).  
+
+We have processed these data and split them into two dataframes - `golub_subjects` and `gene_pval` - both of which we will explore and use in this series of exercises.  
+
+###  
+
+In this series, you will practice:
+
+* gaining quick insight into the type of data these dataframes contains
+* using functions from the Dplyr package to wrangle your data and obtain useful summaries
+* making pretty plots!
+
+### Prerequisites
+
+Please watch the relevant Tidybiology recording(s) 
+
+## Take a look at your data `r fa("microscope")`
+
+### What does the dataset look like?
+
+A couple useful things to know about your dataset are -  
+- The number of rows and columns
+- The types of variables the dataset contains  
+
+What function can you use to get this information? Let's begin with `golub_subjects`. 
+
+```{r glimpse, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Take a glimpse at your data"}
+
+```
+
+<div id="glimpse-hint">
+**Hint:** Try the dplyr `glimpse()` function.
+</div>
+
+```{r glimpse-solution}
+glimpse(golub_subjects)
+```
+
+```{r glimpse-code-check}
+grade_code()
+```
+
+### Double data type
+
+We can see that `golub_subjects` contains many variables that are of type double. 
+
+```{r quiz-double, echo = FALSE}
+quiz(
+  question("The `double` data type refers to which of the following?",
+    answer("A string"),
+    answer("An integer"),
+    answer("A number with a decimal point", correct = TRUE),
+    answer("A factor"))
+)
+```
+
+## Dplyr `r fa("wrench")`  
+
+In this section, we will learn how to apply a few useful Dplyr functions to perform some simple EDA.  
+
+The `golub_subjects` dataset contains many variables. This gives us the chance to practice our `select()`-ing skills!  
+
+### Simple selects
+
+Let's warm up by performing some basic select operations  
+
+How would you select just the columns `mean_ALL` and `mean_AML`? These columns contain mean gene expression values for each of the two groups - AML and ALL.    
+
+```{r simple-select, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "A simple selection"}
+
+```
+
+```{r simple-select-solution}
+golub_subjects %>% 
+  select(mean_ALL, mean_AML)
+```
+
+```{r simple-select-code-check}
+grade_code()
+```
+
+Now select everything between (and including) `gene_name` and `14_ALL`
+
+```{r select-between, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Selecting multiple columns"}
+
+```
+
+```{r select-between-solution}
+golub_subjects %>% 
+  select(gene_name:ALL_14)
+```
+
+```{r select-between-code-check}
+grade_code()
+```
+
+### Slightly-more-difficult selects  
+
+Let's try something more challenging now. Select all variables that **do not** have "ALL" in their names
+
+```{r no-underscore, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "No underscores"}
+
+```
+
+<div id="no-underscore-hint">
+**Hint:** You'll need a helper function. Also, don't forget `!`
+</div>
+
+```{r no-underscore-solution}
+golub_subjects %>% 
+  select(!contains("ALL"))
+```
+
+```{r no-underscore-code-check}
+grade_code()
+```
+
+Helper functions can be really...helpful! To learn more about select helpers, read this - https://tidyselect.r-lib.org/reference/select_helpers.html  
+
+### Filtering
+
+`golub_subjects` contains both numeric and character variables, with lots and lots of observations (rows). This gives us a great opportunity to practice our filtering skills!  
+
+### Simple filters
+
+Say we're only interested in looking at data for the gene Hunc18b2. How would we do this?
+
+```{r simple-filter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = "Simple filter"}
+
+```
+
+<div id="simple-filter-hint">
+**Hint:** To see which major regions are in this dataset, run `unique(happy_select$region)`
+</div>
+
+```{r simple-filter-solution}
+golub_subjects %>% 
+  filter(gene_name == "Hunc18b2")
+```
+
+```{r simple-filter-code-check}
+grade_code()
+```
+
+### Filter%in%g
+
+Now use `filter()` to only keep data for the following genes - DB1, RP105, Calcyclin, and BB1. Try to do this without writing multiple filter statements  
+
+```{r multiple-filter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="multiple-filter-hint">
+**Hint:** Try the `%in%` operator
+</div>
+
+```{r multiple-filter-solution}
+golub_subjects %>% 
+  filter(gene_name %in% c("DB1", "RP105", "Calcyclin", "BB1"))
+```
+
+```{r multiple-filter-code-check}
+grade_code()
+```
+
+### Numeric filtering
+
+Finally, let's filter out genes that have a **below average** expression for the AML group
+
+```{r num-filter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="num-filter-hint">
+**Hint:** Use the base R `mean()` function
+</div>
+
+```{r num-filter-solution}
+golub_subjects %>% 
+  filter(mean_AML < mean(mean_AML))
+```
+
+```{r num-filter-code-check}
+grade_code()
+```
+
+### Re-ordering things
+
+Let's now rearrange the rows of `golub_subjects` so that we begin with the gene with the **highest** mean expression and end with the gene with the lowest mean expression for the ALL group.   
+
+```{r arrange, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="arrange-hint">
+**Hint:** Remember to to use `desc()`!
+</div>
+
+```{r arrange-solution}
+golub_subjects %>% 
+  arrange(desc(mean_ALL))
+```
+
+```{r arrange-code-check}
+grade_code()
+```
+
+### Creating new variables
+
+`mean_AML` and `mean_ALL` contain the mean of **log-transformed** (base 10) gene expression values. What if we wanted to make two new columns that antilogs for these values? Create two new columns called `geo_mean_AML` and `geo_mean_ALL` (because anti-logging the mean of log-transformed values is equal to the geomteric mean of the original values) 
+
+```{r mutate, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="mutate-hint">
+**Hint:** Use the `mutate()` function  
+</div>
+
+```{r mutate-solution}
+golub_subjects %>% 
+  mutate(geo_mean_AML = 10^mean_AML,
+         geo_mean_ALL = 10^mean_ALL)
+```
+
+```{r mutate-code-check}
+grade_code()
+```
+
+### Summary statistics  
+
+Let's end this section by comparing the mean of all the mean expression values for the ALL and AML groups. How would you do this?  
+
+```{r summarise, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="summarise-hint">
+**Hint:** Use the `summaris()/summarize()` function  
+</div>
+
+```{r summarise-solution}
+golub_subjects %>% 
+  summarise(mean(mean_AML),
+             mean(mean_ALL))
+```
+
+```{r summarise-code-check}
+grade_code()
+```
+
+## Ggplot2 `r fa("chart-line")`
+
+Many people associate R with beautiful plots, and for good reason! The Ggplot2 package follows a similar logic to Dplyr for making plots. You can think of it as first creating a canvas and then applying layers with each new line of code. Just as lines of Dplyr code are strung together using the `%>%` operators, Ggplot2 code is chained using the `+` operator  
+
+Let's begin by plotting a histogram to first visualize the distribution of the `mean_AML` variable in the `golub_subjects` dataframe  
+
+```{r hist, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="hist-hint">
+**Hint:** Use `geom_histogram()` to plot a histogram 
+</div>
+
+```{r hist-solution}
+ggplot(golub_subjects, aes(mean_AML)) +
+  geom_histogram()
+```
+
+```{r hist-code-check}
+grade_code()
+```
+
+###  
+
+If this plot looks a little "chunky" to you, you can use `geom_density()` instead. Using the geom, how would you plot the distributions for **both** `mean_AML` and `mean_ALL`? To make things clear, make the first plot green and the second red 
+
+```{r density, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="density-hint">
+**Hint:** Use two `geom_density()`s 
+</div>
+
+```{r density-solution}
+ggplot(golub_subjects) +
+  geom_density(aes(mean_AML), col = "green") +
+  geom_density(aes(mean_ALL), col = "red")
+```
+
+```{r density-code-check}
+grade_code()
+```
+
+Why did we we put the `col = ` outside `aes()`? Try putting this within `aes()` and see what you get. Can you explain this weird behaviour?  
+
+###  
+
+Let's take a look at another way to visualize the distribution of our data. Repeat the previous code, but use `geom_boxplot()` instead  
+
+```{r boxplot-wrong, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+```{r boxplot-wrong-solution}
+ggplot(golub_subjects) +
+  geom_boxplot(aes(mean_AML)) +
+  geom_boxplot(aes(mean_ALL)) 
+```
+
+```{r boxplot-wrong-code-check}
+grade_code()
+```
+
+Gah! This is not what we wanted! Instead of getting two boxplots side-by-side, we instead have overlapping boxplots. The reason for this is that our dataframe is not in the right **shape**. Let's re-arrange `golub_subjects` to turn it into what's known as a **long** dataframe. Don't worry about the code for this just yet. The important lesson here is to understand that if you cannot get the plot you want, it might be because your dataframe doesn't have the right shape 
+
+###  
+
+```{r boxplot-correct, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+golub_subjects %>% 
+  pivot_longer(cols = c(mean_ALL, mean_AML),
+               names_to = "mean_disease",
+               values_to = "mean_expression") %>% 
+  ggplot(aes(mean_expression, fill = mean_disease)) +
+  geom_boxplot()
+```
+
+Much better! This plot isn't perfect, but it's a lot better than the previous one! If this seems a little tricky to you, that's ok. Understanding how to reshape your data in a helpful way is a skill you will develop as you work with (untidy!) datasets in the wild  
+
+###  
+
+These boxplots looks very similar to each other. To visualize the relationship between these two variables, let's make a scatter plot  
+
+```{r scatter, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="scatter-hint">
+**Hint:** Use two `geom_point()`
+</div>
+
+```{r scatter-solution}
+ggplot(golub_subjects, aes(mean_AML, mean_ALL)) +
+  geom_point() 
+```
+
+```{r scatter-code-check}
+grade_code()
+```
+
+###  
+
+Let's change the colour and shape of the points to blue and diamond respectively  
+
+```{r scatter-blue, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="scatter-blue-hint">
+**Hint:** You will need to change these two aesthetics - `col = ` and `shape = `
+</div>
+
+```{r scatter-blue-solution}
+ggplot(golub_subjects, aes(mean_AML, mean_ALL)) +
+  geom_point(col = "blue", shape = 15) 
+```
+
+```{r scatter-blue-code-check}
+grade_code()
+```
+
+This is really ugly, but let's continue anyway. You can see that there are many overlapping and obscured points, especially on the lower left-hand part of the plot. We can ameliorate this by making the points semi-transparent. How would we do this?  
+
+###  
+
+```{r scatter-alpha, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+```{r scatter-alpha-solution}
+ggplot(golub_subjects, aes(mean_AML, mean_ALL)) +
+  geom_point(col = "blue", shape = 15, alpha = 0.5) 
+```
+
+```{r scatter-alpha-code-check}
+grade_code()
+```
+
+## Stringr and Joins `r fa("handshake")` 
+
+### Joins
+
+There are many times when we might have two or more datasets that we would like to combine in some useful way. The `dplyr` package has a collection of `join` functions that enable us to combine dataframes is different ways. To see how this works, let's take a look at our other dataframe - `gene_pval`  
+
+We see that while it has the same number of rows as `golub_subjects` it only has two variables - `gene_name` and `p_val_adj`. Importantly, `gene_pval` and `golub_subjects` have one variable in common - `gene_name`. This is necessary if we want to join the datasets  
+
+Pick an appropriate join to combine these two dataframes to create a new dataframe (call it `golub_full`) that contains all the information from both original dataframes  
+
+```{r join, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+```{r join-solution}
+golub_full <- golub_subjects %>% 
+                inner_join(gene_pval, by = "gene_name")
+```
+
+```{r join-code-check}
+grade_code()
+```
+
+### Stringr  
+
+The ability to work with regular expressions (or "regex" or "regexp") is a very useful skill, but it can be hard to get the hang of. Fortunately, the `stringr` package makes life easier  
+
+Notice that there are a number of entries in the `gene_name` column of `golub_subjects` that contain `AFFX` in their names. How would you filter these out using the a function from the `stringr` package?  
+
+```{r stringr, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
+
+```
+
+<div id="stringr-blue-hint">
+**Hint:** The `str_detect()` function will be helpful  
+</div>
+
+```{r stringr-solution}
+golub_subjects %>% 
+  filter(!str_detect(gene_name, "AFFX"))
+```
+
+```{r stringr-code-check}
+grade_code()
+```
+
+## Putting it all together `r fa("mountain")`
+
+The final section! Let's use all our new knowledge and skills to make a beautiful volcano plot to visualize the Golub dataset  
+
+###  
+
+We will use the `golub_full` dataframe for this section. We will build up our code chunk-by-chunk to see how it all works 
+

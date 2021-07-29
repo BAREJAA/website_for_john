@@ -1,0 +1,60 @@
+---
+title: "golub_processing"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(multtest)
+```
+
+# Load and explore data
+
+Some useful resources -
+https://web.stanford.edu/class/bios221/labs/multi/lab_multtest.html
+
+```{r load-and-explore}
+data(golub)
+
+# calculate p-values for all the genes
+# code from - https://web.stanford.edu/class/bios221/labs/multi/lab_multtest.html
+# and
+# https://www.cyclismo.org/tutorial/R/pValues.html
+
+# perform two-sample Welch t-test
+teststat <- mt.teststat(golub, golub.cl)
+
+# convert to p-values
+pvals <- 2 * (1 - pt(abs(teststat), df = ncol(golub) - 1))
+# calculate adjusted p-values
+adjusted <- mt.rawp2adjp(pvals, "BH")
+bh_adj <- adjusted$adjp[ , 2]
+
+# convert golub to dataframe
+golub <- data.frame(golub)
+
+# make column names `1_ALL`, `2_ALL` etc
+diseases <- ifelse(golub.cl == 0, "ALL", "AML")
+disease_subject <- paste0(c(1:38), "_", diseases)
+
+colnames(golub) <- disease_subject
+
+# calculate mean gene expression per group
+golub %>% 
+  mutate(mean_ALL = rowMeans(across(contains("ALL"))),
+         mean_AML = rowMeans(across(contains("AML")))) -> golub
+
+# make another dataframe that contains - gene names and p-values
+gene_pval <- tibble(gene_name = golub.gnames[ , 2],
+                    p_val_adj = bh_adj)
+
+# add gene name column to golub (to have a column to join on)
+
+golub %>% 
+  mutate(gene_name = gene_pval$gene_name) %>% 
+  relocate(gene_name) -> golub
+
+write_csv(golub, here::here("datasets/golub_kaggle/golub_subjects.csv"))
+write_csv(gene_pval, here::here("datasets/golub_kaggle/gene_pval.csv"))
+```
