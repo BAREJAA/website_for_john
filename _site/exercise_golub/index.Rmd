@@ -20,8 +20,8 @@ library(fontawesome)
 library(here)
 
 # note: you will have to replace the following lines with urls to the github locations of these files
-golub_subjects <- read_csv(here::here("datasets/golub_kaggle/golub_subjects.csv"))
-gene_pval <- read_csv(here::here("datasets/golub_kaggle/gene_pval.csv"))
+golub_subjects <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/golub_kaggle/golub_subjects.csv")
+gene_pval <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/golub_kaggle/gene_pval.csv")
 
 golub_subjects %>% 
   inner_join(gene_pval, by = "gene_name") -> golub_full
