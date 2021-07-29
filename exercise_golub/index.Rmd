@@ -17,7 +17,6 @@ gradethis::gradethis_setup()
 library(tidyverse)
 library(janitor)
 library(fontawesome)
-library(here)
 
 # note: you will have to replace the following lines with urls to the github locations of these files
 golub_subjects <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/golub_kaggle/golub_subjects.csv")
@@ -475,3 +474,6 @@ The final section! Let's use all our new knowledge and skills to make a beautifu
 
 We will use the `golub_full` dataframe for this section. We will build up our code chunk-by-chunk to see how it all works 
 
+## Next steps
+
+[Classifying Leukemia Patients Based on DNA Microarray Data](http://cs229.stanford.edu/proj2019spr/report/61.pdf)
