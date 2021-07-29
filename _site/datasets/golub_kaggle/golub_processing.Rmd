@@ -36,11 +36,11 @@ golub <- data.frame(golub)
 
 # make column names `1_ALL`, `2_ALL` etc
 diseases <- ifelse(golub.cl == 0, "ALL", "AML")
-disease_subject <- paste0(c(1:38), "_", diseases)
+disease_subject <- paste0(diseases, "_", c(1:38))
 
 colnames(golub) <- disease_subject
 
-# calculate mean gene expression per group
+# calculate mean gene expression per group. Note, since the values have been log-transformed (http://www.stat.rice.edu/~cscott/stat699/dudoit.pdf), this must be the GEOMETRIC mean
 golub %>% 
   mutate(mean_ALL = rowMeans(across(contains("ALL"))),
          mean_AML = rowMeans(across(contains("AML")))) -> golub
