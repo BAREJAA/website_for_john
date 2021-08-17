@@ -1,7 +1,7 @@
 ---
 title: "About this site"
 description: |
-  Welcome to Tidybiology. The goal of this endeaovour is to provide a "zero entry" introduction to R and data science to biologists
+  Welcome to Tidybiology. The goal of this endeaovour is to provide a "zero entry" introduction to R and data science to biologists.
 ---
 
 ```{r setup, include=FALSE}
