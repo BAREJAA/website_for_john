@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>An Introduction to Pandas</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Akshay Bareja" />
+    <meta name="date" content="2021-08-23" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# An Introduction to Pandas
+### Akshay Bareja
+### Duke University
+### 2021-08-23
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# Getting to know your data  
+
+---
+class: center, middle
+
+![Data](https://media.giphy.com/media/ftAyb0CG1FNAIZt4SO/giphy.gif)
+
+Datasets can get very complicated!
+
+---
+
+class: center, middle
+
+# Pandas has some simple functions to help you perform Exploratory Data Analysis (EDA) 
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/600px-Pandas_logo.svg.png)
+---
+# Introducing `pandas` 
+  
+pandas is a package that contains a suite of tools that allow you to easily manipulate a data set  
+
+--
+
+Some of the things you can do are -  
+- select rows and columns that match specific criteria  
+- create new variables (columns)  
+- obtain summary statistics on individual groups within your data sets    
+  
+--
+
+To load the pandas package, run this line of code   
+&lt;!-- loading pandas as pd is considered to be standard practice --&gt;
+
+
+```python
+import pandas as pd
+```
+  
+---
+
+# Getting to know your data  
+
+--
+
+We will use a dataset called **happy**  
+
+--
+
+Kaggle  
+
+--
+
+Happiness score for each country   
+
+--
+---
+# World Happiness Report
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;Source: Gallup World Poll&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Variable &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; country_name &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Country name &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ladder_score &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cantril ladder score &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; gdp &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Log GDP per capita &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; social_support &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Measure of support (0 or 1) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
+# What does your DataFrame contain?
+
+Just enter the name of your DataFrame!  
+&lt;!-- pandas uses DataFrames. A DataFrame is a 2-dimensional data structure that can store data of different types  --&gt;
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp  social_support
+## 0         Iraq         4.854   9.240           0.746
+## 1      Comoros         4.289   8.031           0.626
+## 2       Panama         6.180  10.350           0.896
+## 3     Maldives         5.198   9.826           0.913
+## 4        Spain         6.491  10.571           0.932
+```
+
+
+
+]
+]
+---
+
+---
+# Inspecting your DataFrame: dimensions
+
+To see how many rows (observations) and columns (variables) are in **happy**, simply type `happy.shape`  
+
+--
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.shape
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## (5, 4)
+```
+
+
+
+]
+]  
+
+---
+# Inspecting your DataFrame: Data Types   
+
+To just see what data types your DataFrame contains, you can use the `info()` method  
+
+--
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.info()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## &lt;class 'pandas.core.frame.DataFrame'&gt;
+## RangeIndex: 5 entries, 0 to 4
+## Data columns (total 4 columns):
+##  #   Column          Non-Null Count  Dtype  
+## ---  ------          --------------  -----  
+##  0   country_name    5 non-null      object 
+##  1   ladder_score    5 non-null      float64
+##  2   gdp             5 non-null      float64
+##  3   social_support  5 non-null      float64
+## dtypes: float64(3), object(1)
+## memory usage: 288.0+ bytes
+```
+
+
+
+]
+]  
+
+---
+class: center, middle
+
+# Selecting Variables   
+
+---
+# Understanding `[]` 
+--
+.center[
+![select](https://github.com/BAREJAA/tidyexplain/blob/master/images/select-multiple-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+
+# Select a single column  
+
+To select just one column, use square brackets `[]` containing the name of that column in inverted commas  
+
+--
+
+For example, if you only want to select the `country_name` coulmn, run the following code  
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy["country_name"]
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## 0        Iraq
+## 1     Comoros
+## 2      Panama
+## 3    Maldives
+## 4       Spain
+## Name: country_name, dtype: object
+```
+
+
+
+]
+] 
+
+&lt;!-- **Note:** Each column of a DataFrame is a Series. So when you select just one column, you get back a Series and not a DataFrame  --&gt;
+---
+
+# Selecting multiple columns    
+
+To select more than one column, we use a list of the desired column names within `[]`   
+
+--
+
+For example, if you only want to select the `country_name` and `gdp`, you would run the following   
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy[["country_name", "gdp"]]
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name     gdp
+## 0         Iraq   9.240
+## 1      Comoros   8.031
+## 2       Panama  10.350
+## 3     Maldives   9.826
+## 4        Spain  10.571
+```
+
+
+
+]
+]
+---
+
+# Un-selecting a column
+
+To select everything **except** a particular column (e.g. `social_support`), we can use the `drop()` method   
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.drop("social_support", axis = 1)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp
+## 0         Iraq         4.854   9.240
+## 1      Comoros         4.289   8.031
+## 2       Panama         6.180  10.350
+## 3     Maldives         5.198   9.826
+## 4        Spain         6.491  10.571
+```
+
+
+
+]
+]
+---
+# Selecting a range of columns  
+
+Finally, if you want to select multiple columns that are in a row, you can use the `loc` operator. For example  
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.loc[: , "country_name":"gdp"]
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp
+## 0         Iraq         4.854   9.240
+## 1      Comoros         4.289   8.031
+## 2       Panama         6.180  10.350
+## 3     Maldives         5.198   9.826
+## 4        Spain         6.491  10.571
+```
+
+
+
+]
+]
+
+---
+class: center, middle
+
+# Filtering Rows    
+
+---
+# Understanding `loc()` 
+--
+.center[
+![filter_cat](https://github.com/BAREJAA/tidyexplain/blob/master/images/filter_categorical-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+.center[
+![filter_num](https://github.com/BAREJAA/tidyexplain/blob/master/images/filter_numeric-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Filter rows based on certain conditions  
+
+If you would like to only keep rows that match a certain condition (e.g. Rows that have a `ladder_score` greater than 4), you can use the `loc` operator, like this  
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.loc[happy["ladder_score"] &gt; 4]
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp  social_support
+## 0         Iraq         4.854   9.240           0.746
+## 1      Comoros         4.289   8.031           0.626
+## 2       Panama         6.180  10.350           0.896
+## 3     Maldives         5.198   9.826           0.913
+## 4        Spain         6.491  10.571           0.932
+```
+
+
+
+]
+]
+---
+# Filter on categorical data  
+
+Filtering can be performed on **categorical** data   
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.loc[happy["country_name"] == "Spain"]
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp  social_support
+## 4        Spain         6.491  10.571           0.932
+```
+
+
+
+]
+]
+
+&lt;!-- Mention that choosing one row (unlike choosing one column) produces another DataFrame and NOT a Series --&gt;
+--
+
+Note that filtering only applies to rows, and has no effect on columns  
+
+---
+# Multiple filters  
+
+To filter on multiple conditions, we can use the `query()` method, like this  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.query("ladder_score &gt; 5 &amp; gdp &lt; 10")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score    gdp  social_support
+## 3     Maldives         5.198  9.826           0.913
+```
+
+
+
+]
+]
+
+---
+# Filter and Select
+
+Finally, we can combine filtering rows and selecting columns, again by using the `loc` operator. For example, if we wanted to only keep the countries that have a `ladder_score` above 5, along with just the `country_name` and `ladder_score` columns, we could run this  
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.loc[happy["ladder_score"] &gt; 5, ["country_name", "ladder_score"]]
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score
+## 2       Panama         6.180
+## 3     Maldives         5.198
+## 4        Spain         6.491
+```
+
+
+
+]
+]
+
+---
+class: center, middle
+
+# Re-ordering our data
+
+---
+# Understanding `sort_values()` 
+--
+.center[
+![sort_values](https://github.com/BAREJAA/tidyexplain/blob/master/images/sort_values-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Sorting rows  
+
+To rearrange the rows of a DataFrame based on the values of a particular column, you can use `sort_values()` method. For example, to change the order of rows of `happy` to go from the lowest `gdp` to the highest, run this code  
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.sort_values(["gdp"])
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp  social_support
+## 1      Comoros         4.289   8.031           0.626
+## 0         Iraq         4.854   9.240           0.746
+## 3     Maldives         5.198   9.826           0.913
+## 2       Panama         6.180  10.350           0.896
+## 4        Spain         6.491  10.571           0.932
+```
+
+
+
+]
+]
+
+---
+# Reversing order
+
+By default, `sort_values()` sorts from the lowest to highest values. To reverse this order, set `ascending = False` 
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy.sort_values(["gdp"], ascending = False)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp  social_support
+## 4        Spain         6.491  10.571           0.932
+## 2       Panama         6.180  10.350           0.896
+## 3     Maldives         5.198   9.826           0.913
+## 0         Iraq         4.854   9.240           0.746
+## 1      Comoros         4.289   8.031           0.626
+```
+
+
+
+]
+]
+
+---
+class: center, middle
+
+# Creating New Variables 
+
+---
+# Modify an existing variable
+
+We can modify an existing variable and assign the resulting values to a new variable. For example, say we wanted to create a new column named `social_support_100` that contains the values in `social_support` multiplied by 100. We can do it like this   
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy["social_support_100"] = happy["social_support"] * 100
+happy.head()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score     gdp  social_support  social_support_100
+## 0         Iraq         4.854   9.240           0.746                74.6
+## 1      Comoros         4.289   8.031           0.626                62.6
+## 2       Panama         6.180  10.350           0.896                89.6
+## 3     Maldives         5.198   9.826           0.913                91.3
+## 4        Spain         6.491  10.571           0.932                93.2
+```
+
+
+
+]
+]
+
+---
+# Combining multiple variables
+
+We can even create a new variable by combining two or more existing variables. For example, we can create a new variable called `gdp_ladder_ratio` that contains the values of `gdp` divided by `ladder_score` using the following code  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy["gdp_ladder_ratio"] = happy["gdp"] / happy["ladder_score"]
+happy.head()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score  ...  social_support_100  gdp_ladder_ratio
+## 0         Iraq         4.854  ...                74.6          1.903585
+## 1      Comoros         4.289  ...                62.6          1.872464
+## 2       Panama         6.180  ...                89.6          1.674757
+## 3     Maldives         5.198  ...                91.3          1.890342
+## 4        Spain         6.491  ...                93.2          1.628563
+## 
+## [5 rows x 6 columns]
+```
+
+
+
+]
+]
+
+---
+class: center, middle
+
+# Summarizing Data 
+
+---
+# Calculating summary statistics 
+
+Calculating summary statistics, like the mean or median of a particular column, can easily be done. For example, to calculate the mean `ladder_score` of all the countries in `happy`, run the following code  
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy["ladder_score"].mean()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## 5.4024
+```
+
+
+
+]
+]
+
+---
+# Aggregating by group
+
+Pandas has the powerful method `groupby()` that allows you to summarize data **by group**. To show how this method works, we will make use the entire dataset - called `happy_full` - that contains additional columns, one of which is called `regional_indicator`  
+
+--
+
+Let's take a look at this full dataset
+  
+
+```
+##   country_name  ... dystopia_+_residual
+## 0      Finland  ...               3.253
+## 1      Denmark  ...               2.868
+## 2  Switzerland  ...               2.839
+## 3      Iceland  ...               2.967
+## 4  Netherlands  ...               2.798
+## 
+## [5 rows x 20 columns]
+```
+---
+
+# `groupby()`
+
+Let's again calculate the mean `ladder_score` but this time by region
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full.groupby("regional_indicator")["ladder_score"].mean()
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## regional_indicator
+## Central and Eastern Europe            5.984765
+## Commonwealth of Independent States    5.467000
+## East Asia                             5.810333
+## Latin America and Caribbean           5.908050
+## Middle East and North Africa          5.219765
+## North America and ANZ                 7.128500
+## South Asia                            4.441857
+## Southeast Asia                        5.407556
+## Sub-Saharan Africa                    4.494472
+## Western Europe                        6.914905
+## Name: ladder_score, dtype: float64
+```
+
+
+
+]
+]
+---
+class: center, middle
+
+# Saving Your Work
+
+---
+# Saving a new dataset as an object
+
+If you'd like to save the output of your wrangling as an object, you can do so like this 
+
+`mean_happy = happy_full.groupby("regional_indicator")["ladder_score"].mean()`  
+ 
+*Assigning the object the same name (i.e. `happy_full`) will overwrite the object  
+---
+  
+# Saving a new dataset as a file
+
+To save `mean_happy` as a new file (e.g. csv), run the following:  
+
+`mean_happy.to_csv("mean_happy.csv", index = False)`
+---
+class: center, middle
+
+# Combining data sets
+
+---
+# Combining data sets 
+
+There are many times when you have two or more overlapping data sets that you would like to combine  
+
+Pandas offers various ways to combine Series or DataFrames. Let's take a look at how we can perform what are known as **joins** using pandas  
+
+---
+# `happy` and `happy_join`
+
+
+```
+##   country_name  ladder_score  ...  social_support_100  gdp_ladder_ratio
+## 0         Iraq         4.854  ...                74.6          1.903585
+## 1      Comoros         4.289  ...                62.6          1.872464
+## 2       Panama         6.180  ...                89.6          1.674757
+## 3     Maldives         5.198  ...                91.3          1.890342
+## 4        Spain         6.491  ...                93.2          1.628563
+## 
+## [5 rows x 6 columns]
+```
+
+--
+
+
+```
+##     country_name  healthy_life_expectancy
+## 133   Mauritania                   57.161
+## 140        Yemen                   57.122
+## 2    Switzerland                   74.400
+## 109      Ukraine                   64.902
+## 106    Venezuela                   66.700
+## 0           Iraq                   60.583
+## 1        Comoros                   57.349
+## 2         Panama                   69.652
+## 3       Maldives                   70.600
+```
+
+---
+
+# Understanding Left Joins
+--
+.center[
+![left_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/left-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Left Join?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+pd.merge(happy, happy_join, how = "left", on = "country_name")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score  ...  gdp_ladder_ratio  healthy_life_expectancy
+## 0         Iraq         4.854  ...          1.903585                   60.583
+## 1      Comoros         4.289  ...          1.872464                   57.349
+## 2       Panama         6.180  ...          1.674757                   69.652
+## 3     Maldives         5.198  ...          1.890342                   70.600
+## 4        Spain         6.491  ...          1.628563                      NaN
+## 
+## [5 rows x 7 columns]
+```
+
+
+
+]
+]
+---
+# Understanding Right Joins 
+--
+.center[
+![right_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/right-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Right Join?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+pd.merge(happy, happy_join, how = "right", on = "country_name")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score  ...  gdp_ladder_ratio  healthy_life_expectancy
+## 0   Mauritania           NaN  ...               NaN                   57.161
+## 1        Yemen           NaN  ...               NaN                   57.122
+## 2  Switzerland           NaN  ...               NaN                   74.400
+## 3      Ukraine           NaN  ...               NaN                   64.902
+## 4    Venezuela           NaN  ...               NaN                   66.700
+## 5         Iraq         4.854  ...          1.903585                   60.583
+## 6      Comoros         4.289  ...          1.872464                   57.349
+## 7       Panama         6.180  ...          1.674757                   69.652
+## 8     Maldives         5.198  ...          1.890342                   70.600
+## 
+## [9 rows x 7 columns]
+```
+
+
+
+]
+]
+---
+# Understanding Inner Joins 
+--
+.center[
+![inner_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/inner-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Inner Join?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+pd.merge(happy, happy_join, how = "inner", on = "country_name")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score  ...  gdp_ladder_ratio  healthy_life_expectancy
+## 0         Iraq         4.854  ...          1.903585                   60.583
+## 1      Comoros         4.289  ...          1.872464                   57.349
+## 2       Panama         6.180  ...          1.674757                   69.652
+## 3     Maldives         5.198  ...          1.890342                   70.600
+## 
+## [4 rows x 7 columns]
+```
+
+
+
+]
+]
+---
+# Understanding Outer Joins
+--
+.center[
+![full_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/full-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Outer Join?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+pd.merge(happy, happy_join, how = "outer", on = "country_name")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##   country_name  ladder_score  ...  gdp_ladder_ratio  healthy_life_expectancy
+## 0         Iraq         4.854  ...          1.903585                   60.583
+## 1      Comoros         4.289  ...          1.872464                   57.349
+## 2       Panama         6.180  ...          1.674757                   69.652
+## 3     Maldives         5.198  ...          1.890342                   70.600
+## 4        Spain         6.491  ...          1.628563                      NaN
+## 5   Mauritania           NaN  ...               NaN                   57.161
+## 6        Yemen           NaN  ...               NaN                   57.122
+## 7  Switzerland           NaN  ...               NaN                   74.400
+## 8      Ukraine           NaN  ...               NaN                   64.902
+## 9    Venezuela           NaN  ...               NaN                   66.700
+## 
+## [10 rows x 7 columns]
+```
+
+
+
+]
+]
+---
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

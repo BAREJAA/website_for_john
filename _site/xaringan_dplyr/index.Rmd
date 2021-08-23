@@ -137,9 +137,9 @@ glimpse(happy)
 ```
 ]
 ---
-## Basic Data Types in R 
+## Basic Data Types in R
 
-R has different data types -  
+R uses different data types -  
 
 --
 **character** - `"a"`, `"tidyverse"`    
@@ -270,7 +270,7 @@ class: center, middle
 ---
 # `filter()` rows based on certain condition(s) 
 
-The `filter()` verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered")    
+The `filter()` verb evaluates a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered")    
   
 --
 

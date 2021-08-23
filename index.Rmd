@@ -43,6 +43,7 @@ df %>%
 + [World Happiness Report EDA](exercise_happy/)
 + [World Happiness Report Scrollytelling](scrollytelling/)
 + [Exploring the Golub dataset](exercise_golub/)
++ [Intro to Pandas](xaringan_pandas/)
 
 \
 

@@ -1,0 +1,538 @@
+---
+title: "An Introduction to Pandas"
+author: "Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+library(reticulate)
+use_condaenv("r-reticulate")
+
+#happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full_r <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+```{python, include = FALSE}
+# I used the official docs for this tutorial - https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html#min-tut-01-tableoriented 
+
+import pandas as pd
+import random
+
+random.seed(42)
+
+happy = pd.read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full = pd.read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv")
+happy_full.columns = happy_full.columns.str.lower()
+happy_full.columns = happy_full.columns.str.replace(' ', '_')
+
+happy_join_one = pd.merge(happy, happy_full, how = "inner", on = "country_name")[["country_name", "healthy_life_expectancy"]]
+
+happy_full_join_inter = happy_full[~happy_full.country_name.isin(happy.loc[:, "country_name"])].sample(n = 5)[["country_name", "healthy_life_expectancy"]]
+
+happy_join = pd.concat([happy_full_join_inter, happy_join_one]).iloc[0:9, :]
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Getting to know your data  
+
+---
+class: center, middle
+
+![Data](https://media.giphy.com/media/ftAyb0CG1FNAIZt4SO/giphy.gif)
+
+Datasets can get very complicated!
+
+---
+
+class: center, middle
+
+# Pandas has some simple functions to help you perform Exploratory Data Analysis (EDA) 
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/600px-Pandas_logo.svg.png)
+---
+# Introducing `pandas` 
+  
+pandas is a package that contains a suite of tools that allow you to easily manipulate a data set  
+
+--
+
+Some of the things you can do are -  
+- select rows and columns that match specific criteria  
+- create new variables (columns)  
+- obtain summary statistics on individual groups within your data sets    
+  
+--
+
+To load the pandas package, run this line of code   
+<!-- loading pandas as pd is considered to be standard practice -->
+
+```{python}
+import pandas as pd
+```
+  
+---
+
+# Getting to know your data  
+
+--
+
+We will use a dataset called **happy**  
+
+--
+
+Kaggle  
+
+--
+
+Happiness score for each country   
+
+--
+---
+# World Happiness Report
+
+```{r whr, echo = FALSE}
+whr <- tribble(
+  ~Variable, ~Description,
+  "country_name", "Country name",
+  "ladder_score", "Cantril ladder score",
+  "gdp", "Log GDP per capita"   ,
+  "social_support", "Measure of support (0 or 1)" 
+)
+
+whr %>%
+  kbl(caption = "Source: Gallup World Poll") %>%
+  kable_styling()
+```
+---
+# What does your DataFrame contain?
+
+Just enter the name of your DataFrame!  
+<!-- pandas uses DataFrames. A DataFrame is a 2-dimensional data structure that can store data of different types  -->
+--
+.panelset[
+```{python panelset = TRUE}
+happy
+```
+]
+---
+
+---
+# Inspecting your DataFrame: dimensions
+
+To see how many rows (observations) and columns (variables) are in **happy**, simply type `happy.shape`  
+
+--
+
+.panelset[
+```{python panelset = TRUE}
+happy.shape
+```
+]  
+
+---
+# Inspecting your DataFrame: Data Types   
+
+To just see what data types your DataFrame contains, you can use the `info()` method  
+
+--
+
+.panelset[
+```{python panelset = TRUE}
+happy.info()
+```
+]  
+
+---
+class: center, middle
+
+# Selecting Variables   
+
+---
+# Understanding `[]` 
+--
+.center[
+![select](https://github.com/BAREJAA/tidyexplain/blob/master/images/select-multiple-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+
+# Select a single column  
+
+To select just one column, use square brackets `[]` containing the name of that column in inverted commas  
+
+--
+
+For example, if you only want to select the `country_name` coulmn, run the following code  
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy["country_name"]
+```
+] 
+
+<!-- **Note:** Each column of a DataFrame is a Series. So when you select just one column, you get back a Series and not a DataFrame  -->
+---
+
+# Selecting multiple columns    
+
+To select more than one column, we use a list of the desired column names within `[]`   
+
+--
+
+For example, if you only want to select the `country_name` and `gdp`, you would run the following   
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy[["country_name", "gdp"]]
+```
+]
+---
+
+# Un-selecting a column
+
+To select everything **except** a particular column (e.g. `social_support`), we can use the `drop()` method   
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy.drop("social_support", axis = 1)
+```
+]
+---
+# Selecting a range of columns  
+
+Finally, if you want to select multiple columns that are in a row, you can use the `loc` operator. For example  
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy.loc[: , "country_name":"gdp"]
+```
+]
+
+---
+class: center, middle
+
+# Filtering Rows    
+
+---
+# Understanding `loc()` 
+--
+.center[
+![filter_cat](https://github.com/BAREJAA/tidyexplain/blob/master/images/filter_categorical-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+.center[
+![filter_num](https://github.com/BAREJAA/tidyexplain/blob/master/images/filter_numeric-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Filter rows based on certain conditions  
+
+If you would like to only keep rows that match a certain condition (e.g. Rows that have a `ladder_score` greater than 4), you can use the `loc` operator, like this  
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy.loc[happy["ladder_score"] > 4]
+```
+]
+---
+# Filter on categorical data  
+
+Filtering can be performed on **categorical** data   
+--
+.panelset[
+```{python panelset = TRUE}
+happy.loc[happy["country_name"] == "Spain"]
+```
+]
+
+<!-- Mention that choosing one row (unlike choosing one column) produces another DataFrame and NOT a Series -->
+--
+
+Note that filtering only applies to rows, and has no effect on columns  
+
+---
+# Multiple filters  
+
+To filter on multiple conditions, we can use the `query()` method, like this  
+--
+.panelset[
+```{python panelset = TRUE}
+happy.query("ladder_score > 5 & gdp < 10")
+```
+]
+
+---
+# Filter and Select
+
+Finally, we can combine filtering rows and selecting columns, again by using the `loc` operator. For example, if we wanted to only keep the countries that have a `ladder_score` above 5, along with just the `country_name` and `ladder_score` columns, we could run this  
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy.loc[happy["ladder_score"] > 5, ["country_name", "ladder_score"]]
+```
+]
+
+---
+class: center, middle
+
+# Re-ordering our data
+
+---
+# Understanding `sort_values()` 
+--
+.center[
+![sort_values](https://github.com/BAREJAA/tidyexplain/blob/master/images/sort_values-pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Sorting rows  
+
+To rearrange the rows of a DataFrame based on the values of a particular column, you can use `sort_values()` method. For example, to change the order of rows of `happy` to go from the lowest `gdp` to the highest, run this code  
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy.sort_values(["gdp"])
+```
+]
+
+---
+# Reversing order
+
+By default, `sort_values()` sorts from the lowest to highest values. To reverse this order, set `ascending = False` 
+
+--
+.panelset[
+```{python panelset = TRUE}
+happy.sort_values(["gdp"], ascending = False)
+```
+]
+
+---
+class: center, middle
+
+# Creating New Variables 
+
+---
+# Modify an existing variable
+
+We can modify an existing variable and assign the resulting values to a new variable. For example, say we wanted to create a new column named `social_support_100` that contains the values in `social_support` multiplied by 100. We can do it like this   
+--
+.panelset[
+```{python panelset = TRUE}
+happy["social_support_100"] = happy["social_support"] * 100
+happy.head()
+```
+]
+
+---
+# Combining multiple variables
+
+We can even create a new variable by combining two or more existing variables. For example, we can create a new variable called `gdp_ladder_ratio` that contains the values of `gdp` divided by `ladder_score` using the following code  
+--
+.panelset[
+```{python panelset = TRUE}
+happy["gdp_ladder_ratio"] = happy["gdp"] / happy["ladder_score"]
+happy.head()
+```
+]
+
+---
+class: center, middle
+
+# Summarizing Data 
+
+---
+# Calculating summary statistics 
+
+Calculating summary statistics, like the mean or median of a particular column, can easily be done. For example, to calculate the mean `ladder_score` of all the countries in `happy`, run the following code  
+--
+.panelset[
+```{python panelset = TRUE}
+happy["ladder_score"].mean()
+```
+]
+
+---
+# Aggregating by group
+
+Pandas has the powerful method `groupby()` that allows you to summarize data **by group**. To show how this method works, we will make use the entire dataset - called `happy_full` - that contains additional columns, one of which is called `regional_indicator`  
+
+--
+
+Let's take a look at this full dataset
+  
+```{python, echo = FALSE}
+happy_full.head()
+```
+---
+
+# `groupby()`
+
+Let's again calculate the mean `ladder_score` but this time by region
+--
+.panelset[
+```{python panelset = TRUE}
+happy_full.groupby("regional_indicator")["ladder_score"].mean()
+```
+]
+---
+class: center, middle
+
+# Saving Your Work
+
+---
+# Saving a new dataset as an object
+
+If you'd like to save the output of your wrangling as an object, you can do so like this 
+
+`mean_happy = happy_full.groupby("regional_indicator")["ladder_score"].mean()`  
+ 
+*Assigning the object the same name (i.e. `happy_full`) will overwrite the object  
+---
+  
+# Saving a new dataset as a file
+
+To save `mean_happy` as a new file (e.g. csv), run the following:  
+
+`mean_happy.to_csv("mean_happy.csv", index = False)`
+---
+class: center, middle
+
+# Combining data sets
+
+---
+# Combining data sets 
+
+There are many times when you have two or more overlapping data sets that you would like to combine  
+
+Pandas offers various ways to combine Series or DataFrames. Let's take a look at how we can perform what are known as **joins** using pandas  
+
+---
+# `happy` and `happy_join`
+
+```{python echo = FALSE, eval = TRUE}
+happy
+```
+
+--
+
+```{python echo = FALSE, eval = TRUE}
+happy_join
+```
+
+---
+
+# Understanding Left Joins
+--
+.center[
+![left_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/left-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Left Join?
+
+.panelset[
+```{python panelset = TRUE}
+pd.merge(happy, happy_join, how = "left", on = "country_name")
+```
+]
+---
+# Understanding Right Joins 
+--
+.center[
+![right_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/right-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Right Join?
+
+.panelset[
+```{python panelset = TRUE}
+pd.merge(happy, happy_join, how = "right", on = "country_name")
+```
+]
+---
+# Understanding Inner Joins 
+--
+.center[
+![inner_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/inner-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Inner Join?
+
+.panelset[
+```{python panelset = TRUE}
+pd.merge(happy, happy_join, how = "inner", on = "country_name")
+```
+]
+---
+# Understanding Outer Joins
+--
+.center[
+![full_join](https://github.com/BAREJAA/tidyexplain/blob/master/images/full-join_pandas.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# Why Outer Join?
+
+.panelset[
+```{python panelset = TRUE}
+pd.merge(happy, happy_join, how = "outer", on = "country_name")
+```
+]
+---
+
+
+
+
