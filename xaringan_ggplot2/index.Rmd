@@ -1,0 +1,412 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy_full %>% select(country_name:ladder_score, logged_gdp_per_capita:ladder_score_in_dystopia) %>% relocate(ladder_score_in_dystopia, .after = region) -> happy_select
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+
+happy %>% 
+  inner_join(happy_full, by = "country_name") %>% 
+  select(country_name, healthy_life_expectancy) -> happy_join_one
+
+happy_full %>% 
+  filter(!(country_name %in% happy$country_name)) %>% 
+  slice_sample(n = 5) %>% 
+  select(country_name, healthy_life_expectancy) %>%
+  bind_rows(happy_join_one) %>% 
+  .[-10 ,] -> happy_join
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"),
+  text_slide_number_font_size = "0rem"
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Making pretty plots with Ggplot2 
+
+---
+background-image: url(https://github.com/bbc/bbplot/blob/master/chart_examples/bbplot_example_plots.png?raw=true)
+background-size: contain
+---
+background-image: url(https://www.r-graph-gallery.com/img/graph/271-ggplot2-animated-gif-chart-with-gganimate1.gif)
+background-size: contain
+---
+background-image: url(https://ggplot2.tidyverse.org/logo.png)
+---
+# Why `ggplot2`?
+
+--
+
+- Easy to use  
+  
+--
+  
+- Introduces reproducibility  
+  
+--
+  
+- **powerful** 
+  
+---
+# `happy_select`
+
+```{r, echo = FALSE}
+glimpse(happy_select)
+```
+
+---
+# Plotting Distributions
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+hist_panel_names <- c(
+  source = "R Code",
+  output = "Histogram"
+)
+```
+
+```{r panelset = hist_panel_names, out.width = '50%'}
+ggplot(happy_select) +
+  geom_histogram(aes(ladder_score))
+```
+]
+---
+# Anatomy of a ggplot
+
+```{r eval = FALSE}
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+--
+```{r eval = FALSE}
+ggplot(<DATA>) + 
+  <GEOM_FUNCTION>(aes(<MAPPINGS>))
+```
+
+---
+# A Simple Histogram
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select) +
+  geom_histogram(aes(ladder_score)) 
+```
+---
+# Making Improvements
+
+.panelset.sideways[
+```{r include=FALSE}
+density_panel_names <- c(
+  source = "R Code",
+  output = "Density Plot"
+)
+```
+
+```{r panelset = density_panel_names, out.width = '50%'}
+ggplot(happy_select) +
+  geom_density(aes(ladder_score)) 
+```
+]
+---
+--
+```{r out.width = '50%', warning = FALSE, message = FALSE, eval = FALSE}
+ggplot(happy_select) +
+  geom_histogram(aes(ladder_score)) #<<
+```
+--
+```{r out.width = '50%', warning = FALSE, message = FALSE, eval = FALSE}
+ggplot(happy_select) +
+  geom_density(aes(ladder_score)) #<<
+```
+---
+# Are Richer Countries "Happier"?
+
+.panelset.sideways[
+```{r include=FALSE}
+scatter_panel_names <- c(
+  source = "R Code",
+  output = "Scatter Plot"
+)
+```
+
+```{r panelset = scatter_panel_names, out.width = '50%'}
+ggplot(happy_select) +
+  geom_point(aes(logged_gdp_per_capita, ladder_score)) 
+```
+]
+---
+# Emphasizing Trends
+
+.panelset.sideways[
+```{r include=FALSE}
+linear_panel_names <- c(
+  source = "R Code",
+  output = "Regression Plot"
+)
+```
+
+```{r panelset = linear_panel_names, out.width = '50%', message = FALSE}
+ggplot(happy_select) +
+  geom_point(aes(logged_gdp_per_capita, ladder_score)) +
+  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE)
+```
+]
+---
+# Inheritance
+--
+```{r out.width = '50%', warning = FALSE, message = FALSE, eval = FALSE}
+ggplot(happy_select) +
+  geom_point(aes(logged_gdp_per_capita, ladder_score)) + #<<
+  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE) #<<
+```
+--
+```{r out.width = '50%', warning = FALSE, message = FALSE, eval = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) + #<<
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot() 
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select) 
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) 
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point()
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() +
+  geom_smooth()
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+---
+# Layering
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+---
+# Aesthetic Mappings
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + #<<
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# Inside or Outside `aes()`?
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(colour = "red") + #<<
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# Shape Shifting
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region), shape = 17) + #<<
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# Multiple Regression Lines
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score, colour = region)) + #<<
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# Faceting
+
+.panelset.sideways[
+```{r include=FALSE}
+facet_panel_names <- c(
+  source = "R Code",
+  output = "Facetted Plot"
+)
+```
+
+```{r panelset = facet_panel_names, out.width = '50%', message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score, colour = region)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~region)
+```
+]
+---
+# Label Changes
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# X-axis Label
+
+```{r out.width = '50%', warning = FALSE, message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita") #<<
+```
+---
+# Y-axis Label
+
+.panelset.sideways[
+```{r include=FALSE}
+yaxis_panel_names <- c(
+  source = "R Code",
+  output = "Y Axis Label"
+)
+```
+
+```{r panelset = yaxis_panel_names, out.width = '50%'}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score")
+```
+]
+---
+# Adding a Title
+
+.panelset.sideways[
+```{r include=FALSE}
+title_panel_names <- c(
+  source = "R Code",
+  output = "With Title"
+)
+```
+
+```{r panelset = title_panel_names, out.width = '50%', message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score",
+       title = "Are Rich Countries 'Happier'?")
+```
+]
+---
+# Add a Caption
+
+.panelset.sideways[
+```{r include=FALSE}
+caption_panel_names <- c(
+  source = "R Code",
+  output = "With Caption"
+)
+```
+
+```{r panelset = caption_panel_names, out.width = '50%', message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score",
+       title = "Are Rich Countries 'Happier'?",
+       caption = "Source: World Happiness Report")
+```
+]
+---
+# Theme Change
+
+.panelset.sideways[
+```{r include=FALSE}
+theme_panel_names <- c(
+  source = "R Code",
+  output = "Theme Change"
+)
+```
+
+```{r panelset = theme_panel_names, out.width = '50%', message = FALSE}
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score",
+       title = "Are Rich Countries 'Happier'?",
+       caption = "Source: World Happiness Report") +
+  theme_minimal()
+```
+]
+---

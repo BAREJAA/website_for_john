@@ -385,7 +385,7 @@ We can use scatterplots to visualize the relationship between two variables. For
 
 ```{r scatter-solution}
 happy_select %>% 
-  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  ggplot(aes(logged_gdp_per_capita, ladder_score)) +
   geom_point()
 ```
 

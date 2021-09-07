@@ -239,7 +239,7 @@ grade_code()
 
 ### Creating new variables
 
-`mean_AML` and `mean_ALL` contain the mean of **log-transformed** (base 10) gene expression values. What if we wanted to make two new columns that antilogs for these values? Create two new columns called `geo_mean_AML` and `geo_mean_ALL` (because anti-logging the mean of log-transformed values is equal to the geomteric mean of the original values) 
+`mean_AML` and `mean_ALL` contain the mean of **log-transformed** (base 10) gene expression values. What if we wanted to make two new columns that contain antilogs for these values? Create two new columns called `geo_mean_AML` and `geo_mean_ALL` (because anti-logging the mean of log-transformed values is equal to the geometric mean of the original values) 
 
 ```{r mutate, exercise = TRUE, exercise.eval = FALSE, exercise.cap = ""}
 

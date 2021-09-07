@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tidybiology</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
+    <meta name="date" content="2021-09-07" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Tidybiology
+## ⚔<br/>Intro to Data Science Using R
+### Matthew Hirschey &amp; Akshay Bareja
+### Duke University
+### 2021-09-07
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# Making pretty plots with Ggplot2 
+
+---
+background-image: url(https://github.com/bbc/bbplot/blob/master/chart_examples/bbplot_example_plots.png?raw=true)
+background-size: contain
+---
+background-image: url(https://www.r-graph-gallery.com/img/graph/271-ggplot2-animated-gif-chart-with-gganimate1.gif)
+background-size: contain
+---
+background-image: url(https://ggplot2.tidyverse.org/logo.png)
+---
+# Why `ggplot2`?
+
+--
+
+- Easy to use  
+  
+--
+  
+- Introduces reproducibility  
+  
+--
+  
+- **powerful** 
+  
+---
+# `happy_select`
+
+
+```
+## Rows: 149
+## Columns: 10
+## $ country_name                 &lt;chr&gt; "Finland", "Denmark", "Switzerland", "Ice…
+## $ region                       &lt;chr&gt; "Western Europe", "Western Europe", "West…
+## $ ladder_score_in_dystopia     &lt;dbl&gt; 2.43, 2.43, 2.43, 2.43, 2.43, 2.43, 2.43,…
+## $ ladder_score                 &lt;dbl&gt; 7.842, 7.620, 7.571, 7.554, 7.464, 7.392,…
+## $ logged_gdp_per_capita        &lt;dbl&gt; 10.775, 10.933, 11.117, 10.878, 10.932, 1…
+## $ social_support               &lt;dbl&gt; 0.954, 0.954, 0.942, 0.983, 0.942, 0.954,…
+## $ healthy_life_expectancy      &lt;dbl&gt; 72.000, 72.700, 74.400, 73.000, 72.400, 7…
+## $ freedom_to_make_life_choices &lt;dbl&gt; 0.949, 0.946, 0.919, 0.955, 0.913, 0.960,…
+## $ generosity                   &lt;dbl&gt; -0.098, 0.030, 0.025, 0.160, 0.175, 0.093…
+## $ perceptions_of_corruption    &lt;dbl&gt; 0.186, 0.179, 0.292, 0.673, 0.338, 0.270,…
+```
+
+---
+# Plotting Distributions
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select) +
+  geom_histogram(aes(ladder_score))
+```
+
+]
+
+.panel[.panel-name[Histogram]
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Anatomy of a ggplot
+
+
+```r
+ggplot(data = &lt;DATA&gt;) + 
+  &lt;GEOM_FUNCTION&gt;(mapping = aes(&lt;MAPPINGS&gt;))
+```
+--
+
+```r
+ggplot(&lt;DATA&gt;) + 
+  &lt;GEOM_FUNCTION&gt;(aes(&lt;MAPPINGS&gt;))
+```
+
+---
+# A Simple Histogram
+
+
+```r
+ggplot(happy_select) +
+  geom_histogram(aes(ladder_score)) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="50%" /&gt;
+---
+# Making Improvements
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select) +
+  geom_density(aes(ladder_score)) 
+```
+
+]
+
+.panel[.panel-name[Density Plot]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="50%" /&gt;
+
+]
+]
+---
+--
+
+```r
+ggplot(happy_select) +
+* geom_histogram(aes(ladder_score))
+```
+--
+
+```r
+ggplot(happy_select) +
+* geom_density(aes(ladder_score))
+```
+---
+# Are Richer Countries "Happier"?
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select) +
+  geom_point(aes(logged_gdp_per_capita, ladder_score)) 
+```
+
+]
+
+.panel[.panel-name[Scatter Plot]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Emphasizing Trends
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select) +
+  geom_point(aes(logged_gdp_per_capita, ladder_score)) +
+  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE)
+```
+
+]
+
+.panel[.panel-name[Regression Plot]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Inheritance
+--
+
+```r
+ggplot(happy_select) +
+* geom_point(aes(logged_gdp_per_capita, ladder_score)) +
+* geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE)
+```
+--
+
+```r
+*ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+---
+# Layering
+
+
+```r
+ggplot() 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" width="50%" /&gt;
+---
+# Layering
+
+
+```r
+ggplot(happy_select) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="50%" /&gt;
+---
+# Layering
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" width="50%" /&gt;
+---
+# Layering
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point()
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="50%" /&gt;
+---
+# Layering
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() +
+  geom_smooth()
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="50%" /&gt;
+---
+# Layering
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="50%" /&gt;
+---
+# Layering
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="50%" /&gt;
+---
+# Aesthetic Mappings
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+* geom_point(aes(colour = region)) +
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" width="50%" /&gt;
+---
+# Inside or Outside `aes()`?
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+* geom_point(colour = "red") +
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-25-1.png" width="50%" /&gt;
+---
+# Shape Shifting
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+* geom_point(aes(colour = region), shape = 17) +
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-26-1.png" width="50%" /&gt;
+---
+# Multiple Regression Lines
+
+
+```r
+*ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score, colour = region)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-27-1.png" width="50%" /&gt;
+---
+# Faceting
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score, colour = region)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~region)
+```
+
+]
+
+.panel[.panel-name[Facetted Plot]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-29-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Label Changes
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-30-1.png" width="50%" /&gt;
+---
+# X-axis Label
+
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+* labs(x = "Logged GDP Per Capita")
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-31-1.png" width="50%" /&gt;
+---
+# Y-axis Label
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score")
+```
+
+]
+
+.panel[.panel-name[Y Axis Label]
+
+```
+## `geom_smooth()` using formula 'y ~ x'
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-33-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Adding a Title
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score",
+       title = "Are Rich Countries 'Happier'?")
+```
+
+]
+
+.panel[.panel-name[With Title]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-35-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Add a Caption
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score",
+       title = "Are Rich Countries 'Happier'?",
+       caption = "Source: World Happiness Report")
+```
+
+]
+
+.panel[.panel-name[With Caption]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-37-1.png" width="50%" /&gt;
+
+]
+]
+---
+# Theme Change
+
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
+  geom_point(aes(colour = region)) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Logged GDP Per Capita",
+       y = "Ladder Score",
+       title = "Are Rich Countries 'Happier'?",
+       caption = "Source: World Happiness Report") +
+  theme_minimal()
+```
+
+]
+
+.panel[.panel-name[Theme Change]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-39-1.png" width="50%" /&gt;
+
+]
+]
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -14,6 +14,8 @@ library(tidyverse)
 Some useful resources -
 https://web.stanford.edu/class/bios221/labs/multi/lab_multtest.html
 
+Note - expression values are in base log10 - 
+https://www.stat.cmu.edu/~jiashun/Research/software/GenomicsData/papers/dudoit.pdf
 ```{r load-and-explore}
 data(golub)
 

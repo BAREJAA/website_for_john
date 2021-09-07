@@ -44,6 +44,7 @@ df %>%
 + [World Happiness Report Scrollytelling](scrollytelling/)
 + [Exploring the Golub dataset](exercise_golub/)
 + [Intro to Pandas](xaringan_pandas/)
++ [Intro to Ggplot2](xaringan_ggplot2/)
 
 \
 
