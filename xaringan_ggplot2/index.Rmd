@@ -338,7 +338,7 @@ yaxis_panel_names <- c(
 )
 ```
 
-```{r panelset = yaxis_panel_names, out.width = '50%'}
+```{r panelset = yaxis_panel_names, out.width = '50%', message = FALSE}
 ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
   geom_point(aes(colour = region)) + 
   geom_smooth(method = "lm", se = FALSE) +
