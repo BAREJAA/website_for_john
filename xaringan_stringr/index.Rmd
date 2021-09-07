@@ -1,0 +1,197 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+library(fontawesome)
+
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy_full %>% select(country_name:ladder_score, logged_gdp_per_capita:ladder_score_in_dystopia) %>% relocate(ladder_score_in_dystopia, .after = region) -> happy_select
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+
+happy %>% 
+  inner_join(happy_full, by = "country_name") %>% 
+  select(country_name, healthy_life_expectancy) -> happy_join_one
+
+happy_full %>% 
+  filter(!(country_name %in% happy$country_name)) %>% 
+  slice_sample(n = 5) %>% 
+  select(country_name, healthy_life_expectancy) %>%
+  bind_rows(happy_join_one) %>% 
+  .[-10 ,] -> happy_join
+
+happy_select %>% 
+  pivot_longer(cols = c(-country_name, -region),
+               names_to = "measurements",
+               values_to = "values") -> happy_long
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"),
+  text_slide_number_font_size = "0rem"
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# String Manipulation with Stringr
+
+---
+background-image: url(https://stringr.tidyverse.org/logo.png)
+---
+# `happy_long`
+
+```{r, echo = FALSE}
+glimpse(happy_long)
+```
+
+---
+# `happy_long`
+
+```{r, echo = FALSE}
+head(happy_long)
+```
+
+---
+# `str_detect`
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+detect_panel_names <- c(
+  source = "R Code",
+  output = "Output"
+)
+```
+
+```{r panelset = detect_panel_names, out.width = '50%'}
+str_detect(happy_long$region, "Africa")
+```
+]
+---
+# Stringr and Dplyr `r fa("handshake")`
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+filter_panel_names <- c(
+  source = "R Code",
+  output = "Output"
+)
+```
+
+```{r panelset = filter_panel_names, out.width = '50%'}
+happy_long %>% 
+  filter(str_detect(region, "Africa"))
+```
+]
+---
+# More Complex Search Terms
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+regexp_panel_names <- c(
+  source = "R Code",
+  output = "Output"
+)
+```
+
+```{r panelset = regexp_panel_names, out.width = '50%'}
+happy_long %>% 
+  filter(str_detect(measurements, "ladder|life"))
+```
+]
+---
+# Re-formating Strings 
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+tolower_panel_names <- c(
+  source = "R Code",
+  output = "Output"
+)
+```
+
+```{r panelset = tolower_panel_names, out.width = '50%'}
+str_to_lower(happy_long$region)
+```
+]
+---
+# Stringr and `mutate()` 
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+mutate_panel_names <- c(
+  source = "R Code",
+  output = "Output"
+)
+```
+
+```{r panelset = mutate_panel_names, out.width = '50%'}
+happy_long %>% 
+  mutate(region = str_to_lower(region))
+```
+]
+---
+# `str_count()` 
+
+--
+.panelset.sideways[
+```{r include=FALSE}
+count_panel_names <- c(
+  source = "R Code",
+  output = "Output"
+)
+```
+
+```{r panelset = mutate_panel_names, out.width = '50%'}
+happy_long %>% 
+  mutate(sentence_length = str_count(measurements, "_")) %>% 
+  arrange(desc(sentence_length)) %>% 
+  select(sentence_length)
+```
+]
+---
