@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tidybiology</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
+    <meta name="date" content="2021-09-07" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Tidybiology
+## ⚔<br/>Intro to Data Science Using R
+### Matthew Hirschey &amp; Akshay Bareja
+### Duke University
+### 2021-09-07
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# String Manipulation with Stringr
+
+---
+background-image: url(https://stringr.tidyverse.org/logo.png)
+---
+# `happy_long`
+
+
+```
+## Rows: 1,192
+## Columns: 4
+## $ country_name &lt;chr&gt; "Finland", "Finland", "Finland", "Finland", "Finland", "F…
+## $ region       &lt;chr&gt; "Western Europe", "Western Europe", "Western Europe", "We…
+## $ measurements &lt;chr&gt; "ladder_score_in_dystopia", "ladder_score", "logged_gdp_p…
+## $ values       &lt;dbl&gt; 2.430, 7.842, 10.775, 0.954, 72.000, 0.949, -0.098, 0.186…
+```
+
+---
+# `happy_long`
+
+
+```
+## # A tibble: 6 × 4
+##   country_name region         measurements                 values
+##   &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;                         &lt;dbl&gt;
+## 1 Finland      Western Europe ladder_score_in_dystopia      2.43 
+## 2 Finland      Western Europe ladder_score                  7.84 
+## 3 Finland      Western Europe logged_gdp_per_capita        10.8  
+## 4 Finland      Western Europe social_support                0.954
+## 5 Finland      Western Europe healthy_life_expectancy      72    
+## 6 Finland      Western Europe freedom_to_make_life_choices  0.949
+```
+
+---
+# `str_detect`
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+str_detect(happy_long$region, "Africa")
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##    [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [85] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##   [97] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [145] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [157] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [169]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+##  [181] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [193]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [205]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [217] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [229] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [241] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [253] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [265] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [277] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [289] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [301] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [313] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [325] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [337] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [349] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [361] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [373]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [385] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [397]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [409] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [421] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [433] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [445] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [457] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [469] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [481] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [493] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [505] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [517] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [529] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [541] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [553] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [565] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [577] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [589] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [601] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [613] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [625] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [637]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [649] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [661]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [673]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+##  [685] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [697] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [709] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [721]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [733]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [745] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [757]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [769] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [781]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [793] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [805] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [817]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [829]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [841]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+##  [853] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [865]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+##  [877] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [889]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [901]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [913]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [925]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [937]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [949]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [961]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [973]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [985]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [997]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [1009]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1021]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [1033]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1045]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1057]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1069]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1081]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1093]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1105] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+## [1117]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1129]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+## [1141] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1153]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1165]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1177]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+## [1189] FALSE FALSE FALSE FALSE
+```
+
+
+
+]
+]
+---
+# Stringr and Dplyr <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"/></svg>
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+happy_long %&gt;% 
+  filter(str_detect(region, "Africa"))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 424 × 4
+##    country_name region                       measurements                 values
+##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;                         &lt;dbl&gt;
+##  1 Israel       Middle East and North Africa ladder_score_in_dystopia      2.43 
+##  2 Israel       Middle East and North Africa ladder_score                  7.16 
+##  3 Israel       Middle East and North Africa logged_gdp_per_capita        10.6  
+##  4 Israel       Middle East and North Africa social_support                0.939
+##  5 Israel       Middle East and North Africa healthy_life_expectancy      73.5  
+##  6 Israel       Middle East and North Africa freedom_to_make_life_choices  0.8  
+##  7 Israel       Middle East and North Africa generosity                    0.031
+##  8 Israel       Middle East and North Africa perceptions_of_corruption     0.753
+##  9 Bahrain      Middle East and North Africa ladder_score_in_dystopia      2.43 
+## 10 Bahrain      Middle East and North Africa ladder_score                  6.65 
+## # … with 414 more rows
+```
+
+
+
+]
+]
+---
+# More Complex Search Terms
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+happy_long %&gt;% 
+  filter(str_detect(measurements, "ladder|life"))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 596 × 4
+##    country_name region         measurements                 values
+##    &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;                         &lt;dbl&gt;
+##  1 Finland      Western Europe ladder_score_in_dystopia      2.43 
+##  2 Finland      Western Europe ladder_score                  7.84 
+##  3 Finland      Western Europe healthy_life_expectancy      72    
+##  4 Finland      Western Europe freedom_to_make_life_choices  0.949
+##  5 Denmark      Western Europe ladder_score_in_dystopia      2.43 
+##  6 Denmark      Western Europe ladder_score                  7.62 
+##  7 Denmark      Western Europe healthy_life_expectancy      72.7  
+##  8 Denmark      Western Europe freedom_to_make_life_choices  0.946
+##  9 Switzerland  Western Europe ladder_score_in_dystopia      2.43 
+## 10 Switzerland  Western Europe ladder_score                  7.57 
+## # … with 586 more rows
+```
+
+
+
+]
+]
+---
+# Re-formating Strings 
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+str_to_lower(happy_long$region)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##    [1] "western europe"                     "western europe"                    
+##    [3] "western europe"                     "western europe"                    
+##    [5] "western europe"                     "western europe"                    
+##    [7] "western europe"                     "western europe"                    
+##    [9] "western europe"                     "western europe"                    
+##   [11] "western europe"                     "western europe"                    
+##   [13] "western europe"                     "western europe"                    
+##   [15] "western europe"                     "western europe"                    
+##   [17] "western europe"                     "western europe"                    
+##   [19] "western europe"                     "western europe"                    
+##   [21] "western europe"                     "western europe"                    
+##   [23] "western europe"                     "western europe"                    
+##   [25] "western europe"                     "western europe"                    
+##   [27] "western europe"                     "western europe"                    
+##   [29] "western europe"                     "western europe"                    
+##   [31] "western europe"                     "western europe"                    
+##   [33] "western europe"                     "western europe"                    
+##   [35] "western europe"                     "western europe"                    
+##   [37] "western europe"                     "western europe"                    
+##   [39] "western europe"                     "western europe"                    
+##   [41] "western europe"                     "western europe"                    
+##   [43] "western europe"                     "western europe"                    
+##   [45] "western europe"                     "western europe"                    
+##   [47] "western europe"                     "western europe"                    
+##   [49] "western europe"                     "western europe"                    
+##   [51] "western europe"                     "western europe"                    
+##   [53] "western europe"                     "western europe"                    
+##   [55] "western europe"                     "western europe"                    
+##   [57] "western europe"                     "western europe"                    
+##   [59] "western europe"                     "western europe"                    
+##   [61] "western europe"                     "western europe"                    
+##   [63] "western europe"                     "western europe"                    
+##   [65] "north america and anz"              "north america and anz"             
+##   [67] "north america and anz"              "north america and anz"             
+##   [69] "north america and anz"              "north america and anz"             
+##   [71] "north america and anz"              "north america and anz"             
+##   [73] "western europe"                     "western europe"                    
+##   [75] "western europe"                     "western europe"                    
+##   [77] "western europe"                     "western europe"                    
+##   [79] "western europe"                     "western europe"                    
+##   [81] "north america and anz"              "north america and anz"             
+##   [83] "north america and anz"              "north america and anz"             
+##   [85] "north america and anz"              "north america and anz"             
+##   [87] "north america and anz"              "north america and anz"             
+##   [89] "middle east and north africa"       "middle east and north africa"      
+##   [91] "middle east and north africa"       "middle east and north africa"      
+##   [93] "middle east and north africa"       "middle east and north africa"      
+##   [95] "middle east and north africa"       "middle east and north africa"      
+##   [97] "western europe"                     "western europe"                    
+##   [99] "western europe"                     "western europe"                    
+##  [101] "western europe"                     "western europe"                    
+##  [103] "western europe"                     "western europe"                    
+##  [105] "north america and anz"              "north america and anz"             
+##  [107] "north america and anz"              "north america and anz"             
+##  [109] "north america and anz"              "north america and anz"             
+##  [111] "north america and anz"              "north america and anz"             
+##  [113] "western europe"                     "western europe"                    
+##  [115] "western europe"                     "western europe"                    
+##  [117] "western europe"                     "western europe"                    
+##  [119] "western europe"                     "western europe"                    
+##  [121] "latin america and caribbean"        "latin america and caribbean"       
+##  [123] "latin america and caribbean"        "latin america and caribbean"       
+##  [125] "latin america and caribbean"        "latin america and caribbean"       
+##  [127] "latin america and caribbean"        "latin america and caribbean"       
+##  [129] "western europe"                     "western europe"                    
+##  [131] "western europe"                     "western europe"                    
+##  [133] "western europe"                     "western europe"                    
+##  [135] "western europe"                     "western europe"                    
+##  [137] "central and eastern europe"         "central and eastern europe"        
+##  [139] "central and eastern europe"         "central and eastern europe"        
+##  [141] "central and eastern europe"         "central and eastern europe"        
+##  [143] "central and eastern europe"         "central and eastern europe"        
+##  [145] "north america and anz"              "north america and anz"             
+##  [147] "north america and anz"              "north america and anz"             
+##  [149] "north america and anz"              "north america and anz"             
+##  [151] "north america and anz"              "north america and anz"             
+##  [153] "western europe"                     "western europe"                    
+##  [155] "western europe"                     "western europe"                    
+##  [157] "western europe"                     "western europe"                    
+##  [159] "western europe"                     "western europe"                    
+##  [161] "western europe"                     "western europe"                    
+##  [163] "western europe"                     "western europe"                    
+##  [165] "western europe"                     "western europe"                    
+##  [167] "western europe"                     "western europe"                    
+##  [169] "middle east and north africa"       "middle east and north africa"      
+##  [171] "middle east and north africa"       "middle east and north africa"      
+##  [173] "middle east and north africa"       "middle east and north africa"      
+##  [175] "middle east and north africa"       "middle east and north africa"      
+##  [177] "western europe"                     "western europe"                    
+##  [179] "western europe"                     "western europe"                    
+##  [181] "western europe"                     "western europe"                    
+##  [183] "western europe"                     "western europe"                    
+##  [185] "east asia"                          "east asia"                         
+##  [187] "east asia"                          "east asia"                         
+##  [189] "east asia"                          "east asia"                         
+##  [191] "east asia"                          "east asia"                         
+##  [193] "middle east and north africa"       "middle east and north africa"      
+##  [195] "middle east and north africa"       "middle east and north africa"      
+##  [197] "middle east and north africa"       "middle east and north africa"      
+##  [199] "middle east and north africa"       "middle east and north africa"      
+##  [201] "middle east and north africa"       "middle east and north africa"      
+##  [203] "middle east and north africa"       "middle east and north africa"      
+##  [205] "middle east and north africa"       "middle east and north africa"      
+##  [207] "middle east and north africa"       "middle east and north africa"      
+##  [209] "western europe"                     "western europe"                    
+##  [211] "western europe"                     "western europe"                    
+##  [213] "western europe"                     "western europe"                    
+##  [215] "western europe"                     "western europe"                    
+##  [217] "western europe"                     "western europe"                    
+##  [219] "western europe"                     "western europe"                    
+##  [221] "western europe"                     "western europe"                    
+##  [223] "western europe"                     "western europe"                    
+##  [225] "central and eastern europe"         "central and eastern europe"        
+##  [227] "central and eastern europe"         "central and eastern europe"        
+##  [229] "central and eastern europe"         "central and eastern europe"        
+##  [231] "central and eastern europe"         "central and eastern europe"        
+##  [233] "latin america and caribbean"        "latin america and caribbean"       
+##  [235] "latin america and caribbean"        "latin america and caribbean"       
+##  [237] "latin america and caribbean"        "latin america and caribbean"       
+##  [239] "latin america and caribbean"        "latin america and caribbean"       
+##  [241] "latin america and caribbean"        "latin america and caribbean"       
+##  [243] "latin america and caribbean"        "latin america and caribbean"       
+##  [245] "latin america and caribbean"        "latin america and caribbean"       
+##  [247] "latin america and caribbean"        "latin america and caribbean"       
+##  [249] "southeast asia"                     "southeast asia"                    
+##  [251] "southeast asia"                     "southeast asia"                    
+##  [253] "southeast asia"                     "southeast asia"                    
+##  [255] "southeast asia"                     "southeast asia"                    
+##  [257] "central and eastern europe"         "central and eastern europe"        
+##  [259] "central and eastern europe"         "central and eastern europe"        
+##  [261] "central and eastern europe"         "central and eastern europe"        
+##  [263] "central and eastern europe"         "central and eastern europe"        
+##  [265] "central and eastern europe"         "central and eastern europe"        
+##  [267] "central and eastern europe"         "central and eastern europe"        
+##  [269] "central and eastern europe"         "central and eastern europe"        
+##  [271] "central and eastern europe"         "central and eastern europe"        
+##  [273] "latin america and caribbean"        "latin america and caribbean"       
+##  [275] "latin america and caribbean"        "latin america and caribbean"       
+##  [277] "latin america and caribbean"        "latin america and caribbean"       
+##  [279] "latin america and caribbean"        "latin america and caribbean"       
+##  [281] "latin america and caribbean"        "latin america and caribbean"       
+##  [283] "latin america and caribbean"        "latin america and caribbean"       
+##  [285] "latin america and caribbean"        "latin america and caribbean"       
+##  [287] "latin america and caribbean"        "latin america and caribbean"       
+##  [289] "latin america and caribbean"        "latin america and caribbean"       
+##  [291] "latin america and caribbean"        "latin america and caribbean"       
+##  [293] "latin america and caribbean"        "latin america and caribbean"       
+##  [295] "latin america and caribbean"        "latin america and caribbean"       
+##  [297] "central and eastern europe"         "central and eastern europe"        
+##  [299] "central and eastern europe"         "central and eastern europe"        
+##  [301] "central and eastern europe"         "central and eastern europe"        
+##  [303] "central and eastern europe"         "central and eastern europe"        
+##  [305] "western europe"                     "western europe"                    
+##  [307] "western europe"                     "western europe"                    
+##  [309] "western europe"                     "western europe"                    
+##  [311] "western europe"                     "western europe"                    
+##  [313] "central and eastern europe"         "central and eastern europe"        
+##  [315] "central and eastern europe"         "central and eastern europe"        
+##  [317] "central and eastern europe"         "central and eastern europe"        
+##  [319] "central and eastern europe"         "central and eastern europe"        
+##  [321] "latin america and caribbean"        "latin america and caribbean"       
+##  [323] "latin america and caribbean"        "latin america and caribbean"       
+##  [325] "latin america and caribbean"        "latin america and caribbean"       
+##  [327] "latin america and caribbean"        "latin america and caribbean"       
+##  [329] "commonwealth of independent states" "commonwealth of independent states"
+##  [331] "commonwealth of independent states" "commonwealth of independent states"
+##  [333] "commonwealth of independent states" "commonwealth of independent states"
+##  [335] "commonwealth of independent states" "commonwealth of independent states"
+##  [337] "latin america and caribbean"        "latin america and caribbean"       
+##  [339] "latin america and caribbean"        "latin america and caribbean"       
+##  [341] "latin america and caribbean"        "latin america and caribbean"       
+##  [343] "latin america and caribbean"        "latin america and caribbean"       
+##  [345] "central and eastern europe"         "central and eastern europe"        
+##  [347] "central and eastern europe"         "central and eastern europe"        
+##  [349] "central and eastern europe"         "central and eastern europe"        
+##  [351] "central and eastern europe"         "central and eastern europe"        
+##  [353] "commonwealth of independent states" "commonwealth of independent states"
+##  [355] "commonwealth of independent states" "commonwealth of independent states"
+##  [357] "commonwealth of independent states" "commonwealth of independent states"
+##  [359] "commonwealth of independent states" "commonwealth of independent states"
+##  [361] "central and eastern europe"         "central and eastern europe"        
+##  [363] "central and eastern europe"         "central and eastern europe"        
+##  [365] "central and eastern europe"         "central and eastern europe"        
+##  [367] "central and eastern europe"         "central and eastern europe"        
+##  [369] "middle east and north africa"       "middle east and north africa"      
+##  [371] "middle east and north africa"       "middle east and north africa"      
+##  [373] "middle east and north africa"       "middle east and north africa"      
+##  [375] "middle east and north africa"       "middle east and north africa"      
+##  [377] "central and eastern europe"         "central and eastern europe"        
+##  [379] "central and eastern europe"         "central and eastern europe"        
+##  [381] "central and eastern europe"         "central and eastern europe"        
+##  [383] "central and eastern europe"         "central and eastern europe"        
+##  [385] "latin america and caribbean"        "latin america and caribbean"       
+##  [387] "latin america and caribbean"        "latin america and caribbean"       
+##  [389] "latin america and caribbean"        "latin america and caribbean"       
+##  [391] "latin america and caribbean"        "latin america and caribbean"       
+##  [393] "sub-saharan africa"                 "sub-saharan africa"                
+##  [395] "sub-saharan africa"                 "sub-saharan africa"                
+##  [397] "sub-saharan africa"                 "sub-saharan africa"                
+##  [399] "sub-saharan africa"                 "sub-saharan africa"                
+##  [401] "central and eastern europe"         "central and eastern europe"        
+##  [403] "central and eastern europe"         "central and eastern europe"        
+##  [405] "central and eastern europe"         "central and eastern europe"        
+##  [407] "central and eastern europe"         "central and eastern europe"        
+##  [409] "latin america and caribbean"        "latin america and caribbean"       
+##  [411] "latin america and caribbean"        "latin america and caribbean"       
+##  [413] "latin america and caribbean"        "latin america and caribbean"       
+##  [415] "latin america and caribbean"        "latin america and caribbean"       
+##  [417] "central and eastern europe"         "central and eastern europe"        
+##  [419] "central and eastern europe"         "central and eastern europe"        
+##  [421] "central and eastern europe"         "central and eastern europe"        
+##  [423] "central and eastern europe"         "central and eastern europe"        
+##  [425] "southeast asia"                     "southeast asia"                    
+##  [427] "southeast asia"                     "southeast asia"                    
+##  [429] "southeast asia"                     "southeast asia"                    
+##  [431] "southeast asia"                     "southeast asia"                    
+##  [433] "latin america and caribbean"        "latin america and caribbean"       
+##  [435] "latin america and caribbean"        "latin america and caribbean"       
+##  [437] "latin america and caribbean"        "latin america and caribbean"       
+##  [439] "latin america and caribbean"        "latin america and caribbean"       
+##  [441] "east asia"                          "east asia"                         
+##  [443] "east asia"                          "east asia"                         
+##  [445] "east asia"                          "east asia"                         
+##  [447] "east asia"                          "east asia"                         
+##  [449] "latin america and caribbean"        "latin america and caribbean"       
+##  [451] "latin america and caribbean"        "latin america and caribbean"       
+##  [453] "latin america and caribbean"        "latin america and caribbean"       
+##  [455] "latin america and caribbean"        "latin america and caribbean"       
+##  [457] "western europe"                     "western europe"                    
+##  [459] "western europe"                     "western europe"                    
+##  [461] "western europe"                     "western europe"                    
+##  [463] "western europe"                     "western europe"                    
+##  [465] "latin america and caribbean"        "latin america and caribbean"       
+##  [467] "latin america and caribbean"        "latin america and caribbean"       
+##  [469] "latin america and caribbean"        "latin america and caribbean"       
+##  [471] "latin america and caribbean"        "latin america and caribbean"       
+##  [473] "central and eastern europe"         "central and eastern europe"        
+##  [475] "central and eastern europe"         "central and eastern europe"        
+##  [477] "central and eastern europe"         "central and eastern europe"        
+##  [479] "central and eastern europe"         "central and eastern europe"        
+##  [481] "southeast asia"                     "southeast asia"                    
+##  [483] "southeast asia"                     "southeast asia"                    
+##  [485] "southeast asia"                     "southeast asia"                    
+##  [487] "southeast asia"                     "southeast asia"                    
+##  [489] "east asia"                          "east asia"                         
+##  [491] "east asia"                          "east asia"                         
+##  [493] "east asia"                          "east asia"                         
+##  [495] "east asia"                          "east asia"                         
+##  [497] "latin america and caribbean"        "latin america and caribbean"       
+##  [499] "latin america and caribbean"        "latin america and caribbean"       
+##  [501] "latin america and caribbean"        "latin america and caribbean"       
+##  [503] "latin america and caribbean"        "latin america and caribbean"       
+##  [505] "central and eastern europe"         "central and eastern europe"        
+##  [507] "central and eastern europe"         "central and eastern europe"        
+##  [509] "central and eastern europe"         "central and eastern europe"        
+##  [511] "central and eastern europe"         "central and eastern europe"        
+##  [513] "commonwealth of independent states" "commonwealth of independent states"
+##  [515] "commonwealth of independent states" "commonwealth of independent states"
+##  [517] "commonwealth of independent states" "commonwealth of independent states"
+##  [519] "commonwealth of independent states" "commonwealth of independent states"
+##  [521] "latin america and caribbean"        "latin america and caribbean"       
+##  [523] "latin america and caribbean"        "latin america and caribbean"       
+##  [525] "latin america and caribbean"        "latin america and caribbean"       
+##  [527] "latin america and caribbean"        "latin america and caribbean"       
+##  [529] "commonwealth of independent states" "commonwealth of independent states"
+##  [531] "commonwealth of independent states" "commonwealth of independent states"
+##  [533] "commonwealth of independent states" "commonwealth of independent states"
+##  [535] "commonwealth of independent states" "commonwealth of independent states"
+##  [537] "western europe"                     "western europe"                    
+##  [539] "western europe"                     "western europe"                    
+##  [541] "western europe"                     "western europe"                    
+##  [543] "western europe"                     "western europe"                    
+##  [545] "latin america and caribbean"        "latin america and caribbean"       
+##  [547] "latin america and caribbean"        "latin america and caribbean"       
+##  [549] "latin america and caribbean"        "latin america and caribbean"       
+##  [551] "latin america and caribbean"        "latin america and caribbean"       
+##  [553] "east asia"                          "east asia"                         
+##  [555] "east asia"                          "east asia"                         
+##  [557] "east asia"                          "east asia"                         
+##  [559] "east asia"                          "east asia"                         
+##  [561] "latin america and caribbean"        "latin america and caribbean"       
+##  [563] "latin america and caribbean"        "latin america and caribbean"       
+##  [565] "latin america and caribbean"        "latin america and caribbean"       
+##  [567] "latin america and caribbean"        "latin america and caribbean"       
+##  [569] "central and eastern europe"         "central and eastern europe"        
+##  [571] "central and eastern europe"         "central and eastern europe"        
+##  [573] "central and eastern europe"         "central and eastern europe"        
+##  [575] "central and eastern europe"         "central and eastern europe"        
+##  [577] "latin america and caribbean"        "latin america and caribbean"       
+##  [579] "latin america and caribbean"        "latin america and caribbean"       
+##  [581] "latin america and caribbean"        "latin america and caribbean"       
+##  [583] "latin america and caribbean"        "latin america and caribbean"       
+##  [585] "western europe"                     "western europe"                    
+##  [587] "western europe"                     "western europe"                    
+##  [589] "western europe"                     "western europe"                    
+##  [591] "western europe"                     "western europe"                    
+##  [593] "commonwealth of independent states" "commonwealth of independent states"
+##  [595] "commonwealth of independent states" "commonwealth of independent states"
+##  [597] "commonwealth of independent states" "commonwealth of independent states"
+##  [599] "commonwealth of independent states" "commonwealth of independent states"
+##  [601] "commonwealth of independent states" "commonwealth of independent states"
+##  [603] "commonwealth of independent states" "commonwealth of independent states"
+##  [605] "commonwealth of independent states" "commonwealth of independent states"
+##  [607] "commonwealth of independent states" "commonwealth of independent states"
+##  [609] "east asia"                          "east asia"                         
+##  [611] "east asia"                          "east asia"                         
+##  [613] "east asia"                          "east asia"                         
+##  [615] "east asia"                          "east asia"                         
+##  [617] "commonwealth of independent states" "commonwealth of independent states"
+##  [619] "commonwealth of independent states" "commonwealth of independent states"
+##  [621] "commonwealth of independent states" "commonwealth of independent states"
+##  [623] "commonwealth of independent states" "commonwealth of independent states"
+##  [625] "southeast asia"                     "southeast asia"                    
+##  [627] "southeast asia"                     "southeast asia"                    
+##  [629] "southeast asia"                     "southeast asia"                    
+##  [631] "southeast asia"                     "southeast asia"                    
+##  [633] "middle east and north africa"       "middle east and north africa"      
+##  [635] "middle east and north africa"       "middle east and north africa"      
+##  [637] "middle east and north africa"       "middle east and north africa"      
+##  [639] "middle east and north africa"       "middle east and north africa"      
+##  [641] "southeast asia"                     "southeast asia"                    
+##  [643] "southeast asia"                     "southeast asia"                    
+##  [645] "southeast asia"                     "southeast asia"                    
+##  [647] "southeast asia"                     "southeast asia"                    
+##  [649] "southeast asia"                     "southeast asia"                    
+##  [651] "southeast asia"                     "southeast asia"                    
+##  [653] "southeast asia"                     "southeast asia"                    
+##  [655] "southeast asia"                     "southeast asia"                    
+##  [657] "sub-saharan africa"                 "sub-saharan africa"                
+##  [659] "sub-saharan africa"                 "sub-saharan africa"                
+##  [661] "sub-saharan africa"                 "sub-saharan africa"                
+##  [663] "sub-saharan africa"                 "sub-saharan africa"                
+##  [665] "east asia"                          "east asia"                         
+##  [667] "east asia"                          "east asia"                         
+##  [669] "east asia"                          "east asia"                         
+##  [671] "east asia"                          "east asia"                         
+##  [673] "sub-saharan africa"                 "sub-saharan africa"                
+##  [675] "sub-saharan africa"                 "sub-saharan africa"                
+##  [677] "sub-saharan africa"                 "sub-saharan africa"                
+##  [679] "sub-saharan africa"                 "sub-saharan africa"                
+##  [681] "commonwealth of independent states" "commonwealth of independent states"
+##  [683] "commonwealth of independent states" "commonwealth of independent states"
+##  [685] "commonwealth of independent states" "commonwealth of independent states"
+##  [687] "commonwealth of independent states" "commonwealth of independent states"
+##  [689] "south asia"                         "south asia"                        
+##  [691] "south asia"                         "south asia"                        
+##  [693] "south asia"                         "south asia"                        
+##  [695] "south asia"                         "south asia"                        
+##  [697] "central and eastern europe"         "central and eastern europe"        
+##  [699] "central and eastern europe"         "central and eastern europe"        
+##  [701] "central and eastern europe"         "central and eastern europe"        
+##  [703] "central and eastern europe"         "central and eastern europe"        
+##  [705] "south asia"                         "south asia"                        
+##  [707] "south asia"                         "south asia"                        
+##  [709] "south asia"                         "south asia"                        
+##  [711] "south asia"                         "south asia"                        
+##  [713] "commonwealth of independent states" "commonwealth of independent states"
+##  [715] "commonwealth of independent states" "commonwealth of independent states"
+##  [717] "commonwealth of independent states" "commonwealth of independent states"
+##  [719] "commonwealth of independent states" "commonwealth of independent states"
+##  [721] "sub-saharan africa"                 "sub-saharan africa"                
+##  [723] "sub-saharan africa"                 "sub-saharan africa"                
+##  [725] "sub-saharan africa"                 "sub-saharan africa"                
+##  [727] "sub-saharan africa"                 "sub-saharan africa"                
+##  [729] "sub-saharan africa"                 "sub-saharan africa"                
+##  [731] "sub-saharan africa"                 "sub-saharan africa"                
+##  [733] "sub-saharan africa"                 "sub-saharan africa"                
+##  [735] "sub-saharan africa"                 "sub-saharan africa"                
+##  [737] "central and eastern europe"         "central and eastern europe"        
+##  [739] "central and eastern europe"         "central and eastern europe"        
+##  [741] "central and eastern europe"         "central and eastern europe"        
+##  [743] "central and eastern europe"         "central and eastern europe"        
+##  [745] "central and eastern europe"         "central and eastern europe"        
+##  [747] "central and eastern europe"         "central and eastern europe"        
+##  [749] "central and eastern europe"         "central and eastern europe"        
+##  [751] "central and eastern europe"         "central and eastern europe"        
+##  [753] "sub-saharan africa"                 "sub-saharan africa"                
+##  [755] "sub-saharan africa"                 "sub-saharan africa"                
+##  [757] "sub-saharan africa"                 "sub-saharan africa"                
+##  [759] "sub-saharan africa"                 "sub-saharan africa"                
+##  [761] "sub-saharan africa"                 "sub-saharan africa"                
+##  [763] "sub-saharan africa"                 "sub-saharan africa"                
+##  [765] "sub-saharan africa"                 "sub-saharan africa"                
+##  [767] "sub-saharan africa"                 "sub-saharan africa"                
+##  [769] "commonwealth of independent states" "commonwealth of independent states"
+##  [771] "commonwealth of independent states" "commonwealth of independent states"
+##  [773] "commonwealth of independent states" "commonwealth of independent states"
+##  [775] "commonwealth of independent states" "commonwealth of independent states"
+##  [777] "sub-saharan africa"                 "sub-saharan africa"                
+##  [779] "sub-saharan africa"                 "sub-saharan africa"                
+##  [781] "sub-saharan africa"                 "sub-saharan africa"                
+##  [783] "sub-saharan africa"                 "sub-saharan africa"                
+##  [785] "sub-saharan africa"                 "sub-saharan africa"                
+##  [787] "sub-saharan africa"                 "sub-saharan africa"                
+##  [789] "sub-saharan africa"                 "sub-saharan africa"                
+##  [791] "sub-saharan africa"                 "sub-saharan africa"                
+##  [793] "southeast asia"                     "southeast asia"                    
+##  [795] "southeast asia"                     "southeast asia"                    
+##  [797] "southeast asia"                     "southeast asia"                    
+##  [799] "southeast asia"                     "southeast asia"                    
+##  [801] "south asia"                         "south asia"                        
+##  [803] "south asia"                         "south asia"                        
+##  [805] "south asia"                         "south asia"                        
+##  [807] "south asia"                         "south asia"                        
+##  [809] "sub-saharan africa"                 "sub-saharan africa"                
+##  [811] "sub-saharan africa"                 "sub-saharan africa"                
+##  [813] "sub-saharan africa"                 "sub-saharan africa"                
+##  [815] "sub-saharan africa"                 "sub-saharan africa"                
+##  [817] "sub-saharan africa"                 "sub-saharan africa"                
+##  [819] "sub-saharan africa"                 "sub-saharan africa"                
+##  [821] "sub-saharan africa"                 "sub-saharan africa"                
+##  [823] "sub-saharan africa"                 "sub-saharan africa"                
+##  [825] "middle east and north africa"       "middle east and north africa"      
+##  [827] "middle east and north africa"       "middle east and north africa"      
+##  [829] "middle east and north africa"       "middle east and north africa"      
+##  [831] "middle east and north africa"       "middle east and north africa"      
+##  [833] "south asia"                         "south asia"                        
+##  [835] "south asia"                         "south asia"                        
+##  [837] "south asia"                         "south asia"                        
+##  [839] "south asia"                         "south asia"                        
+##  [841] "middle east and north africa"       "middle east and north africa"      
+##  [843] "middle east and north africa"       "middle east and north africa"      
+##  [845] "middle east and north africa"       "middle east and north africa"      
+##  [847] "middle east and north africa"       "middle east and north africa"      
+##  [849] "latin america and caribbean"        "latin america and caribbean"       
+##  [851] "latin america and caribbean"        "latin america and caribbean"       
+##  [853] "latin america and caribbean"        "latin america and caribbean"       
+##  [855] "latin america and caribbean"        "latin america and caribbean"       
+##  [857] "commonwealth of independent states" "commonwealth of independent states"
+##  [859] "commonwealth of independent states" "commonwealth of independent states"
+##  [861] "commonwealth of independent states" "commonwealth of independent states"
+##  [863] "commonwealth of independent states" "commonwealth of independent states"
+##  [865] "middle east and north africa"       "middle east and north africa"      
+##  [867] "middle east and north africa"       "middle east and north africa"      
+##  [869] "middle east and north africa"       "middle east and north africa"      
+##  [871] "middle east and north africa"       "middle east and north africa"      
+##  [873] "commonwealth of independent states" "commonwealth of independent states"
+##  [875] "commonwealth of independent states" "commonwealth of independent states"
+##  [877] "commonwealth of independent states" "commonwealth of independent states"
+##  [879] "commonwealth of independent states" "commonwealth of independent states"
+##  [881] "middle east and north africa"       "middle east and north africa"      
+##  [883] "middle east and north africa"       "middle east and north africa"      
+##  [885] "middle east and north africa"       "middle east and north africa"      
+##  [887] "middle east and north africa"       "middle east and north africa"      
+##  [889] "sub-saharan africa"                 "sub-saharan africa"                
+##  [891] "sub-saharan africa"                 "sub-saharan africa"                
+##  [893] "sub-saharan africa"                 "sub-saharan africa"                
+##  [895] "sub-saharan africa"                 "sub-saharan africa"                
+##  [897] "sub-saharan africa"                 "sub-saharan africa"                
+##  [899] "sub-saharan africa"                 "sub-saharan africa"                
+##  [901] "sub-saharan africa"                 "sub-saharan africa"                
+##  [903] "sub-saharan africa"                 "sub-saharan africa"                
+##  [905] "southeast asia"                     "southeast asia"                    
+##  [907] "southeast asia"                     "southeast asia"                    
+##  [909] "southeast asia"                     "southeast asia"                    
+##  [911] "southeast asia"                     "southeast asia"                    
+##  [913] "sub-saharan africa"                 "sub-saharan africa"                
+##  [915] "sub-saharan africa"                 "sub-saharan africa"                
+##  [917] "sub-saharan africa"                 "sub-saharan africa"                
+##  [919] "sub-saharan africa"                 "sub-saharan africa"                
+##  [921] "sub-saharan africa"                 "sub-saharan africa"                
+##  [923] "sub-saharan africa"                 "sub-saharan africa"                
+##  [925] "sub-saharan africa"                 "sub-saharan africa"                
+##  [927] "sub-saharan africa"                 "sub-saharan africa"                
+##  [929] "sub-saharan africa"                 "sub-saharan africa"                
+##  [931] "sub-saharan africa"                 "sub-saharan africa"                
+##  [933] "sub-saharan africa"                 "sub-saharan africa"                
+##  [935] "sub-saharan africa"                 "sub-saharan africa"                
+##  [937] "middle east and north africa"       "middle east and north africa"      
+##  [939] "middle east and north africa"       "middle east and north africa"      
+##  [941] "middle east and north africa"       "middle east and north africa"      
+##  [943] "middle east and north africa"       "middle east and north africa"      
+##  [945] "sub-saharan africa"                 "sub-saharan africa"                
+##  [947] "sub-saharan africa"                 "sub-saharan africa"                
+##  [949] "sub-saharan africa"                 "sub-saharan africa"                
+##  [951] "sub-saharan africa"                 "sub-saharan africa"                
+##  [953] "sub-saharan africa"                 "sub-saharan africa"                
+##  [955] "sub-saharan africa"                 "sub-saharan africa"                
+##  [957] "sub-saharan africa"                 "sub-saharan africa"                
+##  [959] "sub-saharan africa"                 "sub-saharan africa"                
+##  [961] "sub-saharan africa"                 "sub-saharan africa"                
+##  [963] "sub-saharan africa"                 "sub-saharan africa"                
+##  [965] "sub-saharan africa"                 "sub-saharan africa"                
+##  [967] "sub-saharan africa"                 "sub-saharan africa"                
+##  [969] "middle east and north africa"       "middle east and north africa"      
+##  [971] "middle east and north africa"       "middle east and north africa"      
+##  [973] "middle east and north africa"       "middle east and north africa"      
+##  [975] "middle east and north africa"       "middle east and north africa"      
+##  [977] "middle east and north africa"       "middle east and north africa"      
+##  [979] "middle east and north africa"       "middle east and north africa"      
+##  [981] "middle east and north africa"       "middle east and north africa"      
+##  [983] "middle east and north africa"       "middle east and north africa"      
+##  [985] "sub-saharan africa"                 "sub-saharan africa"                
+##  [987] "sub-saharan africa"                 "sub-saharan africa"                
+##  [989] "sub-saharan africa"                 "sub-saharan africa"                
+##  [991] "sub-saharan africa"                 "sub-saharan africa"                
+##  [993] "middle east and north africa"       "middle east and north africa"      
+##  [995] "middle east and north africa"       "middle east and north africa"      
+##  [997] "middle east and north africa"       "middle east and north africa"      
+##  [999] "middle east and north africa"       "middle east and north africa"      
+## [1001] "southeast asia"                     "southeast asia"                    
+## [1003] "southeast asia"                     "southeast asia"                    
+## [1005] "southeast asia"                     "southeast asia"                    
+## [1007] "southeast asia"                     "southeast asia"                    
+## [1009] "middle east and north africa"       "middle east and north africa"      
+## [1011] "middle east and north africa"       "middle east and north africa"      
+## [1013] "middle east and north africa"       "middle east and north africa"      
+## [1015] "middle east and north africa"       "middle east and north africa"      
+## [1017] "sub-saharan africa"                 "sub-saharan africa"                
+## [1019] "sub-saharan africa"                 "sub-saharan africa"                
+## [1021] "sub-saharan africa"                 "sub-saharan africa"                
+## [1023] "sub-saharan africa"                 "sub-saharan africa"                
+## [1025] "south asia"                         "south asia"                        
+## [1027] "south asia"                         "south asia"                        
+## [1029] "south asia"                         "south asia"                        
+## [1031] "south asia"                         "south asia"                        
+## [1033] "sub-saharan africa"                 "sub-saharan africa"                
+## [1035] "sub-saharan africa"                 "sub-saharan africa"                
+## [1037] "sub-saharan africa"                 "sub-saharan africa"                
+## [1039] "sub-saharan africa"                 "sub-saharan africa"                
+## [1041] "sub-saharan africa"                 "sub-saharan africa"                
+## [1043] "sub-saharan africa"                 "sub-saharan africa"                
+## [1045] "sub-saharan africa"                 "sub-saharan africa"                
+## [1047] "sub-saharan africa"                 "sub-saharan africa"                
+## [1049] "middle east and north africa"       "middle east and north africa"      
+## [1051] "middle east and north africa"       "middle east and north africa"      
+## [1053] "middle east and north africa"       "middle east and north africa"      
+## [1055] "middle east and north africa"       "middle east and north africa"      
+## [1057] "sub-saharan africa"                 "sub-saharan africa"                
+## [1059] "sub-saharan africa"                 "sub-saharan africa"                
+## [1061] "sub-saharan africa"                 "sub-saharan africa"                
+## [1063] "sub-saharan africa"                 "sub-saharan africa"                
+## [1065] "sub-saharan africa"                 "sub-saharan africa"                
+## [1067] "sub-saharan africa"                 "sub-saharan africa"                
+## [1069] "sub-saharan africa"                 "sub-saharan africa"                
+## [1071] "sub-saharan africa"                 "sub-saharan africa"                
+## [1073] "sub-saharan africa"                 "sub-saharan africa"                
+## [1075] "sub-saharan africa"                 "sub-saharan africa"                
+## [1077] "sub-saharan africa"                 "sub-saharan africa"                
+## [1079] "sub-saharan africa"                 "sub-saharan africa"                
+## [1081] "sub-saharan africa"                 "sub-saharan africa"                
+## [1083] "sub-saharan africa"                 "sub-saharan africa"                
+## [1085] "sub-saharan africa"                 "sub-saharan africa"                
+## [1087] "sub-saharan africa"                 "sub-saharan africa"                
+## [1089] "sub-saharan africa"                 "sub-saharan africa"                
+## [1091] "sub-saharan africa"                 "sub-saharan africa"                
+## [1093] "sub-saharan africa"                 "sub-saharan africa"                
+## [1095] "sub-saharan africa"                 "sub-saharan africa"                
+## [1097] "sub-saharan africa"                 "sub-saharan africa"                
+## [1099] "sub-saharan africa"                 "sub-saharan africa"                
+## [1101] "sub-saharan africa"                 "sub-saharan africa"                
+## [1103] "sub-saharan africa"                 "sub-saharan africa"                
+## [1105] "south asia"                         "south asia"                        
+## [1107] "south asia"                         "south asia"                        
+## [1109] "south asia"                         "south asia"                        
+## [1111] "south asia"                         "south asia"                        
+## [1113] "sub-saharan africa"                 "sub-saharan africa"                
+## [1115] "sub-saharan africa"                 "sub-saharan africa"                
+## [1117] "sub-saharan africa"                 "sub-saharan africa"                
+## [1119] "sub-saharan africa"                 "sub-saharan africa"                
+## [1121] "middle east and north africa"       "middle east and north africa"      
+## [1123] "middle east and north africa"       "middle east and north africa"      
+## [1125] "middle east and north africa"       "middle east and north africa"      
+## [1127] "middle east and north africa"       "middle east and north africa"      
+## [1129] "sub-saharan africa"                 "sub-saharan africa"                
+## [1131] "sub-saharan africa"                 "sub-saharan africa"                
+## [1133] "sub-saharan africa"                 "sub-saharan africa"                
+## [1135] "sub-saharan africa"                 "sub-saharan africa"                
+## [1137] "latin america and caribbean"        "latin america and caribbean"       
+## [1139] "latin america and caribbean"        "latin america and caribbean"       
+## [1141] "latin america and caribbean"        "latin america and caribbean"       
+## [1143] "latin america and caribbean"        "latin america and caribbean"       
+## [1145] "sub-saharan africa"                 "sub-saharan africa"                
+## [1147] "sub-saharan africa"                 "sub-saharan africa"                
+## [1149] "sub-saharan africa"                 "sub-saharan africa"                
+## [1151] "sub-saharan africa"                 "sub-saharan africa"                
+## [1153] "sub-saharan africa"                 "sub-saharan africa"                
+## [1155] "sub-saharan africa"                 "sub-saharan africa"                
+## [1157] "sub-saharan africa"                 "sub-saharan africa"                
+## [1159] "sub-saharan africa"                 "sub-saharan africa"                
+## [1161] "sub-saharan africa"                 "sub-saharan africa"                
+## [1163] "sub-saharan africa"                 "sub-saharan africa"                
+## [1165] "sub-saharan africa"                 "sub-saharan africa"                
+## [1167] "sub-saharan africa"                 "sub-saharan africa"                
+## [1169] "sub-saharan africa"                 "sub-saharan africa"                
+## [1171] "sub-saharan africa"                 "sub-saharan africa"                
+## [1173] "sub-saharan africa"                 "sub-saharan africa"                
+## [1175] "sub-saharan africa"                 "sub-saharan africa"                
+## [1177] "sub-saharan africa"                 "sub-saharan africa"                
+## [1179] "sub-saharan africa"                 "sub-saharan africa"                
+## [1181] "sub-saharan africa"                 "sub-saharan africa"                
+## [1183] "sub-saharan africa"                 "sub-saharan africa"                
+## [1185] "south asia"                         "south asia"                        
+## [1187] "south asia"                         "south asia"                        
+## [1189] "south asia"                         "south asia"                        
+## [1191] "south asia"                         "south asia"
+```
+
+
+
+]
+]
+---
+# Stringr and `mutate()` 
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+happy_long %&gt;% 
+  mutate(region = str_to_lower(region))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 1,192 × 4
+##    country_name region         measurements                 values
+##    &lt;chr&gt;        &lt;chr&gt;          &lt;chr&gt;                         &lt;dbl&gt;
+##  1 Finland      western europe ladder_score_in_dystopia      2.43 
+##  2 Finland      western europe ladder_score                  7.84 
+##  3 Finland      western europe logged_gdp_per_capita        10.8  
+##  4 Finland      western europe social_support                0.954
+##  5 Finland      western europe healthy_life_expectancy      72    
+##  6 Finland      western europe freedom_to_make_life_choices  0.949
+##  7 Finland      western europe generosity                   -0.098
+##  8 Finland      western europe perceptions_of_corruption     0.186
+##  9 Denmark      western europe ladder_score_in_dystopia      2.43 
+## 10 Denmark      western europe ladder_score                  7.62 
+## # … with 1,182 more rows
+```
+
+
+
+]
+]
+---
+# `str_count()` 
+
+--
+.panelset.sideways[
+
+
+.panel[.panel-name[R Code]
+
+```r
+happy_long %&gt;% 
+  mutate(sentence_length = str_count(measurements, "_")) %&gt;% 
+  arrange(desc(sentence_length)) %&gt;% 
+  select(sentence_length)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 1,192 × 1
+##    sentence_length
+##              &lt;int&gt;
+##  1               4
+##  2               4
+##  3               4
+##  4               4
+##  5               4
+##  6               4
+##  7               4
+##  8               4
+##  9               4
+## 10               4
+## # … with 1,182 more rows
+```
+
+
+
+]
+]
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
