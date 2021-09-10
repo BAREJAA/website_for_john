@@ -1,0 +1,66 @@
+---
+title: "Intro"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Slide 1
+In this video, you will learn about Ggplot2, which is a powerful package within the Tidyverse that enables you to make beautiful and sophisticated plots using just a few lines of code
+
+# Slide 2
+This package is used by various organizations, including the BBC. They've even developed a bbplot package that you can use to easily create graphics like these with ggplot
+
+# Slide 3
+Ggplot can also serve as a gateway to making more elaborate plots, like this animation. Once you've built the basic plot, animating it requires just one or two additional function from another package called gganimate
+
+# Slide 4
+Ggplot2 (which we will mostly refer to as simply Ggplot) implements what's known as the grammar of graphics (hence the Gg), the details of which we will describe in subsequent recordings
+
+# Slide 5
+Given the various tools you can use to make plots (including those within R) why would you consider using ggplot?
+- For one thing, we will try to convince you that it is (relatively) easy to use
+- It works well with the Dplyr package
+- And - as you've seen with the BBC plot examples - you can do a lot with it
+
+# Slide 6
+For this and subsequent ggplot videos, we will use a version of the World Happiness Report dataset called `happy_select`, which you can see has 10 variables and 149 observations
+
+# Slide 7
+- So let's begin by making a simple plot that shows the distribution of one of these variables
+- Here you can see two lines of code that will produce a histogram to show the distribution of the `ladder_score` variable. We will describe the details of this code in a subsequent video, but for now I want you to see that with just these two lines we get this histogram
+- This is by no means the best we can do, but it's not bad for just a couple of lines of code
+And as a side note, R will occasionally give you some helpful advice like this. Sometimes
+
+There you go - you now know what the Ggplot2 package is
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

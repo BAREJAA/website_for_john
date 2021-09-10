@@ -1,0 +1,59 @@
+---
+title: "Labels & Themes"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Slide 1
+In this talk you will learn how to make improvements to your ggplot by adding layers and adjusting themes
+
+# Slide 2
+Let's begin with this simple scatterplot with a regression line. We see that the default x- and y-axis labels are just the corresponding variable names. Let's see how we can make them look nicer
+
+# Slide 3
+First we change the x-axis label. For this we can use the `labs()` function and we set x = "Logged GDP Per Capita" to replace the underscores with spaces and capitalize everything
+
+# Slide 4
+Similarly, to change the y-axis label we set y = "Ladder Score", and we get this
+- [show plot]
+
+# Slide 5
+We can also use the `labs()` function to add a title, like this
+- [show plot]
+
+# Slide 6
+And finally, let's add a caption to show what the data source is.
+- The caption is positioned on the bottom right-hand corner
+
+# Slide 7
+Ggplot's default settings are a little drab. To quickly change multiple theme settings at once, we can use one of many theme functions by just adding them as another layer. For example, let's take a look at what `theme_minimal()` does
+- Much cleaner! There are ways to make specific adjustments to every aspect of the plot, but these theme functions offer a quick and pain-free way to do this
+- There you go - you now know how to make your plots more informative and look prettier by changing the labels and themes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

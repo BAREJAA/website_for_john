@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2021-09-07" />
+    <meta name="date" content="2021-09-09" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2021-09-07
+### 2021-09-09
 
 ---
 
@@ -63,7 +63,7 @@ background-image: url(https://ggplot2.tidyverse.org/logo.png)
   
 --
   
-- Introduces reproducibility  
+- Works well with Dplyr  
   
 --
   
@@ -115,7 +115,12 @@ ggplot(happy_select) +
 ]
 ]
 ---
-# Anatomy of a ggplot
+class: center, middle
+
+# Anatomy of a Ggplot
+
+---
+# Graphing Template
 
 
 ```r
@@ -205,7 +210,7 @@ ggplot(happy_select) +
 ```r
 ggplot(happy_select) +
   geom_point(aes(logged_gdp_per_capita, ladder_score)) +
-  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE)
+  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm")
 ```
 
 ]
@@ -223,14 +228,14 @@ ggplot(happy_select) +
 ```r
 ggplot(happy_select) +
 * geom_point(aes(logged_gdp_per_capita, ladder_score)) +
-* geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE)
+* geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm")
 ```
 --
 
 ```r
 *ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) +
   geom_point() + 
-  geom_smooth(method = "lm", se = FALSE) 
+  geom_smooth(method = "lm") 
 ```
 ---
 # Layering
@@ -370,6 +375,12 @@ ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score, colour = region)) 
 ]
 ]
 ---
+class: center, middle
+
+# Labels &amp; Themes
+
+---
+
 # Label Changes
 
 

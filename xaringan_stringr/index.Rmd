@@ -93,7 +93,7 @@ head(happy_long)
 ```
 
 ---
-# `str_detect`
+# `str_detect()`
 
 --
 .panelset.sideways[
@@ -189,7 +189,7 @@ count_panel_names <- c(
 
 ```{r panelset = mutate_panel_names, out.width = '50%'}
 happy_long %>% 
-  mutate(sentence_length = str_count(measurements, "_")) %>% 
+  mutate(sentence_length = str_count(measurements, "_") + 1) %>% 
   arrange(desc(sentence_length)) %>% 
   select(sentence_length)
 ```

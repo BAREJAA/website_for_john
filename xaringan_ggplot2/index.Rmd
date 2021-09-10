@@ -87,7 +87,7 @@ background-image: url(https://ggplot2.tidyverse.org/logo.png)
   
 --
   
-- Introduces reproducibility  
+- Works well with Dplyr  
   
 --
   
@@ -118,7 +118,12 @@ ggplot(happy_select) +
 ```
 ]
 ---
-# Anatomy of a ggplot
+class: center, middle
+
+# Anatomy of a Ggplot
+
+---
+# Graphing Template
 
 ```{r eval = FALSE}
 ggplot(data = <DATA>) + 
@@ -194,7 +199,7 @@ linear_panel_names <- c(
 ```{r panelset = linear_panel_names, out.width = '50%', message = FALSE}
 ggplot(happy_select) +
   geom_point(aes(logged_gdp_per_capita, ladder_score)) +
-  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE)
+  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm")
 ```
 ]
 ---
@@ -203,13 +208,13 @@ ggplot(happy_select) +
 ```{r out.width = '50%', warning = FALSE, message = FALSE, eval = FALSE}
 ggplot(happy_select) +
   geom_point(aes(logged_gdp_per_capita, ladder_score)) + #<<
-  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm", se = FALSE) #<<
+  geom_smooth(aes(logged_gdp_per_capita, ladder_score), method = "lm") #<<
 ```
 --
 ```{r out.width = '50%', warning = FALSE, message = FALSE, eval = FALSE}
 ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score)) + #<<
   geom_point() + 
-  geom_smooth(method = "lm", se = FALSE) 
+  geom_smooth(method = "lm") 
 ```
 ---
 # Layering
@@ -311,6 +316,12 @@ ggplot(happy_select, aes(logged_gdp_per_capita, ladder_score, colour = region)) 
 ```
 ]
 ---
+class: center, middle
+
+# Labels & Themes
+
+---
+
 # Label Changes
 
 ```{r out.width = '50%', warning = FALSE, message = FALSE}
