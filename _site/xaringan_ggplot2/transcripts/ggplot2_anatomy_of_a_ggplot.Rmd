@@ -1,0 +1,144 @@
+---
+title: "Anatomy of a ggplot"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Slide 1
+In this video, you will learn how to use ggplot to make some simple plots
+
+# Slide 2
+This is a graphing template for ggplot taken from Hadley Wickham's R4DS book. We see that we always begin with the the `ggplot()` function, and this function is used to intialize a ggplot object. We also see that one of its arguments is the dataset we want to use. 
+Next, we see this GEOM_FUNCTION. This is a placeholder for one of many geom functions that are used to define what kind of plot we want to make, like a histogram or a scatterplot, for example. 
+Finally, we see this `mapping = aes(<MAPPING>)`. This defines both which variables we use to make the plot and how these variables will influence the look or aesthetics of our plot. This will be made clearer with some examples which we will soon take a look at. Also notice that we chain lines of ggplot code using the `+` operator and not the pipe
+- We can even drop the `data = ` and  `mapping = ` parts to make our code more succinct. But if you want to continue to use the first, more explicit, template, then you should 
+
+# Slide 3
+Let's revisit our simple histogram. Keeping the graphin template that we just saw in mind, notice that we begin with the ggplot function, along with an input dataset, which is `happy_select` in this example. The geom function we use is `geom_histogram()` (because we want to make a histogram) and we place the variables of interest within this function. Note that all the variables you want to plot must go within this `aes()` function. This function tells ggplot how to use this variable to make this histogram. 
+And again, we chain these two lines with the `+` operator. We will soon see why the makes of ggplot chose this over the pipe operator.
+So the histogram we've made is not bad, but it's a little chunky. Also it has this ugly grey default background and looks a little drab. 
+One quick way to improve it is to just change the geom function
+
+# Slide 4
+- Let's see what happens when we replace `geom_histogram()` with `geom_density()` to make a density plot
+- This looks nicer! I think this plot does a better job of showing the distribution of this variable, and all it took was swapping in a new geom function 
+
+# Slide 5
+- To recap - here's the code for the histogram
+- And here's the code for the density plot
+
+# Slide 6
+Let's now see what else ggplot has to offer
+Say we want to answer this question - Are Richer Countries "Happier"? While the answer is probably depressingly obvious, let's go ahead with this exercise anyway
+So let's plot `logged_gdp_per_capita` against the `ladder_score`. To make this scatterplot we need to use a new geom function called `geom_point()`. And we now have two variables within the `aes()` function
+- And this is the output. We can see a clear positive correlation between these two variables
+
+# Slide 7
+If we want to emphasize this trend, we could add a regression line. To do this, we simply use another geom function, which in this case is `geom_smooth()`. Note that we use the same variables as for `geom_point()`. There's also this other parameter called `method` that we use to specify that we want to use a linear model (which is not the default)
+- And here's the output, now with a nice regression line with its confidence interval shown. So we can see that by using the `+` operator, we are adding layers to our plot, which is something we'll dive deeper into in a moment
+
+# Slide 8
+Before moving on to layering, let's briefly consider the concept of inheritance in ggplot
+- So here's the code we just wrote. Notice the repetition with the `aes()` part
+- We could just move this inside the `ggplot()` function, and the two geom functions would simply inherit this information
+
+# Slide 9
+To demonstrate this layering concept we just introduced, let's take a look at the output of an empty `ggplot()` function. It's just a blank canvas
+
+# Slide 10
+And if we put in our dataset, we still get an empty canvas because ggplot doesn't know what to do with this dataset
+
+# Slide 11
+When we add the aes() function with the variables, we see that ggplot now constructs the axes of a Cartesian coordinate system, and adds the appropriate x- and y-axis labels 
+
+# Slide 12
+We finally see some actual data points because we've told ggplot what kind of plot we want by using `geom_point()`
+
+# Slide 13
+We then add a line to highlight any trends, which by default is a loess curve
+
+# Slide 14
+And finally we change this curve to a linear regression line by specifying that `method = "lm"`
+So hopefully you can see how ggplot uses this layering approach to sequentially build a plot. Even the most sophisticated and ornate plots are built using this simple strategy
+
+# Slide 15
+Let's now literally add some colour to our plot. We see that the overall trend for these two variables is positive, but what about for each region?
+We can try to answer this by first mapping the `region` variable to the colour aesthetic of `geom_point()` by setting `colour = region` within the the `aes()` function. Now we see that the colour of each point on our plot tells us which region that point corresponds to. So in this way we can add more than two variables to our two dimensional plot
+
+# Slide 16
+The decision to put the colour parameter inside the `aes()` function or not can sometimes cause confusion. Remember, if you want an aesthetic, in this case colour, to be related to a given variable, you should use the `aes()` function. If you want to define an aesthetic that is independent of the data, don't use `aes()`. So in this example, since I want all the points to be red, I drop the `aes()` function and set `colour = "red"`, remembering to put red in quotation marks otherwise R would look for some object called "red" and throw an error
+
+# Slide 17
+There are other aestehtic options besides colour, like shape. In this case I want all the points to be triangles instead of circles, so I set `shape = 17` outside the `aes()` function. To see the various options available for these and other aesthetics, refer to the ggplot documentation, which is well written
+
+# Slide 18
+If you want to add a regression line for each region, move the `colour = "region"` argument to the `ggplot()` function. Now both `geom_point()` and `geom_smooth()` will inherit this information
+This is is a busy plot, so it would be nice to split the plot by region. Is there an easy way to do this?
+
+# Slide 19
+Yes, by using a method known as facetting. This line at the end tells ggplot to make the same plot as before but separately for each region
+- And we get this. Here we see that while there's generally a positive trend, the slope varies quite a lot. And this region here - the Commonwealth of Independent States - bucks this trend. So this might be worth further exploring
+
+And there you go - you now know how to use ggplot to make some basic plots
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

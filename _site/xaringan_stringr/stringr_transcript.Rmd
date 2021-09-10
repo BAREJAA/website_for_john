@@ -1,0 +1,52 @@
+---
+title: "Intro to Stringr"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Slide 1
+In this video you will learn how to handle and manipulate strings using the Stringr package
+
+# Slide 2
+As the Stringr website states - "Strings are not glamorous, high-profile components of R, but they do play a big role in many data cleaning and preparation tasks"
+Working with strings can be challenging, but the Stringr package makes this as painless as possible
+
+# Slide 3
+The dataset we will be using is called `happy_long` and contains a subset of the World Happiness Report data
+
+# Slide 4
+Here are the first few entries of this dataframe, and we can see that we have a few character variables to work with
+
+# Slide 5
+Let's begin by taking a look at the `str_detect()` function. We see this function to detect patterns in a given character variable. So, in this case we want to see which regions have the word "Africa" in their names
+- The output is just a bunch of Trues and Falses, which by themselves are of limited value
+
+# Slide 6
+Stringr shines when used in conjunction with Dplyr
+- For example we can use `str_detect()` within the `filter()` function. Recall that whatever goes inside `filter()` must evaluate to True or False, and we just saw that `str_detect()` produces Trues or Falses
+- When we look at the output, we see that we now have a smaller tibble, and this one only contains information for regions in Africa
+
+# Slide 7
+Let's take a look at a slightly more complex example
+- We can use the "or" symbol to search for two patterns. So this line of code will produce a tibble that only contains rows for the `measurement` terms that contain either the word "ladder" or "life"
+- Looking at the output we can verify that this is in fact the case
+
+# Slide 8
+Let's take a look at another example of how we can use this package
+- Say we have capitalized words that we want to make lower case. We can easilt do this by using the `str_to_lower()` functions
+- And the output is just lower case strings
+
+# Slide 9
+Again we can use this function along with a Dplyr function, like `mutate()`
+- Here we use mutate to convert all the entries in the `region` variable to lower case versions. So we've used mutate here not to create an additional variable but instead to modify an existing one
+- Looking at the output we see that all the entries in `region` are now lower case
+
+# Slide 10
+And we will end this video with another function - `str_count()`
+- Some of the entries in the `measurements` column contain multiple words separated by underscores. Say we wanted to find out what the maximum number of words a given member of this column contains. We could do this by simply counting the number of underscores and adding a 1. We can create a new variable - called `sentence_length` - that contains these numbers, and arrange the resulting tibble in descending order of this new variable
+- And we see that the maximum number of words a given `measurements` entry contains is 5
+
+There you go - you are now familiar with a few basic but powerful Stringr functions

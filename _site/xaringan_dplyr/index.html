@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2021-06-08" />
+    <meta name="date" content="2021-09-10" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2021-06-08
+### 2021-09-10
 
 ---
 
@@ -124,7 +124,7 @@ happy
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 5 x 4
+## # A tibble: 5 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746
@@ -198,9 +198,9 @@ glimpse(happy)
 ]
 ]
 ---
-## Basic Data Types in R 
+## Basic Data Types in R
 
-R has different data types -  
+R uses different data types -  
 
 --
 **character** - `"a"`, `"tidyverse"`    
@@ -243,7 +243,7 @@ The following code chunk illustrates how `%&gt;%` works:
 --
 
 ```
-## # A tibble: 1 x 2
+## # A tibble: 1 × 2
 ##   country_name ladder_score
 ##   &lt;chr&gt;               &lt;dbl&gt;
 ## 1 Panama               6.18
@@ -310,7 +310,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 5 x 2
+## # A tibble: 5 × 2
 ##   country_name   gdp
 ##   &lt;chr&gt;        &lt;dbl&gt;
 ## 1 Iraq          9.24
@@ -342,7 +342,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 5 x 3
+## # A tibble: 5 × 3
 ##   country_name ladder_score social_support
 ##   &lt;chr&gt;               &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Iraq                 4.85          0.746
@@ -374,7 +374,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 5 x 3
+## # A tibble: 5 × 3
 ##   ladder_score   gdp social_support
 ##          &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1         4.85  9.24          0.746
@@ -396,7 +396,7 @@ class: center, middle
 ---
 # `filter()` rows based on certain condition(s) 
 
-The `filter()` verb evalutes a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered")    
+The `filter()` verb evaluates a logical statement, and if a row meets the condition of this statement (i.e. is true) then it gets chosen (or "filtered")    
   
 --
 
@@ -435,7 +435,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 1 x 4
+## # A tibble: 1 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Spain                6.49  10.6          0.932
@@ -472,7 +472,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 3 x 4
+## # A tibble: 3 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Panama               6.18 10.4           0.896
@@ -500,7 +500,7 @@ happy %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 4
+## # A tibble: 1 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Maldives             5.20  9.83          0.913
@@ -526,7 +526,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 1 x 4
+## # A tibble: 1 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Maldives             5.20  9.83          0.913
@@ -572,7 +572,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 5 x 4
+## # A tibble: 5 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Comoros              4.29  8.03          0.626
@@ -602,7 +602,7 @@ happy %&gt;%
 ```
 
 ```
-## # A tibble: 5 x 4
+## # A tibble: 5 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Spain                6.49 10.6           0.932
@@ -638,7 +638,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 5 x 5
+## # A tibble: 5 × 5
 ##   country_name ladder_score   gdp social_support gdp_sqrt
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746     3.04
@@ -680,7 +680,7 @@ happy %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   `mean(ladder_score)`
 ##                  &lt;dbl&gt;
 ## 1                 5.40
@@ -705,24 +705,22 @@ Let's take a look at this full dataset
   
 
 ```
-## # A tibble: 6 x 20
-##   country_name region   ladder_score standard_error_o… upperwhisker lowerwhisker
-##   &lt;chr&gt;        &lt;chr&gt;           &lt;dbl&gt;             &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
-## 1 Finland      Western…         7.84             0.032         7.90         7.78
-## 2 Denmark      Western…         7.62             0.035         7.69         7.55
-## 3 Switzerland  Western…         7.57             0.036         7.64         7.5 
-## 4 Iceland      Western…         7.55             0.059         7.67         7.44
-## 5 Netherlands  Western…         7.46             0.027         7.52         7.41
-## 6 Norway       Western…         7.39             0.035         7.46         7.32
+## # A tibble: 6 × 20
+##   country_name region         ladder_score standard_error_… upperwhisker lowerwhisker
+##   &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Finland      Western Europe         7.84            0.032         7.90         7.78
+## 2 Denmark      Western Europe         7.62            0.035         7.69         7.55
+## 3 Switzerland  Western Europe         7.57            0.036         7.64         7.5 
+## 4 Iceland      Western Europe         7.55            0.059         7.67         7.44
+## 5 Netherlands  Western Europe         7.46            0.027         7.52         7.41
+## 6 Norway       Western Europe         7.39            0.035         7.46         7.32
 ## # … with 14 more variables: logged_gdp_per_capita &lt;dbl&gt;, social_support &lt;dbl&gt;,
 ## #   healthy_life_expectancy &lt;dbl&gt;, freedom_to_make_life_choices &lt;dbl&gt;,
 ## #   generosity &lt;dbl&gt;, perceptions_of_corruption &lt;dbl&gt;,
 ## #   ladder_score_in_dystopia &lt;dbl&gt;, explained_by_log_gdp_per_capita &lt;dbl&gt;,
 ## #   explained_by_social_support &lt;dbl&gt;,
 ## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
-## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;,
-## #   explained_by_generosity &lt;dbl&gt;,
-## #   explained_by_perceptions_of_corruption &lt;dbl&gt;, dystopia_residual &lt;dbl&gt;
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;, …
 ```
 ---
 
@@ -744,7 +742,7 @@ happy_full %&gt;%
 .panel[.panel-name[Output]
 
 ```
-## # A tibble: 10 x 2
+## # A tibble: 10 × 2
 ##    region                             `mean(ladder_score)`
 ##    &lt;chr&gt;                                             &lt;dbl&gt;
 ##  1 Central and Eastern Europe                         5.98

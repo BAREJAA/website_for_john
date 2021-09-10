@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2021-09-07" />
+    <meta name="date" content="2021-09-09" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2021-09-07
+### 2021-09-09
 
 ---
 
@@ -78,7 +78,7 @@ background-image: url(https://stringr.tidyverse.org/logo.png)
 ```
 
 ---
-# `str_detect`
+# `str_detect()`
 
 --
 .panelset.sideways[
@@ -949,7 +949,7 @@ happy_long %&gt;%
 
 ```r
 happy_long %&gt;% 
-  mutate(sentence_length = str_count(measurements, "_")) %&gt;% 
+  mutate(sentence_length = str_count(measurements, "_") + 1) %&gt;% 
   arrange(desc(sentence_length)) %&gt;% 
   select(sentence_length)
 ```
@@ -961,17 +961,17 @@ happy_long %&gt;%
 ```
 ## # A tibble: 1,192 × 1
 ##    sentence_length
-##              &lt;int&gt;
-##  1               4
-##  2               4
-##  3               4
-##  4               4
-##  5               4
-##  6               4
-##  7               4
-##  8               4
-##  9               4
-## 10               4
+##              &lt;dbl&gt;
+##  1               5
+##  2               5
+##  3               5
+##  4               5
+##  5               5
+##  6               5
+##  7               5
+##  8               5
+##  9               5
+## 10               5
 ## # … with 1,182 more rows
 ```
 
