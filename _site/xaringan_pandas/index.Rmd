@@ -274,7 +274,7 @@ class: center, middle
 ---
 # Filter rows based on certain conditions  
 
-If you would like to only keep rows that match a certain condition (e.g. Rows that have a `ladder_score` greater than 4), you can use the `loc` operator, like this  
+If you would like to only keep rows that match a certain condition (e.g. Rows that have a `ladder_score` greater than 4), you can use the `loc` property, like this  
 
 --
 .panelset[
@@ -405,7 +405,7 @@ happy["ladder_score"].mean()
 ---
 # Aggregating by group
 
-Pandas has the powerful method `groupby()` that allows you to summarize data **by group**. To show how this method works, we will make use the entire dataset - called `happy_full` - that contains additional columns, one of which is called `regional_indicator`  
+Pandas has the powerful method `groupby()` that allows you to summarize data **by group**. To show how this method works, we will make use of the entire dataset - called `happy_full` - that contains additional columns, one of which is called `regional_indicator`  
 
 --
 
