@@ -82,7 +82,7 @@ happy_full %>%
 Try to select everything *except* for `region`
 
 <div style = "width:0%; height:auto; margin: auto;">
-```{r app, echo=FALSE}
+```{r app, echo=FALSE, warning = FALSE, message = FALSE}
 # Source - https://stackoverflow.com/questions/45347852/how-to-run-user-input-as-r-code-in-a-shiny-app
 ui <- fluidPage(
     mainPanel(
