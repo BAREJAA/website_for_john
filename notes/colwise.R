@@ -39,10 +39,12 @@ happy %>%
 happy %>% 
   summarise(across(where(is.numeric), list(average = mean, total = sum)))
 
-# show this also? maybe not...
-# Control how the names are created with the .names argument which takes a glue spec:
-happy %>% 
-  summarise(across(where(is.numeric), list(average = mean, total = sum), .names = "{.col}_{.fn}"))
+# applying across to character AND numeric variables
+happy_full %>% 
+  summarise(
+    across(where(is.character), list(distinct = n_distinct)),
+    across(where(is.numeric), list(average = mean))
+  )
 
 # other verbs
 # So far we’ve focused on the use of across() with summarise(), but it works 
@@ -50,6 +52,16 @@ happy %>%
 # simple example - 
 happy %>% 
   mutate(across(where(is.numeric), ~. * 10))
+
+# other examples
+happy %>% 
+  mutate(across(contains("_") & !country_name, ~ . * 100))
+# NOTE: don't put contains() in where()!!!!!
+
+# show this also? maybe not...
+# Control how the names are created with the .names argument which takes a glue spec:
+happy %>% 
+  summarise(across(where(is.numeric), list(average = mean, total = sum), .names = "{.col}_{.fn}"))
 
 # a more complex example
 # BONUS - combines row-wise with col-wise
@@ -61,19 +73,9 @@ happy %>%
 # break this example down into smaller parts
 # NOTE: should this go at the end of the rowwise module?
 
-# applying across to character AND numeric variables
-happy %>% 
-  summarise(
-    across(where(is.character), list(distinct = n_distinct)),
-    across(where(is.numeric), list(average = mean))
-  )
-
 # NOTE - show the filter examples in your "advanced filter" module
 # if_any(), if_all()
 
-# other examples
-happy %>% 
-  mutate(across(contains("_") & !country_name, ~ . * 100))
-# NOTE: don't put contains() in where()!!!!!
+
 
 

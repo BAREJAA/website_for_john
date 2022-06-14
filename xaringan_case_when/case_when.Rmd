@@ -23,7 +23,6 @@ library(kableExtra)
 library(xaringanExtra)
 library(janitor)
 library(xaringanthemer)
-library(emo)
 
 happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
 ```
@@ -54,7 +53,7 @@ xaringanExtra::use_panelset()
 ---
 class: center, middle
 
-# Working With Multiple Columns
+# Multiple if/else statements
 
 ---
 # The `happy` data frame
@@ -67,104 +66,63 @@ happy %>%
 ```
 ]
 ---
-# Computing the mean for multiple columns
+# `if_else` recap
 
-The tedious (and error-prone!) way 
+.center[
+```{r echo = FALSE}
+happy_if <- happy %>% 
+              mutate(in_europe = if_else(country_name == "Spain", TRUE, FALSE))
+
+happy_if %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# `if_else` recap
 
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(mean_ladder = mean(ladder_score),
-            mean_gdp = mean(gdp),
-            mean_ss = mean(social_support))
+  mutate(in_europe = if_else(country_name == "Spain", TRUE, FALSE))
 ```
 ]
 ---
-# Computing the mean for multiple columns 
+# More complex situations
 
-An efficient and robust way  
+.center[
+```{r echo = FALSE}
+happy %>% 
+  mutate(happy_level = case_when(
+    ladder_score < 4.3 ~ "unhappy",
+    ladder_score >= 4.3 & ladder_score <= 6 ~ "neutral",
+    TRUE ~ "happy"
+  ))
+```
+]
+---
+# Multiple `if_else()`s
 
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(across(c(ladder_score, gdp, social_support), mean))
+  mutate(happy_level = if_else(ladder_score < 4.3, "unhappy",
+                               if_else(ladder_score >= 4.3 & ladder_score <= 6, "neutral", "happy")))
 ```
 ]
----
-# Computing the mean for multiple columns 
-
-Do we really need `across()`?  
-
-`happy %>%`  
-  `summarise(c(ladder_score, gdp, social_support), mean)`
-  
 --
-  
-    
-Error in `summarise()`:  
-! Problem while computing `..2 = mean`.  
-✖ `..2` must be a vector, not a function.  
-
+ugly! 
 ---
-# Computing the mean for multiple columns 
-
-Getting fancy `r cat(jis[str_detect(jis$name, "smiling.*sunglasses"), ]$emoji)`
+# `case_when()`  
 
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(across(where(is.numeric), mean))
+  mutate(happy_level = case_when(
+    ladder_score < 4.3 ~ "unhappy",
+    ladder_score >= 4.3 & ladder_score <= 6 ~ "neutral",
+    TRUE ~ "happy"
+  ))
 ```
 ]
 ---
-# `across()`
-
---
-  
-`.cols`  
-  
---
-  
-    
-`.fns`  
-  
-  
----
-# Applying multiple functions
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(across(where(is.numeric), list(mean, sum)))
-```
-]
----
-# Applying multiple functions
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(across(where(is.numeric), list(average = mean, total = sum)))
-```
-]
----
-# `mutate()` and `across()`
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  mutate(across(where(is.numeric), ~.x * 10))
-```
-]
----
-# `mutate()` and `across()`
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  mutate(across(contains("_") & !country_name, ~ . * 100))
-```
-]
----
-
-

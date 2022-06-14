@@ -5,14 +5,14 @@ happy_full %>%
   unite("country_region", c(country_name, region))
 # point out that the default separator is an underscore and that we can specify what this
 
-# remove the original columns
+# keep the original columns
 happy_full %>% 
-  unite("country_region", c(country_name, region), remove = TRUE)
+  unite("country_region", c(country_name, region), remove = FALSE)
 
 
 # specify separator
 happy_full %>% 
-  unite("country_region", c(country_name, region), remove = TRUE, sep = ".")
+  unite("country_region", c(country_name, region), sep = ".")
 
 # separate
 # https://tidyr.tidyverse.org/reference/separate.html

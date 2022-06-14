@@ -23,7 +23,6 @@ library(kableExtra)
 library(xaringanExtra)
 library(janitor)
 library(xaringanthemer)
-library(emo)
 
 happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
 ```
@@ -54,7 +53,7 @@ xaringanExtra::use_panelset()
 ---
 class: center, middle
 
-# Working With Multiple Columns
+# If/else
 
 ---
 # The `happy` data frame
@@ -67,104 +66,129 @@ happy %>%
 ```
 ]
 ---
-# Computing the mean for multiple columns
-
-The tedious (and error-prone!) way 
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(mean_ladder = mean(ladder_score),
-            mean_gdp = mean(gdp),
-            mean_ss = mean(social_support))
-```
-]
----
-# Computing the mean for multiple columns 
-
-An efficient and robust way  
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(across(c(ladder_score, gdp, social_support), mean))
-```
-]
----
-# Computing the mean for multiple columns 
-
-Do we really need `across()`?  
-
-`happy %>%`  
-  `summarise(c(ladder_score, gdp, social_support), mean)`
-  
+# The if statement
 --
-  
-    
-Error in `summarise()`:  
-! Problem while computing `..2 = mean`.  
-✖ `..2` must be a vector, not a function.  
-
+```{r eval = FALSE}
+if(condition){
+  do this
+}
+```
 ---
-# Computing the mean for multiple columns 
-
-Getting fancy `r cat(jis[str_detect(jis$name, "smiling.*sunglasses"), ]$emoji)`
+# Example if statement
 
 .panelset[
 ```{r panelset = TRUE}
-happy %>% 
-  summarise(across(where(is.numeric), mean))
+if(7 > 5){
+  print("is greater than 5")
+}
+```
+]
+--
+.panelset[
+```{r panelset = TRUE}
+if(3 > 5){
+  print("is greater than 5")
+}
 ```
 ]
 ---
-# `across()`
+# if/else
+
+```{r eval = FALSE}
+if(condition){
+  do A
+} else {
+  do B
+}
+```
+
+---
+# if/else
+
+.panelset[
+```{r panelset = TRUE}
+if(7 > 5){
+  print("is greater than 5")
+} else {
+  print("is less than 5")
+}
+```
+]
+---
+# Applying if/else to `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy_if <- happy %>% 
+              mutate(in_europe = if_else(country_name == "Spain", TRUE, FALSE))
+
+happy_if %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# Applying if/else to a vector
+
+```{r eval = FALSE}
+if(happy$country_name == "Spain"){
+  print(TRUE)
+} else {
+  print(FALSE)
+}
+```
+--
+This won't work!
+---
+# Write a for loop?
+
+.panelset[
+```{r panelset = TRUE}
+for(i in 1:length(happy$country_name)){
+  if(happy$country_name[i] == "Spain"){
+    print(TRUE)
+  } else {
+    print(FALSE)
+  }
+}
+```
+]
+---
+# Vectorized `ifelse()` 
+
+.panelset[
+```{r panelset = TRUE}
+ifelse(happy$country_name == "Spain", TRUE, FALSE)
+```
+]  
 
 --
-  
-`.cols`  
-  
+```{r eval = FALSE}
+ifelse(condition, Do A, Do B)
+```
+---
+# Using `ifelse()` to modify a data frame
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  mutate(in_europe = ifelse(country_name == "Spain", TRUE, FALSE))
+```
+]
+---
+# `if_else()` from the Dplyr package
+
+.panelset[
+```{r panelset = TRUE}
+ifelse(happy$country_name == "Spain", TRUE, "No")
+```
+]  
+
 --
-  
-    
-`.fns`  
-  
-  
----
-# Applying multiple functions
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(across(where(is.numeric), list(mean, sum)))
+```{r eval = FALSE}
+if_else(happy$country_name == "Spain", TRUE, "No")
 ```
-]
+
+**Error** in `if_else()`:  
+! `false` must be a logical vector, not a character vector.
 ---
-# Applying multiple functions
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(across(where(is.numeric), list(average = mean, total = sum)))
-```
-]
----
-# `mutate()` and `across()`
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  mutate(across(where(is.numeric), ~.x * 10))
-```
-]
----
-# `mutate()` and `across()`
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  mutate(across(contains("_") & !country_name, ~ . * 100))
-```
-]
----
-
-

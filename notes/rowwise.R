@@ -20,7 +20,7 @@ df %>%
   rowwise(student_id) %>% 
   mutate(avg = mean(c(test1, test2, test3, test4)))
 
-# happy emaples
+# happy examples
 # simple example - compute the mean of all the numeric metrics for `happy` for each country
 # naive approach
 happy %>% 
@@ -38,7 +38,7 @@ happy %>%
 # simple example - 
 happy %>% 
   rowwise() %>% 
-  mutate(avergae = mean(c_across(where(is.numeric))))
+  mutate(average = mean(c_across(where(is.numeric))))
 
 # from https://dplyr.tidyverse.org/dev/articles/rowwise.html
 # dplyr, and R in general, are particularly well suited to performing operations over columns, 
@@ -49,6 +49,13 @@ happy %>%
 # - Calling a function multiple times with varying arguments.
 # - Working with list-columns. 
 
+happy %>% 
+  rowwise() %>% 
+  mutate(
+    average = mean(c_across(where(is.numeric))),
+    total = sum(c_across(where(is.numeric)))
+  )
+
 # combining row-wise and column-wise operations
 happy %>% 
   rowwise() %>% 
@@ -58,13 +65,6 @@ happy %>%
 # the rest is too complex for now...
 
 # from https://dplyr.tidyverse.org/reference/c_across.html 
-
-happy %>% 
-  rowwise() %>% 
-  mutate(
-    average = mean(c_across(where(is.numeric))),
-    total = sum(c_across(where(is.numeric)))
-  )
 
 # NOTE: state that knowing when to use c_across() vs. across() can be tricky, so remind students
 # that c_across() goes with rowwise()

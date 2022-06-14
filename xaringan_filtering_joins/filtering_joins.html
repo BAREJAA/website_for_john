@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tidybiology</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
+    <meta name="date" content="2022-06-13" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Tidybiology
+## ⚔<br/>Intro to Data Science Using R
+### Matthew Hirschey &amp; Akshay Bareja
+### Duke University
+### 2022-06-13
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# Filtering Joins
+
+---
+# The `happy` data frame
+
+.center[
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; country_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; ladder_score &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; gdp &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; social_support &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Iraq &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.854 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.240 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.746 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Comoros &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.289 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.031 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.626 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Panama &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.180 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.350 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.896 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Maldives &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.198 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.826 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.913 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Spain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.491 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.571 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.932 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+---
+# The `happy_join` data frame
+
+.center[
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; country_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; healthy_life_expectancy &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Slovenia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71.400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Australia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73.900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jamaica &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67.500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Philippines &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62.000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nicaragua &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67.657 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Iraq &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60.583 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Comoros &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57.349 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Panama &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69.652 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Maldives &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70.600 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+---
+# The Filtering Joins
+  
+--
+`semi_join()`  
+  
+--
+  
+`anti_join()`    
+
+---
+# Understanding `semi_join()` 
+--
+.center[
+![semi_join](https://github.com/gadenbuie/tidyexplain/blob/main/images/semi-join.gif?raw=true)
+]
+---
+# Why `semi_join()`?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  semi_join(happy_join)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## Joining, by = "country_name"
+```
+
+```
+## # A tibble: 4 × 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Iraq                 4.85  9.24          0.746
+## 2 Comoros              4.29  8.03          0.626
+## 3 Panama               6.18 10.4           0.896
+## 4 Maldives             5.20  9.83          0.913
+```
+
+
+
+]
+]
+---
+# Why not `inner_join()`?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  inner_join(happy_join)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## Joining, by = "country_name"
+```
+
+```
+## # A tibble: 4 × 5
+##   country_name ladder_score   gdp social_support healthy_life_expectancy
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;                   &lt;dbl&gt;
+## 1 Iraq                 4.85  9.24          0.746                    60.6
+## 2 Comoros              4.29  8.03          0.626                    57.3
+## 3 Panama               6.18 10.4           0.896                    69.7
+## 4 Maldives             5.20  9.83          0.913                    70.6
+```
+
+
+
+]
+]
+
+---
+# Understanding `anti_join()` 
+--
+.center[
+![anti_join](https://github.com/gadenbuie/tidyexplain/blob/main/images/anti-join.gif?raw=true)
+]
+---
+# Why `anti_join()`?
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy %&gt;% 
+  anti_join(happy_join)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## Joining, by = "country_name"
+```
+
+```
+## # A tibble: 1 × 4
+##   country_name ladder_score   gdp social_support
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Spain                6.49  10.6          0.932
+```
+
+
+
+]
+]
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

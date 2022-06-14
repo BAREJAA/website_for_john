@@ -23,7 +23,6 @@ library(kableExtra)
 library(xaringanExtra)
 library(janitor)
 library(xaringanthemer)
-library(emo)
 
 happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
 ```
@@ -54,7 +53,7 @@ xaringanExtra::use_panelset()
 ---
 class: center, middle
 
-# Working With Multiple Columns
+# Per-Row Operations
 
 ---
 # The `happy` data frame
@@ -67,104 +66,45 @@ happy %>%
 ```
 ]
 ---
-# Computing the mean for multiple columns
-
-The tedious (and error-prone!) way 
+# Computing the mean for each country
 
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(mean_ladder = mean(ladder_score),
-            mean_gdp = mean(gdp),
-            mean_ss = mean(social_support))
+  mutate(average = mean(c(ladder_score, gdp, social_support)))
 ```
 ]
 ---
-# Computing the mean for multiple columns 
-
-An efficient and robust way  
-
+# `rowwise()`
+  
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(across(c(ladder_score, gdp, social_support), mean))
+  rowwise() %>% 
+  mutate(average = mean(c(ladder_score, gdp, social_support)))
 ```
 ]
 ---
-# Computing the mean for multiple columns 
-
-Do we really need `across()`?  
-
-`happy %>%`  
-  `summarise(c(ladder_score, gdp, social_support), mean)`
+# `c_across()`
   
---
-  
-    
-Error in `summarise()`:  
-! Problem while computing `..2 = mean`.  
-✖ `..2` must be a vector, not a function.  
-
----
-# Computing the mean for multiple columns 
-
-Getting fancy `r cat(jis[str_detect(jis$name, "smiling.*sunglasses"), ]$emoji)`
-
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(across(where(is.numeric), mean))
+  rowwise() %>% 
+  mutate(average = mean(c_across(where(is.numeric))))
 ```
 ]
 ---
-# `across()`
-
---
+# Multiple row-wise operations
   
-`.cols`  
-  
---
-  
-    
-`.fns`  
-  
-  
----
-# Applying multiple functions
-
 .panelset[
 ```{r panelset = TRUE}
 happy %>% 
-  summarise(across(where(is.numeric), list(mean, sum)))
+  rowwise() %>% 
+  mutate(
+    average = mean(c_across(where(is.numeric))),
+    total = sum(c_across(where(is.numeric)))
+  )
 ```
 ]
 ---
-# Applying multiple functions
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  summarise(across(where(is.numeric), list(average = mean, total = sum)))
-```
-]
----
-# `mutate()` and `across()`
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  mutate(across(where(is.numeric), ~.x * 10))
-```
-]
----
-# `mutate()` and `across()`
-
-.panelset[
-```{r panelset = TRUE}
-happy %>% 
-  mutate(across(contains("_") & !country_name, ~ . * 100))
-```
-]
----
-
-
