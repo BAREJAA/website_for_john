@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-05-26" />
+    <meta name="date" content="2022-06-12" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2022-05-26
+### 2022-06-12
 
 ---
 
@@ -307,6 +307,178 @@ happy_full %&gt;%
 ]
 ]
 ---
+# `relocate()`
+
+Move columns around with `relocate()`
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  relocate(ladder_score)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 × 20
+##    ladder_score country_name region   standard_error_… upperwhisker lowerwhisker
+##           &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;               &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1         7.84 Finland      Western…            0.032         7.90         7.78
+##  2         7.62 Denmark      Western…            0.035         7.69         7.55
+##  3         7.57 Switzerland  Western…            0.036         7.64         7.5 
+##  4         7.55 Iceland      Western…            0.059         7.67         7.44
+##  5         7.46 Netherlands  Western…            0.027         7.52         7.41
+##  6         7.39 Norway       Western…            0.035         7.46         7.32
+##  7         7.36 Sweden       Western…            0.036         7.43         7.29
+##  8         7.32 Luxembourg   Western…            0.037         7.40         7.25
+##  9         7.28 New Zealand  North A…            0.04          7.36         7.20
+## 10         7.27 Austria      Western…            0.036         7.34         7.20
+## # … with 139 more rows, and 14 more variables: logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
+## #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;,
+## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;, …
+```
+
+
+
+]
+]
+---
+# Specify where to relocate
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  relocate(ladder_score, .after = country_name)
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 × 20
+##    country_name ladder_score region   standard_error_… upperwhisker lowerwhisker
+##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Finland              7.84 Western…            0.032         7.90         7.78
+##  2 Denmark              7.62 Western…            0.035         7.69         7.55
+##  3 Switzerland          7.57 Western…            0.036         7.64         7.5 
+##  4 Iceland              7.55 Western…            0.059         7.67         7.44
+##  5 Netherlands          7.46 Western…            0.027         7.52         7.41
+##  6 Norway               7.39 Western…            0.035         7.46         7.32
+##  7 Sweden               7.36 Western…            0.036         7.43         7.29
+##  8 Luxembourg           7.32 Western…            0.037         7.40         7.25
+##  9 New Zealand          7.28 North A…            0.04          7.36         7.20
+## 10 Austria              7.27 Western…            0.036         7.34         7.20
+## # … with 139 more rows, and 14 more variables: logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
+## #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;,
+## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;, …
+```
+
+
+
+]
+]
+---
+# `relocate()` and selection helpers
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  relocate(where(is.character))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 × 20
+##    country_name region   ladder_score standard_error_… upperwhisker lowerwhisker
+##    &lt;chr&gt;        &lt;chr&gt;           &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Finland      Western…         7.84            0.032         7.90         7.78
+##  2 Denmark      Western…         7.62            0.035         7.69         7.55
+##  3 Switzerland  Western…         7.57            0.036         7.64         7.5 
+##  4 Iceland      Western…         7.55            0.059         7.67         7.44
+##  5 Netherlands  Western…         7.46            0.027         7.52         7.41
+##  6 Norway       Western…         7.39            0.035         7.46         7.32
+##  7 Sweden       Western…         7.36            0.036         7.43         7.29
+##  8 Luxembourg   Western…         7.32            0.037         7.40         7.25
+##  9 New Zealand  North A…         7.28            0.04          7.36         7.20
+## 10 Austria      Western…         7.27            0.036         7.34         7.20
+## # … with 139 more rows, and 14 more variables: logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
+## #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;,
+## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;, …
+```
+
+
+
+]
+]
+---
+# `relocate()` and selection helpers
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  relocate(starts_with("explained_by"))
+```
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 × 20
+##    explained_by_log_gdp_per_… explained_by_so… explained_by_he… explained_by_fr…
+##                         &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1                       1.45             1.11            0.741            0.691
+##  2                       1.50             1.11            0.763            0.686
+##  3                       1.57             1.08            0.816            0.653
+##  4                       1.48             1.17            0.772            0.698
+##  5                       1.50             1.08            0.753            0.647
+##  6                       1.54             1.11            0.782            0.703
+##  7                       1.48             1.06            0.763            0.685
+##  8                       1.75             1.00            0.76             0.639
+##  9                       1.4              1.09            0.785            0.665
+## 10                       1.49             1.06            0.782            0.64 
+## # … with 139 more rows, and 16 more variables: explained_by_generosity &lt;dbl&gt;,
+## #   explained_by_perceptions_of_corruption &lt;dbl&gt;, country_name &lt;chr&gt;,
+## #   region &lt;chr&gt;, ladder_score &lt;dbl&gt;, standard_error_of_ladder_score &lt;dbl&gt;,
+## #   upperwhisker &lt;dbl&gt;, lowerwhisker &lt;dbl&gt;, logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;, …
+```
+
+
+
+]
+]
+---
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

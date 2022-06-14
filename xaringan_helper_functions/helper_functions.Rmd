@@ -139,4 +139,41 @@ happy_full %>%
 ---
 # `relocate()`
 
-*NOTE: SHOW HOW THIS WORKS + HOW IT WORKS WITH HELPER FUNCTIONS*
+Move columns around with `relocate()`
+--
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  relocate(ladder_score)
+```
+]
+---
+# Specify where to relocate
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  relocate(ladder_score, .after = country_name)
+```
+]
+---
+# `relocate()` and selection helpers
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  relocate(where(is.character))
+```
+]
+---
+# `relocate()` and selection helpers
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  relocate(starts_with("explained_by"))
+```
+]
+---
+
+
