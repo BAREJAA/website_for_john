@@ -46,7 +46,7 @@ class: center, middle, inverse, title-slide
 ---
 class: center, middle
 
-# If/else
+# Multiple if/else statements
 
 ---
 # The `happy` data frame
@@ -96,96 +96,7 @@ class: center, middle
 &lt;/table&gt;
 ]
 ---
-# The if statement
---
-
-```r
-if(condition){
-  do this
-}
-```
----
-# Example if statement
-
-.panelset[
-.panel[.panel-name[Code]
-
-```r
-if(7 &gt; 5){
-  print("is greater than 5")
-}
-```
-
-]
-
-.panel[.panel-name[Output]
-
-```
-## [1] "is greater than 5"
-```
-
-
-
-]
-]
---
-.panelset[
-.panel[.panel-name[Code]
-
-```r
-if(3 &gt; 5){
-  print("is greater than 5")
-}
-```
-
-]
-
-.panel[.panel-name[Output]
-
-
-
-]
-]
----
-# if/else
-
-
-```r
-if(condition){
-  do A
-} else {
-  do B
-}
-```
-
----
-# if/else
-
-.panelset[
-.panel[.panel-name[Code]
-
-```r
-if(3 &gt; 5){
-  print("is greater than 5")
-} else {
-  print("is less than 5")
-}
-```
-
-]
-
-.panel[.panel-name[Output]
-
-```
-## [1] "is less than 5"
-```
-
-
-
-]
-]
----
-# Applying if/else to `happy` data frame
+# `if_else` recap
 
 .center[
 &lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
@@ -238,88 +149,14 @@ if(3 &gt; 5){
 &lt;/table&gt;
 ]
 ---
-# Applying if/else to a vector
-
-
-```r
-if(happy$country_name == "Spain"){
-  print(TRUE)
-} else {
-  print(FALSE)
-}
-```
---
-This won't work!
----
-# Write a for loop?
-
-.panelset[
-.panel[.panel-name[Code]
-
-```r
-for(i in 1:length(happy$country_name)){
-  if(happy$country_name[i] == "Spain"){
-    print(TRUE)
-  } else {
-    print(FALSE)
-  }
-}
-```
-
-]
-
-.panel[.panel-name[Output]
-
-```
-## [1] FALSE
-## [1] FALSE
-## [1] FALSE
-## [1] FALSE
-## [1] TRUE
-```
-
-
-
-]
-]
----
-# Vectorized `ifelse()` 
---
-
-```r
-ifelse(condition, Do A, Do B)
-```
----
-# Vectorized `ifelse()` 
-
-.panelset[
-.panel[.panel-name[Code]
-
-```r
-ifelse(happy$country_name == "Spain", TRUE, FALSE)
-```
-
-]
-
-.panel[.panel-name[Output]
-
-```
-## [1] FALSE FALSE FALSE FALSE  TRUE
-```
-
-
-
-]
-]  
----
-# Using `ifelse()` to modify a data frame
+# `if_else` recap
 
 .panelset[
 .panel[.panel-name[Code]
 
 ```r
 happy %&gt;% 
-  mutate(in_europe = ifelse(country_name == "Spain", TRUE, FALSE))
+  mutate(in_europe = if_else(country_name == "Spain", TRUE, FALSE))
 ```
 
 ]
@@ -342,13 +179,31 @@ happy %&gt;%
 ]
 ]
 ---
-# `if_else()` from the Dplyr package
+# More complex situations
+
+.center[
+
+```
+## # A tibble: 5 × 5
+##   country_name ladder_score   gdp social_support happy_level
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;      
+## 1 Iraq                 4.85  9.24          0.746 neutral    
+## 2 Comoros              4.29  8.03          0.626 unhappy    
+## 3 Panama               6.18 10.4           0.896 happy      
+## 4 Maldives             5.20  9.83          0.913 neutral    
+## 5 Spain                6.49 10.6           0.932 happy
+```
+]
+---
+# Multiple `if_else()`s
 
 .panelset[
 .panel[.panel-name[Code]
 
 ```r
-ifelse(happy$country_name == "Spain", TRUE, "No")
+happy %&gt;% 
+  mutate(happy_level = if_else(ladder_score &lt; 4.3, "unhappy",
+                               if_else(ladder_score &gt;= 4.3 &amp; ladder_score &lt;= 6, "neutral", "happy")))
 ```
 
 ]
@@ -356,22 +211,56 @@ ifelse(happy$country_name == "Spain", TRUE, "No")
 .panel[.panel-name[Output]
 
 ```
-## [1] "No"   "No"   "No"   "No"   "TRUE"
+## # A tibble: 5 × 5
+##   country_name ladder_score   gdp social_support happy_level
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;      
+## 1 Iraq                 4.85  9.24          0.746 neutral    
+## 2 Comoros              4.29  8.03          0.626 unhappy    
+## 3 Panama               6.18 10.4           0.896 happy      
+## 4 Maldives             5.20  9.83          0.913 neutral    
+## 5 Spain                6.49 10.6           0.932 happy
 ```
 
 
 
 ]
-]  
-
+]
 --
+ugly! 
+---
+# `case_when()`  
+
+.panelset[
+.panel[.panel-name[Code]
 
 ```r
-if_else(happy$country_name == "Spain", TRUE, "No")
+happy %&gt;% 
+  mutate(happy_level = case_when(
+    ladder_score &lt; 4.3 ~ "unhappy",
+    ladder_score &gt;= 4.3 &amp; ladder_score &lt;= 6 ~ "neutral",
+    TRUE ~ "happy"
+  ))
 ```
 
-**Error** in `if_else()`:  
-! `false` must be a logical vector, not a character vector.
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 5 × 5
+##   country_name ladder_score   gdp social_support happy_level
+##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;      
+## 1 Iraq                 4.85  9.24          0.746 neutral    
+## 2 Comoros              4.29  8.03          0.626 unhappy    
+## 3 Panama               6.18 10.4           0.896 happy      
+## 4 Maldives             5.20  9.83          0.913 neutral    
+## 5 Spain                6.49 10.6           0.932 happy
+```
+
+
+
+]
+]
 ---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

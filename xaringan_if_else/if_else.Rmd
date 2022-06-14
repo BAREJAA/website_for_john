@@ -107,7 +107,7 @@ if(condition){
 
 .panelset[
 ```{r panelset = TRUE}
-if(7 > 5){
+if(3 > 5){
   print("is greater than 5")
 } else {
   print("is less than 5")
@@ -155,17 +155,18 @@ for(i in 1:length(happy$country_name)){
 ]
 ---
 # Vectorized `ifelse()` 
+--
+```{r eval = FALSE}
+ifelse(condition, Do A, Do B)
+```
+---
+# Vectorized `ifelse()` 
 
 .panelset[
 ```{r panelset = TRUE}
 ifelse(happy$country_name == "Spain", TRUE, FALSE)
 ```
 ]  
-
---
-```{r eval = FALSE}
-ifelse(condition, Do A, Do B)
-```
 ---
 # Using `ifelse()` to modify a data frame
 
