@@ -107,11 +107,11 @@ happy %>%
 ```{r panelset = TRUE}
 happy %>% 
   mutate(happy_level = if_else(ladder_score < 4.3, "unhappy",
-                               if_else(ladder_score >= 4.3 & ladder_score <= 6, "neutral", "happy")))
+                               if_else(ladder_score >= 4.3 & 
+                                       ladder_score <= 6, "neutral", 
+                                                           "happy")))
 ```
 ]
---
-ugly! 
 ---
 # `case_when()`  
 

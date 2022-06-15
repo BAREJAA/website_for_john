@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-06-14" />
+    <meta name="date" content="2022-06-15" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2022-06-14
+### 2022-06-15
 
 ---
 
@@ -128,7 +128,9 @@ if(7 &gt; 5){
 
 ]
 ]
---
+---
+# Example if statement
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -342,7 +344,7 @@ happy %&gt;%
 ]
 ]
 ---
-# `if_else()` from the Dplyr package
+# `ifelse()` 
 
 .panelset[
 .panel[.panel-name[Code]
@@ -364,7 +366,9 @@ ifelse(happy$country_name == "Spain", TRUE, "No")
 ]
 ]  
 
---
+---
+# `if_else()` from the Dplyr package
+
 
 ```r
 if_else(happy$country_name == "Spain", TRUE, "No")

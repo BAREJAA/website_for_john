@@ -83,7 +83,9 @@ if(7 > 5){
 }
 ```
 ]
---
+---
+# Example if statement
+
 .panelset[
 ```{r panelset = TRUE}
 if(3 > 5){
@@ -177,7 +179,7 @@ happy %>%
 ```
 ]
 ---
-# `if_else()` from the Dplyr package
+# `ifelse()` 
 
 .panelset[
 ```{r panelset = TRUE}
@@ -185,7 +187,9 @@ ifelse(happy$country_name == "Spain", TRUE, "No")
 ```
 ]  
 
---
+---
+# `if_else()` from the Dplyr package
+
 ```{r eval = FALSE}
 if_else(happy$country_name == "Spain", TRUE, "No")
 ```

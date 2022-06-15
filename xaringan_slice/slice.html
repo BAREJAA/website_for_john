@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-06-13" />
+    <meta name="date" content="2022-06-15" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2022-06-13
+### 2022-06-15
 
 ---
 
@@ -121,7 +121,9 @@ happy %&gt;%
 
 ]
 ]
---
+---
+# `slice()`
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -148,7 +150,7 @@ happy %&gt;%
 ]
 ]
 ---
-# `slice_head()` and `slice_tail()`
+# `slice_head()` 
 
 .panelset[
 .panel[.panel-name[Code]
@@ -175,7 +177,9 @@ happy %&gt;%
 
 ]
 ]
---
+---
+# `slice_tail()`
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -221,15 +225,17 @@ happy %&gt;%
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746
-## 2 Spain                6.49 10.6           0.932
-## 3 Panama               6.18 10.4           0.896
+## 2 Panama               6.18 10.4           0.896
+## 3 Spain                6.49 10.6           0.932
 ```
 
 
 
 ]
 ]
---
+---
+# `slice_sample()`
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -246,9 +252,9 @@ happy %&gt;%
 ## # A tibble: 3 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
-## 1 Iraq                 4.85  9.24          0.746
-## 2 Maldives             5.20  9.83          0.913
-## 3 Spain                6.49 10.6           0.932
+## 1 Spain                6.49 10.6           0.932
+## 2 Panama               6.18 10.4           0.896
+## 3 Comoros              4.29  8.03          0.626
 ```
 
 
@@ -281,7 +287,9 @@ happy %&gt;%
 
 ]
 ]
---
+---
+# `slice_min()`
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -332,7 +340,9 @@ happy %&gt;%
 
 ]
 ]
---
+---
+# `slice_max()`
+ 
 .panelset[
 .panel[.panel-name[Code]
 

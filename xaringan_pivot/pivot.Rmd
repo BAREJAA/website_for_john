@@ -95,7 +95,9 @@ happy %>%
                values_to = "values")
 ```
 ]
---
+---
+# How pivoting works
+
 .panelset[
 ```{r panelset = TRUE}
 happy_long %>% 

@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-06-14" />
+    <meta name="date" content="2022-06-15" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2022-06-14
+### 2022-06-15
 
 ---
 
@@ -203,7 +203,9 @@ happy %&gt;%
 ```r
 happy %&gt;% 
   mutate(happy_level = if_else(ladder_score &lt; 4.3, "unhappy",
-                               if_else(ladder_score &gt;= 4.3 &amp; ladder_score &lt;= 6, "neutral", "happy")))
+                               if_else(ladder_score &gt;= 4.3 &amp; 
+                                       ladder_score &lt;= 6, "neutral", 
+                                                           "happy")))
 ```
 
 ]
@@ -225,8 +227,6 @@ happy %&gt;%
 
 ]
 ]
---
-ugly! 
 ---
 # `case_when()`  
 

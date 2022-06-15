@@ -118,7 +118,9 @@ happy_full %>%
   select(contains("^explained|score$"))
 ```
 ]
---
+---
+# `matches()`
+
 .panelset[
 ```{r panelset = TRUE}
 happy_full %>% 
