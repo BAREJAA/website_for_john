@@ -12,7 +12,7 @@ df <- tribble(
     "'%>%' is knows as the...", "pipe operator",
     "In a tidy dataset, what's another term for rows?", "Observations",
     "In a tidy dataset, what's another term for columns?", "Variables",
-    "Which function can we use to assign a title to a plot?", "title()"
+    "Which function can we use to assign a title to a plot?", "labs()"
 )
 
 ui <- fluidPage(

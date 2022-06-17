@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2021-06-07" />
+    <meta name="date" content="2022-06-12" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ## ⚔<br/>Intro to Data Science Using R
 ### Matthew Hirschey &amp; Akshay Bareja
 ### Duke University
-### 2021-06-07
+### 2022-06-12
 
 ---
 
@@ -58,7 +58,7 @@ The `dplyr` package has a number of `*_join` functions for this purpose
 
 
 ```
-## # A tibble: 5 x 4
+## # A tibble: 5 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746
@@ -72,14 +72,14 @@ The `dplyr` package has a number of `*_join` functions for this purpose
 
 
 ```
-## # A tibble: 9 x 2
+## # A tibble: 9 × 2
 ##   country_name healthy_life_expectancy
 ##   &lt;chr&gt;                          &lt;dbl&gt;
-## 1 Chile                           70  
-## 2 Senegal                         59.8
-## 3 Italy                           73.8
-## 4 Burkina Faso                    54.2
-## 5 Netherlands                     72.4
+## 1 Latvia                          67.1
+## 2 Kyrgyzstan                      64.4
+## 3 Russia                          64.7
+## 4 Myanmar                         59.3
+## 5 Afghanistan                     52.5
 ## 6 Iraq                            60.6
 ## 7 Comoros                         57.3
 ## 8 Panama                          69.7
@@ -113,7 +113,7 @@ happy %&gt;%
 ```
 
 ```
-## # A tibble: 5 x 5
+## # A tibble: 5 × 5
 ##   country_name ladder_score   gdp social_support healthy_life_expectancy
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;                   &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746                    60.6
@@ -154,18 +154,18 @@ happy %&gt;%
 ```
 
 ```
-## # A tibble: 9 x 5
+## # A tibble: 9 × 5
 ##   country_name ladder_score   gdp social_support healthy_life_expectancy
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;                   &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746                    60.6
 ## 2 Comoros              4.29  8.03          0.626                    57.3
 ## 3 Panama               6.18 10.4           0.896                    69.7
 ## 4 Maldives             5.20  9.83          0.913                    70.6
-## 5 Chile               NA    NA            NA                        70  
-## 6 Senegal             NA    NA            NA                        59.8
-## 7 Italy               NA    NA            NA                        73.8
-## 8 Burkina Faso        NA    NA            NA                        54.2
-## 9 Netherlands         NA    NA            NA                        72.4
+## 5 Latvia              NA    NA            NA                        67.1
+## 6 Kyrgyzstan          NA    NA            NA                        64.4
+## 7 Russia              NA    NA            NA                        64.7
+## 8 Myanmar             NA    NA            NA                        59.3
+## 9 Afghanistan         NA    NA            NA                        52.5
 ```
 
 
@@ -199,7 +199,7 @@ happy %&gt;%
 ```
 
 ```
-## # A tibble: 4 x 5
+## # A tibble: 4 × 5
 ##   country_name ladder_score   gdp social_support healthy_life_expectancy
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;                   &lt;dbl&gt;
 ## 1 Iraq                 4.85  9.24          0.746                    60.6
@@ -239,7 +239,7 @@ happy %&gt;%
 ```
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 10 × 5
 ##    country_name ladder_score   gdp social_support healthy_life_expectancy
 ##    &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;                   &lt;dbl&gt;
 ##  1 Iraq                 4.85  9.24          0.746                    60.6
@@ -247,11 +247,11 @@ happy %&gt;%
 ##  3 Panama               6.18 10.4           0.896                    69.7
 ##  4 Maldives             5.20  9.83          0.913                    70.6
 ##  5 Spain                6.49 10.6           0.932                    NA  
-##  6 Chile               NA    NA            NA                        70  
-##  7 Senegal             NA    NA            NA                        59.8
-##  8 Italy               NA    NA            NA                        73.8
-##  9 Burkina Faso        NA    NA            NA                        54.2
-## 10 Netherlands         NA    NA            NA                        72.4
+##  6 Latvia              NA    NA            NA                        67.1
+##  7 Kyrgyzstan          NA    NA            NA                        64.4
+##  8 Russia              NA    NA            NA                        64.7
+##  9 Myanmar             NA    NA            NA                        59.3
+## 10 Afghanistan         NA    NA            NA                        52.5
 ```
 
 

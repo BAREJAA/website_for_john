@@ -4,6 +4,7 @@ author:
 - name: Matthew Hirschey
   affiliation: Duke University
   affiliation_url: https://duke.edu
+- name: Allie Mills
 - name: Akshay Bareja
 date: "`r Sys.Date()`"
 description: |
@@ -16,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(fontawesome)
+library(fontawesome) # to see all options, run - fa_metadata()$icon_names %>% as_tibble() %>% View()
 ```
 
 
@@ -24,29 +25,53 @@ library(fontawesome)
 # from - https://stackoverflow.com/questions/48506712/kable-kableextra-cells-with-hyperlinks
 # and - https://stackoverflow.com/questions/53549662/how-can-i-add-a-fontawesome-icon-to-a-table-in-rmarkdown
 
-links <- c("https://bespokds.netlify.app/xaringan_dplyr/#1", "https://bespokds.netlify.app/xaringan_joins/#1",
-"https://bespokds.netlify.app/xaringan_advanced_dplyr/#1")
+links <- c("https://bespokds.netlify.app/xaringan_intro_to_dplyr/#1", "https://bespokds.netlify.app/xaringan_select/#1",
+"https://bespokds.netlify.app/xaringan_filter/#1",
+"https://bespokds.netlify.app/xaringan_arrange/#1",
+"https://bespokds.netlify.app/xaringan_mutate/#1",
+"https://bespokds.netlify.app/xaringan_joins/#1",
+"https://bespokds.netlify.app/xaringan_saving/#1",
+"https://bespokds.netlify.app/xaringan_group_by_summarise/#1",
+"https://bespokds.netlify.app/xaringan_filtering_joins/#1",
+"https://bespokds.netlify.app/xaringan_helper_functions/#1",
+"https://bespokds.netlify.app/xaringan_slice/#1",
+"https://bespokds.netlify.app/xaringan_unite_separate/#1",
+"https://bespokds.netlify.app/xaringan_pivot/#1",
+"https://bespokds.netlify.app/xaringan_if_else/#1",
+"https://bespokds.netlify.app/xaringan_case_when/#1",
+"https://bespokds.netlify.app/xaringan_colwise/#1",
+"https://bespokds.netlify.app/xaringan_rowwise/#1")
 
 df <- tribble(
   ~Class, ~Slides, ~Recording, ~Exercise,
-  "Dplyr", paste0("<a href=\"", links[1], "\">", as.character(fa("tv")), "</a>"), as.character(fa("video")), as.character(fa("list")),
-  "Joins", paste0("<a href=\"", links[2], "\">", as.character(fa("tv")), "</a>"), as.character(fa("video")), as.character(fa("list")),
-  "Advanced Dplyr", paste0("<a href=\"", links[3], "\">", as.character(fa("tv")), "</a>"), as.character(fa("video")), as.character(fa("list"))
+  "Getting to Know Your Data", paste0("<a href=\"", links[1], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/W3D-JSPExXo", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Selecting Variables", paste0("<a href=\"", links[2], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/vDgP7J1qMCI", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Filtering Observations", paste0("<a href=\"", links[3], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/KWs8VNeWlbE", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Arranging Your Data", paste0("<a href=\"", links[4], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/BN9-zPuM-2g", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Adding New Columns", paste0("<a href=\"", links[5], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/stNOP4B1aGE", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Mutating Joins", paste0("<a href=\"", links[6], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/kLgZYO3tcYA", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Saving Your Work", paste0("<a href=\"", links[7], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/thw78gmuvM4", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Group By and Summarise", paste0("<a href=\"", links[8], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Filtering Joins", paste0("<a href=\"", links[9], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Selection Helpers", paste0("<a href=\"", links[10], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+   "Slice", paste0("<a href=\"", links[11], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Unite and Separate", paste0("<a href=\"", links[12], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Pivoting", paste0("<a href=\"", links[13], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "If/else", paste0("<a href=\"", links[14], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+   "case_when()", paste0("<a href=\"", links[15], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Column-wise operations", paste0("<a href=\"", links[16], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+   "Row-wise operations", paste0("<a href=\"", links[17], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard"))
 )
 
 df %>% 
-  kable("html", escape = FALSE, table.attr = "style='width:100%;'") %>%
-  kable_styling(bootstrap_options = c("hover"))
+  kable("html", escape = FALSE, table.attr = "style='width:100%;'", align = 'c') %>%
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive")) %>% 
+  #row_spec(row = 1:nrow(df), color = "white", background = "#90ee90") %>%# can start at 0 (to include header)
+  column_spec(1, color = "darkblue") %>% 
+  column_spec(2, color = "black") %>% 
+  column_spec(3, color = "red") %>% 
+  column_spec(4, color = "brown")
 ```
-\
-
-+ [World Happiness Report EDA](exercise_happy/)
-+ [World Happiness Report Scrollytelling](scrollytelling/)
-+ [Exploring the Golub dataset](exercise_golub/)
-+ [Intro to Pandas](xaringan_pandas/)
-+ [Intro to Ggplot2](xaringan_ggplot2/)
-+ [Simple Exercise](intro/)
-
 \
 
 ## Useful Resources

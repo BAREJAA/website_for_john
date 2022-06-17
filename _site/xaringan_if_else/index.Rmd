@@ -1,0 +1,199 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width = 6, fig.height = 4) 
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# If/else
+
+---
+# The `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# The if statement
+--
+```{r eval = FALSE}
+if(condition){
+  do this
+}
+```
+---
+# Example if statement
+
+.panelset[
+```{r panelset = TRUE}
+if(7 > 5){
+  print("is greater than 5")
+}
+```
+]
+---
+# Example if statement
+
+.panelset[
+```{r panelset = TRUE}
+if(3 > 5){
+  print("is greater than 5")
+}
+```
+]
+---
+# if/else
+
+```{r eval = FALSE}
+if(condition){
+  do A
+} else {
+  do B
+}
+```
+
+---
+# if/else
+
+.panelset[
+```{r panelset = TRUE}
+if(3 > 5){
+  print("is greater than 5")
+} else {
+  print("is less than 5")
+}
+```
+]
+---
+# Applying if/else to `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy_if <- happy %>% 
+              mutate(in_europe = if_else(country_name == "Spain", TRUE, FALSE))
+
+happy_if %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# Applying if/else to a vector
+
+```{r eval = FALSE}
+if(happy$country_name == "Spain"){
+  print(TRUE)
+} else {
+  print(FALSE)
+}
+```
+--
+This won't work!
+---
+# Write a for loop?
+
+.panelset[
+```{r panelset = TRUE}
+for(i in 1:length(happy$country_name)){
+  if(happy$country_name[i] == "Spain"){
+    print(TRUE)
+  } else {
+    print(FALSE)
+  }
+}
+```
+]
+---
+# Vectorized `ifelse()` 
+--
+```{r eval = FALSE}
+ifelse(condition, Do A, Do B)
+```
+---
+# Vectorized `ifelse()` 
+
+.panelset[
+```{r panelset = TRUE}
+ifelse(happy$country_name == "Spain", TRUE, FALSE)
+```
+]  
+---
+# Using `ifelse()` to modify a data frame
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  mutate(in_europe = ifelse(country_name == "Spain", TRUE, FALSE))
+```
+]
+---
+# `ifelse()` 
+
+.panelset[
+```{r panelset = TRUE}
+ifelse(happy$country_name == "Spain", TRUE, "No")
+```
+]  
+
+---
+# `if_else()` from the Dplyr package
+
+```{r eval = FALSE}
+if_else(happy$country_name == "Spain", TRUE, "No")
+```
+
+**Error** in `if_else()`:  
+! `false` must be a logical vector, not a character vector.
+---

@@ -1,0 +1,140 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width = 6, fig.height = 4) 
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy %>% 
+  inner_join(happy_full, by = "country_name") %>% 
+  select(country_name, healthy_life_expectancy) -> happy_join_one
+
+happy_full %>% 
+  filter(!(country_name %in% happy$country_name)) %>% 
+  slice_sample(n = 5) %>% 
+  select(country_name, healthy_life_expectancy) %>%
+  bind_rows(happy_join_one) %>% 
+  .[-10 ,] -> happy_join
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Filtering Joins
+
+---
+# The `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# The `happy_join` data frame
+
+.center[
+```{r echo = FALSE}
+happy_join %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# The Filtering Joins
+  
+--
+`semi_join()`  
+  
+--
+  
+`anti_join()`    
+
+---
+# Understanding `semi_join()` 
+--
+.center[
+![semi_join](https://github.com/gadenbuie/tidyexplain/blob/main/images/semi-join.gif?raw=true)
+]
+---
+# Why `semi_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  semi_join(happy_join)
+```
+]
+---
+# Why not `inner_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  inner_join(happy_join)
+```
+]
+
+---
+# Understanding `anti_join()` 
+--
+.center[
+![anti_join](https://github.com/gadenbuie/tidyexplain/blob/main/images/anti-join.gif?raw=true)
+]
+---
+# Why `anti_join()`?
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  anti_join(happy_join)
+```
+]
+---

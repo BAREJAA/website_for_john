@@ -1,5 +1,6 @@
 name: "tidybiology"
 title: "Tidybiology"
+theme: theme.css
 description: |
   Tidybiology
 output_dir: "_site"
@@ -15,10 +16,10 @@ navbar:
         - text: "Example by Dr. Hirschey"
           href: projects/Matthew-Hirschey.html
     - text: "Flashcard App"
-      href: flashcard/
+      href: https://akshay-bareja.shinyapps.io/flashcard/
     - text: "About"
       href: about.html
-    - icon: fas fa-hand-spock
+    - icon: fas fa-github-alt
       href: https://github.com/matthewhirschey
 output: distill::distill_article
 

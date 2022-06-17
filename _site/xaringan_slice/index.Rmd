@@ -1,0 +1,160 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width = 6, fig.height = 4) 
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Slice
+
+---
+# The `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# `slice()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice(1)
+```
+]
+---
+# `slice()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice(1:3)
+```
+]
+---
+# `slice_head()` 
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_head(n = 3)
+```
+]
+---
+# `slice_tail()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_tail(n = 3)
+```
+]
+---
+# `slice_sample()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_sample(n = 3)
+```
+]
+---
+# `slice_sample()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_sample(prop = 3/5)
+```
+]
+---
+# `slice_min()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_min(ladder_score)
+```
+]
+---
+# `slice_min()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_min(ladder_score, n = 2)
+```
+]
+---
+# `slice_max()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_max(ladder_score)
+```
+]
+---
+# `slice_max()`
+ 
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  slice_max(ladder_score, n = 2)
+```
+]
+---
+
+

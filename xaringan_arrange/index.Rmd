@@ -1,0 +1,96 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# `arrange()` 
+
+---
+
+# Understanding `arrange()` 
+--
+.center[
+![arrange](https://github.com/BAREJAA/tidyexplain/blob/master/images/arrange.gif?raw=true)
+]
+.footnote[Garrick Aden-Buie]
+---
+# `arrange()` sorts rows 
+
+The input for arrange is one or many columns, and `arrange()` sorts the rows in ascending order i.e. from smallest to largest  
+
+
+For example, to sort rows from smallest to largest in `ladder_score`, run the following  
+
+--
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  arrange(ladder_score)
+```
+]  
+
+---
+# `arrange()` 
+
+To reverse this order, use the `desc()` function within `arrange()`  
+
+--
+
+.panelset[
+```{r panselset = TRUE}
+happy %>% 
+  arrange(desc(ladder_score))
+```
+]  
+

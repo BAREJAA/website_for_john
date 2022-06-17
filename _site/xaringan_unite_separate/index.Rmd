@@ -1,0 +1,106 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width = 6, fig.height = 4) 
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Unite and Separate
+
+---
+# The `happy_full` data frame
+
+.center[
+```{r echo = FALSE}
+happy_full %>% 
+  glimpse()
+```
+]
+---
+# `unite()`
+
+Combine `country_name` and `region` 
+--
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  unite("country_region", c(country_name, region))
+```
+]
+---
+# Keeping the original columns
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  unite("country_region", c(country_name, region), remove = FALSE)
+```
+]
+---
+# Specifying the separator
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  unite("country_region", c(country_name, region), sep = ".")
+```
+]
+---
+# `separate()` 
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  unite("country_region", c(country_name, region)) %>% 
+  separate(country_region, c("country_name", "region"), sep = "_")
+```
+]
+---
