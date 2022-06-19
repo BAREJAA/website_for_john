@@ -18,7 +18,7 @@ navbar:
     - text: "Flashcard App"
       href: https://akshay-bareja.shinyapps.io/flashcard/
     - text: "Scrollytelling"
-      href: scrollytelling/index.html
+      href: https://akshay-bareja.shinyapps.io/scrollytelling/
     - text: "About"
       href: about.html
     - icon: fas fa-github-alt
