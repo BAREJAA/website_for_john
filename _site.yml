@@ -17,6 +17,8 @@ navbar:
           href: projects/Matthew-Hirschey.html
     - text: "Flashcard App"
       href: https://akshay-bareja.shinyapps.io/flashcard/
+    - text: "Scrollytelling"
+      href: scrollytelling/index.html
     - text: "About"
       href: about.html
     - icon: fas fa-github-alt

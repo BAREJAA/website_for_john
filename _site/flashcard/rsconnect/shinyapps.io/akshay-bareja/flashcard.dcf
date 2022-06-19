@@ -5,9 +5,9 @@ account: akshay-bareja
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6507708
-bundleId: 6018157
+bundleId: 6021663
 url: https://akshay-bareja.shinyapps.io/flashcard/
-when: 1655489803.70455
-lastSyncTime: 1655489803.70455
+when: 1655649473.24887
+lastSyncTime: 1655649473.24889
 asMultiple: FALSE
 asStatic: FALSE

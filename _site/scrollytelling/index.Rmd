@@ -197,3 +197,111 @@ happy_select %>%
 ```
 </div>
 
+# Line by line
+
+Your turn - how would you make the plot on the right? Think about the code you need to write. 
+
+Scroll down for one solution  
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+```
+</div>
+
+# Set up the canvas
+
+`happy_select %>%` 
+  `ggplot(aes(ladder_score, logged_gdp_per_capita))`
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita))
+```
+</div>
+
+# Add the points
+
+`happy_select %>%` 
+  `ggplot(aes(ladder_score, logged_gdp_per_capita)) +`
+  `geom_point()`
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point()
+```
+</div>
+
+# Add a trend line
+
+`happy_select %>%` 
+  `ggplot(aes(ladder_score, logged_gdp_per_capita)) +`
+  `geom_point() +`
+  `geom_smooth()`
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth()
+```
+</div>
+
+# Make it linear
+
+`happy_select %>%` 
+  `ggplot(aes(ladder_score, logged_gdp_per_capita)) +`
+  `geom_point() +`
+  `geom_smooth(method = "lm")`
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+</div>
+
+# Remove the confidence intervals
+
+`happy_select %>%` 
+  `ggplot(aes(ladder_score, logged_gdp_per_capita)) +`
+  `geom_point() +`
+  `geom_smooth(method = "lm", se = FALSE)`
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+</div>
+
+# Clean up the plot
+
+`happy_select %>%` 
+  `ggplot(aes(ladder_score, logged_gdp_per_capita)) +`
+  `geom_point() +`
+  `geom_smooth(method = "lm", se = FALSE) +`
+  `theme_minimal()`
+  
+<div style = "width:0%; height:auto; margin: auto;">
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+happy_select %>% 
+  ggplot(aes(ladder_score, logged_gdp_per_capita)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+```
+</div>
+

@@ -1,18 +1,25 @@
 library(shiny)
 library(shinyjs)
+library(shinyWidgets)
 library(tidyverse)
 
 df <- tribble(
-    ~Question, ~Answer,
-    "Which function would you use to choose particular rows?", "filter()",
-    "Which function would you use to choose particular columns?", "select()",
-    "Which geom_*() function would you use to make a scatter plot?", "geom_point()",
-    "How does arrange() order numeric values?", "From lowest to highest",
-    "group_by() works especially well with which other dplyr function?", "summarise()/summarize()",
-    "'%>%' is knows as the...", "pipe operator",
-    "In a tidy dataset, what's another term for rows?", "Observations",
-    "In a tidy dataset, what's another term for columns?", "Variables",
-    "Which function can we use to assign a title to a plot?", "labs()"
+    ~Question, ~Answer, ~Difficulty,
+    "Which function would you use to choose particular rows?", "filter()", "easy",
+    "Which function would you use to choose particular columns?", "select()", "easy",
+    "Which geom_*() function would you use to make a scatter plot?", "geom_point()", "easy",
+    "How does arrange() order numeric values?", "From lowest to highest", "easy",
+    "group_by() works especially well with which other dplyr function?", "summarise()/summarize()", "easy",
+    "'%>%' is knows as the...", "pipe operator", "easy",
+    "In a tidy dataset, what's another term for rows?", "Observations", "easy",
+    "In a tidy dataset, what's another term for columns?", "Variables", "easy",
+    "Which function can we use to assign a title to a plot?", "labs()", "easy",
+    "What kind of join is a semi-join?", "Filtering Join", "hard",
+    "What are the two main parameters of pivot_wider()?", "names_from and values_from", "hard",
+    "What are the two main parameters of across()?", ".cols and .fns", "hard",
+    "Which selection helper can handle regular expressions?", "matches()", "hard",
+    "What is the regex for searching for a literal '.'", "\\\\.", "hard",
+    "Which Dplyr function would you use to avoid writing nested if/else statements?", "case_when()", "hard"
 )
 
 ui <- fluidPage(
@@ -21,6 +28,13 @@ ui <- fluidPage(
     
     fluidRow(
         column(3,
+               prettySwitch(inputId = "switch", label = textOutput("Difficulty"), status = "danger"),
+               # textOutput("Difficulty")
+        ),
+        
+        hr(),
+
+        column(3,
                tags$head(
                    tags$style(HTML('#question{background-color:blue;
                                 color:white}'))
@@ -28,19 +42,21 @@ ui <- fluidPage(
                actionButton("question", "Next Question", width = '150px', icon = icon('refresh')),
                tags$head(
                    tags$style(HTML('#answer{background-color:blue;
-                                color:white}'))
+                                    color:white}'))
                ),
                uiOutput("button2")
         ),
+
         column(9,
                tags$head(
                    tags$style(HTML('#Question{font-size: 25px;
-                                           text-align: center}'))
+                                              text-align: center}'))
                ),
                textOutput("Question"),
                tags$head(
                    tags$style(HTML('#Answer{font-size: 25px;
-                                         text-align: center}'))
+                                         text-align: center;
+                                         color:teal}'))
                ),
                textOutput("Answer")
         )
@@ -49,14 +65,34 @@ ui <- fluidPage(
 
 server <- function(input, output) {
     
+    observeEvent(input$switch, {
+        output$Difficulty <- renderText({
+            if_else(input$switch, "hard", "easy")
+        })
+    })
+    
     df1 <- NULL
     df2 <- NULL
     observeEvent(input$question, {
         output$Answer <- renderText({})
         
-        df1 <<- df[sample(nrow(df), 1), ]
-        df2 <<- df1
-        question <- df1$Question
+        if(input$switch){
+            df <- df %>% 
+                filter(Difficulty == "hard")
+            
+            df1 <<- df[sample(nrow(df), 1), ]
+            df2 <<- df1
+            question <- df1$Question
+            difficulty <- df1$Difficulty 
+        } else {
+            df <- df %>% 
+                    filter(Difficulty == "easy")
+            
+            df1 <<- df[sample(nrow(df), 1), ]
+            df2 <<- df1
+            question <- df1$Question   
+            difficulty <- df1$Difficulty 
+        }
         
         output$Question <- renderText({question})
         
