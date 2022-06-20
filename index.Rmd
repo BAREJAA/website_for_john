@@ -43,7 +43,7 @@ links <- c("https://bespokds.netlify.app/xaringan_intro_to_dplyr/#1", "https://b
 "https://bespokds.netlify.app/xaringan_rowwise/#1")
 
 df <- tribble(
-  ~Class, ~Slides, ~Recording, ~Exercise,
+  ~Concept, ~Slides, ~Recording, ~Exercise,
   "Getting to Know Your Data", paste0("<a href=\"", links[1], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/W3D-JSPExXo", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
   "Selecting Variables", paste0("<a href=\"", links[2], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/vDgP7J1qMCI", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
   "Filtering Observations", paste0("<a href=\"", links[3], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "https://youtu.be/KWs8VNeWlbE", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
@@ -63,15 +63,35 @@ df <- tribble(
    "Row-wise operations", paste0("<a href=\"", links[17], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard"))
 )
 
-df %>% 
+df %>%
   kable("html", escape = FALSE, table.attr = "style='width:100%;'", align = 'c') %>%
-  kable_styling(bootstrap_options = c("hover", "condensed", "responsive")) %>% 
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive")) %>%
   #row_spec(row = 1:nrow(df), color = "white", background = "#90ee90") %>%# can start at 0 (to include header)
-  column_spec(1, color = "darkblue") %>% 
-  column_spec(2, color = "black") %>% 
-  column_spec(3, color = "red") %>% 
+  column_spec(1, color = "darkblue") %>%
+  column_spec(2, color = "black") %>%
+  column_spec(3, color = "red") %>%
   column_spec(4, color = "brown")
 ```
+\
+```{r tracks, fig.width = 10, fig.height = 10}
+links_two <- c("https://akshay-bareja.shinyapps.io/ds_intro_track/")
+
+df_two <- tribble(
+  ~Track, ~Tutorial, 
+  "Introduction to Data Science", paste0("<a href=\"", links_two[1], "\">", as.character(fa("road")), "</a>"),
+  "Exploratory Data Analysis", paste0("<a href=\"", "", "\">", as.character(fa("road")), "</a>"),
+  "Making Plots", paste0("<a href=\"", "", "\">", as.character(fa("road")), "</a>"),
+)
+
+df_two %>%
+  kable("html", escape = FALSE, table.attr = "style='width:100%;'", align = 'c') %>%
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive")) %>%
+  #row_spec(row = 1:nrow(df), color = "white", background = "#90ee90") %>%# can start at 0 (to include header)
+  column_spec(1, color = "darkblue") %>%
+  column_spec(2, color = "black") 
+```
+
+
 \
 
 ## Useful Resources
