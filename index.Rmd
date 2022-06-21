@@ -111,7 +111,8 @@ gg_subway <- ggplot(subway, aes(x = x, y = y)) +
                         fontface = "bold") +
                theme_void()
 
-girafe(ggobj = gg_subway)
+girafe(ggobj = gg_subway,
+       height_svg = 3)
 ```
 
 \
