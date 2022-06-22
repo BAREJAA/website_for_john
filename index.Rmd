@@ -19,10 +19,12 @@ library(knitr)
 library(kableExtra)
 library(fontawesome) # to see all options, run - fa_metadata()$icon_names %>% as_tibble() %>% View()
 library(ggiraph)
+library(ggforce)
+library(DT)
 ```
 
 \
-```{r subway, fig.width = 10, fig.height = 10}
+```{r subway_one, fig.width = 10, fig.height = 10}
 # crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
 # 
 # crimes$onclick <- sprintf("window.open(\"%s%s\")",
@@ -147,6 +149,98 @@ girafe(ggobj = gg_subway,
 ```
 
 \
+```{r datatable, fig.width = 10, fig.height = 10}
+links_dt <- c("https://akshay-bareja.shinyapps.io/ds_intro_track/#section-introduction-to-data-science", "https://akshay-bareja.shinyapps.io/ds_intro_track/#section-what-is-data-science",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-tools-of-data-science",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-get-started-with-r",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-quiz",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-r-exercise",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-installing-packages",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-introduction-to-the-tidyverse",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-the-pipe-operator",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-install-r-and-rstudio",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-tour-of-rstudio",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-rmarkdown-activity",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-final-exercise",
+"https://akshay-bareja.shinyapps.io/ds_intro_track/#section-resources")
+
+urls_dt <- paste0('<a href=', links_dt, '>', 'Introduction to Data Science ', '</a>')
+
+types <- c("slides",
+          "video",
+          "video",
+          "video",
+          "quiz",
+          "exercise",
+          "video",
+          "video",
+          "video",
+          "video",
+          "video",
+          "exercise",
+          "exercise",
+          "video")
+
+languages <- c("multiple",
+          "multiple",
+          "multiple",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R",
+          "R")
+
+titles <- str_to_title(str_replace_all(sub(".*section-", "", links_dt), "-", " ")) # ugh
+
+levels <- rep("beginner", 14)
+
+
+df_dt <- tibble(
+                Title = titles,
+                Level = levels,
+                Language = languages,
+                Type = types,
+                `Include in` = urls_dt)
+
+df_dt %>% 
+  datatable(rownames = FALSE, escape = -5,
+            filter = 'top')
+
+```
+
+\
+\
+\
+\
+\
+\
+\
+
+```{r tracks, fig.width = 10, fig.height = 10}
+links_two <- c("https://akshay-bareja.shinyapps.io/ds_intro_track/")
+
+df_two <- tribble(
+  ~Track, ~Tutorial, 
+  "Introduction to Data Science", paste0("<a href=\"", links_two[1], "\">", as.character(fa("road")), "</a>"),
+  "Exploratory Data Analysis", paste0("<a href=\"", "", "\">", as.character(fa("road")), "</a>"),
+  "Making Plots", paste0("<a href=\"", "", "\">", as.character(fa("road")), "</a>"),
+)
+
+df_two %>%
+  kable("html", escape = FALSE, table.attr = "style='width:100%;'", align = 'c') %>%
+  kable_styling(bootstrap_options = c("hover", "condensed", "responsive")) %>%
+  #row_spec(row = 1:nrow(df), color = "white", background = "#90ee90") %>%# can start at 0 (to include header)
+  column_spec(1, color = "darkblue") %>%
+  column_spec(2, color = "black") 
+```
+
+\
 ```{r links, fig.width = 10, fig.height = 10}
 # from - https://stackoverflow.com/questions/48506712/kable-kableextra-cells-with-hyperlinks
 # and - https://stackoverflow.com/questions/53549662/how-can-i-add-a-fontawesome-icon-to-a-table-in-rmarkdown
@@ -199,27 +293,6 @@ df %>%
   column_spec(4, color = "brown")
 ```
 \
-```{r tracks, fig.width = 10, fig.height = 10}
-links_two <- c("https://akshay-bareja.shinyapps.io/ds_intro_track/")
-
-df_two <- tribble(
-  ~Track, ~Tutorial, 
-  "Introduction to Data Science", paste0("<a href=\"", links_two[1], "\">", as.character(fa("road")), "</a>"),
-  "Exploratory Data Analysis", paste0("<a href=\"", "", "\">", as.character(fa("road")), "</a>"),
-  "Making Plots", paste0("<a href=\"", "", "\">", as.character(fa("road")), "</a>"),
-)
-
-df_two %>%
-  kable("html", escape = FALSE, table.attr = "style='width:100%;'", align = 'c') %>%
-  kable_styling(bootstrap_options = c("hover", "condensed", "responsive")) %>%
-  #row_spec(row = 1:nrow(df), color = "white", background = "#90ee90") %>%# can start at 0 (to include header)
-  column_spec(1, color = "darkblue") %>%
-  column_spec(2, color = "black") 
-```
-
-
-\
-
 ## Useful Resources
 
 + [R for Data Science](https://r4ds.had.co.nz)
