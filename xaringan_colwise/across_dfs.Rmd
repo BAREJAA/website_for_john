@@ -1,0 +1,29 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+library(emo)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+```
+
+```{r message = FALSE, warning = FALSE}
+happy %>% 
+  summarise(across(where(is.numeric), list(mean, sum))) 
+```
+
+```{r message = FALSE, warning = FALSE}
+options(width = 300)
+
+happy %>% 
+  summarise(across(where(is.numeric), list(average = mean, total = sum)))
+```

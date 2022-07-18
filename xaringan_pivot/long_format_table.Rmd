@@ -1,0 +1,30 @@
+---
+title: "long_format_table_output"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(kableExtra)
+library(janitor)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+
+happy %>% 
+  pivot_longer(cols = -country_name,
+               names_to = "measurements",
+               values_to = "values") -> happy_long
+```
+
+```{r}
+happy %>% 
+  pivot_longer(cols = !country_name,
+               names_to = "measurements",
+               values_to = "values") %>% 
+  kbl %>% 
+  kable_styling()
+```
+
