@@ -1,0 +1,289 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Advanced `filter()`
+
+---
+# The `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# Simple example
+
+Keep countries that have a `gdp` greater than 9 that are **NOT** Panama  
+--
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# Simple example
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(gdp > 9,
+         country_name != "Panama")
+```
+]
+---
+# Table of Relational Operators
+
+.center[
+```{r echo = FALSE}
+tribble(~Operator, ~Description,
+        "==", "equals",
+        "!=", "does not equal",
+        ">", "greater than",
+        "<", "less than",
+        ">=", "greater than or equal to",
+        "<=", "less than or equal to") %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# The `|` ("or") Operator
+
+Keep countries that have a `gdp` less than 9 or greater than 10 
+--
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# The `|` Operator
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(gdp < 9|gdp > 10)
+```
+]
+---
+# The `!` Operator
+
+*Discard* countries that have a `gdp` less than 9 
+--
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(!gdp < 9)
+```
+]
+---
+# The `!` Operator
+
+*Discard* countries that have a `gdp` less than 9 or greater than 10   
+
+--
+  
+**WRONG!!!**  
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(!gdp < 9|gdp > 10)
+```
+]
+---
+# Operator Precendence
+
+`!` precedes `|` 
+
+--
+
+Operator Syntax and Precedence - https://stat.ethz.ch/R-manual/R-devel/library/base/html/Syntax.html  
+
+--
+  
+```{r eval = FALSE, echo = TRUE}
+happy %>% 
+  filter(!gdp < 9|gdp > 10)
+```
+
+--
+  
+**IS THE SAME AS**  
+```{r eval = FALSE, echo = TRUE}
+happy %>% 
+  filter(gdp >= 9|gdp > 10)
+```
+---
+# Operator Precedence 
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(!(gdp < 9|gdp > 10))
+```
+]
+---
+# Filter`%in%`g
+
+Choose rows that correspond to Iraq, Panama, and Maldives  
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(country_name == "Iraq"|
+         country_name == "Panama"|
+         country_name == "Maldives")
+```
+]
+---
+# Filter`%in%`g
+
+**Note!!**
+--
+```{r echo = TRUE, eval = FALSE}
+happy %>% 
+  filter(country_name == "Iraq"|"Panama"|"Maldives")
+```
+--
+Error in `filter()`:  
+! Problem while computing `..1 = country_name == ("Iraq" | "Panama" | "Maldives")`.  
+Caused by error in `"Iraq" | "Panama"`:  
+! operations are possible only for numeric, logical or complex types  
+---
+# Filter`%in%`g
+
+Use the `%in%` operator!  
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(country_name %in% c("Iraq", "Panama", "Maldives"))
+```
+]
+---
+# Not `%in%`
+
+Choose countries that are NOT Iraq, Panama, or Maldives 
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(!country_name %in% c("Iraq", "Panama", "Maldives"))
+```
+]
+---
+# `between()`
+
+Choose countries that have a `ladder_score` between (and including) 4.5 and 6.2
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(ladder_score >= 4.5,
+         ladder_score <= 6.2)
+```
+]
+---
+# `between()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(between(ladder_score, 4.5, 6.2))
+```
+]
+---
+# `near()`
+
+Choose countries that have a `ladder_score` equal to 6 +/- 0.5
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(between(ladder_score, 5.5, 6.5))
+```
+]
+---
+# `near()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(near(ladder_score, 6, tol = 0.5))
+```
+]
+---
+# `near()`
+
+Choose countries that have a `ladder_score` equal to the mean `ladder_score` +/- standard deviation of `ladder_score`
+--
+Credit: https://suzan.rbind.io/2018/02/dplyr-tutorial-3/
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(near(ladder_score, mean(ladder_score), tol = sd(ladder_score)))
+```
+]
+---

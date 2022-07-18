@@ -1,0 +1,126 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# `between()` and `near()`
+
+---
+# The `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# `between()`
+
+Choose countries that have a `ladder_score` between (and including) 4.5 and 6.2
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(ladder_score >= 4.5,
+         ladder_score <= 6.2)
+```
+]
+---
+# `between()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(between(ladder_score, 4.5, 6.2))
+```
+]
+---
+# `near()`
+
+Choose countries that have a `ladder_score` equal to 6 +/- 0.5
+--
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(between(ladder_score, 5.5, 6.5))
+```
+]
+---
+# `near()`
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(near(ladder_score, 6, tol = 0.5))
+```
+]
+---
+# `near()`
+
+Choose countries that have a `ladder_score` equal to the mean `ladder_score` +/- standard deviation of `ladder_score` 
+
+--
+
+`https://suzan.rbind.io/2018/02/dplyr-tutorial-3/`  
+--
+
+.panelset[
+```{r panelset = TRUE}
+happy %>% 
+  filter(near(ladder_score, mean(ladder_score), 
+              tol = sd(ladder_score)))
+```
+]
+---
