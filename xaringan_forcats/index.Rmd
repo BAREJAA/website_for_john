@@ -1,0 +1,255 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+library(gganimate)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+happy_full <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/world-happiness-report-2021.csv") %>% clean_names() %>% rename(region = regional_indicator)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# Introduction to {forcats}
+
+---
+background-image: url(https://forcats.tidyverse.org/logo.png)
+---
+
+```{r echo = FALSE, warning = FALSE, message = FALSE}
+df_f <- tribble(
+  ~letter, ~time, ~y, ~x,
+  "F", 1, 1, 1,
+  "F", 2, 1, 1
+)
+
+df_a <- tribble(
+  ~letter, ~time, ~y,
+  "A", 1, 1,
+  "A", 2, 1
+)
+df_a$x <- seq(5, 2, length.out=2)
+
+df_c <- tribble(
+  ~letter, ~time, ~y,
+  "C", 1, 1,
+  "C", 2, 1
+)
+df_c$x <- seq(4, 3, length.out=2)
+
+df_t <- tribble(
+  ~letter, ~time, ~y,
+  "T", 1, 1,
+  "T", 2, 1
+)
+df_t$x <- seq(6, 4, length.out=2)
+
+df_o <- tribble(
+  ~letter, ~time, ~y,
+  "O", 1, 1,
+  "O", 2, 1
+)
+df_o$x <- seq(2, 5, length.out=2)
+
+df_r <- tribble(
+  ~letter, ~time, ~y,
+  "R", 1, 1,
+  "R", 2, 1
+)
+df_r$x <- seq(3, 6, length.out=2)
+
+df_s <- tribble(
+  ~letter, ~time, ~y,
+  "S", 1, 1,
+  "S", 2, 1
+)
+df_s$x <- 7
+
+df <- bind_rows(df_f, df_a, df_c, df_t, df_o, df_r, df_s)
+
+df <- df %>% 
+        mutate(y = 2) %>% 
+        relocate(y, .after = time) # trying to shift image up, but it's not working!!
+  
+# animation
+df %>% 
+  ggplot(aes(x, y)) +
+  geom_text(aes(label = letter), size = 25) +
+  theme_void() +
+  transition_states(
+    time
+  ) 
+```
+---
+# The `happy_full` data frame
+
+.center[
+```{r echo = FALSE}
+happy_full %>% 
+  glimpse()
+```
+]
+---
+# `fct_reorder()` 
+
+Make boxplots of `ladder_score` for each `region`
+--
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  ggplot(aes(region, ladder_score)) +
+  geom_boxplot() +
+  coord_flip()
+```
+]
+---
+# `fct_reorder()` 
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  ggplot(aes(fct_reorder(region, ladder_score), ladder_score)) + #<<
+  geom_boxplot() +
+  coord_flip()
+```
+]
+---
+# `fct_reorder()` 
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  ggplot(aes(fct_reorder(region, -ladder_score), ladder_score)) + #<<
+  geom_boxplot() +
+  coord_flip()
+```
+]
+---
+# `fct_reorder()` 
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  ggplot(aes(fct_reorder(region, ladder_score, .desc = TRUE), ladder_score)) + #<<
+  geom_boxplot() +
+  coord_flip()
+```
+]
+---
+# `fct_reorder()` by mean
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  ggplot(aes(fct_reorder(region, ladder_score, .fun = mean), ladder_score)) + #<<
+  geom_boxplot() +
+  coord_flip()
+```
+]
+---
+# `fct_reorder()` and {dplyr}
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  mutate(region = fct_reorder(region, ladder_score)) %>% #<<
+  ggplot(aes(region, ladder_score)) +
+  geom_boxplot() +
+  coord_flip()
+```
+]
+---
+# `fct_infreq()`
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  ggplot(aes(fct_infreq(region))) + #<<
+  geom_bar() +
+  coord_flip()
+```
+]
+---
+# `fct_infreq()` and `fct_rev()`
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>% 
+  mutate(region = region %>% fct_infreq() %>% fct_rev()) %>% #<<
+  ggplot(aes(region)) + 
+  geom_bar() +
+  coord_flip()
+```
+]
+---
+# `fct_lump_n()`
+
+Only plot the `region` with the most number of countries and collapse all the other countries into a group called "Other"  
+--
+.panelset[
+```{r panelset = TRUE}
+happy_full %>%
+  mutate(relig = fct_lump_n(region, n = 1)) %>% #<<
+  ggplot(aes(fct_infreq(relig))) +
+  geom_bar() +
+  coord_flip()
+```
+]
+---
+# `fct_lump_n()`
+
+.panelset[
+```{r panelset = TRUE}
+happy_full %>%
+  mutate(relig = fct_lump_n(region, n = 2)) %>% #<<
+  ggplot(aes(fct_infreq(relig))) +
+  geom_bar() +
+  coord_flip()
+```
+]
+---
+

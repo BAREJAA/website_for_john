@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tidybiology</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
+    <meta name="date" content="2022-07-18" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Tidybiology
+]
+.subtitle[
+## ⚔<br/>Intro to Data Science Using R
+]
+.author[
+### Matthew Hirschey &amp; Akshay Bareja
+]
+.institute[
+### Duke University
+]
+.date[
+### 2022-07-18
+]
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: center, middle
+
+# Introduction to Categorical Variables and Factors
+
+---
+# What are Categorical Variables?
+
+--
+
+"Variables that have a fixed and known set of possible values" (R4DS)  
+
+--
+
+Examples - months of the year, gender  
+
+--
+
+We use factors to work with categorical variables  
+
+---
+# The `happy_full` data frame
+
+.center[
+
+```
+## Rows: 149
+## Columns: 20
+## $ country_name                              &lt;chr&gt; "Finland", "Denmark", "Switz…
+## $ region                                    &lt;chr&gt; "Western Europe", "Western E…
+## $ ladder_score                              &lt;dbl&gt; 7.842, 7.620, 7.571, 7.554, …
+## $ standard_error_of_ladder_score            &lt;dbl&gt; 0.032, 0.035, 0.036, 0.059, …
+## $ upperwhisker                              &lt;dbl&gt; 7.904, 7.687, 7.643, 7.670, …
+## $ lowerwhisker                              &lt;dbl&gt; 7.780, 7.552, 7.500, 7.438, …
+## $ logged_gdp_per_capita                     &lt;dbl&gt; 10.775, 10.933, 11.117, 10.8…
+## $ social_support                            &lt;dbl&gt; 0.954, 0.954, 0.942, 0.983, …
+## $ healthy_life_expectancy                   &lt;dbl&gt; 72.000, 72.700, 74.400, 73.0…
+## $ freedom_to_make_life_choices              &lt;dbl&gt; 0.949, 0.946, 0.919, 0.955, …
+## $ generosity                                &lt;dbl&gt; -0.098, 0.030, 0.025, 0.160,…
+## $ perceptions_of_corruption                 &lt;dbl&gt; 0.186, 0.179, 0.292, 0.673, …
+## $ ladder_score_in_dystopia                  &lt;dbl&gt; 2.43, 2.43, 2.43, 2.43, 2.43…
+## $ explained_by_log_gdp_per_capita           &lt;dbl&gt; 1.446, 1.502, 1.566, 1.482, …
+## $ explained_by_social_support               &lt;dbl&gt; 1.106, 1.108, 1.079, 1.172, …
+## $ explained_by_healthy_life_expectancy      &lt;dbl&gt; 0.741, 0.763, 0.816, 0.772, …
+## $ explained_by_freedom_to_make_life_choices &lt;dbl&gt; 0.691, 0.686, 0.653, 0.698, …
+## $ explained_by_generosity                   &lt;dbl&gt; 0.124, 0.208, 0.204, 0.293, …
+## $ explained_by_perceptions_of_corruption    &lt;dbl&gt; 0.481, 0.485, 0.413, 0.170, …
+## $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.967, …
+```
+]
+---
+# Character versus Factor 
+
+--
+
+Create a new data frame called `happy_fact` in which the `region` variable is a factor
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_fact &lt;- happy_full %&gt;% 
+              mutate(region = factor(region))
+glimpse(happy_fact)
+```
+
+
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## Rows: 149
+## Columns: 20
+## $ country_name                              &lt;chr&gt; "Finland", "Denmark", "Switz…
+## $ region                                    &lt;fct&gt; Western Europe, Western Euro…
+## $ ladder_score                              &lt;dbl&gt; 7.842, 7.620, 7.571, 7.554, …
+## $ standard_error_of_ladder_score            &lt;dbl&gt; 0.032, 0.035, 0.036, 0.059, …
+## $ upperwhisker                              &lt;dbl&gt; 7.904, 7.687, 7.643, 7.670, …
+## $ lowerwhisker                              &lt;dbl&gt; 7.780, 7.552, 7.500, 7.438, …
+## $ logged_gdp_per_capita                     &lt;dbl&gt; 10.775, 10.933, 11.117, 10.8…
+## $ social_support                            &lt;dbl&gt; 0.954, 0.954, 0.942, 0.983, …
+## $ healthy_life_expectancy                   &lt;dbl&gt; 72.000, 72.700, 74.400, 73.0…
+## $ freedom_to_make_life_choices              &lt;dbl&gt; 0.949, 0.946, 0.919, 0.955, …
+## $ generosity                                &lt;dbl&gt; -0.098, 0.030, 0.025, 0.160,…
+## $ perceptions_of_corruption                 &lt;dbl&gt; 0.186, 0.179, 0.292, 0.673, …
+## $ ladder_score_in_dystopia                  &lt;dbl&gt; 2.43, 2.43, 2.43, 2.43, 2.43…
+## $ explained_by_log_gdp_per_capita           &lt;dbl&gt; 1.446, 1.502, 1.566, 1.482, …
+## $ explained_by_social_support               &lt;dbl&gt; 1.106, 1.108, 1.079, 1.172, …
+## $ explained_by_healthy_life_expectancy      &lt;dbl&gt; 0.741, 0.763, 0.816, 0.772, …
+## $ explained_by_freedom_to_make_life_choices &lt;dbl&gt; 0.691, 0.686, 0.653, 0.698, …
+## $ explained_by_generosity                   &lt;dbl&gt; 0.124, 0.208, 0.204, 0.293, …
+## $ explained_by_perceptions_of_corruption    &lt;dbl&gt; 0.481, 0.485, 0.413, 0.170, …
+## $ dystopia_residual                         &lt;dbl&gt; 3.253, 2.868, 2.839, 2.967, …
+```
+
+
+
+]
+]
+---
+# Character versus Factor - levels
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+levels(happy_full$region)
+```
+
+
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## NULL
+```
+
+
+
+]
+]
+---
+# Character versus Factor - levels
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+levels(happy_fact$region)
+```
+
+
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##  [1] "Central and Eastern Europe"         "Commonwealth of Independent States"
+##  [3] "East Asia"                          "Latin America and Caribbean"       
+##  [5] "Middle East and North Africa"       "North America and ANZ"             
+##  [7] "South Asia"                         "Southeast Asia"                    
+##  [9] "Sub-Saharan Africa"                 "Western Europe"
+```
+
+
+
+]
+]
+---
+# Changing levels of a factor
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_fact &lt;- happy_fact %&gt;% 
+                mutate(region = fct_relevel(region, "East Asia"))
+
+levels(happy_fact$region)
+```
+
+
+
+]
+
+.panel[.panel-name[Output]
+
+```
+##  [1] "East Asia"                          "Central and Eastern Europe"        
+##  [3] "Commonwealth of Independent States" "Latin America and Caribbean"       
+##  [5] "Middle East and North Africa"       "North America and ANZ"             
+##  [7] "South Asia"                         "Southeast Asia"                    
+##  [9] "Sub-Saharan Africa"                 "Western Europe"
+```
+
+
+
+]
+]
+---
+# `arrange()` - `&lt;chr&gt;` vs. `&lt;fct&gt;`
+
+--
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_full %&gt;% 
+  arrange(region)
+```
+
+
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 × 20
+##    country_name   region ladder_score standard_error_… upperwhisker lowerwhisker
+##    &lt;chr&gt;          &lt;chr&gt;         &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Czech Republic Centr…         6.96            0.049         7.06         6.87
+##  2 Slovenia       Centr…         6.46            0.043         6.55         6.38
+##  3 Kosovo         Centr…         6.37            0.059         6.49         6.26
+##  4 Slovakia       Centr…         6.33            0.041         6.41         6.25
+##  5 Lithuania      Centr…         6.26            0.045         6.34         6.17
+##  6 Estonia        Centr…         6.19            0.038         6.26         6.12
+##  7 Poland         Centr…         6.17            0.04          6.24         6.09
+##  8 Romania        Centr…         6.14            0.057         6.25         6.03
+##  9 Serbia         Centr…         6.08            0.053         6.18         5.97
+## 10 Latvia         Centr…         6.03            0.036         6.10         5.96
+## # … with 139 more rows, and 14 more variables: logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
+## #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;,
+## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;, …
+```
+
+
+
+]
+]
+---
+# `arrange()` - `&lt;chr&gt;` vs. `&lt;fct&gt;`
+
+.panelset[
+.panel[.panel-name[Code]
+
+```r
+happy_fact %&gt;% 
+  arrange(region)
+```
+
+
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 149 × 20
+##    country_name   region ladder_score standard_error_… upperwhisker lowerwhisker
+##    &lt;chr&gt;          &lt;fct&gt;         &lt;dbl&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Taiwan Provin… East …         6.58            0.038         6.66         6.51
+##  2 Japan          East …         5.94            0.04          6.02         5.86
+##  3 South Korea    East …         5.84            0.042         5.93         5.76
+##  4 Mongolia       East …         5.68            0.042         5.76         5.60
+##  5 Hong Kong S.A… East …         5.48            0.049         5.57         5.38
+##  6 China          East …         5.34            0.029         5.40         5.28
+##  7 Czech Republic Centr…         6.96            0.049         7.06         6.87
+##  8 Slovenia       Centr…         6.46            0.043         6.55         6.38
+##  9 Kosovo         Centr…         6.37            0.059         6.49         6.26
+## 10 Slovakia       Centr…         6.33            0.041         6.41         6.25
+## # … with 139 more rows, and 14 more variables: logged_gdp_per_capita &lt;dbl&gt;,
+## #   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,
+## #   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,
+## #   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,
+## #   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;,
+## #   explained_by_healthy_life_expectancy &lt;dbl&gt;,
+## #   explained_by_freedom_to_make_life_choices &lt;dbl&gt;, …
+```
+
+
+
+]
+]
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
