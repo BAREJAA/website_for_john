@@ -70,6 +70,10 @@ Examples - months of the year, gender
 
 We use factors to work with categorical variables  
 
+--
+
+Factors have levels
+
 ---
 # The `happy_full` data frame
 
@@ -89,7 +93,7 @@ Create a new data frame called `happy_fact` in which the `region` variable is a 
 .panelset[
 ```{r panelset = TRUE}
 happy_fact <- happy_full %>% 
-              mutate(region = factor(region))
+              mutate(region = factor(region)) #<<
 glimpse(happy_fact)
 ```
 ]
@@ -117,7 +121,7 @@ levels(happy_fact$region)
 .panelset[
 ```{r panelset = TRUE}
 happy_fact <- happy_fact %>% 
-                mutate(region = fct_relevel(region, "East Asia"))
+                mutate(region = fct_relevel(region, "East Asia")) #<<
 
 levels(happy_fact$region)
 ```

@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-07-18" />
+    <meta name="date" content="2022-07-19" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -34,7 +34,7 @@ class: center, middle, inverse, title-slide
 ### Duke University
 ]
 .date[
-### 2022-07-18
+### 2022-07-19
 ]
 
 ---
@@ -70,6 +70,10 @@ Examples - months of the year, gender
 --
 
 We use factors to work with categorical variables  
+
+--
+
+Factors have levels
 
 ---
 # The `happy_full` data frame
@@ -113,7 +117,7 @@ Create a new data frame called `happy_fact` in which the `region` variable is a 
 
 ```r
 happy_fact &lt;- happy_full %&gt;% 
-              mutate(region = factor(region))
+*             mutate(region = factor(region))
 glimpse(happy_fact)
 ```
 
@@ -214,7 +218,7 @@ levels(happy_fact$region)
 
 ```r
 happy_fact &lt;- happy_fact %&gt;% 
-                mutate(region = fct_relevel(region, "East Asia"))
+*               mutate(region = fct_relevel(region, "East Asia"))
 
 levels(happy_fact$region)
 ```

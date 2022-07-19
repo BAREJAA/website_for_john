@@ -229,7 +229,9 @@ happy_full %>%
 # `fct_lump_n()`
 
 Only plot the `region` with the most number of countries and collapse all the other countries into a group called "Other"  
+
 --
+
 .panelset[
 ```{r panelset = TRUE}
 happy_full %>%
