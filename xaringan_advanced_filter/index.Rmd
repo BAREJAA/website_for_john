@@ -152,7 +152,7 @@ happy %>%
 ```
 ]
 ---
-# Operator Precendence
+# Operator Precedence
 
 `!` precedes `|` 
 

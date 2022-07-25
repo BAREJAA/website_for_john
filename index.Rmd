@@ -262,7 +262,7 @@ links <- c("https://bespokds.netlify.app/xaringan_intro_to_dplyr/#3", "https://b
 "https://bespokds.netlify.app/xaringan_colwise/#3",
 "https://bespokds.netlify.app/xaringan_rowwise/#3",
 "https://bespokds.netlify.app/xaringan_advanced_filter/#3",
-"https://bespokds.netlify.app/xaringan_betwee_near/#3",
+"https://bespokds.netlify.app/xaringan_between_near/#3",
 "https://bespokds.netlify.app/xaringan_categorical_variables/#3",
 "https://bespokds.netlify.app/xaringan_forcats/#3",
 "https://bespokds.netlify.app/xaringan_bind_cols_rows/#3")
