@@ -245,22 +245,27 @@ df_two %>%
 # from - https://stackoverflow.com/questions/48506712/kable-kableextra-cells-with-hyperlinks
 # and - https://stackoverflow.com/questions/53549662/how-can-i-add-a-fontawesome-icon-to-a-table-in-rmarkdown
 
-links <- c("https://bespokds.netlify.app/xaringan_intro_to_dplyr/#1", "https://bespokds.netlify.app/xaringan_select/#1",
-"https://bespokds.netlify.app/xaringan_filter/#1",
-"https://bespokds.netlify.app/xaringan_arrange/#1",
-"https://bespokds.netlify.app/xaringan_mutate/#1",
-"https://bespokds.netlify.app/xaringan_joins/#1",
-"https://bespokds.netlify.app/xaringan_saving/#1",
-"https://bespokds.netlify.app/xaringan_group_by_summarise/#1",
-"https://bespokds.netlify.app/xaringan_filtering_joins/#1",
-"https://bespokds.netlify.app/xaringan_helper_functions/#1",
-"https://bespokds.netlify.app/xaringan_slice/#1",
-"https://bespokds.netlify.app/xaringan_unite_separate/#1",
-"https://bespokds.netlify.app/xaringan_pivot/#1",
-"https://bespokds.netlify.app/xaringan_if_else/#1",
-"https://bespokds.netlify.app/xaringan_case_when/#1",
-"https://bespokds.netlify.app/xaringan_colwise/#1",
-"https://bespokds.netlify.app/xaringan_rowwise/#1")
+links <- c("https://bespokds.netlify.app/xaringan_intro_to_dplyr/#3", "https://bespokds.netlify.app/xaringan_select/#3",
+"https://bespokds.netlify.app/xaringan_filter/#3",
+"https://bespokds.netlify.app/xaringan_arrange/#3",
+"https://bespokds.netlify.app/xaringan_mutate/#3",
+"https://bespokds.netlify.app/xaringan_joins/#3",
+"https://bespokds.netlify.app/xaringan_saving/#3",
+"https://bespokds.netlify.app/xaringan_group_by_summarise/#3",
+"https://bespokds.netlify.app/xaringan_filtering_joins/#3",
+"https://bespokds.netlify.app/xaringan_helper_functions/#3",
+"https://bespokds.netlify.app/xaringan_slice/#3",
+"https://bespokds.netlify.app/xaringan_unite_separate/#3",
+"https://bespokds.netlify.app/xaringan_pivot/#3",
+"https://bespokds.netlify.app/xaringan_if_else/#3",
+"https://bespokds.netlify.app/xaringan_case_when/#3",
+"https://bespokds.netlify.app/xaringan_colwise/#3",
+"https://bespokds.netlify.app/xaringan_rowwise/#3",
+"https://bespokds.netlify.app/xaringan_advanced_filter/#3",
+"https://bespokds.netlify.app/xaringan_betwee_near/#3",
+"https://bespokds.netlify.app/xaringan_categorical_variables/#3",
+"https://bespokds.netlify.app/xaringan_forcats/#3",
+"https://bespokds.netlify.app/xaringan_bind_cols_rows/#3")
 
 df <- tribble(
   ~Concept, ~Slides, ~Recording, ~Exercise,
@@ -280,7 +285,12 @@ df <- tribble(
   "If/else", paste0("<a href=\"", links[14], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
    "case_when()", paste0("<a href=\"", links[15], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
   "Column-wise operations", paste0("<a href=\"", links[16], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
-   "Row-wise operations", paste0("<a href=\"", links[17], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard"))
+   "Row-wise operations", paste0("<a href=\"", links[17], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Advanced filter operations", paste0("<a href=\"", links[18], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Between and Near", paste0("<a href=\"", links[19], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Categorical Variables", paste0("<a href=\"", links[20], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "{forcats}", paste0("<a href=\"", links[21], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard")),
+  "Binding data frames", paste0("<a href=\"", links[22], "\">", as.character(fa("laptop")), "</a>"), paste0("<a href=\"", "", "\">", as.character(fa("youtube-square")), "</a>"), as.character(fa("clipboard"))
 )
 
 df %>%

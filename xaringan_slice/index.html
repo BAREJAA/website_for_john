@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-06-16" />
+    <meta name="date" content="2022-07-24" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -23,11 +23,21 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Tidybiology
+]
+.subtitle[
 ## ⚔<br/>Intro to Data Science Using R
+]
+.author[
 ### Matthew Hirschey &amp; Akshay Bareja
+]
+.institute[
 ### Duke University
-### 2022-06-16
+]
+.date[
+### 2022-07-24
+]
 
 ---
 
@@ -106,6 +116,8 @@ happy %&gt;%
   slice(1)
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -131,6 +143,8 @@ happy %&gt;%
 happy %&gt;% 
   slice(1:3)
 ```
+
+
 
 ]
 
@@ -160,6 +174,8 @@ happy %&gt;%
   slice_head(n = 3)
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -187,6 +203,8 @@ happy %&gt;%
 happy %&gt;% 
   slice_tail(n = 3)
 ```
+
+
 
 ]
 
@@ -216,6 +234,8 @@ happy %&gt;%
   slice_sample(n = 3)
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -225,8 +245,8 @@ happy %&gt;%
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
 ## 1 Comoros              4.29  8.03          0.626
-## 2 Panama               6.18 10.4           0.896
-## 3 Maldives             5.20  9.83          0.913
+## 2 Spain                6.49 10.6           0.932
+## 3 Iraq                 4.85  9.24          0.746
 ```
 
 
@@ -244,6 +264,8 @@ happy %&gt;%
   slice_sample(prop = 3/5)
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -252,9 +274,9 @@ happy %&gt;%
 ## # A tibble: 3 × 4
 ##   country_name ladder_score   gdp social_support
 ##   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;
-## 1 Panama               6.18 10.4           0.896
-## 2 Comoros              4.29  8.03          0.626
-## 3 Maldives             5.20  9.83          0.913
+## 1 Maldives             5.20  9.83          0.913
+## 2 Spain                6.49 10.6           0.932
+## 3 Panama               6.18 10.4           0.896
 ```
 
 
@@ -271,6 +293,8 @@ happy %&gt;%
 happy %&gt;% 
   slice_min(ladder_score)
 ```
+
+
 
 ]
 
@@ -297,6 +321,8 @@ happy %&gt;%
 happy %&gt;% 
   slice_min(ladder_score, n = 2)
 ```
+
+
 
 ]
 
@@ -325,6 +351,8 @@ happy %&gt;%
   slice_max(ladder_score)
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -350,6 +378,8 @@ happy %&gt;%
 happy %&gt;% 
   slice_max(ladder_score, n = 2)
 ```
+
+
 
 ]
 
@@ -417,6 +447,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

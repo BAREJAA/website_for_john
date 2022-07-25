@@ -1,0 +1,165 @@
+---
+title: "Tidybiology"
+subtitle: "⚔<br/>Intro to Data Science Using R"
+author: "Matthew Hirschey & Akshay Bareja"
+institute: "Duke University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width = 6, fig.height = 4) 
+library(tidyverse)
+library(kableExtra)
+library(xaringanExtra)
+library(janitor)
+library(xaringanthemer)
+
+happy <- read_csv("https://raw.githubusercontent.com/BAREJAA/website_for_john/master/datasets/happy_small.csv")
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#00539B",
+  header_font_google = google_font("Adobe Caslon"),
+  text_font_google   = google_font("Adobe Caslon", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra-freezeframe, echo = FALSE, message = FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_freezeframe()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+---
+class: center, middle
+
+# `bind_rows()` and `bind_cols()`
+
+---
+# The `happy` data frame
+
+.center[
+```{r echo = FALSE}
+happy %>% 
+  kbl %>% 
+  kable_styling()
+```
+]
+---
+# Split `happy` by row
+
+```{r echo = TRUE}
+happy_row_one <- happy %>% 
+                  slice(1:2)
+happy_row_two <- happy %>% 
+                  slice(3:5)
+```
+--
+`happy_row_one`  
+```{r echo = FALSE}
+happy_row_one
+```
+--
+`happy_row_two`
+```{r echo = FALSE}
+happy_row_two
+```
+---
+# Recreate `happy` using `bind_rows()`
+
+.panelset[
+```{r panelset = TRUE}
+bind_rows(happy_row_one, happy_row_two)
+```
+]
+---
+# Order matters!
+
+.panelset[
+```{r panelset = TRUE}
+bind_rows(happy_row_two, happy_row_one)
+```
+]
+---
+# Keep track of original data frames
+
+.panelset[
+```{r panelset = TRUE}
+bind_rows(happy_row_one, happy_row_two, .id = "original_df")
+```
+]
+---
+# `bind_rows()` with unequal columns
+
+.panelset[
+```{r panelset = TRUE}
+happy_row_two_cut <- happy_row_two %>% 
+                      select(!social_support)
+happy_row_two_cut
+```
+]
+---
+# `bind_rows()` with unequal columns
+
+.panelset[
+```{r panelset = TRUE}
+bind_rows(happy_row_one, happy_row_two_cut)
+```
+]
+---
+# Split `happy` by column
+
+```{r echo = TRUE}
+happy_col_one <- happy %>% 
+                  select(1:2)
+happy_col_two <- happy %>% 
+                  select(3:4)
+```
+---
+# Recreate `happy` using `bind_cols()`
+
+.panelset[
+```{r panelset = TRUE}
+bind_cols(happy_col_one, happy_col_two)
+```
+]
+---
+# `bind_cols()` with unequal rows
+
+.panelset[
+```{r panelset = TRUE}
+happy_col_two_cut <- happy_col_two %>% 
+                        slice(1:4)
+happy_col_two_cut
+```
+]
+---
+# `bind_cols()` with unequal rows
+
+```{r echo = TRUE, eval = FALSE}
+bind_cols(happy_col_one, happy_col_two_cut)
+```
+
+`Error in `bind_cols()`:`  
+`! Can't recycle `..1` (size 5) to match `..2` (size 4).`  
+---

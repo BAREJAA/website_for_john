@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-06-16" />
+    <meta name="date" content="2022-07-24" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -21,11 +21,21 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Tidybiology
+]
+.subtitle[
 ## ⚔<br/>Intro to Data Science Using R
+]
+.author[
 ### Matthew Hirschey &amp; Akshay Bareja
+]
+.institute[
 ### Duke University
-### 2022-06-16
+]
+.date[
+### 2022-07-24
+]
 
 ---
 
@@ -97,6 +107,8 @@ happy_full %&gt;%
   select(starts_with("explained_by"))
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -135,6 +147,8 @@ Select all columns that end with the word "choices"
 happy_full %&gt;% 
   select(ends_with("choices"))
 ```
+
+
 
 ]
 
@@ -175,6 +189,8 @@ happy_full %&gt;%
   select(contains("log"))
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -213,6 +229,8 @@ happy_full %&gt;%
   select(contains("^explained|score$"))
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -235,6 +253,8 @@ happy_full %&gt;%
 happy_full %&gt;% 
   select(matches("^explained|score$"))
 ```
+
+
 
 ]
 
@@ -276,6 +296,8 @@ Re-order the data frame so that the first column is `ladder_score`
 happy_full %&gt;% 
   select(ladder_score, everything())
 ```
+
+
 
 ]
 
@@ -321,6 +343,8 @@ happy_full %&gt;%
   relocate(ladder_score)
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -362,6 +386,8 @@ happy_full %&gt;%
 happy_full %&gt;% 
   relocate(ladder_score, .after = country_name)
 ```
+
+
 
 ]
 
@@ -405,6 +431,8 @@ happy_full %&gt;%
   relocate(where(is.character))
 ```
 
+
+
 ]
 
 .panel[.panel-name[Output]
@@ -446,6 +474,8 @@ happy_full %&gt;%
 happy_full %&gt;% 
   relocate(starts_with("explained_by"))
 ```
+
+
 
 ]
 
@@ -528,6 +558,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
