@@ -135,6 +135,20 @@ happy_col_one <- happy %>%
 happy_col_two <- happy %>% 
                   select(3:4)
 ```
+--
+.pull-left[
+`happy_col_one`  
+```{r echo = FALSE}
+happy_col_one
+```
+]
+--
+.pull-right[
+`happy_col_two`
+```{r echo = FALSE}
+happy_col_two
+```
+]
 ---
 # Recreate `happy` using `bind_cols()`
 

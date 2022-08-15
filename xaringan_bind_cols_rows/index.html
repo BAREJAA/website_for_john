@@ -4,7 +4,7 @@
     <title>Tidybiology</title>
     <meta charset="utf-8" />
     <meta name="author" content="Matthew Hirschey &amp; Akshay Bareja" />
-    <meta name="date" content="2022-07-25" />
+    <meta name="date" content="2022-08-15" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
@@ -36,7 +36,7 @@ class: center, middle, inverse, title-slide
 ### Duke University
 ]
 .date[
-### 2022-07-25
+### 2022-08-15
 ]
 
 ---
@@ -301,6 +301,36 @@ happy_col_one &lt;- happy %&gt;%
 happy_col_two &lt;- happy %&gt;% 
                   select(3:4)
 ```
+--
+.pull-left[
+`happy_col_one`  
+
+```
+## # A tibble: 5 × 2
+##   country_name ladder_score
+##   &lt;chr&gt;               &lt;dbl&gt;
+## 1 Iraq                 4.85
+## 2 Comoros              4.29
+## 3 Panama               6.18
+## 4 Maldives             5.20
+## 5 Spain                6.49
+```
+]
+--
+.pull-right[
+`happy_col_two`
+
+```
+## # A tibble: 5 × 2
+##     gdp social_support
+##   &lt;dbl&gt;          &lt;dbl&gt;
+## 1  9.24          0.746
+## 2  8.03          0.626
+## 3 10.4           0.896
+## 4  9.83          0.913
+## 5 10.6           0.932
+```
+]
 ---
 # Recreate `happy` using `bind_cols()`
 

@@ -139,7 +139,7 @@ happy_full %>%
 Make boxplots of `ladder_score` for each `region`
 --
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '400px'}
 happy_full %>% 
   ggplot(aes(region, ladder_score)) +
   geom_boxplot() +
@@ -150,7 +150,7 @@ happy_full %>%
 # `fct_reorder()` 
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, , out.height = '400px'}
 happy_full %>% 
   ggplot(aes(fct_reorder(region, ladder_score), #<<
              ladder_score)) + 
@@ -162,7 +162,7 @@ happy_full %>%
 # `fct_reorder()` 
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '400px'}
 happy_full %>% 
   ggplot(aes(fct_reorder(region, -ladder_score), #<< 
              ladder_score)) + 
@@ -174,7 +174,7 @@ happy_full %>%
 # `fct_reorder()` 
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '400px'}
 happy_full %>% 
   ggplot(aes(fct_reorder(region, ladder_score, .desc = TRUE), #<<
              ladder_score)) + 
@@ -186,7 +186,7 @@ happy_full %>%
 # `fct_reorder()` by mean
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '400px'}
 happy_full %>% 
   ggplot(aes(fct_reorder(region, ladder_score, .fun = mean), #<<
              ladder_score)) + 
@@ -198,7 +198,7 @@ happy_full %>%
 # `fct_reorder()` and {dplyr}
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '400px'}
 happy_full %>% 
   mutate(region = fct_reorder(region, ladder_score)) %>% #<<
   ggplot(aes(region, ladder_score)) +
@@ -210,7 +210,7 @@ happy_full %>%
 # `fct_infreq()`
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '400px'}
 happy_full %>% 
   ggplot(aes(fct_infreq(region))) + #<<
   geom_bar() +
@@ -221,7 +221,7 @@ happy_full %>%
 # `fct_infreq()` and `fct_rev()`
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '350px'}
 happy_full %>% 
   mutate(region = region %>% 
            fct_infreq() %>% #<<
@@ -239,7 +239,7 @@ Only plot the `region` with the most number of countries and collapse all the ot
 --
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '350px'}
 happy_full %>%
   mutate(relig = fct_lump_n(region, n = 1)) %>% #<<
   ggplot(aes(fct_infreq(relig))) +
@@ -251,7 +251,7 @@ happy_full %>%
 # `fct_lump_n()`
 
 .panelset[
-```{r panelset = TRUE}
+```{r panelset = TRUE, out.height = '350px'}
 happy_full %>%
   mutate(relig = fct_lump_n(region, n = 2)) %>% #<<
   ggplot(aes(fct_infreq(relig))) +
